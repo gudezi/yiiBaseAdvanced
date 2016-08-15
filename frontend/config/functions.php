@@ -10,7 +10,7 @@
 */
 function d() 
 {
-   echo '<pre>';
+   echo '<pre style="margin: 50px 0 10px;">';
    for ($i = 0; $i < func_num_args(); $i++) 
    {
       yii\helpers\VarDumper::dump(func_get_arg($i), 10, true);

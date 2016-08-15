@@ -27,8 +27,10 @@
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*",
-        "yiisoft/yii2-jui": "~2.0.0"
-    },
+        "yiisoft/yii2-jui": "~2.0.0",
+		"kartik-v/yii2-widgets": "dev-master",
+		"kartik-v/yii2-date-range": "dev-master"
+	},
     "config": {
         "process-timeout": 1800
     },
