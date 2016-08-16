@@ -23,7 +23,8 @@ use kartik\widgets\DatePicker;
     <?//= $form->field($model, 'fecha') ?>
 	<?php
 	echo $form->field($model, 'fecha_desde')->widget(DatePicker::classname(), [
-		'options' => ['placeholder' => ''],
+		'options' => ['placeholder' => ''],      
+      'language' => 'es',
 		'pluginOptions' => [
 			'id' => 'fecha1',
 			'autoclose'=>true,
@@ -33,7 +34,8 @@ use kartik\widgets\DatePicker;
 	]);
 
 	echo $form->field($model, 'fecha_hasta')->widget(DatePicker::classname(), [
-		'options' => ['placeholder' => ''],
+      'options' => ['placeholder' => ''],
+      'language' => 'es',
 		'pluginOptions' => [
 			'id' => 'fecha1',
 			'autoclose'=>true,

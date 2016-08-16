@@ -41,6 +41,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
             'kartik\\mpdf\\' => 12,
+            'kartik\\icons\\' => 13,
             'kartik\\growl\\' => 13,
             'kartik\\grid\\' => 12,
             'kartik\\form\\' => 12,
@@ -166,6 +167,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'kartik\\mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf',
+        ),
+        'kartik\\icons\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-icons',
         ),
         'kartik\\growl\\' => 
         array (

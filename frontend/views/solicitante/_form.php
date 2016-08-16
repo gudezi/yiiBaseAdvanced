@@ -83,6 +83,7 @@ use yii\jui\DatePicker;
     <?php echo $form->field($model,'fecha_nacimiento')->
         widget(DatePicker::className(),[
             'dateFormat' => 'yyyy-MM-dd',
+            'language' => 'es',
             'clientOptions' => [
                 'yearRange' => '-115:+0',
                 'changeYear' => true
