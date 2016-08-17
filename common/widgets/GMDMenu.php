@@ -6,6 +6,8 @@ use yii\base\Widget;
 //use yii\helpers\Html;
 //use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
+use common\models\UserMenus;
+use yii\helpers\ArrayHelper;
 
 class GMDMenu extends Widget
 {
@@ -87,10 +89,25 @@ class GMDMenu extends Widget
          ];
          }
         
+        //$kk = UserMenus::find()->all();
+        //$kk = ArrayHelper::map(UserMenus::find()->all(),'id_menu', 'descripcion', 'destino');
+        //$kk = ArrayHelper::index(UserMenus::find()->all(), 'id_menu');
+        /*$kk = ArrayHelper::toArray(UserMenus::find()->all(), [
+                    'common\models\UserMenus' => [
+                    'id' => 'id_menu',
+                    'descripcion',
+                    'destino'     
+                     ],
+               ]);*/
+        $kk = UserMenus::getTree();       
+        /*echo "<pre>"; 
+        print_r($kk);
+        print_r($menuItems);
+        die();*/
         $lines .= Nav::widget([
          'options' => ['class' => 'navbar-nav navbar-right'],
          'encodeLabels' => false,
-         'items' => $menuItems,
+         'items' => $kk,
          ]);
          
         //$lines .= Html::encode(NavBar::end());

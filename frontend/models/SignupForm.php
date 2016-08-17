@@ -43,7 +43,24 @@ class SignupForm extends Model
      */
     public function signup()
     {
-        if (!$this->validate()) {
+      if ($this->validate()) {
+        $user = new User();
+        $user->username = $this->username;
+        $user->email = $this->email;
+        $user->setPassword($this->password);
+        $user->generateAuthKey();
+        $user->save(false);
+
+        // the following three lines were added:
+        $auth = Yii::$app->authManager;
+        $authorRole = $auth->getRole('author');
+        $auth->assign($authorRole, $user->getId());
+
+        return $user;
+      }
+
+      return null;
+        /*if (!$this->validate()) {
             return null;
         }
         
@@ -54,5 +71,5 @@ class SignupForm extends Model
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;
-    }
+    }*/
 }

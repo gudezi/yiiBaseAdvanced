@@ -4,7 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-//use yii\bootstrap\Nav;
+use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
@@ -28,7 +28,7 @@ AppAsset::register($this);
 
 <div class="wrap">
    <? 
-   NavBar::begin([
+  /*NavBar::begin([
             'brandLabel' => 'MeetingPlanner',//Yii::t('frontend','MeetingPlanner.io'), //
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
@@ -38,13 +38,12 @@ AppAsset::register($this);
            
    echo GMDMenu::widget(['message' => 'Hola Prueba de Widget']);
 
-   NavBar::end();
-
+   NavBar::end();*/
    ?>
 
 
     <?php
-    /*NavBar::begin([
+    NavBar::begin([
         'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
@@ -73,7 +72,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
-    NavBar::end();*/
+    NavBar::end();
     ?>
 
     <div class="container">
