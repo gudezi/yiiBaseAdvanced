@@ -45,8 +45,10 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-			//'enableStrictParsing' => false,
+            //'baseUrl' => '',
+            //'enableStrictParsing' => true,
             'rules' => [
+               ['class' => 'common\helpers\UrlRule', 'connectionID' => 'db', /* ... */],
             ],
         ],
 

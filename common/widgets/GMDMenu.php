@@ -3,6 +3,7 @@ namespace common\widgets;
 
 use yii;
 use yii\base\Widget;
+use yii\helpers\Html;
 //use yii\bootstrap\Nav;
 use common\models\UserMenus;
 use yii\helpers\ArrayHelper;
@@ -10,99 +11,64 @@ use kartik\nav\NavX;
 
 class GMDMenu extends Widget
 {
-    public $message;
+   public $message;
 
-    public function init()
-    {
-        parent::init();
-        if ($this->message === null) {
-            $this->message = 'Hello World';
-        }
-    }
+   public function init()
+   {
+      parent::init();
+      if ($this->message === null) 
+      {
+         $this->message = 'Hello World';
+      }
+   }
 
-    public function run()
-    {
-        $lines = '';
-        /*$lines = Html::encode(NavBar::begin([
-         'brandLabel' => 'MeetingPlanner',//Yii::t('frontend','MeetingPlanner.io'), //
-         'brandUrl' => Yii::$app->homeUrl,
-         'options' => [
-         'class' => 'navbar-inverse navbar-fixed-top',
-         ],
-        ]));*/
+   public function run()
+   {
+      $lines = '';
 
-         if (Yii::$app->user->isGuest)
-         {
-            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            //$menuItems[] = ['label' => Yii::t('frontend','Signup'), 'url' => ['/site/signup']];
-            //$menuItems[] = ['label' => Yii::t('frontend','Login'), 'url' => ['/site/login']];
-         }
-         else 
-         {
-            $menuItems = [
-            ['label' => 'Meetings', 'url' => ['/meeting'], 'image' => 'glyphicon glyphicon-info'],
-            ['label' => '<span class="glyphicon glyphicon-home"></span>Places', 'url' => ['/place/yours']],
-            //['label' => Yii::t('frontend','Meetings'), 'url' => ['/meeting']],
-            //['label' => Yii::t('frontend','Places'), 'url' => ['/place/yours']],
-            ];
-         }
-         //$menuItems[]=['label' => Yii::t('frontend','About'),
-         $menuItems[]=['label' => 'About',
-         'items' => [
-            ['label' => 'Learn more', 'url' => ['/site/about']],
-            ['label' => 'Contact us', 'url' => ['/site/contact']],
-            //['label' => Yii::t('frontend','Learn more'), 'url' => ['/site/about']],
-            //['label' => Yii::t('frontend','Contact us'), 'url' => ['/site/contact']],
-            ],
-         ];
-         if (!Yii::$app->user->isGuest) 
-         {
-            $menuItems[] = [
-            'label' => 'Account',
-            'items' => [
-               [
-                  //'label' => Yii::t('frontend','Friends'),
-                  'label' => 'Friends',
-                  'url' => ['/friend'],
-               ],
-               [
-               //'label' => Yii::t('frontend','Contact information'),
-               'label' => 'Contact information',
-               'url' => ['/user-contact'],
-               ],
-               [
-               //'label' => Yii::t('frontend','Settings'),
-               'label' => 'Settings',
-               'url' => ['/user-setting'],
-               ],
-               [
-               //'label' => Yii::t('frontend','Logout').' (' . Yii::$app->user->identity->username . ')',
-               'label' => 'Logout'.' (' . Yii::$app->user->identity->username . ')',
-               'url' => ['/site/logout'],
-               'linkOptions' => ['data-method' => 'post']
-               ],
-            ],
-         ];
-         }
-        
+      $home = [  
+         ['label' => 'Home', 'url' => ['/site/index']],
+         ['label' => 'About', 'url' => ['/site/about']],
+         ['label' => 'Contact', 'url' => ['/site/contact']],
+      ];
+   
+      if (Yii::$app->user->isGuest) 
+      {
+         $menuItems = $home;
+         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+      }
+      else
+      {
+         $menuItems = UserMenus::getTree();       
+         $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+            'Logout (' . Yii::$app->user->identity->username . ')',
+               ['class' => 'btn btn-link']
+            )
+            . Html::endForm()
+            . '</li>';
+         $menuItems = ArrayHelper::merge($home,$menuItems);
+      }
+      /*echo "<pre>";
+      print_r($menuItems);
+      die;*/
+      $lines .= NavX::widget([
+         'options' => ['class' => 'navbar-nav  navbar-right'],
+         'items' => $menuItems,
+         'activateItems' => true,
+         'activateParents' => true,
+         'encodeLabels' => false
+      ]);
 
-        $menuItems = UserMenus::getTree();       
-
-		$lines .= NavX::widget([
-		'options' => ['class' => 'navbar-nav  navbar-right'],
-			'items' => $menuItems,
-			'activateParents' => true,
-			'encodeLabels' => false
-		]);
-		
-        /*$lines .= Nav::widget([
+      /*$lines .= Nav::widget([
          'options' => ['class' => 'navbar-nav navbar-right'],
          'encodeLabels' => false,
          'items' => $menuItems,
-         ]);*/
-         
-        return $lines;
-    }
+      ]);*/
+
+      return $lines;
+   }
 }
 ?>

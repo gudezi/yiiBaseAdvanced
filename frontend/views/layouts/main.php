@@ -28,8 +28,8 @@ AppAsset::register($this);
 
 <div class="wrap">
    <? 
-  NavBar::begin([
-            'brandLabel' => 'MeetingPlanner',//Yii::t('frontend','MeetingPlanner.io'), //
+   NavBar::begin([
+            'brandLabel' => 'My Company',//Yii::t('frontend','My Company.io'), //
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',

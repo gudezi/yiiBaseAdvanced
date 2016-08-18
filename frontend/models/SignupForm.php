@@ -43,7 +43,7 @@ class SignupForm extends Model
      */
     public function signup()
     {
-      if ($this->validate()) {
+      /*if ($this->validate()) {
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
@@ -59,8 +59,8 @@ class SignupForm extends Model
         return $user;
       }
 
-      return null;
-        /*if (!$this->validate()) {
+      return null;*/
+        if (!$this->validate()) {
             return null;
         }
         
@@ -71,5 +71,5 @@ class SignupForm extends Model
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;
-    }*/
+    }
 }
