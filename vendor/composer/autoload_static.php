@@ -40,6 +40,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\nav\\' => 11,
             'kartik\\mpdf\\' => 12,
             'kartik\\icons\\' => 13,
             'kartik\\growl\\' => 13,
@@ -47,6 +48,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'kartik\\form\\' => 12,
             'kartik\\file\\' => 12,
             'kartik\\editable\\' => 16,
+            'kartik\\dropdown\\' => 16,
             'kartik\\dialog\\' => 14,
             'kartik\\depdrop\\' => 15,
             'kartik\\datetime\\' => 16,
@@ -164,6 +166,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
         ),
+        'kartik\\nav\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-nav-x',
+        ),
         'kartik\\mpdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf',
@@ -191,6 +197,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'kartik\\editable\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-editable',
+        ),
+        'kartik\\dropdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dropdown-x',
         ),
         'kartik\\dialog\\' => 
         array (

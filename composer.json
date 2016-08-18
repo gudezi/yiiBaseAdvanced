@@ -21,7 +21,8 @@
         "yiisoft/yii2-debug": "~2.0.0",
         "johnitvn/yii2-ajaxcrud": "*",
         "kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-icons": "@dev"
+        "kartik-v/yii2-icons": "@dev",
+        "kartik-v/yii2-nav-x": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

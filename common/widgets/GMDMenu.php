@@ -3,11 +3,10 @@ namespace common\widgets;
 
 use yii;
 use yii\base\Widget;
-//use yii\helpers\Html;
-//use yii\bootstrap\NavBar;
-use yii\bootstrap\Nav;
+//use yii\bootstrap\Nav;
 use common\models\UserMenus;
 use yii\helpers\ArrayHelper;
+use kartik\nav\NavX;
 
 class GMDMenu extends Widget
 {
@@ -23,8 +22,6 @@ class GMDMenu extends Widget
 
     public function run()
     {
-        //return Html::encode($this->message);
-
         $lines = '';
         /*$lines = Html::encode(NavBar::begin([
          'brandLabel' => 'MeetingPlanner',//Yii::t('frontend','MeetingPlanner.io'), //
@@ -89,30 +86,23 @@ class GMDMenu extends Widget
          ];
          }
         
-        //$kk = UserMenus::find()->all();
-        //$kk = ArrayHelper::map(UserMenus::find()->all(),'id_menu', 'descripcion', 'destino');
-        //$kk = ArrayHelper::index(UserMenus::find()->all(), 'id_menu');
-        /*$kk = ArrayHelper::toArray(UserMenus::find()->all(), [
-                    'common\models\UserMenus' => [
-                    'id' => 'id_menu',
-                    'descripcion',
-                    'destino'     
-                     ],
-               ]);*/
-        $kk = UserMenus::getTree();       
-        /*echo "<pre>"; 
-        print_r($kk);
-        print_r($menuItems);
-        die();*/
-        $lines .= Nav::widget([
+
+        $menuItems = UserMenus::getTree();       
+
+		$lines .= NavX::widget([
+		'options' => ['class' => 'navbar-nav  navbar-right'],
+			'items' => $menuItems,
+			'activateParents' => true,
+			'encodeLabels' => false
+		]);
+		
+        /*$lines .= Nav::widget([
          'options' => ['class' => 'navbar-nav navbar-right'],
          'encodeLabels' => false,
-         'items' => $kk,
-         ]);
+         'items' => $menuItems,
+         ]);*/
          
-        //$lines .= Html::encode(NavBar::end());
         return $lines;
-        //return implode("\n", $lines);
     }
 }
 ?>

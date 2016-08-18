@@ -84,6 +84,7 @@ class UserMenus extends \yii\db\ActiveRecord
         
          foreach($menu as $item)
          {
+			$ret=array();
             if($item['imagen']=='')
             {
                $ret['label']=$item['descripcion'];
@@ -91,11 +92,15 @@ class UserMenus extends \yii\db\ActiveRecord
             else
             {
                $imagen = "<span class='glyphicon glyphicon-".$item['imagen']."'></span>";
-               $ret['label']=$imagen.$item['descripcion'];
+               $ret['label']=$imagen.' '.$item['descripcion'];
             }
             if($item['submenu']=='1')
             {
-               $ret['items']=static::getTree($item['id']);
+			   $items =	static::getTree($item['id']);
+			   if( count($items)>0)
+			   {
+				$ret['items']=$items;
+			   }
             }
             else
             {
