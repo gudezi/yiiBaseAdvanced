@@ -48,7 +48,7 @@ return [
             //'baseUrl' => '',
             //'enableStrictParsing' => true,
             'rules' => [
-               ['class' => 'common\helpers\UrlRule', 'connectionID' => 'db', /* ... */],
+               //['class' => 'common\helpers\UrlRule', 'connectionID' => 'db', /* ... */],
             ],
         ],
 

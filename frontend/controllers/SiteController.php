@@ -182,7 +182,8 @@ class SiteController extends Controller
      */
     public function actionGustavo()
     {
-        return $this->render('gustavo');
+      d(Yii::$app->user);
+      return $this->render('gustavo');
     }
 
     /**
