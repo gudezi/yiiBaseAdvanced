@@ -176,6 +176,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionGustavo()
+    {
+        return $this->render('gustavo');
+    }
+
+    /**
      * Signs user up.
      *
      * @return mixed

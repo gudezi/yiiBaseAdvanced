@@ -4,7 +4,7 @@ namespace common\widgets;
 use yii;
 use yii\base\Widget;
 use yii\helpers\Html;
-//use yii\bootstrap\Nav;
+use yii\bootstrap\Nav;
 use common\models\UserMenus;
 use yii\helpers\ArrayHelper;
 use kartik\nav\NavX;
