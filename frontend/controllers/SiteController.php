@@ -109,6 +109,30 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+	
+	public function actionChange_password()
+	{
+		// setup user and load post data
+		$user = Yii::$app->user->identity;
+		$loadPost = $user->load(Yii::$app->request->post());
+
+		// validate for normal request
+		if($loadedPost && $user->validate()){
+			$user->password = $user->newPassword;
+			//save, set flash and refresh page
+			$user->save(false);
+			#var_dump($user->errors);
+			Yii::$app->session->setFlash('sussess', 'You have successfully change your password');
+			return $this->refresh();
+		}
+		#
+		//render
+		return $this->render('changePassword', [
+			'user' => $user,
+		]);
+	}
+	
+	
     /**
      * Logs in a user.
      *
