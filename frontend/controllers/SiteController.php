@@ -14,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\ChangePasswordForm;
 
 /**
  * Site controller
@@ -108,30 +109,6 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-
-	
-	public function actionChange_password()
-	{
-		// setup user and load post data
-		$user = Yii::$app->user->identity;
-		$loadPost = $user->load(Yii::$app->request->post());
-
-		// validate for normal request
-		if($loadedPost && $user->validate()){
-			$user->password = $user->newPassword;
-			//save, set flash and refresh page
-			$user->save(false);
-			#var_dump($user->errors);
-			Yii::$app->session->setFlash('sussess', 'You have successfully change your password');
-			return $this->refresh();
-		}
-		#
-		//render
-		return $this->render('changePassword', [
-			'user' => $user,
-		]);
-	}
-	
 	
     /**
      * Logs in a user.
@@ -279,4 +256,42 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+	
+	public function actionChangePassword()
+	{
+		try {
+            $model = new ChangePasswordForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+		if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->changePassword()) {
+            Yii::$app->session->setFlash('success', 'New password was saved.');
+
+            return $this->goHome();
+        }
+
+        return $this->render('changePassword', [
+            'model' => $model,
+        ]);
+		
+		// setup user and load post data
+		/*$user = Yii::$app->user->identity;
+		$loadPost = $user->load(Yii::$app->request->post());
+
+		// validate for normal request
+		if($loadedPost && $user->validate()){
+			$user->password = $user->newPassword;
+			//save, set flash and refresh page
+			$user->save(false);
+			#var_dump($user->errors);
+			Yii::$app->session->setFlash('sussess', 'You have successfully change your password');
+			return $this->refresh();
+		}
+		#
+		//render
+		return $this->render('changePassword', [
+			'user' => $user,
+		]);*/
+	}
 }

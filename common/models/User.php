@@ -30,11 +30,6 @@ class User extends ActiveRecord implements IdentityInterface
     const ROLE_USER = 10;
     const ROLE_ADMIN = 20;
     const ROLE_SUPERUSER = 30;
-	
-	/*public $currentPassword;
-	public $newPassword;
-	public $newPasswordConfirm;*/
-
 
     /**
      * @inheritdoc
@@ -62,38 +57,8 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-			
-			/*[['currentPassword','newPassword','newPasswordConfirm'], 'required'],
-			[['currentPassword'], 'validateCurrentPassword'],
-			
-			[['currentPassword','newPasswordConfirm'], 'string', 'min' => 3],
-			[['currentPassword','newPasswordConfirm'], 'filter', 'filter' => 'trim'],
-			[['newPasswordConfirm'], 'compare', 'compareAttribute' => 'newPassword', 'message' => 'Passwords do not match'],*/
         ];
     }
-	
-	/*public function validateCurrentPassword()
-	{
-		if(!$this->verifyPassword($this->currentPassword)){
-			$this->addError('currentPassword','Current Password Incorrect');
-		}
-	}
-
-	public function verifyPassword($password)
-	{
-		$dbpassword = static::findOne(['username' => Yii::$app->user->identity->username, 'status' => self::STATUS_ACTIVE])->password_hash;
-		return Yii::$app->security->validatePassword($password,$dbpassword);
-	}
-	
-	public function attributeLabels()
-	{
-		return [
-			'currentPassword' => 'Old Password',
-			'newPassword' => 'New Password',
-			'newPasswordConfirm' => 'Old Password Confirm',
-		
-		];
-	}*/
 	
     /**
      * @inheritdoc

@@ -21,9 +21,9 @@ return [
 				'username' => 'framewokphp@gmail.com',
 				'password' => 'Framework101',
 				//'port' => '587',
-				'encryption' => 'tls',
+				//'encryption' => 'tls',
 				'port' => '465',
-				//'encryption' => 'ssl',
+				'encryption' => 'ssl',
 			],
         ],
         
