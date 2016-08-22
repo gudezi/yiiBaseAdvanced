@@ -5,7 +5,7 @@ use yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use common\models\UserMenus;
+use common\models\Menu;
 use yii\helpers\ArrayHelper;
 use kartik\nav\NavX;
 
@@ -40,7 +40,7 @@ class GMDMenu extends Widget
       }
       else
       {
-         $menuItems = UserMenus::getTree();       
+         $menuItems = Menu::getTree();       
          $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
