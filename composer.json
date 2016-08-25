@@ -22,7 +22,8 @@
         "johnitvn/yii2-ajaxcrud": "*",
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-icons": "@dev",
-        "kartik-v/yii2-nav-x": "*"
+        "kartik-v/yii2-nav-x": "*",
+        "dmstr/yii2-adminlte-asset": "2.*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

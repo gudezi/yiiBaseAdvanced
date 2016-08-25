@@ -24,6 +24,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'r' => 
+        array (
+            'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
         'k' => 
         array (
             'kartik\\widgets\\' => 15,
@@ -62,6 +66,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'j' => 
         array (
             'johnitvn\\ajaxcrud\\' => 18,
+        ),
+        'd' => 
+        array (
+            'dmstr\\' => 6,
         ),
         'c' => 
         array (
@@ -109,6 +117,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'rmrevin\\yii\\fontawesome\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -242,6 +254,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/johnitvn/yii2-ajaxcrud/src',
         ),
+        'dmstr\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
@@ -253,6 +269,13 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
     );
 
     public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'cebe\\gravatar\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
