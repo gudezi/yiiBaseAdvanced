@@ -24,7 +24,8 @@ if (Yii::$app->controller->action->id === 'login') {
 
     dmstr\web\AdminLteAsset::register($this);
 
-    $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
+    //$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
+    $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/sofse/adminlte/dist');
     ?>
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -36,7 +37,8 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <!-- <body class="hold-transition skin-blue sidebar-mini"> -->
+    <body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?> hold-transition sidebar-mini">
     <?php $this->beginBody() ?>
     <div class="wrapper">
 
