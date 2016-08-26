@@ -38,7 +38,7 @@
                   <a href="#" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Mí cuenta</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Salir</a>
+                  <a href="/yiiBaseAdvanced/frontend/web/index.php?r=site%2Flogout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Salir</a>
                 </div>
               </li>
             </ul>
