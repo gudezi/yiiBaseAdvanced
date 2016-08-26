@@ -364,4 +364,14 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
+ 'sofse/yii2-adminlte-asset' => 
+  array (
+    'name' => 'sofse/yii2-adminlte-asset',
+    'version' => '2.3.3.0',
+    'alias' => 
+    array (
+      '@sofse' => $vendorDir . '/sofse/yii2-adminlte-asset',
+    ),
+  ),
+
 );

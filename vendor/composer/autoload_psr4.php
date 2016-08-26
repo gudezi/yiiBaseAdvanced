@@ -50,6 +50,7 @@ return array(
     'kartik\\affix\\' => array($vendorDir . '/kartik-v/yii2-widget-affix'),
     'johnitvn\\ajaxcrud\\' => array($vendorDir . '/johnitvn/yii2-ajaxcrud/src'),
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
+    'sofse\\' => array($vendorDir . '/sofse/yii2-adminlte-asset'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

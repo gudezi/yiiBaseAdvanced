@@ -258,6 +258,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
+        'sofse\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sofse/yii2-adminlte-asset',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
