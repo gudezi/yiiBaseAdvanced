@@ -6,6 +6,7 @@ use yii\helpers\Html;
 /* @var $content string */
 
 dmstr\web\AdminLteAsset::register($this);
+$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/sofse/adminlte/dist');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

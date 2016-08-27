@@ -1,3 +1,9 @@
+<?php
+use yii\helpers\Html;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+?>
 <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -38,7 +44,12 @@
                   <a href="#" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Mí cuenta</a>
                 </div>
                 <div class="pull-right">
-                  <a href="/yiiBaseAdvanced/frontend/web/index.php?r=site%2Flogout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Salir</a>
+				<?= Html::a(
+                                    'Salir',
+                                    ['/site/logout'],
+                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                ) ?>
+                 <!-- <a href="/yiiBaseAdvanced/frontend/web/index.php?r=site%2Flogout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Salir</a> -->
                 </div>
               </li>
             </ul>

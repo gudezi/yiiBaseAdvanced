@@ -25,14 +25,14 @@ return [
 		  'view' => [
             'theme' => [
                'pathMap' => [
-                  '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                  '@app/views' => '@vendor/sofse/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
                ],
             ],
         ],
         'assetManager' => [
             'bundles' => [
-               'dmstr\web\AdminLteAsset' => [
-                  'skin' => 'skin-green',
+               'sofse\web\AdminLteAsset' => [
+                  'skin' => 'skin-sofse',
                ],
             ],
         ],

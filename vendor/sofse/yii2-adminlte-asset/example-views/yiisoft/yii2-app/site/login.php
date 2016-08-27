@@ -17,6 +17,7 @@ $fieldOptions2 = [
     'options' => ['class' => 'form-group has-feedback'],
     'inputTemplate' => "{input}<span class='glyphicon glyphicon-lock form-control-feedback'></span>"
 ];
+$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/sofse/adminlte/dist');
 ?>
 <div class="login-box">
     <div class="login-logo">
@@ -24,7 +25,7 @@ $fieldOptions2 = [
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Acceder al sistema para iniciar sesión</p>
+        <p class="login-box-msg">Acceder al sistema para iniciar sesiÃ³n</p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 
@@ -55,7 +56,7 @@ $fieldOptions2 = [
 	<br>
 	<br>
 
-        <a href="#">Olvido su contraseña?</a><br>
+        <a href="#">Olvido su contraseÃ±a?</a><br>
         <a href="register.html" class="text-center">Registrarse</a>
 
   </div>

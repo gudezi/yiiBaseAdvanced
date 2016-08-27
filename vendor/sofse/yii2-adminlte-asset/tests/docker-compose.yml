@@ -21,7 +21,7 @@ appcli:
     - 'appnginx:WEB'
     - 'seleniumhub:HUB'
   volumes:
-    - ../:/app/vendor/dmstr/yii2-adminlte-asset
+    - ../:/app/vendor/sofse/yii2-adminlte-asset
     #- ./_config/local.php:/app/src/config/local.php
   volumes_from:
     - appsrc
@@ -43,7 +43,7 @@ appfpm:
   image: phundament/php:5.6-fpm-4.0.0-rc1-dev
   # host-volume for local development
   volumes:
-    - ../:/app/vendor/dmstr/yii2-adminlte-asset
+    - ../:/app/vendor/sofse/yii2-adminlte-asset
     - ../example-views/yiisoft/yii2-app/layouts:/app/src/modules/backend/views/layouts
     #- ../tests/_config/local.php:/app/src/config/local.php
   volumes_from:
