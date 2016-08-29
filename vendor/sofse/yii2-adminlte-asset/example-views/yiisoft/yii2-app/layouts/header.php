@@ -21,22 +21,33 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
 
-          <?include "sectores.php";?>
-          
-          <!-- // INCLUYO LOS MENSAJES -->
-          <?include "mensajes.php";?> 
+          <?
+          if(Yii::$app->user->isGuest)
+          {
+             // INCLUYO EL MENU DE USUARIO
+             include "usuario.php";
+          }
+          else
+          {
+             // INCLUYO LOS SECTORES
+             include "sectores.php";
+             
+             // INCLUYO LOS MENSAJES
+             include "mensajes.php";
 
-          <!-- // INCLUYO LAS NOTIFICACIONES -->
-         <?include "notificaciones.php";?> 
+             // INCLUYO LAS NOTIFICACIONES
+             include "notificaciones.php";
 
-          <!-- // INCLUYO LAS TAREAS -->
-          <?include "tareas.php";?>
-          
-          <!-- // INCLUYO EL MENU DE USUARIO-->
-          <?include "usuario.php";?>
-          
-          <!-- // INCLUYO EL  BOTON DE CONSTROLSIDEBAR-->
-          <?include "control_sidebar.php";?>
+             // INCLUYO LAS TAREAS
+             include "tareas.php";
+             
+             // INCLUYO EL MENU DE USUARIO
+             include "usuario.php";
+             
+             // INCLUYO EL  BOTON DE CONSTROLSIDEBAR-->
+             include "control_sidebar.php";
+          }
+          ?>
 
         </ul>
       </div>
