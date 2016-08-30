@@ -4,6 +4,9 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+$items = array(['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
+                    ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
+                    ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],);
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**
@@ -26,6 +29,8 @@ if (Yii::$app->controller->action->id === 'login') {
 
     //$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
     $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/sofse/adminlte/dist');
+    //echo '<pre>';
+    //print_r(Yii::$app); die;
     ?>
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -49,7 +54,7 @@ if (Yii::$app->controller->action->id === 'login') {
 
         <?= $this->render(
             'sidebar.php',
-            ['directoryAsset' => $directoryAsset]
+            ['items' => $items, 'directoryAsset' => $directoryAsset]
         )
         ?>
 

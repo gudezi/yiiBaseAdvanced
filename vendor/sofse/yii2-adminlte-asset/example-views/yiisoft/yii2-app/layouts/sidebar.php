@@ -1,3 +1,4 @@
+<?//echo "<br>Variables:<br>"; print_r($items);die;?>
 <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
@@ -7,7 +8,8 @@
             <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
-                'items' => [
+                'items' => $items,
+                /*'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],
@@ -38,7 +40,7 @@
                             ],
                         ],
                     ],
-                ],
+                ],*/
             ]
         ) ?>
 
