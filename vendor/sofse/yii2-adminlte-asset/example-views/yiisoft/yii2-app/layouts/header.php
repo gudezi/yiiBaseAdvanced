@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="<?= Yii::$app->homeUrl?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>TA</b></span>
       <!-- <span class="logo-mini"><i class="fa fa-train"></i></span> -->
