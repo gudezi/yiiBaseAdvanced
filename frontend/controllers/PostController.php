@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * PostController implements the CRUD actions for Post model.
  */
-class PostController extends Controller
+class PostController extends BaseController //Controller
 {
     /**
      * @inheritdoc

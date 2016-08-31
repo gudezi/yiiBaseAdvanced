@@ -19,7 +19,7 @@ use frontend\models\ChangePasswordForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController //Controller
 {
     /**
      * @inheritdoc

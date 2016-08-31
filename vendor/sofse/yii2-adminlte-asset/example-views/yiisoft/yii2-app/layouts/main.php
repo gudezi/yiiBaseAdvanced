@@ -3,10 +3,11 @@ use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+/*echo '<pre>';
+print_r(Yii::$app->controller->items_menu);
+die;*/
 
-$items = array(['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],);
+$items = Yii::$app->controller->items_menu;
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**

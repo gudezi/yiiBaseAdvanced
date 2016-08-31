@@ -109,4 +109,46 @@ class Menu extends \yii\db\ActiveRecord
       }
       return $return;
    }
+   
+   public static function getTreeLte($id = 0)
+   {
+      $return = array();
+      
+      $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
+
+      $menu = ArrayHelper::toArray($menu, [
+         'common\models\Menu' => [
+         'id' => 'id_menu','descripcion','imagen','destino',
+         'padre','submenu'
+         ],
+      ]);
+
+      foreach($menu as $item)
+      {
+         $ret=array();
+		 $ret['label']=$item['descripcion'];
+		 
+         if($item['imagen']!='')
+         {
+            $ret['icon']=$item['imagen'];
+         }
+
+         if($item['submenu']=='1')
+         {
+            $ret['url'] = '#';
+			$items = static::getTreeLte($item['id']);
+            if( count($items)>0)
+            {
+               $ret['items']=$items;
+            }
+         }
+         else
+         {
+            $ret['url']=[$item['destino']];
+         }
+         $return[]=$ret;
+      }
+      return $return;
+   }
+
 }

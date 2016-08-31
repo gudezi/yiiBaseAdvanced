@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 /**
  * SolicitanteController implements the CRUD actions for Solicitante model.
  */
-class SolicitanteController extends Controller
+class SolicitanteController extends BaseController //Controller
 {
     /**
      * @inheritdoc
