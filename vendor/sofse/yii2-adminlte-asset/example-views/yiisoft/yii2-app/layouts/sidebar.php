@@ -5,7 +5,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-            <?= dmstr\widgets\Menu::widget(
+            <?= sofse\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => $items,

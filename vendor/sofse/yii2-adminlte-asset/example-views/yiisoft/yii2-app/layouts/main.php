@@ -7,7 +7,10 @@ use yii\helpers\Html;
 print_r(Yii::$app->controller->items_menu);
 die;*/
 
-$items = Yii::$app->controller->items_menu;
+if(isset(Yii::$app->controller->items_menu))
+{
+	$items = Yii::$app->controller->items_menu;
+}
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**

@@ -130,7 +130,7 @@ class Menu extends \yii\db\ActiveRecord
 		 
          if($item['imagen']!='')
          {
-            $ret['icon']=$item['imagen'];
+            $ret['icon']="fa fa-".$item['imagen'];
          }
 
          if($item['submenu']=='1')
