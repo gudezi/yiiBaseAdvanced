@@ -26,7 +26,7 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-		  /*'view' => [
+		  'view' => [
             'theme' => [
                'pathMap' => [
                   '@app/views' => '@vendor/sofse/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
@@ -42,7 +42,7 @@ return [
                   'skin' => 'skin-sofse',
                ],
             ],
-        ],*/
+        ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',

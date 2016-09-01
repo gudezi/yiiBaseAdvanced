@@ -6,7 +6,7 @@ use common\models\AccessHelpers;
 use common\models\Menu;
 use yii\helpers\ArrayHelper;
  
-class BaseController extends Controller { 
+class ModuleBaseController extends Controller { 
  
 	public $items_menu;
 	
@@ -26,9 +26,9 @@ class BaseController extends Controller {
 			$menu = Menu::getTreeLte();
 			$this->items_menu = ArrayHelper::merge($home,$menu);
 		}	
-    }
+   }
 
-	public function beforeAction($action) { 
+	/*public function beforeAction($action) { 
         if (!parent::beforeAction($action)) { 
              return false; 
         } 
@@ -39,11 +39,12 @@ class BaseController extends Controller {
             return true;
         }
         if (!AccessHelpers::getAcceso($operacion)) {
+			//echo "<pre>";print_r($this);die;
             echo $this->render('/site/nopermitido');
             return false;
         }
  
         return true;
-    }
+    }*/
 }
 ?>
