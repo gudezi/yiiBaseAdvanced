@@ -11,9 +11,9 @@ class BaseController extends Controller {
     //public $items_menu = array(['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
     //                ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
     //                ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],);
-	public $items_menu;
+	//public $items_menu;
 	
-	public function init(){
+	/*public function init(){
         parent::init();
 		$home = [  
 			['label' => 'Home', 'icon' => 'fa fa-home', 'url' => ['/site/index']],
@@ -29,9 +29,9 @@ class BaseController extends Controller {
 			$menu = Menu::getTreeLte();
 			$this->items_menu = ArrayHelper::merge($home,$menu);
 		}	
-    }
+    }*/
 
-	/*public function beforeAction($action) { 
+	public function beforeAction($action) { 
         if (!parent::beforeAction($action)) { 
              return false; 
         } 
@@ -43,11 +43,11 @@ class BaseController extends Controller {
         }
         if (!AccessHelpers::getAcceso($operacion)) {
 			//echo "<pre>";print_r($this);die;
-            echo $this->render('site/error');
+            echo $this->render('/site/nopermitido');
             return false;
         }
  
         return true;
-    }*/
+    }
 }
 ?>
