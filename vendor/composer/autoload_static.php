@@ -24,6 +24,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        's' => 
+        array (
+            'softark\\duallistbox\\' => 20,
+        ),
         'r' => 
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
@@ -117,6 +121,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'softark\\duallistbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/softark/yii2-dual-listbox',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
@@ -257,10 +265,6 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
-        ),
-        'sofse\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sofse/yii2-adminlte-asset',
         ),
         'cebe\\markdown\\' => 
         array (

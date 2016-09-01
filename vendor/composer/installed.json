@@ -3167,5 +3167,94 @@
             "theme",
             "yii2"
         ]
+    },
+    {
+        "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
+        "version": "3.0.5",
+        "version_normalized": "3.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
+            "reference": "68ab678f033b175f8609f13621285bc25d692c1d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/68ab678f033b175f8609f13621285bc25d692c1d",
+            "reference": "68ab678f033b175f8609f13621285bc25d692c1d",
+            "shasum": ""
+        },
+        "suggest": {
+            "components/jquery": "2.0.*",
+            "twbs/bootstrap": "3.*"
+        },
+        "time": "2015-09-23 10:50:32",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "István Ujj-Mészáros",
+                "homepage": "https://github.com/istvan-ujjmeszaros"
+            }
+        ],
+        "description": "A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.",
+        "homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
+        "keywords": [
+            "bootstrap",
+            "bootstrap duallistbox",
+            "bootstrap select",
+            "duallistbox",
+            "select"
+        ]
+    },
+    {
+        "name": "softark/yii2-dual-listbox",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/softark/yii2-dual-listbox.git",
+            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/softark/yii2-dual-listbox/zipball/e2d46973271449043b8faa248c9c8f83afe895cd",
+            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd",
+            "shasum": ""
+        },
+        "require": {
+            "istvan-ujjmeszaros/bootstrap-duallistbox": "*",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-01-12 23:14:58",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "softark\\duallistbox\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nobuo Kihara",
+                "email": "softark@gmail.com",
+                "homepage": "http://softark.net"
+            }
+        ],
+        "description": "Dual Listbox Widget for Yii 2",
+        "keywords": [
+            "dual-listbox",
+            "duallistbox",
+            "widget",
+            "yii 2",
+            "yii2"
+        ]
     }
 ]

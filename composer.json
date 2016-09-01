@@ -23,7 +23,8 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-icons": "@dev",
         "kartik-v/yii2-nav-x": "*",
-        "dmstr/yii2-adminlte-asset": "2.*"
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "softark/yii2-dual-listbox": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

@@ -19,7 +19,7 @@ class MessagesController extends ModuleBaseController //Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
+    /*public function behaviors()
     {
         return [
             'verbs' => [
@@ -38,7 +38,7 @@ class MessagesController extends ModuleBaseController //Controller
             ],
         ],
         ];
-    }
+    }*/
 
     /**
      * Lists all Messages models.

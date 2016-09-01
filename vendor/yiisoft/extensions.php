@@ -364,7 +364,7 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
- 'sofse/yii2-adminlte-asset' => 
+  'sofse/yii2-adminlte-asset' => 
   array (
     'name' => 'sofse/yii2-adminlte-asset',
     'version' => '2.3.3.0',
@@ -373,5 +373,13 @@ return array (
       '@sofse' => $vendorDir . '/sofse/yii2-adminlte-asset',
     ),
   ),
-
+  'softark/yii2-dual-listbox' => 
+  array (
+    'name' => 'softark/yii2-dual-listbox',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@softark/duallistbox' => $vendorDir . '/softark/yii2-dual-listbox',
+    ),
+  ),
 );

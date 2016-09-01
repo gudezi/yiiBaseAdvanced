@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7595cfdbc1ffd1adf423b29ed9cc5d1a",
-    "content-hash": "4fd6731ceb97b618f36b00159a59cbd0",
+    "hash": "1d5de793a2b4c6a24ad2ed7277dc30f1",
+    "content-hash": "a75069a93ae9661e732532ca1909c892",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -629,6 +629,46 @@
                 "icon"
             ],
             "time": "2016-05-13 15:42:25"
+        },
+        {
+            "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
+                "reference": "68ab678f033b175f8609f13621285bc25d692c1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/68ab678f033b175f8609f13621285bc25d692c1d",
+                "reference": "68ab678f033b175f8609f13621285bc25d692c1d",
+                "shasum": ""
+            },
+            "suggest": {
+                "components/jquery": "2.0.*",
+                "twbs/bootstrap": "3.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "István Ujj-Mészáros",
+                    "homepage": "https://github.com/istvan-ujjmeszaros"
+                }
+            ],
+            "description": "A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.",
+            "homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap duallistbox",
+                "bootstrap select",
+                "duallistbox",
+                "select"
+            ],
+            "time": "2015-09-23 10:50:32"
         },
         {
             "name": "johnitvn/yii2-ajaxcrud",
@@ -1297,6 +1337,51 @@
                 "yii"
             ],
             "time": "2016-08-19 14:09:51"
+        },
+        {
+            "name": "softark/yii2-dual-listbox",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/softark/yii2-dual-listbox.git",
+                "reference": "e2d46973271449043b8faa248c9c8f83afe895cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/softark/yii2-dual-listbox/zipball/e2d46973271449043b8faa248c9c8f83afe895cd",
+                "reference": "e2d46973271449043b8faa248c9c8f83afe895cd",
+                "shasum": ""
+            },
+            "require": {
+                "istvan-ujjmeszaros/bootstrap-duallistbox": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "softark\\duallistbox\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nobuo Kihara",
+                    "email": "softark@gmail.com",
+                    "homepage": "http://softark.net"
+                }
+            ],
+            "description": "Dual Listbox Widget for Yii 2",
+            "keywords": [
+                "dual-listbox",
+                "duallistbox",
+                "widget",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2016-01-12 23:14:58"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3058,6 +3143,7 @@
     "stability-flags": {
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-icons": 20,
+        "softark/yii2-dual-listbox": 20,
         "kartik-v/yii2-widgets": 20,
         "kartik-v/yii2-date-range": 20
     },
