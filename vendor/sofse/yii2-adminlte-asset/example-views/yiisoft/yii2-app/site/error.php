@@ -26,22 +26,21 @@ $this->title = 'Error '.$exception->statusCode;
         
     <!-- Main content -->
     <section class="content">
-      <div class="error-page">
-        <h2 class="headline text-light-blue"> 404</h2>
+        <div class="error-page">
+            <h2 class="headline text-light-blue"> 404</h2>
 
-        <div class="error-content">
-          <h3><i class="fa fa-warning text-light-blue"></i> Error! <?=Html::encode($message)?></h3>
+            <div class="error-content">
+                <h3><i class="fa fa-warning text-light-blue"></i> Error! <?=Html::encode($message)?></h3>
+                <p>
+                    Se ha producido un error, mientras el servidor Web procesaba su solicitud.
+                    Por favor, póngase en contacto con nosotros si usted piensa que esto es un error del servidor. Gracias.
+                    Pulse <a href='<?= Yii::$app-> homeUrl ?>'> aquí </a>para regresar.
+                </p>
 
-          <p>
-            Se ha producido un error, mientras el servidor Web procesaba su solicitud.
-            Por favor, póngase en contacto con nosotros si usted piensa que esto es un error del servidor. Gracias.
-            Pulse <a href='<?= Yii::$app-> homeUrl ?>'> aquí </a>para regresar.
-          </p>
-
+            </div>
+            <!-- /.error-content -->
         </div>
-        <!-- /.error-content -->
-      </div>
-      <!-- /.error-page -->
+        <!-- /.error-page -->
     </section>
     <!-- /.content -->
     

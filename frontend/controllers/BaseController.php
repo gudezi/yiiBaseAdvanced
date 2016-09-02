@@ -11,7 +11,7 @@ class BaseController extends Controller {
 	public $items_menu;
 	
 	public function init(){
-        parent::init();
+      parent::init();
 		$home = [  
 			['label' => 'Home', 'icon' => 'fa fa-home', 'url' => ['/site/index']],
 			['label' => 'About', 'icon' => 'fa fa-info', 'url' => ['/site/about']],
@@ -33,13 +33,14 @@ class BaseController extends Controller {
              return false; 
         } 
         $operacion = str_replace("/", "-", Yii::$app->controller->route);
+        //die($operacion);
         $permitirSiempre = ['site-captcha', 'site-signup', 'site-index', 'site-error', 'site-about', 'site-contact', 'site-login', 'site-logout'];
  
         if (in_array($operacion, $permitirSiempre)) {
             return true;
         }
         if (!AccessHelpers::getAcceso($operacion)) {
-            echo $this->render('/site/nopermitido');
+            echo $this->render('//site/nopermitido');
             return false;
         }
  

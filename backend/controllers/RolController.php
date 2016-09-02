@@ -95,28 +95,28 @@ class RolController extends Controller
      */
     public function actionUpdate($id)
     {
-       $model = $this->findModel($id);
-       $tipoOperaciones = Operacion::find()->all();
+        $model = $this->findModel($id);
+        $tipoOperaciones = Operacion::find()->all();
     
-       $model->operaciones = \yii\helpers\ArrayHelper::getColumn(
-           $model->getRolOperaciones()->asArray()->all(),
-           'operacion_id'
-       );
+        $model->operaciones = \yii\helpers\ArrayHelper::getColumn(
+            $model->getRolOperaciones()->asArray()->all(),
+            'operacion_id'
+        );
     
-       if ($model->load(Yii::$app->request->post())) {
-           if (!isset($_POST['Rol']['operaciones'])) {
-               $model->operaciones = [];
-           }
-           if ($model->save()) {
-               return $this->redirect(['view', 'id' => $model->id]);
-           }
-       } else {
-           return $this->render('update', [
-               'model' => $model,
-               'tipoOperaciones' => $tipoOperaciones
-           ]);
-       }
-    /*        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+            if (!isset($_POST['Rol']['operaciones'])) {
+                $model->operaciones = [];
+            }
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+                'tipoOperaciones' => $tipoOperaciones
+            ]);
+        }
+    /*  $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

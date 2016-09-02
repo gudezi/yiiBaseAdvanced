@@ -52,27 +52,27 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
     <?php Pjax::end() ?>
     <?php
-      $this->registerJs(
-          "$(document).on('click', '#activity-index-link', (function() {
-              $.get(
-                  $(this).data('url'),
-                  function (data) {
-                      $('.modal-body').html(data);
-                      $('#modal').modal();
-                  }
-              );
-          }));"
-      ); ?>
+    $this->registerJs(
+        "$(document).on('click', '#activity-index-link', (function() {
+            $.get(
+                $(this).data('url'),
+                function (data) {
+                    $('.modal-body').html(data);
+                    $('#modal').modal();
+                }
+            );
+        }));"
+    ); ?>
        
-      <?php
-      Modal::begin([
-          'id' => 'modal',
-          'header' => '<h4 class="modal-title">Complete</h4>',
-          'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>',
-      ]);
+    <?php
+    Modal::begin([
+        'id' => 'modal',
+        'header' => '<h4 class="modal-title">Complete</h4>',
+        'footer' => '<a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>',
+    ]);
        
-      echo "<div class='well'></div>";
+    echo "<div class='well'></div>";
        
-      Modal::end();
+    Modal::end();
    ?>
 </div>

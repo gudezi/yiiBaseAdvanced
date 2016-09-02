@@ -111,36 +111,37 @@ class SolicitanteController extends BaseController //Controller
     {
         $model = $this->findModel($id);
     
-       if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $submit == false) {
-           Yii::$app->response->format = Response::FORMAT_JSON;
-           return ActiveForm::validate($model);
-       }  
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $submit == false) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }  
     
-       if ($model->load(Yii::$app->request->post())) {
-           if ($model->save()) {
-               $model->refresh();
-               Yii::$app->response->format = Response::FORMAT_JSON;
-               return [
-                   'message' => '¡Éxito!',
-               ];
-           } else {
-               Yii::$app->response->format = Response::FORMAT_JSON;
-               return ActiveForm::validate($model);
-           }
-       }
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                $model->refresh();
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return [
+                    'message' => '¡Éxito!',
+                ];
+            } else {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+        }
     
-       return $this->renderAjax('update', [
-           'model' => $model,
-       ]);      /*     
-         $model = $this->findModel($id);
+        return $this->renderAjax('update', [
+            'model' => $model,
+        ]);
+        /*     
+        $model = $this->findModel($id);
 
-              if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                  return $this->redirect(['view', 'id' => $model->id]);
-              } else {
-                  return $this->render('update', [
-                      'model' => $model,
-                  ]);
-              }*/
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }*/
     }
 
     /**

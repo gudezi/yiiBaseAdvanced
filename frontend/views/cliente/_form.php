@@ -28,20 +28,20 @@ use frontend\models\Localidades;
 
     <?//= $form->field($model, 'localidad_id')->textInput() ?>
     <?php
-      $provincia = ArrayHelper::map(Provincias::find()->all(), 'provincia_id', 'provincia');
-      echo $form->field($model, 'provincia_id')->dropDownList(
-      $provincia,
-      [
-        'prompt'=>'Por favor elija una',
-        'onchange'=>'
+        $provincia = ArrayHelper::map(Provincias::find()->all(), 'provincia_id', 'provincia');
+        echo $form->field($model, 'provincia_id')->dropDownList(
+        $provincia,
+            [
+            'prompt'=>'Por favor elija una',
+            'onchange'=>'
                         $.get( "'.Url::toRoute('dependent-dropdown/departamento').'", { id: $(this).val() } )
                             .done(function( data ) {
                                 $( "#'.Html::getInputId($model, 'departamento_id').'" ).html( data );
                             }
                         );
                     '
-      ]
-      );
+            ]
+        );
     ?>
     <?php echo $form->field($model, 'departamento_id')->dropDownList(array(),
     [
@@ -56,13 +56,13 @@ use frontend\models\Localidades;
     ]
     ); ?>;
     <?php
-      if ($model->isNewRecord)
-         echo $form->field($model, 'localidad_id')->dropDownList(['prompt'=>'Por favor elija una']);
-      else
-      {
-         $localidad = ArrayHelper::map(Localidades::find()->where(['localidad_id' =>$model->localidad_id])->all(), 'localidad_id', 'localidad');
-         echo $form->field($model, 'localidad_id')->dropDownList($localidad);
-      }
+    if ($model->isNewRecord)
+        echo $form->field($model, 'localidad_id')->dropDownList(['prompt'=>'Por favor elija una']);
+    else
+    {
+        $localidad = ArrayHelper::map(Localidades::find()->where(['localidad_id' =>$model->localidad_id])->all(), 'localidad_id', 'localidad');
+        echo $form->field($model, 'localidad_id')->dropDownList($localidad);
+    }
 ?>
 
     <div class="form-group">

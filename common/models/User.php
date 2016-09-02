@@ -193,12 +193,12 @@ class User extends ActiveRecord implements IdentityInterface
     
     public static function roleInArray($arr_role)
     {
-         return in_array(Yii::$app->user->identity->role, $arr_role);
+        return in_array(Yii::$app->user->identity->role, $arr_role);
     }
     
     public static function isActive()
     {
-         return Yii::$app->user->identity->status == self::STATUS_ACTIVE;
+        return Yii::$app->user->identity->status == self::STATUS_ACTIVE;
     }
     
     public function getRol()

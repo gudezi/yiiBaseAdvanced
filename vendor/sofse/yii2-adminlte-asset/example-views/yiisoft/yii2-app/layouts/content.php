@@ -3,8 +3,8 @@ use yii\widgets\Breadcrumbs;
 use sofse\widgets\Alert;
 
 ?>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
 
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -24,7 +24,7 @@ use sofse\widgets\Alert;
             </h1>
         <?php } ?>
         
-      <ol class="breadcrumb">
+        <ol class="breadcrumb">
         <?=
         Breadcrumbs::widget(
             [
@@ -32,9 +32,9 @@ use sofse\widgets\Alert;
             ]
         ) ?>
 
-      <!--   <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
-        <li class="active">Test</li>  -->
-      </ol>
+        <!--   <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
+            <li class="active">Test</li>  -->
+        </ol>
       
     </section>
 

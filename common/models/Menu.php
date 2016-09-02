@@ -64,91 +64,90 @@ class Menu extends \yii\db\ActiveRecord
             'target' => 'Target',
         ];
     }
-   public static function findByParent($id)
-   {
-      return static::findAll(['padre' => $id, 'activo' => '1']);
-   }
-   public static function getTree($id = 0)
-   {
-      $return = array();
+    public static function findByParent($id)
+    {
+        return static::findAll(['padre' => $id, 'activo' => '1']);
+    }
+    public static function getTree($id = 0)
+    {
+        $return = array();
       
-      $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
+        $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
 
-      $menu = ArrayHelper::toArray($menu, [
-         'common\models\Menu' => [
-         'id' => 'id_menu','descripcion','imagen','destino',
-         'padre','submenu'
-         ],
-      ]);
+        $menu = ArrayHelper::toArray($menu, [
+            'common\models\Menu' => [
+            'id' => 'id_menu','descripcion','imagen','destino',
+            'padre','submenu'
+            ],
+        ]);
 
-      foreach($menu as $item)
-      {
-         $ret=array();
-         if($item['imagen']=='')
-         {
-            $ret['label']=$item['descripcion'];
-         }
-         else
-         {
-            $imagen = "<span class='glyphicon glyphicon-".$item['imagen']."'></span>";
-            $ret['label']=$imagen.' '.$item['descripcion'];
-         }
-         if($item['submenu']=='1')
-         {
-            $items =	static::getTree($item['id']);
-            if( count($items)>0)
+        foreach($menu as $item)
+        {
+            $ret=array();
+            if($item['imagen']=='')
             {
-               $ret['items']=$items;
+                $ret['label']=$item['descripcion'];
             }
-         }
-         else
-         {
-            $ret['url']=[$item['destino']];
-         }
-         $return[]=$ret;
-      }
-      return $return;
-   }
+            else
+            {
+                $imagen = "<span class='glyphicon glyphicon-".$item['imagen']."'></span>";
+                $ret['label']=$imagen.' '.$item['descripcion'];
+            }
+            if($item['submenu']=='1')
+            {
+                $items =	static::getTree($item['id']);
+                if( count($items)>0)
+                {
+                    $ret['items']=$items;
+                }
+            }
+            else
+            {
+                $ret['url']=[$item['destino']];
+            }
+            $return[]=$ret;
+        }
+        return $return;
+    }
    
-   public static function getTreeLte($id = 0)
-   {
-      $return = array();
+    public static function getTreeLte($id = 0)
+    {
+        $return = array();
       
-      $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
+        $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
 
-      $menu = ArrayHelper::toArray($menu, [
-         'common\models\Menu' => [
-         'id' => 'id_menu','descripcion','imagen','destino',
-         'padre','submenu'
-         ],
-      ]);
+        $menu = ArrayHelper::toArray($menu, [
+            'common\models\Menu' => [
+            'id' => 'id_menu','descripcion','imagen','destino',
+            'padre','submenu'
+            ],
+        ]);
 
-      foreach($menu as $item)
-      {
-         $ret=array();
-		 $ret['label']=$item['descripcion'];
+        foreach($menu as $item)
+        {
+            $ret=array();
+            $ret['label']=$item['descripcion'];
 		 
-         if($item['imagen']!='')
-         {
-            $ret['icon']="fa fa-".$item['imagen'];
-         }
-
-         if($item['submenu']=='1')
-         {
-            $ret['url'] = '#';
-			$items = static::getTreeLte($item['id']);
-            if( count($items)>0)
+            if($item['imagen']!='')
             {
-               $ret['items']=$items;
+                $ret['icon']="fa fa-".$item['imagen'];
             }
-         }
-         else
-         {
-            $ret['url']=[$item['destino']];
-         }
-         $return[]=$ret;
-      }
-      return $return;
-   }
 
+            if($item['submenu']=='1')
+            {
+                $ret['url'] = '#';
+                $items = static::getTreeLte($item['id']);
+                if( count($items)>0)
+                {
+                    $ret['items']=$items;
+                }
+            }
+            else
+            {
+                $ret['url']=[$item['destino']];
+            }
+            $return[]=$ret;
+        }
+        return $return;
+    }
 }

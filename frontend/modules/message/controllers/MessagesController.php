@@ -9,12 +9,12 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use frontend\controllers\ModuleBaseController;
+use frontend\controllers\BaseController;
 
 /**
  * MessagesController implements the CRUD actions for Messages model.
  */
-class MessagesController extends ModuleBaseController //Controller
+class MessagesController extends BaseController //Controller
 {
     /**
      * @inheritdoc
