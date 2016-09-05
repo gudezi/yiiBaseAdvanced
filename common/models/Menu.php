@@ -150,4 +150,9 @@ class Menu extends \yii\db\ActiveRecord
         }
         return $return;
     }
+    
+    public function getPadre0()
+    {
+        return $this->hasOne(Menu::className(), ['id_menu' => 'padre']);
+    }
 }
