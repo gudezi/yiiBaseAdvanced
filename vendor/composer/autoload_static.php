@@ -36,6 +36,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             'kartik\\widgets\\' => 15,
             'kartik\\typeahead\\' => 17,
+            'kartik\\tree\\' => 12,
             'kartik\\touchspin\\' => 17,
             'kartik\\time\\' => 12,
             'kartik\\switchinput\\' => 19,
@@ -77,6 +78,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         ),
         'c' => 
         array (
+            'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
         ),
         'F' => 
@@ -137,6 +139,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'kartik\\typeahead\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead',
+        ),
+        'kartik\\tree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tree-manager',
         ),
         'kartik\\touchspin\\' => 
         array (
@@ -265,6 +271,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
+        ),
+        'creocoder\\nestedsets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
         ),
         'cebe\\markdown\\' => 
         array (
