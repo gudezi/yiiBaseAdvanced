@@ -18,21 +18,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'destino')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'directorio')->textInput(['maxlength' => true]) ?>
+    <?//= $form->field($model, 'directorio')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'perfil')->textInput(['maxlength' => true]) ?>
+    <?//= $form->field($model, 'perfil')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'activo')->textInput() ?>
-
-    <?= $form->field($model, 'padre')->textInput() ?>
-
-    <?= $form->field($model, 'submenu')->textInput() ?>
-
+    <?//= $form->field($model, 'padre')->textInput() ?>
+	<?= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
+												   
     <?= $form->field($model, 'orden')->textInput() ?>
 
-    <?= $form->field($model, 'grupo')->textInput(['maxlength' => true]) ?>
+	<?//= $form->field($model, 'submenu')->textInput() ?>
+    <?= $form->field($model, 'submenu')->checkBox() ?>
 
-    <?= $form->field($model, 'target')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'activo')->checkBox() ?>
+ 
+    <?//= $form->field($model, 'grupo')->textInput(['maxlength' => true]) ?>
+
+    <?//= $form->field($model, 'target')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

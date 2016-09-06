@@ -37,6 +37,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+			[['descripcion', 'destino', 'activo', 'submenu', 'padre'], 'required'],
             [['activo', 'padre', 'submenu', 'orden'], 'integer'],
             [['descripcion', 'imagen', 'grupo'], 'string', 'max' => 100],
             [['destino', 'directorio', 'perfil'], 'string', 'max' => 200],
@@ -155,4 +156,12 @@ class Menu extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Menu::className(), ['id_menu' => 'padre']);
     }
+
+	public static function getListaMenu()
+	{
+		$opciones = Menu::find()->asArray()->all();
+		$opciones = ArrayHelper::map($opciones, 'id_menu', 'descripcion');
+		return ArrayHelper::merge(['0'=> 'Ninguno'],$opciones);
+		
+	}
 }
