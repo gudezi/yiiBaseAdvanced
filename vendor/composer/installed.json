@@ -3356,5 +3356,143 @@
             "tree",
             "treeview"
         ]
+    },
+    {
+        "name": "execut/yii2-base",
+        "version": "1.1.5",
+        "version_normalized": "1.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/execut/yii2-base.git",
+            "reference": "0812d40630542b67be3c3cb93e96540ae2966578"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/execut/yii2-base/zipball/0812d40630542b67be3c3cb93e96540ae2966578",
+            "reference": "0812d40630542b67be3c3cb93e96540ae2966578",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2-jui": "@dev"
+        },
+        "time": "2016-02-01 11:39:25",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "execut\\yii\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "eXeCUT"
+            }
+        ],
+        "description": "My base classes for yii2",
+        "homepage": "https://github.com/execut/yii2-base",
+        "keywords": [
+            "yii2"
+        ]
+    },
+    {
+        "name": "bower-asset/bootstrap-treeview",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jonmiles/bootstrap-treeview.git",
+            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jonmiles/bootstrap-treeview/zipball/542f57eab636e14417216e95fa7f7049bbf3d69f",
+            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap": ">=3.0.0",
+            "bower-asset/jquery": ">=1.9.0"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "dist/bootstrap-treeview.min.js",
+                "dist/bootstrap-treeview.min.css"
+            ],
+            "bower-asset-ignore": [
+                "**/.*",
+                "node_modules",
+                "bower_components",
+                "test",
+                "tests"
+            ]
+        },
+        "installation-source": "dist",
+        "description": "Tree View for Twitter Bootstrap",
+        "keywords": [
+            "bootstrap",
+            "javascript",
+            "jquery",
+            "jquery-plugin",
+            "navigation",
+            "tree",
+            "tree-view",
+            "treeview",
+            "twitter"
+        ]
+    },
+    {
+        "name": "execut/yii2-widget-bootstraptreeview",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/execut/yii2-widget-bootstraptreeview.git",
+            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/execut/yii2-widget-bootstraptreeview/zipball/2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
+            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap-treeview": "@dev",
+            "execut/yii2-base": "*",
+            "yiisoft/yii2-jui": "@dev"
+        },
+        "time": "2015-11-27 08:08:18",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "execut\\widget\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "eXeCUT"
+            }
+        ],
+        "description": "Bootstrap Tree View widget wrapper for yii2",
+        "homepage": "https://github.com/execut/yii2-widget-bootstraptreeview",
+        "keywords": [
+            "bootstrap",
+            "extension",
+            "form",
+            "input",
+            "jquery",
+            "plugin",
+            "tree",
+            "yii2"
+        ]
     }
 ]

@@ -51,6 +51,8 @@ return array(
     'kartik\\alert\\' => array($vendorDir . '/kartik-v/yii2-widget-alert'),
     'kartik\\affix\\' => array($vendorDir . '/kartik-v/yii2-widget-affix'),
     'johnitvn\\ajaxcrud\\' => array($vendorDir . '/johnitvn/yii2-ajaxcrud/src'),
+    'execut\\yii\\' => array($vendorDir . '/execut/yii2-base'),
+    'execut\\widget\\' => array($vendorDir . '/execut/yii2-widget-bootstraptreeview'),
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),

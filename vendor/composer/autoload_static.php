@@ -72,6 +72,11 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             'johnitvn\\ajaxcrud\\' => 18,
         ),
+        'e' => 
+        array (
+            'execut\\yii\\' => 11,
+            'execut\\widget\\' => 14,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -267,6 +272,14 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'johnitvn\\ajaxcrud\\' => 
         array (
             0 => __DIR__ . '/..' . '/johnitvn/yii2-ajaxcrud/src',
+        ),
+        'execut\\yii\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/execut/yii2-base',
+        ),
+        'execut\\widget\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/execut/yii2-widget-bootstraptreeview',
         ),
         'dmstr\\' => 
         array (

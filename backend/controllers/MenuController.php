@@ -121,4 +121,17 @@ class MenuController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actionTree($id)
+    {
+        $model = $this->findModel($id);
+        //print_r($model);
+        //$searchModel = new MenuSearch();
+        //$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        return $this->render('tree', [
+            'model' => $model,
+            //'searchModel' => $searchModel,
+            //'dataProvider' => $dataProvider,
+        ]);
+    }
 }

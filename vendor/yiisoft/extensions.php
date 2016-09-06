@@ -400,4 +400,22 @@ return array (
       '@kartik/tree' => $vendorDir . '/kartik-v/yii2-tree-manager',
     ),
   ),
+  'execut/yii2-base' => 
+  array (
+    'name' => 'execut/yii2-base',
+    'version' => '1.1.5.0',
+    'alias' => 
+    array (
+      '@execut/yii' => $vendorDir . '/execut/yii2-base',
+    ),
+  ),
+  'execut/yii2-widget-bootstraptreeview' => 
+  array (
+    'name' => 'execut/yii2-widget-bootstraptreeview',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@execut/widget' => $vendorDir . '/execut/yii2-widget-bootstraptreeview',
+    ),
+  ),
 );
