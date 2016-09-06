@@ -1,0 +1,22 @@
+{
+  "name": "execut/yii2-base",
+  "description": "My base classes for yii2",
+  "keywords": ["yii2"],
+  "homepage": "https://github.com/execut/yii2-base",
+  "type": "yii2-extension",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "eXeCUT"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "yiisoft/yii2-jui": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "execut\\yii\\": ""
+    }
+  }
+}
