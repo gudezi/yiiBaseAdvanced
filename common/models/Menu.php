@@ -37,7 +37,7 @@ class Menu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-			[['descripcion', 'destino', 'activo', 'submenu', 'padre'], 'required'],
+			[['descripcion', 'destino', 'activo', 'submenu'], 'required'],
             [['activo', 'padre', 'submenu', 'orden'], 'integer'],
             [['descripcion', 'imagen', 'grupo'], 'string', 'max' => 100],
             [['destino', 'directorio', 'perfil'], 'string', 'max' => 200],
@@ -65,10 +65,12 @@ class Menu extends \yii\db\ActiveRecord
             'target' => 'Target',
         ];
     }
+    
     public static function findByParent($id)
     {
         return static::findAll(['padre' => $id, 'activo' => '1']);
     }
+    
     public static function getTree($id = 0)
     {
         $return = array();
@@ -152,6 +154,48 @@ class Menu extends \yii\db\ActiveRecord
         return $return;
     }
     
+    public static function getTreeCheck($id = 0)
+    {
+        $return = array();
+      
+        $menu = static::findAll(['padre' => $id, 'activo' => '1']); 
+
+        $menu = ArrayHelper::toArray($menu, [
+            'common\models\Menu' => [
+            'id_menu','descripcion','imagen','destino',
+            'padre','submenu'
+            ],
+        ]);
+
+        foreach($menu as $item)
+        {
+            $ret=array();
+            $ret['title']=$item['descripcion'];
+            $ret['key']=$item['id_menu'];
+		 
+            if($item['imagen']!='')
+            {
+                //$ret['icon']="fa fa-".$item['imagen'];
+            }
+
+            if($item['submenu']=='1')
+            {
+                $ret['folder'] = '1';
+                $items = static::getTreeCheck($item['id_menu']);
+                if( count($items)>0)
+                {
+                    $ret['children']=$items;
+                }
+            }
+            else
+            {
+                //$ret['url']=[$item['destino']];
+            }
+            $return[]=$ret;
+        }
+        return $return;
+    }
+
     public function getPadre0()
     {
         return $this->hasOne(Menu::className(), ['id_menu' => 'padre']);

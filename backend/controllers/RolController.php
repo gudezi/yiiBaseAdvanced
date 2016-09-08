@@ -105,10 +105,9 @@ class RolController extends Controller
     
         if ($model->load(Yii::$app->request->post())) {
             if (!isset($_POST['Rol']['operaciones'])) {
-                //$model->operaciones = [];
+                $model->operaciones = [];
             }
-            //echo "<pre>";print_r($model->nombre);echo "<br>"; 
-            //print_r($model->operaciones);die;
+            echo "<Pre>";print_r($_POST);die;
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }

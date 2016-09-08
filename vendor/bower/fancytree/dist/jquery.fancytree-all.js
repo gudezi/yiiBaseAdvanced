@@ -2381,7 +2381,6 @@ Fancytree.prototype = /** @lends Fancytree# */{
 	generateFormElements: function(selected, active, opts) {
 		// TODO: test case
 		opts = opts || {};
-        
         var nodeList,
 			selectedName = (typeof selected === "string") ? selected : "ft_" + this._id + "[]",
 			activeName = (typeof active === "string") ? active : "ft_" + this._id + "_active",
@@ -2396,14 +2395,17 @@ Fancytree.prototype = /** @lends Fancytree# */{
 				id: id
 			}).hide().insertAfter(this.$container);
 		}
-        
+        if(this.options.selectMode === 2)
+        {
+            selectedName = selectedName+'[]';
+        }
         //console.log(nodeList);
 		if(selected !== false){
 			nodeList = this.getSelectedNodes(stopOnParents);
 			$.each(nodeList, function(idx, node){
 				$result.append($("<input>", {
 					type: "checkbox",
-					name: selectedName+'[]',
+					name: selectedName,
 					value: node.key,
 					checked: true
 				}));

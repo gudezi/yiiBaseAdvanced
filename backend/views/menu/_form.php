@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use andru19\fancytree\FancytreeWidget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Menu */
@@ -23,7 +24,52 @@ use yii\widgets\ActiveForm;
     <?//= $form->field($model, 'perfil')->textInput(['maxlength' => true]) ?>
 
     <?//= $form->field($model, 'padre')->textInput() ?>
-	<?= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
+	
+    <?//= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
+    <div id='gus' style='background:yellow;'>
+        <button id="btnExpandAll" class="btn btn-xs btn-primary">Expand all</button>
+        <button id="btnCollapseAll" class="btn btn-xs btn-warning">Collapse all</button>
+        <button id="btnToggleExpand" class="btn btn-xs btn-info">Toggle Expand</button>
+    </div>
+    <?   /* $data = [
+    ['title' => 'Node 1', 'key' => 1],
+    ['title' => 'Folder 2', 'key' => '3', 'folder' => true, 'children' => [
+        ['title' => 'Node 2.1', 'key' => '2'],
+        ['title' => 'Node 2.2', 'key' => '4']
+    ]]
+    ];*/
+    /*$data = [
+    ['title' => 'Node 1', 'key' => 1],
+    ['title' => 'Folder 2', 'key' => 3], 
+    ['title' => 'Node 2.1', 'key' => 2],
+    ['title' => 'Node 2.2', 'key' => 4]
+    
+    ];*/
+    
+    /*$data = \yii\helpers\ArrayHelper::toArray($model->TreeCheck, [
+        'backend\models\Operacion' => ['title' => 'lable', 'key' => 'id_menu'],
+    ]);*/
+    //echo "<pre>"; print_r($model->TreeCheck);die; 
+    //print_r($model->id_menu);die;
+    echo $form->field($model, 'padre')->widget(FancytreeWidget::classname(), [
+            'name' => 'fancytree',
+            'source' => $model->TreeCheck,
+            'selectMode' => FancytreeWidget::SELECT_SINGLE,
+            'checkbox' => true,
+            'idfield' => 'id_menu',
+            //'autoScroll' => true,
+            //'scrollOfs'=> ['top' => 50, 'bottom' => 50],
+            //'scrollParent' => 'gus',
+            //'parent' => 'padre', //$id, // parent category id (if exist)
+            'options' => [// 'checkbox' => true, 
+                        //'id' => 'gus',
+                        'idexpand' => 'btnExpandAll',
+                        'idcollapse' => 'btnCollapseAll',
+                        'idtoggleexpand' => 'btnToggleExpand',
+                        //'selectmode' => '1',
+            ],
+        ]); 
+    ?>
 												   
     <?= $form->field($model, 'orden')->textInput() ?>
 

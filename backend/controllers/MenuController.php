@@ -65,13 +65,28 @@ class MenuController extends Controller
     {
         $model = new Menu();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_menu]);
+        if ($model->load(Yii::$app->request->post())) 
+        {
+            if (!isset($_POST['Rol']['padre'])) {
+                $model->padre = [];
+            }            
+            echo "<Pre>";print_r($_POST);die;
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id_menu]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
+
+        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id_menu]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }*/
     }
 
     /**
@@ -84,13 +99,28 @@ class MenuController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_menu]);
+        if ($model->load(Yii::$app->request->post())) 
+        {
+            if (!isset($_POST['Rol']['padre'])) {
+                $model->padre = [];
+            }
+            echo "<Pre>";print_r($_POST);die;
+            if($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id_menu]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
             ]);
         }
+
+        /*if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id_menu]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }*/
     }
 
     /**

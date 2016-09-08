@@ -53,6 +53,12 @@ class FancytreeWidget extends InputWidget
      * @var bool Display checkboxes to allow selection
      */
     public $checkbox = false;
+     
+    /**
+     * @var bool Defines if quick search activated
+     */
+    public $quicksearch = false;
+    
     /**
      * @var int Defines what happens, when the user click a folder node. 1:activate, 2:expand, 3:activate and expand, 4:activate/dblclick expands
      */
@@ -126,6 +132,10 @@ class FancytreeWidget extends InputWidget
      */
     public $parent;
     /**
+     * @var id field table
+     */
+    public $idfield = 'id';
+    /**
      * @var array Translation table
      */
     public $strings;
@@ -152,7 +162,10 @@ class FancytreeWidget extends InputWidget
      */
     public function registerAssets()
     {
+        
+        echo "<div id='gus3' style='background:red;'>";
         $view = $this->getView();
+        //print_r($view);die;
         FancytreeAsset::register($view);
         $id = 'fancyree_' . $this->id;
         if (isset($this->options['id'])) {
@@ -186,6 +199,7 @@ class FancytreeWidget extends InputWidget
             'scrollParent' => $this->scrollParent,
             'selectMode' => $this->selectMode,
             'source' => $this->source,
+            'quicksearch' => $this->quicksearch,
             'parent' => $this->parent,
             'strings' => $this->strings,
             'tabindex' => $this->tabindex,
@@ -196,29 +210,67 @@ class FancytreeWidget extends InputWidget
             //$name = $this->hasModel() ? Html::getInputName($this->model, $this->attribute) : $this->name;
             $name = Html::getInputName($this->model, $this->attribute);
             //print_r($name);die;
-            $selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
-            $active = $this->selectMode == self::SELECT_SINGLE ? $name : 'undefined';
+            $selected = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : "\"{$name}\"";
+            //$selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
+            //$active = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : 'undefined';
+            $active = 'undefined';
+            //$active = $this->selectMode == self::SELECT_SINGLE ? $name : 'undefined';
             
             //$selected=$name.'[]';
             //print_r($selected);die;
             //$selected = "Rol[operaciones]";
+            
+            if (isset($this->options['idexpand'])) {
+                $idexpand = $this->options['idexpand'];
+                $view->registerJs('$("#'.$idexpand.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(true);});});');
+            }
+
+            /*$("#tree").fancytree("getRootNode").visit(function(node){
+                node.toggleExpanded();
+                node.toggleSelected();
+                node.setSelected(false);
+                node.setSelected(true);
+            });*/
+
+            
+            if (isset($this->options['idcollapse'])) {
+                $idcollapse = $this->options['idcollapse'];
+                $view->registerJs('$("#'.$idcollapse.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(false);});});');
+            }
+
+            if (isset($this->options['idtoggleexpand'])) {
+                $idtoggleexpand = $this->options['idtoggleexpand'];
+                $view->registerJs('$("#'.$idtoggleexpand.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleExpanded();});});');
+            }
+            
+            
+            
             $view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
             //$selected = 'gustavo';
-            
-            //$view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
-            
-            if (!empty($this->parent && $this->model->id)) {
-                $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->id . '");');
+            //echo "<pre>";echo "campo ".$this->idfield." /campo ";print_r($this->model->id_menu);die;
+             //$idfield = $this->idfield;
+            $idfield = $this->idfield; 
+            if (!empty($this->parent && $this->model->$idfield)) {
+                $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$idfield . '");');
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');
-            } elseif ($this->model->id) {
+            } elseif ($this->model->$idfield) {
                 $attribute = $this->attribute;
+                //print_r($attribute);die;
                 //echo'<pre>'; print_r($this->model->$attribute); die;
                 //$view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$attribute . '");');
                 //$view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->model->$attribute . '").setSelected(true)');
-                foreach($this->model->$attribute as $node)
+                if($this->selectMode == self::SELECT_SINGLE)
                 {
-                //    $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("'.$node.'");');
-                    $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("'.$node.'").setSelected(true)');
+                    $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("'.$this->model->$attribute.'");');
+                    $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("'.$this->model->$attribute.'").setSelected(true)');
+                }
+                else
+                {
+                    foreach($this->model->$attribute as $node)
+                    {
+                        $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("'.$node.'");');
+                        $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("'.$node.'").setSelected(true)');
+                    }
                 }
             }
         }
