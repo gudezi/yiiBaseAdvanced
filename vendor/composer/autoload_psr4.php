@@ -56,5 +56,6 @@ return array(
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'andru19\\fancytree\\' => array($vendorDir . '/andru19/yii2-fancytree-widget'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

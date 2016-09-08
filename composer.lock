@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "969e90de78009c0d89e56c7647cbfa2e",
-    "content-hash": "9c8ad90dea8c60382b74ab4ea69d82f5",
+    "hash": "9c23d97af2bda7ca052d44e25e74dce0",
+    "content-hash": "d89ca76d8cd2aa160cb4ee5d13ccc1d4",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -46,6 +46,51 @@
                 "web"
             ],
             "time": "2016-08-04 23:22:06"
+        },
+        {
+            "name": "andru19/yii2-fancytree-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ANDRU19/yii2-fancy-tree-widget.git",
+                "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ANDRU19/yii2-fancy-tree-widget/zipball/fe0d74c1ca7be401d74c8487750c690a6332d346",
+                "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fancytree": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "andru19\\fancytree\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew",
+                    "email": "andriy.ry@gmail.com"
+                }
+            ],
+            "description": "The yii2-fancytree widget is a Yii 2 wrapper for the [Fancytree](https://github.com/mar10/fancytree). A JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag'n'drop, and lazy loading",
+            "keywords": [
+                "extension",
+                "fancytree",
+                "treeview",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-08-08 14:02:03"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -189,6 +234,63 @@
                 "mobile-first",
                 "responsive",
                 "web"
+            ]
+        },
+        {
+            "name": "bower-asset/fancytree",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mar10/fancytree.git",
+                "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mar10/fancytree/zipball/73367c54db0bfc9cea81b0382bdc82adecc57f24",
+                "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7",
+                "bower-asset/jquery-ui": ">=1.8.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/jquery.fancytree-all.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "/3rd-party",
+                    "/archive",
+                    "/bin",
+                    "/build",
+                    "/demo",
+                    "/doc",
+                    "/lib",
+                    "/src",
+                    "/test",
+                    "CONTRIBUTING.md",
+                    "fancytree.jquery.json",
+                    "Gruntfile.coffee",
+                    "index.html"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.19.1-patch0-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Fancytree is a JavaScript tree view plugin for jQuery with support for persistence, keyboard, checkboxes, drag'n'drop, and lazy loading.",
+            "keywords": [
+                "ajax",
+                "jquery-plugin",
+                "lazy",
+                "table",
+                "tabletree",
+                "tree",
+                "treegrid"
             ]
         },
         {
@@ -3367,7 +3469,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-icons": 20,

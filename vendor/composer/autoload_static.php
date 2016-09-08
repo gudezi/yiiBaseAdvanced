@@ -86,6 +86,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
         ),
+        'a' => 
+        array (
+            'andru19\\fancytree\\' => 18,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -292,6 +296,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'andru19\\fancytree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andru19/yii2-fancytree-widget',
         ),
         'Faker\\' => 
         array (

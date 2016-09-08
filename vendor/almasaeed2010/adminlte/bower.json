@@ -9,7 +9,8 @@
     "index2.html",
     "dist/css/AdminLTE.css",
     "dist/js/app.js",
-    "build/less/AdminLTE.less"
+    "build/less/AdminLTE.less",
+    "plugins/slimScroll/jquery.slimscroll.js"
   ],
   "keywords": [
     "css",

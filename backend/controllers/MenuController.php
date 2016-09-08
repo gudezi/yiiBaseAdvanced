@@ -122,16 +122,16 @@ class MenuController extends Controller
         }
     }
     
-    public function actionTree($id)
+    public function actionTree()
     {
-        $model = $this->findModel($id);
+        //$model = $this->findModel($id);
         //print_r($model);
-        //$searchModel = new MenuSearch();
-        //$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel = new MenuSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('tree', [
-            'model' => $model,
-            //'searchModel' => $searchModel,
-            //'dataProvider' => $dataProvider,
+        //    'model' => $model,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 }

@@ -6,7 +6,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     watch: {
       // If any .less file changes in directory "build/less/" run the "less"-task.
-      files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js", "dist/js/sideBarStateLocalStorage.js"],
+      files: ["build/less/*.less", "build/less/skins/*.less", "dist/js/app.js", "dist/js/sideBarStateLocalStorage.js", "plugins/slimScroll/jquery.slimscroll.js"],
       tasks: ["less", "uglify"]
     },
     // "less"-task configuration
@@ -75,6 +75,7 @@ module.exports = function (grunt) {
         files: {
           'dist/js/app.min.js': ['dist/js/app.js'],
           'dist/js/sideBarStateLocalStorage.min.js': ['dist/js/sideBarStateLocalStorage.js']
+          'plugins/slimScroll/jquery.slimscroll.js': ['plugins/slimScroll/jquery.slimscroll.js']
         }
       }
     },

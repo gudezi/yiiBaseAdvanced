@@ -418,4 +418,13 @@ return array (
       '@execut/widget' => $vendorDir . '/execut/yii2-widget-bootstraptreeview',
     ),
   ),
+  'andru19/yii2-fancytree-widget' => 
+  array (
+    'name' => 'andru19/yii2-fancytree-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@andru19/fancytree' => $vendorDir . '/andru19/yii2-fancytree-widget',
+    ),
+  ),
 );

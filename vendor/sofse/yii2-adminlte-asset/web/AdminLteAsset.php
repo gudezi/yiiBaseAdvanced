@@ -25,6 +25,8 @@ class AdminLteAsset extends BaseAdminLteAsset
     public $js = [
         'js/app.min.js',
         'js/sideBarStateLocalStorage.min.js',
+        'js/sideBarStateLocalStorage.min.js',
+        'js/jquery.slimscroll.js'
     ];
     public $depends = [
         'rmrevin\yii\fontawesome\AssetBundle',

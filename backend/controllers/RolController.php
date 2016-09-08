@@ -73,7 +73,7 @@ class RolController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'tipoOperaciones' => $tipoOperaciones
+                'tipoOperaciones' => $tipoOperaciones,
             ]);
         }
         /*$model = new Rol();
@@ -97,7 +97,7 @@ class RolController extends Controller
     {
         $model = $this->findModel($id);
         $tipoOperaciones = Operacion::find()->all();
-    
+
         $model->operaciones = \yii\helpers\ArrayHelper::getColumn(
             $model->getRolOperaciones()->asArray()->all(),
             'operacion_id'
@@ -105,15 +105,17 @@ class RolController extends Controller
     
         if ($model->load(Yii::$app->request->post())) {
             if (!isset($_POST['Rol']['operaciones'])) {
-                $model->operaciones = [];
+                //$model->operaciones = [];
             }
+            //echo "<pre>";print_r($model->nombre);echo "<br>"; 
+            //print_r($model->operaciones);die;
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'tipoOperaciones' => $tipoOperaciones
+                'tipoOperaciones' => $tipoOperaciones,
             ]);
         }
     /*  $model = $this->findModel($id);
