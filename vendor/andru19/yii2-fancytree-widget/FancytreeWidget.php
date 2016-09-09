@@ -162,10 +162,41 @@ class FancytreeWidget extends InputWidget
      */
     public function registerAssets()
     {
-        
-        echo "<div id='gus3' style='background:red;'>";
+        echo "<div>";
+		if (isset($this->options['isexpand'])) {
+            if($this->options['isexpand']){
+				echo "<button id='".$idPrefix."ExpandAll' class='btn btn-xs btn-primary'>Expand All</button>";
+			}
+		}
+		if (isset($this->options['iscollapse'])) {
+            if($this->options['iscollapse']){
+				echo "<button id='".$idPrefix."CollapseAll' class='btn btn-xs btn-warning'>Collapse All</button>";
+			}
+		}
+		if (isset($this->options['istoggleexpand'])) {
+            if($this->options['istoggleexpand']){
+				echo "<button id='".$idPrefix."ToggleExpand' class='btn btn-xs btn-info'>Toggle Expand</button>";
+			}
+		}
+		if (isset($this->options['issetall']) && $this->selectMode == self::SELECT_MULTI) {
+            if($this->options['issetall']){
+				echo "<button id='".$idPrefix."SetAll' class='btn btn-xs btn-primary'>Select All</button>";
+			}
+		}
+		if (isset($this->options['isunsetall']) && $this->selectMode == self::SELECT_MULTI) {
+            if($this->options['isunsetall']){
+				echo "<button id='".$idPrefix."UnsetAll' class='btn btn-xs btn-warning'>Unselect All</button>";
+			}
+		}
+		if (isset($this->options['istoggleselect']) && $this->selectMode == self::SELECT_MULTI) {
+            if($this->options['istoggleselect']){
+				echo "<button id='".$idPrefix."ToggleSelect' class='btn btn-xs btn-info'>Toggle Select</button>";
+			}
+		}
+		echo "</div>";
+		
         $view = $this->getView();
-        //print_r($view);die;
+        //echo "<pre>"; print_r($view); die;
         FancytreeAsset::register($view);
         $id = 'fancyree_' . $this->id;
         if (isset($this->options['id'])) {
@@ -220,31 +251,42 @@ class FancytreeWidget extends InputWidget
             //print_r($selected);die;
             //$selected = "Rol[operaciones]";
             
-            if (isset($this->options['idexpand'])) {
-                $idexpand = $this->options['idexpand'];
-                $view->registerJs('$("#'.$idexpand.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(true);});});');
-            }
-
-            /*$("#tree").fancytree("getRootNode").visit(function(node){
-                node.toggleExpanded();
-                node.toggleSelected();
-                node.setSelected(false);
-                node.setSelected(true);
-            });*/
-
+			if (isset($this->options['isexpand'])) {
+				if($this->options['isexpand']){
+					$view->registerJs('$("#'.$idPrefix.'ExpandAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(true);});});');
+				}
+			}
             
-            if (isset($this->options['idcollapse'])) {
-                $idcollapse = $this->options['idcollapse'];
-                $view->registerJs('$("#'.$idcollapse.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(false);});});');
-            }
+			if (isset($this->options['iscollapse'])) {
+				if($this->options['iscollapse']){
+					$view->registerJs('$("#'.$idPrefix.'CollapseAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(false);});});');
+				}
+			}
 
-            if (isset($this->options['idtoggleexpand'])) {
-                $idtoggleexpand = $this->options['idtoggleexpand'];
-                $view->registerJs('$("#'.$idtoggleexpand.'").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleExpanded();});});');
+			if (isset($this->options['istoggleexpand'])) {
+				if($this->options['istoggleexpand']){
+					$view->registerJs('$("#'.$idPrefix.'ToggleExpand").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleExpanded();});});');
+				}
             }
             
+			if (isset($this->options['issetall']) && $this->selectMode == self::SELECT_MULTI) {
+				if($this->options['issetall']){
+					$view->registerJs('$("#'.$idPrefix.'SetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(true);});});');
+				}
+			}
             
-            
+			if (isset($this->options['isunsetall']) && $this->selectMode == self::SELECT_MULTI) {
+				if($this->options['isunsetall']){
+					$view->registerJs('$("#'.$idPrefix.'UnsetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(false);});});');
+				}
+			}
+
+			if (isset($this->options['istoggleselect']) && $this->selectMode == self::SELECT_MULTI) {
+				if($this->options['istoggleselect']){
+					$view->registerJs('$("#'.$idPrefix.'ToggleSelect").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleSelected();});});');
+				}
+            }
+
             $view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
             //$selected = 'gustavo';
             //echo "<pre>";echo "campo ".$this->idfield." /campo ";print_r($this->model->id_menu);die;

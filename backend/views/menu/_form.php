@@ -26,11 +26,7 @@ use andru19\fancytree\FancytreeWidget;
     <?//= $form->field($model, 'padre')->textInput() ?>
 	
     <?//= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
-    <div id='gus' style='background:yellow;'>
-        <button id="btnExpandAll" class="btn btn-xs btn-primary">Expand all</button>
-        <button id="btnCollapseAll" class="btn btn-xs btn-warning">Collapse all</button>
-        <button id="btnToggleExpand" class="btn btn-xs btn-info">Toggle Expand</button>
-    </div>
+
     <?   /* $data = [
     ['title' => 'Node 1', 'key' => 1],
     ['title' => 'Folder 2', 'key' => '3', 'folder' => true, 'children' => [
@@ -63,9 +59,12 @@ use andru19\fancytree\FancytreeWidget;
             //'parent' => 'padre', //$id, // parent category id (if exist)
             'options' => [// 'checkbox' => true, 
                         //'id' => 'gus',
-                        'idexpand' => 'btnExpandAll',
-                        'idcollapse' => 'btnCollapseAll',
-                        'idtoggleexpand' => 'btnToggleExpand',
+                        'isexpand' => true,
+                        'iscollapse' => true,
+                        'istoggleexpand' => true,
+						'issetall' => true,
+						'isunsetall' => true,
+						'istoggleselect' => true,
                         //'selectmode' => '1',
             ],
         ]); 
