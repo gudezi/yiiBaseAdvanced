@@ -197,6 +197,11 @@ class FancytreeWidget extends InputWidget
 		
         $view = $this->getView();
         //echo "<pre>"; print_r($view); die;
+        
+                $glyph_opts = array(map => array(checkbox => 'glyphicon glyphicon-unchecked'));
+        $glyph_opts=json_encode($glyph_opts);
+        $glyph_opts='{map:{checkbox: "icon-check-empty",checkboxSelected: "icon-check"}}';
+        
         FancytreeAsset::register($view);
         $id = 'fancyree_' . $this->id;
         if (isset($this->options['id'])) {
@@ -207,6 +212,7 @@ class FancytreeWidget extends InputWidget
         }
         $options = Json::encode(ArrayHelper::merge([
             'activeVisible' => $this->activeVisible,
+            'glyph' => 'css/iconos.js',
             'ajax' => $this->ajax,
             'aria' => $this->aria,
             'autoActivate' => $this->autoActivate,
