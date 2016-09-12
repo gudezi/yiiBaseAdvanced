@@ -66,7 +66,6 @@ use andru19\fancytree\FancytreeWidget;
 						'issetall' => true,
 						'isunsetall' => true,
 						'istoggleselect' => true,
-                        //'selectmode' => '1',
             ],
         ]); 
     ?>

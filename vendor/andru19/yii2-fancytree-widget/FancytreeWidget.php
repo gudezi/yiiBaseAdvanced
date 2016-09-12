@@ -1,6 +1,4 @@
 <?php
-
-
 namespace andru19\fancytree;
 
 use yii\helpers\ArrayHelper;
@@ -53,12 +51,10 @@ class FancytreeWidget extends InputWidget
      * @var bool Display checkboxes to allow selection
      */
     public $checkbox = false;
-     
     /**
      * @var bool Defines if quick search activated
      */
     public $quicksearch = false;
-    
     /**
      * @var int Defines what happens, when the user click a folder node. 1:activate, 2:expand, 3:activate and expand, 4:activate/dblclick expands
      */
@@ -194,9 +190,7 @@ class FancytreeWidget extends InputWidget
 			}
 		}
 		echo "</div>";
-		
         $view = $this->getView();
-        //echo "<pre>"; print_r($view); die;
         
         FancytreeAsset::register($view);
         $id = 'fancyree_' . $this->id;
@@ -213,22 +207,22 @@ class FancytreeWidget extends InputWidget
         
         $map = array();
         $map['doc'] = "glyphicon glyphicon-file";
-      $map['docOpen'] = "glyphicon glyphicon-file";
-      $map['checkbox'] = "glyphicon glyphicon-unchecked";
-      $map['checkboxSelected'] = "glyphicon glyphicon-check";
-      $map['checkboxUnknown'] = "glyphicon glyphicon-share";
-      $map['dragHelper'] = "glyphicon glyphicon-play";
-      $map['dropMarker'] = "glyphicon glyphicon-arrow-right";
-      $map['error'] = "glyphicon glyphicon-warning-sign";
-      $map['expanderClosed'] = "glyphicon glyphicon-menu-right";
-      $map['expanderLazy'] = "glyphicon glyphicon-menu-right";  // glyphicon-plus-sign
-      $map['expanderOpen'] = "glyphicon glyphicon-menu-down";  // glyphicon-collapse-down
-      $map['folder'] = "glyphicon glyphicon-folder-close";
-      $map['folderOpen'] = "glyphicon glyphicon-folder-open";
-      $map['loading'] = "glyphicon glyphicon-refresh glyphicon-spin";
+        $map['docOpen'] = "glyphicon glyphicon-file";
+        $map['checkbox'] = "glyphicon glyphicon-unchecked";
+        $map['checkboxSelected'] = "glyphicon glyphicon-check";
+        $map['checkboxUnknown'] = "glyphicon glyphicon-share";
+        $map['dragHelper'] = "glyphicon glyphicon-play";
+        $map['dropMarker'] = "glyphicon glyphicon-arrow-right";
+        $map['error'] = "glyphicon glyphicon-warning-sign";
+        $map['expanderClosed'] = "glyphicon glyphicon-menu-right";
+        $map['expanderLazy'] = "glyphicon glyphicon-menu-right";  // glyphicon-plus-sign
+        $map['expanderOpen'] = "glyphicon glyphicon-menu-down";  // glyphicon-collapse-down
+        $map['folder'] = "glyphicon glyphicon-folder-close";
+        $map['folderOpen'] = "glyphicon glyphicon-folder-open";
+        $map['loading'] = "glyphicon glyphicon-refresh glyphicon-spin";
       
-      $glyph_opts = array();
-      $glyph_opts['map']=$map;
+        $glyph_opts = array();
+        $glyph_opts['map']=$map;
         
         $options = Json::encode(ArrayHelper::merge([
             'activeVisible' => $this->activeVisible,
@@ -262,14 +256,11 @@ class FancytreeWidget extends InputWidget
             'titlesTabbable' => $this->titlesTabbable,
             'childcounter' => $childcounter,
             'glyph' => $glyph_opts,
-            //'glyph' => '{map:{doc: \'glyphicon glyphicon-file\',docOpen: \'glyphicon glyphicon-file\',checkbox: \'glyphicon glyphicon-unchecked\',checkboxSelected: \'glyphicon glyphicon-check\',checkboxUnknown: \'glyphicon glyphicon-share\',dragHelper: \'glyphicon glyphicon-play\',dropMarker: \'glyphicon glyphicon-arrow-right\',error: \'glyphicon glyphicon-warning-sign\',expanderClosed: \'glyphicon glyphicon-menu-right\',expanderLazy: \'glyphicon glyphicon-menu-right\',expanderOpen: \'glyphicon glyphicon-menu-down\',folder: \'glyphicon glyphicon-folder-close\',folderOpen: \'glyphicon glyphicon-folder-open\',loading: \'glyphicon glyphicon-refresh glyphicon-spin\'}}',
-
         ], $this->options));
         $view->registerJs('$("#' . $id . '").fancytree( ' . $options . ')');
         if ($this->hasModel() || $this->name !== null) {
             //$name = $this->hasModel() ? Html::getInputName($this->model, $this->attribute) : $this->name;
             $name = Html::getInputName($this->model, $this->attribute);
-            //print_r($name);die;
             $selected = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : "\"{$name}\"";
             //$selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
             //$active = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : 'undefined';
@@ -317,19 +308,12 @@ class FancytreeWidget extends InputWidget
             }
 
             $view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
-            //$selected = 'gustavo';
-            //echo "<pre>";echo "campo ".$this->idfield." /campo ";print_r($this->model->id_menu);die;
-             //$idfield = $this->idfield;
             $idfield = $this->idfield; 
             if (!empty($this->parent && $this->model->$idfield)) {
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$idfield . '");');
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');
             } elseif ($this->model->$idfield) {
                 $attribute = $this->attribute;
-                //print_r($attribute);die;
-                //echo'<pre>'; print_r($this->model->$attribute); die;
-                //$view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$attribute . '");');
-                //$view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->model->$attribute . '").setSelected(true)');
                 if($this->selectMode == self::SELECT_SINGLE)
                 {
                     $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("'.$this->model->$attribute.'");');

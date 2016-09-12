@@ -44,7 +44,7 @@ class FancytreeAsset extends \yii\web\AssetBundle
     public function init()
     {
         $this->setupAssets('css', [$this->skin]);
-        $this->setupAssets('js', ['dist/jquery.fancytree-all','dist/src/jquery.fancytree.glyph']);
+        $this->setupAssets('js', ['dist/jquery.fancytree-all']);
         parent::init();
     }
 
