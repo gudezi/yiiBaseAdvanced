@@ -60,8 +60,8 @@ use andru19\fancytree\FancytreeWidget;
             //'parent' => 'padre', //$id, // parent category id (if exist)
             'options' => [// 'checkbox' => true, 
                         //'id' => 'gus',
-                        'isexpand' => true,
-                        'iscollapse' => true,
+                        //'isexpand' => true,
+                        //'iscollapse' => true,
                         'istoggleexpand' => true,
 						'issetall' => true,
 						'isunsetall' => true,
@@ -83,7 +83,7 @@ use andru19\fancytree\FancytreeWidget;
     <?//= $form->field($model, 'target')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

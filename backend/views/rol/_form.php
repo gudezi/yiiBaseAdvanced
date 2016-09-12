@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use softark\duallistbox\DualListbox;
-use andru19\fancytree\FancytreeWidget;
+//use andru19\fancytree\FancytreeWidget;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Rol */
@@ -25,7 +25,7 @@ use andru19\fancytree\FancytreeWidget;
         'size' => 10,
     ];
     // echo $form->field($model, $attribute)->listBox($items, $options);
-    /*echo $form->field($model, 'operaciones')->widget(DualListbox::className(),[
+    echo $form->field($model, 'operaciones')->widget(DualListbox::className(),[
         'items' => $opciones,
         'options' => $options,
         'clientOptions' => [
@@ -33,9 +33,9 @@ use andru19\fancytree\FancytreeWidget;
             'selectedListLabel' => 'Selected Items',
             'nonSelectedListLabel' => 'Available Items',
         ],
-    ]);*/
+    ]);
     
-    $data = \yii\helpers\ArrayHelper::toArray($tipoOperaciones, [
+    /*$data = \yii\helpers\ArrayHelper::toArray($tipoOperaciones, [
         'backend\models\Operacion' => ['title' => 'nombre', 'key' => 'id'],
     ]);
     //echo "<pre>"; print_r($model->TreeCheck);die; 
@@ -51,7 +51,7 @@ use andru19\fancytree\FancytreeWidget;
                         //'id' => 'gus',
                         //'selectmode' => '1',
             ],
-        ]); 
+        ]); */
     ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

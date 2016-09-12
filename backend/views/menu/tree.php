@@ -10,7 +10,7 @@ use common\models\menu;
 /* @var $searchModel common\models\MenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Menus');
+$this->title = 'Menus';
 $this->params['breadcrumbs'][] = $this->title;
 //print_r($model);die;
 ?>
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Menu', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
    
     <div class="menu-form">

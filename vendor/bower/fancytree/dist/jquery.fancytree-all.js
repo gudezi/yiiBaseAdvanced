@@ -2381,6 +2381,7 @@ Fancytree.prototype = /** @lends Fancytree# */{
 	generateFormElements: function(selected, active, opts) {
 		// TODO: test case
 		opts = opts || {};
+        
         var nodeList,
 			selectedName = (typeof selected === "string") ? selected : "ft_" + this._id + "[]",
 			activeName = (typeof active === "string") ? active : "ft_" + this._id + "_active",

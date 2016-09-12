@@ -78,7 +78,7 @@ class FancytreeWidget extends InputWidget
     /**
      * @var array List of active extensions
      */
-    public $extensions = [];
+    public $extensions = ['childcounter','glyph'];
     /**
      * @var array Animation options, null:off Gutavo ex fx
      */
@@ -198,10 +198,6 @@ class FancytreeWidget extends InputWidget
         $view = $this->getView();
         //echo "<pre>"; print_r($view); die;
         
-                $glyph_opts = array(map => array(checkbox => 'glyphicon glyphicon-unchecked'));
-        $glyph_opts=json_encode($glyph_opts);
-        $glyph_opts='{map:{checkbox: "icon-check-empty",checkboxSelected: "icon-check"}}';
-        
         FancytreeAsset::register($view);
         $id = 'fancyree_' . $this->id;
         if (isset($this->options['id'])) {
@@ -210,9 +206,32 @@ class FancytreeWidget extends InputWidget
         } else {
             echo Html::tag('div', '', ['id' => $id]);
         }
+        $childcounter = array();
+        $childcounter["deep"]=true;
+        $childcounter["hideZeros"]=true;
+        $childcounter["hideExpanded"]=true;
+        
+        $map = array();
+        $map['doc'] = "glyphicon glyphicon-file";
+      $map['docOpen'] = "glyphicon glyphicon-file";
+      $map['checkbox'] = "glyphicon glyphicon-unchecked";
+      $map['checkboxSelected'] = "glyphicon glyphicon-check";
+      $map['checkboxUnknown'] = "glyphicon glyphicon-share";
+      $map['dragHelper'] = "glyphicon glyphicon-play";
+      $map['dropMarker'] = "glyphicon glyphicon-arrow-right";
+      $map['error'] = "glyphicon glyphicon-warning-sign";
+      $map['expanderClosed'] = "glyphicon glyphicon-menu-right";
+      $map['expanderLazy'] = "glyphicon glyphicon-menu-right";  // glyphicon-plus-sign
+      $map['expanderOpen'] = "glyphicon glyphicon-menu-down";  // glyphicon-collapse-down
+      $map['folder'] = "glyphicon glyphicon-folder-close";
+      $map['folderOpen'] = "glyphicon glyphicon-folder-open";
+      $map['loading'] = "glyphicon glyphicon-refresh glyphicon-spin";
+      
+      $glyph_opts = array();
+      $glyph_opts['map']=$map;
+        
         $options = Json::encode(ArrayHelper::merge([
             'activeVisible' => $this->activeVisible,
-            'glyph' => 'css/iconos.js',
             'ajax' => $this->ajax,
             'aria' => $this->aria,
             'autoActivate' => $this->autoActivate,
@@ -241,6 +260,10 @@ class FancytreeWidget extends InputWidget
             'strings' => $this->strings,
             'tabindex' => $this->tabindex,
             'titlesTabbable' => $this->titlesTabbable,
+            'childcounter' => $childcounter,
+            'glyph' => $glyph_opts,
+            //'glyph' => '{map:{doc: \'glyphicon glyphicon-file\',docOpen: \'glyphicon glyphicon-file\',checkbox: \'glyphicon glyphicon-unchecked\',checkboxSelected: \'glyphicon glyphicon-check\',checkboxUnknown: \'glyphicon glyphicon-share\',dragHelper: \'glyphicon glyphicon-play\',dropMarker: \'glyphicon glyphicon-arrow-right\',error: \'glyphicon glyphicon-warning-sign\',expanderClosed: \'glyphicon glyphicon-menu-right\',expanderLazy: \'glyphicon glyphicon-menu-right\',expanderOpen: \'glyphicon glyphicon-menu-down\',folder: \'glyphicon glyphicon-folder-close\',folderOpen: \'glyphicon glyphicon-folder-open\',loading: \'glyphicon glyphicon-refresh glyphicon-spin\'}}',
+
         ], $this->options));
         $view->registerJs('$("#' . $id . '").fancytree( ' . $options . ')');
         if ($this->hasModel() || $this->name !== null) {

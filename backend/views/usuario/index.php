@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\search\UsuarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Usuarios');
+$this->title = 'Usuarios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

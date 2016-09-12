@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
    <? 
    NavBar::begin([
-            'brandLabel' => 'My Company',//Yii::t('frontend','My Company.io'), //
+            'brandLabel' => 'My Company',
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
