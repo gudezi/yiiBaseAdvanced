@@ -18,7 +18,7 @@ use yii\helpers\Html;
             <!-- The user image in the navbar-->
             <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs"><?echo Yii::$app->user->identity->username?></span>
+            <span class="hidden-xs"><?echo Yii::$app->user->identity->fullname?></span>
         <?}?>
         </a>
         <ul class="dropdown-menu">
@@ -32,7 +32,7 @@ use yii\helpers\Html;
             <?}else{?>
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 <p>
-                    <?echo Yii::$app->user->identity->username?>
+                    <?echo Yii::$app->user->identity->fullname?>
                     <small>Web Developer</small>
                 </p>
             <?}?>

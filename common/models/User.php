@@ -7,6 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use backend\models\Rol;
+use common\models\Profile;
 
 /**
  * User model
@@ -204,5 +205,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function getRol()
     {
         return $this->hasOne(Rol::className(), ['id' => 'rol_id']);
+    }
+    
+    public function getFullname()
+    {
+        $profile = Profile::find()->where(['id'=>$this->id])->one();
+        if ($profile !==null)
+            return $profile->nombre.' '.$profile->apellido;
+        return false;
     }
 }
