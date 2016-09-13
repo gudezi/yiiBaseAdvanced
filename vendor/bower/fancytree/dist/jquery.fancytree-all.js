@@ -2396,10 +2396,11 @@ Fancytree.prototype = /** @lends Fancytree# */{
 				id: id
 			}).hide().insertAfter(this.$container);
 		}
-        if(this.options.selectMode === 2)
-        {
-            selectedName = selectedName+'[]';
-        }
+        //alert(selectedName);
+		//if(this.options.selectMode === 2)
+        //{
+         //   selectedName = selectedName+'[]';
+        //}
         //console.log(nodeList);
 		if(selected !== false){
 			nodeList = this.getSelectedNodes(stopOnParents);

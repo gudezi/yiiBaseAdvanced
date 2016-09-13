@@ -259,8 +259,10 @@ class FancytreeWidget extends InputWidget
         ], $this->options));
         $view->registerJs('$("#' . $id . '").fancytree( ' . $options . ')');
         if ($this->hasModel() || $this->name !== null) {
-            //$name = $this->hasModel() ? Html::getInputName($this->model, $this->attribute) : $this->name;
-            $name = Html::getInputName($this->model, $this->attribute);
+            $name = $this->hasModel() ? Html::getInputName($this->model, $this->attribute) : $this->name;
+            //$name = Html::getInputName($this->model, $this->attribute);
+			if($this->selectMode != self::SELECT_SINGLE)
+				$name = $name.'[]';
             $selected = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : "\"{$name}\"";
             //$selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
             //$active = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : 'undefined';
