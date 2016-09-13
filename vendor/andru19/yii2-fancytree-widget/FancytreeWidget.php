@@ -10,7 +10,6 @@ use yii\widgets\InputWidget;
  * The yii2-fancytree-widget is a Yii 2 wrapper for the fancytree.js
  * See more: https://github.com/mar10/fancytree
  *
-
  */
 class FancytreeWidget extends InputWidget
 {
@@ -74,9 +73,9 @@ class FancytreeWidget extends InputWidget
     /**
      * @var array List of active extensions
      */
-    public $extensions = ['childcounter','glyph'];
+    public $extensions = [];
     /**
-     * @var array Animation options, null:off Gutavo ex fx
+     * @var array Animation options, null:off gudezi change property fx by deprecated
      */
     public $toggleEffect = ['height' => 'toggle', 'duration' => 200];
     /**
@@ -84,7 +83,7 @@ class FancytreeWidget extends InputWidget
      */
     public $generateIds = true;
     /**
-     * @var bool Display node icons gustavo ex icons
+     * @var bool Display node icons gudezi chanche property icons by deprecated
      */
     public $icon = true;
     /**
@@ -136,14 +135,50 @@ class FancytreeWidget extends InputWidget
      */
     public $strings;
     /**
-     * @var bool Add tabindex='0' to container, so tree can be reached using TAB Gustavo ex tabbable
+     * @var bool Add tabindex='0' to container, so tree can be reached using TAB gudezi chenge property tabbable by deprecated
      */
     public $tabindex = 0;
     /**
      * @var bool Add tabindex='0' to node title span, so it can receive keyboard focus
      */
     public $titlesTabbable = false;
-
+    /**
+     * @var bool show button expand all add by gudezi
+     */
+    public $btnExpandAll = false;
+    /**
+     * @var bool show button collapse all add by gudezi
+     */
+    public $btnCollapseAll = false;
+    /**
+     * @var bool show button toggle expand add by gudezi
+     */
+    public $btnToggleExpand = false;
+    /**
+     * @var bool show button select all add by gudezi
+     */
+    public $btnSelectAll = false;
+    /**
+     * @var bool show button unselect all add by gudezi
+     */
+    public $btnUnselectAll = false;
+    /**
+     * @var bool show button toggle select add by gudezi
+     */
+    public $btnToggleSelect = false;
+    /**
+     * @var bool show child counter add by gudezi
+     */
+    public $childcounter = false;
+    /**
+     * @var bool show glyph icons add by gudezi
+     */
+    public $glyph = false;
+    /**
+     * @var bool show filter add by gudezi
+     */
+    public $filter = false;
+    
     /**
      * @inheritdoc
      */
@@ -159,37 +194,28 @@ class FancytreeWidget extends InputWidget
     public function registerAssets()
     {
         echo "<div>";
-		if (isset($this->options['isexpand'])) {
-            if($this->options['isexpand']){
-				echo "<button id='".$idPrefix."ExpandAll' class='btn btn-xs btn-primary'>Expand All</button>";
-			}
-		}
-		if (isset($this->options['iscollapse'])) {
-            if($this->options['iscollapse']){
-				echo "<button id='".$idPrefix."CollapseAll' class='btn btn-xs btn-warning'>Collapse All</button>";
-			}
-		}
-		if (isset($this->options['istoggleexpand'])) {
-            if($this->options['istoggleexpand']){
-				echo "<button id='".$idPrefix."ToggleExpand' class='btn btn-xs btn-info'>Toggle Expand</button>";
-			}
-		}
-		if (isset($this->options['issetall']) && $this->selectMode == self::SELECT_MULTI) {
-            if($this->options['issetall']){
-				echo "<button id='".$idPrefix."SetAll' class='btn btn-xs btn-primary'>Select All</button>";
-			}
-		}
-		if (isset($this->options['isunsetall']) && $this->selectMode == self::SELECT_MULTI) {
-            if($this->options['isunsetall']){
-				echo "<button id='".$idPrefix."UnsetAll' class='btn btn-xs btn-warning'>Unselect All</button>";
-			}
-		}
-		if (isset($this->options['istoggleselect']) && $this->selectMode == self::SELECT_MULTI) {
-            if($this->options['istoggleselect']){
-				echo "<button id='".$idPrefix."ToggleSelect' class='btn btn-xs btn-info'>Toggle Select</button>";
-			}
-		}
+        if($this->filter){
+            echo "<label>Filter:</label><input name='".$idPrefix."search' id='".$idPrefix."search' placeholder='Filter...' autocomplete='off'><button id='".$idPrefix."btnResetSearch'>&times;</button><span id='".$idPrefix."matches'></span>";
+        }
+ 		echo "</div>";
+
+        echo "<div>";
+        if($this->btnExpandAll)	echo "<button id='".$idPrefix."btnExpandAll' class='btn btn-xs btn-primary'>Expand All</button>";
+        
+        if($this->btnCollapseAll) echo "<button id='".$idPrefix."btnCollapseAll' class='btn btn-xs btn-warning'>Collapse All</button>";
+
+        if($this->btnToggleExpand) echo "<button id='".$idPrefix."btnToggleExpand' class='btn btn-xs btn-info'>Toggle Expand</button>";
+
+        if($this->btnSelectAll && $this->selectMode == self::SELECT_MULTI)
+            echo "<button id='".$idPrefix."btnSetAll' class='btn btn-xs btn-primary'>Select All</button>";
+
+        if($this->btnUnselectAll && $this->selectMode == self::SELECT_MULTI)
+            echo "<button id='".$idPrefix."btnUnsetAll' class='btn btn-xs btn-warning'>Unselect All</button>";
+
+        if($this->btnToggleSelect && $this->selectMode == self::SELECT_MULTI)
+            echo "<button id='".$idPrefix."btnToggleSelect' class='btn btn-xs btn-info'>Toggle Select</button>";
 		echo "</div>";
+
         $view = $this->getView();
         
         FancytreeAsset::register($view);
@@ -200,29 +226,61 @@ class FancytreeWidget extends InputWidget
         } else {
             echo Html::tag('div', '', ['id' => $id]);
         }
-        $childcounter = array();
-        $childcounter["deep"]=true;
-        $childcounter["hideZeros"]=true;
-        $childcounter["hideExpanded"]=true;
         
-        $map = array();
-        $map['doc'] = "glyphicon glyphicon-file";
-        $map['docOpen'] = "glyphicon glyphicon-file";
-        $map['checkbox'] = "glyphicon glyphicon-unchecked";
-        $map['checkboxSelected'] = "glyphicon glyphicon-check";
-        $map['checkboxUnknown'] = "glyphicon glyphicon-share";
-        $map['dragHelper'] = "glyphicon glyphicon-play";
-        $map['dropMarker'] = "glyphicon glyphicon-arrow-right";
-        $map['error'] = "glyphicon glyphicon-warning-sign";
-        $map['expanderClosed'] = "glyphicon glyphicon-menu-right";
-        $map['expanderLazy'] = "glyphicon glyphicon-menu-right";  // glyphicon-plus-sign
-        $map['expanderOpen'] = "glyphicon glyphicon-menu-down";  // glyphicon-collapse-down
-        $map['folder'] = "glyphicon glyphicon-folder-close";
-        $map['folderOpen'] = "glyphicon glyphicon-folder-open";
-        $map['loading'] = "glyphicon glyphicon-refresh glyphicon-spin";
-      
-        $glyph_opts = array();
-        $glyph_opts['map']=$map;
+        if($this->childcounter)
+        {
+            if(array_search('childcounter',$this->extensions)<1)
+            {
+                array_push($this->extensions,'childcounter');
+            }
+            $childcounter = array();
+            $childcounter["deep"]=true;
+            $childcounter["hideZeros"]=true;
+            $childcounter["hideExpanded"]=true;
+        }
+        if($this->glyph)
+        {
+            if(array_search('glyph',$this->extensions)<1)
+            {
+                array_push($this->extensions,'glyph');
+            }
+            $map = array();
+            $map['doc'] = "glyphicon glyphicon-file";
+            $map['docOpen'] = "glyphicon glyphicon-file";
+            $map['checkbox'] = "glyphicon glyphicon-unchecked";
+            $map['checkboxSelected'] = "glyphicon glyphicon-check";
+            $map['checkboxUnknown'] = "glyphicon glyphicon-share";
+            $map['dragHelper'] = "glyphicon glyphicon-play";
+            $map['dropMarker'] = "glyphicon glyphicon-arrow-right";
+            $map['error'] = "glyphicon glyphicon-warning-sign";
+            $map['expanderClosed'] = "glyphicon glyphicon-menu-right";
+            $map['expanderLazy'] = "glyphicon glyphicon-menu-right";  // glyphicon-plus-sign
+            $map['expanderOpen'] = "glyphicon glyphicon-menu-down";  // glyphicon-collapse-down
+            $map['folder'] = "glyphicon glyphicon-folder-close";
+            $map['folderOpen'] = "glyphicon glyphicon-folder-open";
+            $map['loading'] = "glyphicon glyphicon-refresh glyphicon-spin";
+          
+            $glyph_opts = array();
+            $glyph_opts['map']=$map;
+        }
+        if($this->filter)
+        {
+            if(array_search('filter',$this->extensions)<1)
+            {
+                array_push($this->extensions,'filter');
+            }
+            $this->quicksearch = true;
+
+            $filter = array();
+            $filter["autoExpand"]=true;
+            $filter["leavesOnly"]=true;
+            $filter["autoApply"]=true; // Re-apply last filter if lazy data is loaded
+            $filter["counter"]=true; // Show a badge with number of matching child nodes near parent icons
+            $filter["fuzzy"]=false; // Match single characters in order, e.g. 'fb' will match 'FooBar'
+            $filter["hideExpandedCounter"]=true;// Hide counter badge, when parent is expanded
+            $filter["highlight"]=true; // Highlight matches by wrapping inside <mark> tags
+            $filter["mode"]="dimm"; // Grayout unmatched nodes (pass "hide" to remove unmatched node instead)
+        }
         
         $options = Json::encode(ArrayHelper::merge([
             'activeVisible' => $this->activeVisible,
@@ -256,61 +314,49 @@ class FancytreeWidget extends InputWidget
             'titlesTabbable' => $this->titlesTabbable,
             'childcounter' => $childcounter,
             'glyph' => $glyph_opts,
+            'filter' => $filter,
         ], $this->options));
         $view->registerJs('$("#' . $id . '").fancytree( ' . $options . ')');
         if ($this->hasModel() || $this->name !== null) {
             $name = $this->hasModel() ? Html::getInputName($this->model, $this->attribute) : $this->name;
-            //$name = Html::getInputName($this->model, $this->attribute);
+
 			if($this->selectMode != self::SELECT_SINGLE)
 				$name = $name.'[]';
-            $selected = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : "\"{$name}\"";
+
             //$selected = $this->selectMode == self::SELECT_SINGLE ? 'undefined' : "\"{$name}\"";
+            $selected = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : "\"{$name}\"";
             //$active = $this->selectMode == self::SELECT_SINGLE ? "\"{$name}\"" : 'undefined';
             $active = 'undefined';
             //$active = $this->selectMode == self::SELECT_SINGLE ? $name : 'undefined';
             
-            //$selected=$name.'[]';
-            //print_r($selected);die;
-            //$selected = "Rol[operaciones]";
+            if($this->btnExpandAll)
+                $view->registerJs('$("#'.$idPrefix.'btnExpandAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(true);});});');
             
-			if (isset($this->options['isexpand'])) {
-				if($this->options['isexpand']){
-					$view->registerJs('$("#'.$idPrefix.'ExpandAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(true);});});');
-				}
-			}
-            
-			if (isset($this->options['iscollapse'])) {
-				if($this->options['iscollapse']){
-					$view->registerJs('$("#'.$idPrefix.'CollapseAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(false);});});');
-				}
-			}
+            if($this->btnCollapseAll)
+                $view->registerJs('$("#'.$idPrefix.'btnCollapseAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.setExpanded(false);});});');
 
-			if (isset($this->options['istoggleexpand'])) {
-				if($this->options['istoggleexpand']){
-					$view->registerJs('$("#'.$idPrefix.'ToggleExpand").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleExpanded();});});');
-				}
+			if($this->btnToggleExpand)
+				$view->registerJs('$("#'.$idPrefix.'btnToggleExpand").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleExpanded();});});');
+            
+            if($this->btnSelectAll && $this->selectMode == self::SELECT_MULTI)
+                $view->registerJs('$("#'.$idPrefix.'btnSetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(true);});});');
+        
+            if($this->btnUnselectAll && $this->selectMode == self::SELECT_MULTI)
+                $view->registerJs('$("#'.$idPrefix.'btnUnsetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(false);});});');
+
+            if($this->btnToggleSelect && $this->selectMode == self::SELECT_MULTI)
+                $view->registerJs('$("#'.$idPrefix.'btnToggleSelect").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleSelected();});});');
+
+			if($this->filter){
+                $view->registerJs('$("#'.$idPrefix.'search").keyup(function(e){e.preventDefault(); var n,opts = {autoExpand:'.$filter["autoExpand"].',leavesOnly: '.$filter["leavesOnly"].'},match = $(this).val();if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){$("#'.$idPrefix.'btnResetSearch").click();return;}n = $("#' . $id . '").fancytree("getTree").filterNodes(match, opts);$("#'.$idPrefix.'btnResetSearch").attr("disabled", false);$("#'.$idPrefix.'matches").text("(" + n + " matches)");}).focus();');
+                
+                $view->registerJs('$("#'.$idPrefix.'btnResetSearch").click(function(e){e.preventDefault();$("#'.$idPrefix.'search").val("");$("#'.$idPrefix.'matches").text("");$("#' . $id . '").fancytree("getTree").clearFilter();}).attr("disabled", true);');
             }
             
-			if (isset($this->options['issetall']) && $this->selectMode == self::SELECT_MULTI) {
-				if($this->options['issetall']){
-					$view->registerJs('$("#'.$idPrefix.'SetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(true);});});');
-				}
-			}
-            
-			if (isset($this->options['isunsetall']) && $this->selectMode == self::SELECT_MULTI) {
-				if($this->options['isunsetall']){
-					$view->registerJs('$("#'.$idPrefix.'UnsetAll").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getTree").visit(function(node){node.setSelected(false);});});');
-				}
-			}
-
-			if (isset($this->options['istoggleselect']) && $this->selectMode == self::SELECT_MULTI) {
-				if($this->options['istoggleselect']){
-					$view->registerJs('$("#'.$idPrefix.'ToggleSelect").click(function(event){event.preventDefault(); $("#'.$id.'").fancytree("getRootNode").visit(function(node){node.toggleSelected();});});');
-				}
-            }
-
             $view->registerJs('$("#' . $id . '").parents("form").submit(function(){$("#' . $id . '").fancytree("getTree").generateFormElements(' . $selected . ', ' . $active . ')});');
+            
             $idfield = $this->idfield; 
+            
             if (!empty($this->parent && $this->model->$idfield)) {
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$idfield . '");');
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');

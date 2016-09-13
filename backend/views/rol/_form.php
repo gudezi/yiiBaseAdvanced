@@ -47,9 +47,15 @@ use andru19\fancytree\FancytreeWidget;
             'checkbox' => true,
             //'idfield' => 'id_menu',
             //'parent' => 'padre', //$id, // parent category id (if exist)
-            'options' => [// 'checkbox' => true, 
-                        //'id' => 'gus',
-                        //'selectmode' => '1',
+            'btnExpandAll' => true,
+            'btnCollapseAll' => true,
+            'btnToggleExpand' => true,
+            'btnSelectAll' => true,
+            'btnUnselectAll' => true,
+            'btnToggleSelect' => true,
+            'childcounter' => true,
+            'glyph'=> true,
+            'options' => [//'id' => 'gus',
             ],
         ]); 
     ?>
