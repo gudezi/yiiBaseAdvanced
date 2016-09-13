@@ -70,7 +70,7 @@ class MenuController extends Controller
             if (!isset($_POST['Rol']['padre'])) {
                 $model->padre = [];
             }            
-            echo "<Pre>";print_r($_POST);die;
+            //echo "<Pre>";print_r($_POST);die;
             if($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id_menu]);
             }
@@ -104,7 +104,7 @@ class MenuController extends Controller
             if (!isset($_POST['Rol']['padre'])) {
                 $model->padre = [];
             }
-            echo "<Pre>";print_r($_POST);die;
+            //echo "<Pre>";print_r($_POST);die;
             if($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id_menu]);
             }

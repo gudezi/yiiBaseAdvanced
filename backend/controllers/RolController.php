@@ -68,8 +68,14 @@ class RolController extends Controller
         $model = new Rol();
         $tipoOperaciones = Operacion::find()->all();
      
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()){
+            if (!isset($_POST['Rol']['operaciones'])){
+                $model->operaciones = [];
+            }
+            //echo "<Pre>";print_r($_POST);die;
+            if($model->save()){
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -107,7 +113,7 @@ class RolController extends Controller
             if (!isset($_POST['Rol']['operaciones'])) {
                 $model->operaciones = [];
             }
-            echo "<Pre>";print_r($_POST);die;
+            //echo "<Pre>";print_r($_POST);die;
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
