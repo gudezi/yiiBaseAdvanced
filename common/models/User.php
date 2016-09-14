@@ -214,4 +214,12 @@ class User extends ActiveRecord implements IdentityInterface
             return $profile->nombre.' '.$profile->apellido;
         return false;
     }
+
+    public function getProfile()
+    {
+        $profile = Profile::find()->where(['id'=>$this->id])->one();
+        if ($profile !==null)
+            return $profile;
+        return new Profile();
+    }
 }

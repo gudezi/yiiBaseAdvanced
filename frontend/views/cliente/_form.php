@@ -28,7 +28,7 @@ use frontend\models\Localidades;
 
     <?//= $form->field($model, 'localidad_id')->textInput() ?>
     <?php
-        $provincia = ArrayHelper::map(Provincias::find()->all(), 'provincia_id', 'provincia');
+        $provincia = ArrayHelper::map(Provincias::find()->all(), 'id', 'descripcion');
         echo $form->field($model, 'provincia_id')->dropDownList(
         $provincia,
             [
@@ -54,13 +54,14 @@ use frontend\models\Localidades;
                         );
                     '
     ]
-    ); ?>;
+    ); ?>
     <?php
     if ($model->isNewRecord)
         echo $form->field($model, 'localidad_id')->dropDownList(['prompt'=>'Por favor elija una']);
     else
     {
-        $localidad = ArrayHelper::map(Localidades::find()->where(['localidad_id' =>$model->localidad_id])->all(), 'localidad_id', 'localidad');
+        //$localidad = ArrayHelper::map(Localidades::find()->where(['localidad_id' =>$model->localidad_id])->all(), 'localidad_id', 'localidad');
+        $localidad = ArrayHelper::map(Localidades::find()->where(['id' =>$model->localidad_id])->all(), 'id', 'descripcion');
         echo $form->field($model, 'localidad_id')->dropDownList($localidad);
     }
 ?>

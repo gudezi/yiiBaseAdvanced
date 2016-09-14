@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "provincias".
  *
- * @property integer $provincia_id
- * @property string $provincia
+ * @property integer $id
+ * @property string $descripcion
  */
 class Provincias extends \yii\db\ActiveRecord
 {
@@ -26,7 +26,7 @@ class Provincias extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['provincia'], 'string', 'max' => 55],
+            [['descripcion'], 'string', 'max' => 55],
         ];
     }
 
@@ -36,8 +36,8 @@ class Provincias extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'provincia_id' => 'Provincia ID',
-            'provincia' => 'Provincia',
+            'id' => 'ID',
+            'descripcion' => 'Descripcion',
         ];
     }
 }

@@ -98,6 +98,9 @@ class MenuController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        
+        //$kk=Yii::$app->user->identity->profile->calle;
+        //echo "<pre>";print_r($kk);die;
 
         if ($model->load(Yii::$app->request->post())) 
         {

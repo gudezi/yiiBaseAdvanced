@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "localidades".
  *
- * @property integer $localidad_id
- * @property string $localidad
+ * @property integer $id
+ * @property string $descripcion
  * @property integer $departamento_id
  */
 class Localidades extends \yii\db\ActiveRecord
@@ -27,9 +27,9 @@ class Localidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['localidad', 'departamento_id'], 'required'],
+            [['descripcion', 'departamento_id'], 'required'],
             [['departamento_id'], 'integer'],
-            [['localidad'], 'string', 'max' => 255],
+            [['descripcion'], 'string', 'max' => 255],
         ];
     }
 
@@ -39,9 +39,9 @@ class Localidades extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'localidad_id' => 'Localidad ID',
-            'localidad' => 'Localidad',
-            'departamento_id' => 'Departamento ID',
+            'id' => 'ID',
+            'descripcion' => 'Descripcion',
+            'departamento_id' => 'Departamento',
         ];
     }
 }

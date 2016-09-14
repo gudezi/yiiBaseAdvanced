@@ -13,17 +13,18 @@ use Yii;
  * @property string $perfil
  * @property integer $grupo
  * @property integer $entidad
+ * @property integer $empresa
  * @property string $calle
  * @property string $numero
  * @property string $piso
  * @property string $depto
- * @property integer $id_pais
- * @property integer $id_provincia
- * @property string $id_localidad
+ * @property integer $pais_id
+ * @property integer $provincia_id
+ * @property integer $partido_id
+ * @property integer $localidad_id
  * @property string $coordenadas
  * @property string $telefono
- * @property string $mail
- * @property integer $id_empresa
+ * @property string $celular
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -41,15 +42,14 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id', 'grupo', 'entidad', 'id_pais', 'id_provincia', 'id_empresa'], 'integer'],
+            [['id', 'apellido', 'nombre'], 'required'],
+            [['id', 'grupo', 'entidad', 'empresa', 'pais_id', 'provincia_id', 'partido_id', 'localidad_id'], 'integer'],
             [['apellido', 'nombre', 'calle', 'coordenadas'], 'string', 'max' => 30],
             [['perfil'], 'string', 'max' => 15],
             [['numero'], 'string', 'max' => 8],
             [['piso'], 'string', 'max' => 3],
             [['depto'], 'string', 'max' => 5],
-            [['id_localidad'], 'string', 'max' => 20],
-            [['telefono', 'mail'], 'string', 'max' => 100],
+            [['telefono', 'celular'], 'string', 'max' => 100],
         ];
     }
 
@@ -65,17 +65,18 @@ class Profile extends \yii\db\ActiveRecord
             'perfil' => 'Perfil',
             'grupo' => 'Grupo',
             'entidad' => 'Entidad',
+            'empresa' => 'Empresa',
             'calle' => 'Calle',
             'numero' => 'Numero',
             'piso' => 'Piso',
             'depto' => 'Depto',
-            'id_pais' => 'Id Pais',
-            'id_provincia' => 'Id Provincia',
-            'id_localidad' => 'Id Localidad',
+            'pais_id' => 'Pais ID',
+            'provincia_id' => 'Provincia ID',
+            'partido_id' => 'Partido ID',
+            'localidad_id' => 'Localidad ID',
             'coordenadas' => 'Coordenadas',
             'telefono' => 'Telefono',
-            'mail' => 'Mail',
-            'id_empresa' => 'Id Empresa',
+            'celular' => 'Celular',
         ];
     }
 }

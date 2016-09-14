@@ -16,11 +16,11 @@ class DependentDropdownController extends Controller
 	}
 
     public function actionDepartamento($id){
-        echo HtmlHelpers::dropDownList(Departamentos::className(), 'provincia_id', $id, 'departamento_id', 'departamento');
+        echo HtmlHelpers::dropDownList(Departamentos::className(), 'provincia_id', $id, 'id', 'descripcion');
     }
 
     public function actionLocalidad($id){
-        echo HtmlHelpers::dropDownList(Localidades::className(), 'departamento_id', $id, 'localidad_id', 'localidad');
+        echo HtmlHelpers::dropDownList(Localidades::className(), 'departamento_id', $id, 'id', 'descripcion');
     }
 }
 ?>

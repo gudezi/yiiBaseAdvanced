@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "departamentos".
  *
- * @property integer $departamento_id
- * @property string $departamento
+ * @property integer $id
+ * @property string $descripcion
  * @property integer $provincia_id
  */
 class Departamentos extends \yii\db\ActiveRecord
@@ -27,9 +27,9 @@ class Departamentos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['departamento', 'provincia_id'], 'required'],
+            [['descripcion', 'provincia_id'], 'required'],
             [['provincia_id'], 'integer'],
-            [['departamento'], 'string', 'max' => 100],
+            [['descripcion'], 'string', 'max' => 100],
         ];
     }
 
@@ -39,9 +39,9 @@ class Departamentos extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'departamento_id' => 'Departamento ID',
-            'departamento' => 'Departamento',
-            'provincia_id' => 'Provincia ID',
+            'id' => 'ID',
+            'descripcion' => 'Descripcion',
+            'provincia_id' => 'Provincia',
         ];
     }
 }
