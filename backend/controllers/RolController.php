@@ -68,7 +68,7 @@ class RolController extends Controller
         $model = new Rol();
         $tipoOperaciones = Operacion::find()->all();
      
-        if ($model->load(Yii::$app->request->post()){
+        if ($model->load(Yii::$app->request->post())){
             if (!isset($_POST['Rol']['operaciones'])){
                 $model->operaciones = [];
             }
