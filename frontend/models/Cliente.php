@@ -19,7 +19,7 @@ class Cliente extends \yii\db\ActiveRecord
 {
     public $provincia_id;
  
-    public $departamento_id;
+    public $partido_id;
     /**
      * @inheritdoc
      */
@@ -54,7 +54,7 @@ class Cliente extends \yii\db\ActiveRecord
         'fecha_nacimiento' => 'Fecha Nacimiento',
         'domicilio' => 'Domicilio',
         'provincia_id' => 'Provincia',
-        'departamento_id' => 'Departamento',
+        'partido_id' => 'Partido',
         'localidad_id' => 'Localidad',
         ];
     }

@@ -5,8 +5,9 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use frontend\models\Provincias;
-use frontend\models\Departamentos;
+use frontend\models\Partidos;
 use frontend\models\Localidades;
+use kartik\depdrop\DepDrop;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Cliente */
 /* @var $form yii\widgets\ActiveForm */
@@ -29,21 +30,33 @@ use frontend\models\Localidades;
     <?//= $form->field($model, 'localidad_id')->textInput() ?>
     <?php
         $provincia = ArrayHelper::map(Provincias::find()->all(), 'id', 'descripcion');
-        echo $form->field($model, 'provincia_id')->dropDownList(
+        //echo $form->field($model, 'cat')->dropDownList($catList, ['id'=>'cat-id']);
+        echo $form->field($model, 'provincia_id')->dropDownList($provincia, ['id'=>'provincia-id']);
+        
+        /*echo $form->field($model, 'provincia_id')->dropDownList(
         $provincia,
             [
             'prompt'=>'Por favor elija una',
             'onchange'=>'
-                        $.get( "'.Url::toRoute('dependent-dropdown/departamento').'", { id: $(this).val() } )
+                        $.get( "'.Url::toRoute('dependent-dropdown/partido').'", { id: $(this).val() } )
                             .done(function( data ) {
-                                $( "#'.Html::getInputId($model, 'departamento_id').'" ).html( data );
+                                $( "#'.Html::getInputId($model, 'partido_id').'" ).html( data );
                             }
                         );
                     '
             ]
-        );
+        );*/
     ?>
-    <?php echo $form->field($model, 'departamento_id')->dropDownList(array(),
+    <?php 
+    echo $form->field($model, 'partido_id')->widget(DepDrop::classname(), [
+     'options' => ['id'=>'partido-id'],
+     'pluginOptions'=>[
+         'depends'=>['provincia-id'],
+         'placeholder' => 'Select...',
+         'url' => Url::to(['dependent-dropdown/partido'])
+     ]
+    ]);
+    /*echo $form->field($model, 'partido_id')->dropDownList(array(),
     [
         'prompt'=>'Por favor elija uno',
         'onchange'=>'
@@ -54,16 +67,23 @@ use frontend\models\Localidades;
                         );
                     '
     ]
-    ); ?>
+    );*/
+    ?>
     <?php
-    if ($model->isNewRecord)
+    echo $form->field($model, 'localidad_id')->widget(DepDrop::classname(), [
+    'pluginOptions'=>[
+        'depends'=>['provincia-id', 'partido-id'],
+        'placeholder'=>'Select...',
+        'url'=>Url::to(['dependent-dropdown/localidad'])
+    ]
+    ]);
+    /*if ($model->isNewRecord)
         echo $form->field($model, 'localidad_id')->dropDownList(['prompt'=>'Por favor elija una']);
     else
     {
-        //$localidad = ArrayHelper::map(Localidades::find()->where(['localidad_id' =>$model->localidad_id])->all(), 'localidad_id', 'localidad');
         $localidad = ArrayHelper::map(Localidades::find()->where(['id' =>$model->localidad_id])->all(), 'id', 'descripcion');
         echo $form->field($model, 'localidad_id')->dropDownList($localidad);
-    }
+    }*/
 ?>
 
     <div class="form-group">

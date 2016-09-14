@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $descripcion
- * @property integer $departamento_id
+ * @property integer $partido_id
  */
 class Localidades extends \yii\db\ActiveRecord
 {
@@ -27,8 +27,8 @@ class Localidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['descripcion', 'departamento_id'], 'required'],
-            [['departamento_id'], 'integer'],
+            [['descripcion', 'partido_id'], 'required'],
+            [['partido_id'], 'integer'],
             [['descripcion'], 'string', 'max' => 255],
         ];
     }
@@ -41,7 +41,7 @@ class Localidades extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'descripcion' => 'Descripcion',
-            'departamento_id' => 'Departamento',
+            'partido_id' => 'Partido',
         ];
     }
 }
