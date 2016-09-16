@@ -11,11 +11,14 @@ namespace common\models;
 
 class HtmlHelpers {
 
-    public static function dropDownList($model, $parent_model_id, $id, $value, $string)
+    public static function dropDownList($model, $parent_model_id, $id, $value, $string, $prompt='')
     {
         $rows = $model::find()->where([$parent_model_id => $id])->all();
 
-        $droptions = "<option>Please Choose One</option>";
+        if($prompt=='')
+            $droptions = "<option>Please Choose One</option>";
+        else
+            $droptions = "<option>".$prompt."</option>";
 
         if(count($rows)>0){
             foreach($rows as $row){

@@ -37,7 +37,6 @@ use frontend\models\Localidades;
                         $.get( "'.Url::toRoute('dependent-dropdown/partido').'", { id: $(this).val() } )
                             .done(function( data ) {
                                 $( "#'.Html::getInputId($model, 'partido_id').'" ).html( data );
-								$( "#'.Html::getInputId($model, 'localidad_id').'" ).html( "");
                             }
                         );
                     '
@@ -70,7 +69,7 @@ use frontend\models\Localidades;
     else
     {
         $localidad = ArrayHelper::map(Localidades::find()->where(['partido_id' =>$model->partido_id])->all(), 'id', 'descripcion');
-        echo $form->field($model, 'localidad_id')->dropDownList($localidad);
+        echo $form->field($model, 'localidad_id')->dropDownList($localidad,['prompt'=>'Por favor elija una']);
     }
 ?>
 

@@ -16,7 +16,7 @@ class DependentDropdownController extends Controller
 	}
 
     public function actionPartido($id){
-        echo HtmlHelpers::dropDownList(Partidos::className(), 'provincia_id', $id, 'id', 'descripcion');
+        echo HtmlHelpers::dropDownList(Partidos::className(), 'provincia_id', $id, 'id', 'descripcion', 'Por favor elija uno');
     }
 
     /*public function actionPartido(){
@@ -47,7 +47,7 @@ class DependentDropdownController extends Controller
     echo Json::encode(['output'=>'', 'selected'=>'']);    }*/
 
     public function actionLocalidad($id){
-        echo HtmlHelpers::dropDownList(Localidades::className(), 'partido_id', $id, 'id', 'descripcion');
+        echo HtmlHelpers::dropDownList(Localidades::className(), 'partido_id', $id, 'id', 'descripcion','Por favor elija una');
     }
     
     /*public function actionLocalidad(){
