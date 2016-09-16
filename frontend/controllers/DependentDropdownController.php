@@ -1,6 +1,4 @@
 <?php
-
-
 namespace frontend\controllers;
 
 use yii\web\Controller;
@@ -17,14 +15,15 @@ class DependentDropdownController extends Controller
 		$this->render('index');
 	}
 
-/*    public function actionPartido($id){
+    public function actionPartido($id){
         echo HtmlHelpers::dropDownList(Partidos::className(), 'provincia_id', $id, 'id', 'descripcion');
-    }*/
+    }
 
-    public function actionPartido(){
+    /*public function actionPartido(){
     $out = [];
     if (isset($_POST['depdrop_parents'])) {
         $parents = $_POST['depdrop_parents'];
+		//echo "<pre>";print_r($_POST);
         if ($parents != null) {
             $provincia_id = $parents[0];
             
@@ -41,20 +40,23 @@ class DependentDropdownController extends Controller
             //    ['id'=>'<sub-cat-id-1>', 'name'=>'<sub-cat-name1>'],
             //    ['id'=>'<sub-cat_id_2>', 'name'=>'<sub-cat-name2>']
             // ]
-            echo Json::encode(['output'=>$out, 'selected'=>'117']);
+            echo Json::encode(['output'=>$out, 'selected'=>'']);
             return;
         }
     }
-    echo Json::encode(['output'=>'', 'selected'=>'117']);    }
+    echo Json::encode(['output'=>'', 'selected'=>'']);    }*/
 
-    /*public function actionLocalidad($id){
+    public function actionLocalidad($id){
         echo HtmlHelpers::dropDownList(Localidades::className(), 'partido_id', $id, 'id', 'descripcion');
-    }*/
+    }
     
-    public function actionLocalidad(){
+    /*public function actionLocalidad(){
     $out = [];
+	//d($_POST);
+	//echo "<pre>";print_r($_POST);
     if (isset($_POST['depdrop_parents'])) {
         $ids = $_POST['depdrop_parents'];
+		//echo "<pre>";print_r($_POST);
         $provincia_id = empty($ids[0]) ? null : $ids[0];
         $partido_id = empty($ids[1]) ? null : $ids[1];
         if ($provincia_id != null) {
@@ -80,12 +82,12 @@ class DependentDropdownController extends Controller
              *  ]
              */
            
-           echo Json::encode(['output'=>$data['out'], 'selected'=>$data['selected']]);
+           /*echo Json::encode(['output'=>$data['out'], 'selected'=>$data['selected']]);
            return;
         }
     }
-    echo Json::encode(['output'=>'', 'selected'=>'342']);
-    }
+    echo Json::encode(['output'=>'', 'selected'=>'']);
+    }*/
     
 }
 ?>

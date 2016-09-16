@@ -86,8 +86,9 @@ class ClienteController extends BaseController //Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-			//$model->provincia_id = 2;
-			//$model->partido_id = 117;
+			$model->provincia_id = 2;
+			$model->partido_id = 117;
+			//$model->localidad_id = 342;
             return $this->render('update', [
                 'model' => $model,
             ]);
