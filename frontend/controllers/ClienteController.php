@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Cliente;
+use frontend\models\Localidades;
+use frontend\models\Partidos;
 use frontend\models\search\ClienteSearch;
 //use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -86,8 +88,8 @@ class ClienteController extends BaseController //Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-			$model->provincia_id = 2;
-			$model->partido_id = 117;
+			$model->partido_id = Localidades::getPartidoId($model->localidad_id);
+			$model->provincia_id = Partidos::getProvinciaId($model->partido_id);
 			//$model->localidad_id = 342;
             return $this->render('update', [
                 'model' => $model,

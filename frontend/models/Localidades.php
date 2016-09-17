@@ -44,4 +44,9 @@ class Localidades extends \yii\db\ActiveRecord
             'partido_id' => 'Partido',
         ];
     }
+	
+	public static function getPartidoId($id)
+    {
+		return static::findOne(['id' => $id])->partido_id;
+    }
 }

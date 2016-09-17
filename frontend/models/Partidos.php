@@ -44,4 +44,9 @@ class Partidos extends \yii\db\ActiveRecord
             'provincia_id' => 'Provincia',
         ];
     }
+	
+	public static function getProvinciaId($id)
+    {
+		return static::findOne(['id' => $id])->provincia_id;
+    }
 }
