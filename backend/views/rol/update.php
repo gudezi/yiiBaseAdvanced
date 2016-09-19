@@ -9,6 +9,7 @@ $this->title = 'Update Rol: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Rols', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
+$action='default';
 ?>
 <div class="rol-update">
 
@@ -16,7 +17,8 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
-        'tipoOperaciones' => $tipoOperaciones
+        'listaOpciones' => $listaOpciones,
+        'action' => $action
     ]) ?>
 
 </div>

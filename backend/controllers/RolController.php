@@ -6,6 +6,9 @@ use Yii;
 use backend\models\Rol;
 use backend\models\search\RolSearch;
 use backend\models\Operacion;
+use backend\models\Usuario;
+use common\models\Menu;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -66,7 +69,7 @@ class RolController extends Controller
     public function actionCreate()
     {
         $model = new Rol();
-        $tipoOperaciones = Operacion::find()->all();
+        $listaOpciones = Operacion::find()->all();
      
         if ($model->load(Yii::$app->request->post())){
             if (!isset($_POST['Rol']['operaciones'])){
@@ -79,7 +82,7 @@ class RolController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'tipoOperaciones' => $tipoOperaciones,
+                'listaOpciones' => $listaOpciones,
             ]);
         }
         /*$model = new Rol();
@@ -102,7 +105,7 @@ class RolController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $tipoOperaciones = Operacion::find()->all();
+        $listaOpciones = Operacion::find()->all();
 
         $model->operaciones = \yii\helpers\ArrayHelper::getColumn(
             $model->getRolOperaciones()->asArray()->all(),
@@ -120,7 +123,7 @@ class RolController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'tipoOperaciones' => $tipoOperaciones,
+                'listaOpciones' => $listaOpciones,
             ]);
         }
     /*  $model = $this->findModel($id);
@@ -161,5 +164,58 @@ class RolController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    
+    public function actionUsuario($id)
+    {
+        $model = $this->findModel($id);
+        $listaOpciones = Usuario::find()->all();
+        $model->usuarios = \yii\helpers\ArrayHelper::getColumn(
+            $model->getRolUsuarios()->asArray()->all(),
+            'usuario_id'
+        );
+        //echo "<pre>";print_r($model->usuarios);print_r($listaOpciones);die;
+    
+        if ($model->load(Yii::$app->request->post())) {
+            if (!isset($_POST['Rol']['usuarios'])) {
+                $model->usuarios = [];
+            }
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            return $this->render('usuario', [
+                'model' => $model,
+                'listaOpciones' => $listaOpciones,
+            ]);
+        }
+    }
+    
+    public function actionMenu($id)
+    {
+        $model = $this->findModel($id);
+        //$listaOpciones = Menu::find()->all();
+        $listaOpciones = Menu::getTreeCheck();
+        $model->menues = \yii\helpers\ArrayHelper::getColumn(
+            $model->getRolMenues()->asArray()->all(),
+            'menu_id'
+        );
+        //echo "<pre>";print_r($model->usuarios);print_r($listaOpciones);die;
+    
+        if ($model->load(Yii::$app->request->post())) {
+            if (!isset($_POST['Rol']['menues'])) {
+                $model->menues = [];
+            }
+            //echo "<Pre>";print_r($_POST);die;
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            return $this->render('menu', [
+                'model' => $model,
+                'listaOpciones' => $listaOpciones,
+            ]);
+        }
+
     }
 }

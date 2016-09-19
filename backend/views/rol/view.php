@@ -32,13 +32,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre',
         ],
     ]) ?>
-   <h2>Operaciones Permitidas</h2>
- 
-   <?php
-    
-   foreach ($model->operacionesPermitidasList as $operacionPermitida) {
+    <h2>Operaciones Permitidas</h2>
+    <?php
+    foreach ($model->operacionesPermitidasList as $operacionPermitida) {
        echo $operacionPermitida['nombre'] . " - ";
-   }
- 
+    }
    ?>
+    <h2>Usuarios Permitidos</h2>
+    <?php
+    foreach ($model->usuariosPermitidosList as $usuariosPermitidos) {
+       echo $usuariosPermitidos['username'] . " - ";
+    }
+   ?>
+    <h2>Menues Permitidos</h2>
+    <?php
+    //print_r($model->menuesPermitidosList);die;
+    foreach ($model->menuesPermitidosList as $menuesPermitidos) {
+       echo $menuesPermitidos['descripcion'] . " - ";
+    }
+   ?>
+
 </div>
