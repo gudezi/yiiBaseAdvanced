@@ -25,6 +25,8 @@ use Yii;
  * @property string $coordenadas
  * @property string $telefono
  * @property string $celular
+ 
+ * @property Username $username0
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -78,5 +80,10 @@ class Profile extends \yii\db\ActiveRecord
             'telefono' => 'Telefono',
             'celular' => 'Celular',
         ];
+    }
+    
+    public function getUsername0()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id']);
     }
 }

@@ -30,12 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn',
             'template' => '{view} {delete} {update} {menu} {usuario}',
-                        'buttons' => [
+            'buttons' => [
                 'menu' => function ($url, $model, $key) {
                    //if($key == 1)
                    //{
                     return Html::a('<span class="glyphicon glyphicon-th-list"></span>', $url, [
-                                        'title' => Yii::t('yii', 'Menu'),
+                                        'title' => 'Menu',
                                 ]);                                
                    /*}
                    else
@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                    if($model->attributes['sexo'] == 2)
                    {*/
                     return Html::a('<span class="glyphicon glyphicon-user"></span>', $url, [
-                                        'title' => Yii::t('yii', 'Usuario'),
+                                        'title' => 'Usuario',
                                 ]);                                
                    /*}
                    else

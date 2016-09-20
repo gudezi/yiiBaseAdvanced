@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\search\UsuarioSearch */
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
+        <?//= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -34,9 +35,28 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'role',
             // 'created_at',
             // 'updated_at',
-            'rol_id',
+            //'rol_id',
+            ['class' => 'yii\grid\ActionColumn',
+            'template' => '{view} {delete} {profile} {rol} {permiso}',
+            'buttons' => [
+                'profile' => function ($url, $model, $key) {
+                    return Html::a('<span class="glyphicon glyphicon-user"></span>', $url, [
+                                        'title' => 'Profile',
+                                ]);                                
+                },
+                'rol' => function ($url, $model, $key) {
+                    return Html::a('<span class="glyphicon glyphicon-list-alt"></span>', $url, [
+                                        'title' => 'Rol',
+                                ]);                                
+                },
+                'permiso' => function ($url, $model, $key) {
+                    return Html::a('<span class="glyphicon glyphicon-tasks"></span>', $url, [
+                                        'title' => 'Permiso',
+                                ]);                                
+                }
 
-            ['class' => 'yii\grid\ActionColumn'],
+                ]
+            ]
         ],
     ]); ?>
 </div>
