@@ -76,9 +76,9 @@ class ProfileSearch extends Profile
             ->andFilterWhere(['like', 'numero', $this->numero])
             ->andFilterWhere(['like', 'piso', $this->piso])
             ->andFilterWhere(['like', 'depto', $this->depto])
-            ->andFilterWhere(['like', 'coordenadas', $this->coordenadas]);
-            //->andFilterWhere(['like', 'telefono', $this->telefono])
-            //->andFilterWhere(['like', 'celular', $this->celular]);
+            ->andFilterWhere(['like', 'coordenadas', $this->coordenadas])
+            ->andFilterWhere(['like', 'telefono', $this->telefono])
+            ->andFilterWhere(['like', 'celular', $this->celular]);
 
         return $dataProvider;
     }

@@ -42,4 +42,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <h2>Roles Permitidos</h2>
+    <?php
+    foreach ($model->rolesPermitidosList as $rolesPermitidos) {
+       echo $rolesPermitidos['nombre'] . " - ";
+    }
+   ?>
+    <h2>Operaciones Permitidas</h2>
+    <?php
+    foreach ($model->operacionesPermitidasList as $operacionesPermitidas) {
+       echo $operacionesPermitidas['nombre'] . " - ";
+    }
+   ?>
+    
 </div>

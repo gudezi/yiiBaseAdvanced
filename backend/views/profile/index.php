@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Profiles';
+$this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['..\usuario\index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-index">
@@ -28,7 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
                'value' => 'username0.username',
                'filter' => yii\helpers\ArrayHelper::map(common\models\user::find()->all(), 'id', 'username')
             ],
-            
             'apellido',
             'nombre',
             //'perfil',
@@ -44,9 +44,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'partido_id',
             // 'localidad_id',
             // 'coordenadas',
-            'telefono',
-            'celular',
-
+            ['attribute' => 'telefono','filter' => false],
+            ['attribute' => 'celular','filter' => false],
+            //'telefono',
+            //'celular',
             ['class' => 'yii\grid\ActionColumn',
             'template' => '{view}'
             ],

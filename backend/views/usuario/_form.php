@@ -2,36 +2,64 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use softark\duallistbox\DualListbox;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Usuario */
+/* @var $model backend\models\Rol */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="usuario-form">
+<div class="rol-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+    <? 
+        if($action == 'default')
+            echo $form->field($model, 'username')->textInput(['maxlength' => true]);
+        else     
+            echo $form->field($model, 'username')->textInput(['maxlength' => true, 'readonly' => true]);
+    ?>
 
-    <?= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'role')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'rol_id')->textInput() ?>
-
+    <?php
+    if($action == 'Rol'){
+        $opciones = \yii\helpers\ArrayHelper::map($listaOpciones, 'id', 'nombre');
+        
+        //echo $form->field($model, 'operaciones')->checkboxList($opciones, ['unselect'=>NULL]);
+        $options = [
+            'multiple' => true,
+            'size' => 10,
+        ];
+        // echo $form->field($model, $attribute)->listBox($items, $options);
+        echo $form->field($model, 'roles')->widget(DualListbox::className(),[
+            'items' => $opciones,
+            'options' => $options,
+            'clientOptions' => [
+                'moveOnSelect' => false,
+                'selectedListLabel' => 'Selected Items',
+                'nonSelectedListLabel' => 'Available Items',
+            ],
+        ]);
+    }elseif($action == 'permiso'){
+        $opciones = \yii\helpers\ArrayHelper::map($listaOpciones, 'id', 'nombre');
+        
+        //echo $form->field($model, 'permisos')->checkboxList($opciones, ['unselect'=>NULL]);
+        $options = [
+            'multiple' => true,
+            'size' => 10,
+        ];
+        // echo $form->field($model, $attribute)->listBox($items, $options);
+        echo $form->field($model, 'permisos')->widget(DualListbox::className(),[
+            'items' => $opciones,
+            'options' => $options,
+            'clientOptions' => [
+                'moveOnSelect' => false,
+                'selectedListLabel' => 'Selected Items',
+                'nonSelectedListLabel' => 'Available Items',
+            ],
+        ]);
+    }
+    
+    ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

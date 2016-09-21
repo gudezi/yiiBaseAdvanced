@@ -3,6 +3,10 @@
 namespace backend\models;
 
 use Yii;
+use common\models\Profile;
+use common\models\User;
+use backend\models\RolUsuario;
+use backend\models\UsuarioOperacion;
 
 /**
  * This is the model class for table "usuario".
@@ -21,6 +25,11 @@ use Yii;
  */
 class Usuario extends \yii\db\ActiveRecord
 {
+    
+    public $roles;
+    
+    public $permisos;
+    
     /**
      * @inheritdoc
      */
@@ -42,6 +51,7 @@ class Usuario extends \yii\db\ActiveRecord
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            [['roles','permisos'], 'safe'],
         ];
     }
 
@@ -63,5 +73,73 @@ class Usuario extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'rol_id' => 'Rol ID',
         ];
+    }
+    
+    public function afterSave($insert, $changedAttributes)
+    {
+        if(isset($this->roles))
+        {
+            \Yii::$app->db->createCommand()->delete('rol_usuario', 'usuario_id = '.(int) $this->id)->execute();
+            //echo "<pre>";print_r($this);die;
+            foreach ($this->roles as $id) {
+                $ru = new RolUsuario();
+                $ru->usuario_id = $this->id;
+                $ru->rol_id = $id;
+                $ru->save();
+            }
+        }
+        if(isset($this->permisos))
+        {
+            \Yii::$app->db->createCommand()->delete('usuario_operacion', 'usuario_id = '.(int) $this->id)->execute();
+            //echo "<pre>";print_r($this->permisos);die;
+            foreach ($this->permisos as $id) {
+                //echo $id."<br>";
+                $uo = new UsuarioOperacion();
+                $uo->usuario_id = $this->id;
+                $uo->operacion_id = $id;
+                $uo->save();
+            }
+            //die;
+        }
+    }
+    
+    public function getProfile()
+    {
+        $profile = Profile::find()->where(['id'=>$this->id])->one();
+        if ($profile !==null)
+            return $profile;
+        return false;
+    }
+    
+    public function getRolUsuarios()
+    {
+        return $this->hasMany(RolUsuario::className(), ['usuario_id' => 'id']);
+    }
+    
+    public function getRolesPermitidos()
+    {
+        return $this->hasMany(Rol::className(), ['id' => 'rol_id'])
+            ->viaTable('rol_usuario', ['usuario_id' => 'id']);
+    }
+ 
+    public function getRolesPermitidosList()
+    {
+        return $this->getRolesPermitidos()->asArray();
+    }
+
+    public function getUsuarioOperacion()
+    {
+        return $this->hasMany(UsuarioOperacion::className(), ['usuario_id' => 'id']);
+    }
+    
+    public function getOperacionesPermitidas()
+    {
+        return $this->hasMany(Operacion::className(), ['id' => 'operacion_id'])
+            ->viaTable('usuario_operacion', ['usuario_id' => 'id']);
+    }
+ 
+    public function getOperacionesPermitidasList()
+    {
+        return $this->getOperacionesPermitidas()->asArray();
     }
 }
