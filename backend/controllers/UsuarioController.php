@@ -7,10 +7,12 @@ use backend\models\Usuario;
 //use common\models\User;
 use backend\models\Rol;
 use backend\models\Operacion;
+use backend\models\RolOperacion;
 use backend\models\search\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
@@ -166,26 +168,28 @@ class UsuarioController extends Controller
         $rolarray[0]=0;
         foreach($model->rolesPermitidos as $roles)
             $rolarray[]=$roles->id;
-
-        //$listaOpciones = Operacion::find()->where(['id' => $rolarray]);
-        $listaOpciones = Operacion::find()->all();
         
-        //echo "<pre>";
-        //print_r($model->rolesPermitidos);
-        //print_r($rolarray);
-        //print_r($listaOpciones);
-        //die;
+        $rows = (new \yii\db\Query())
+            ->select(['operacion_id'])
+            ->distinct(true)
+            ->from('rol_operacion')
+            ->where(['rol_id' => $rolarray])
+            ->all();
+
+        $operacionarray[]=0;
+        foreach($rows as $row)
+            $operacionarray[] = $row['operacion_id'];
+
+        $listaOpciones = Operacion::find()->where(['id'=> $operacionarray])->all();
         
         $model->permisos = \yii\helpers\ArrayHelper::getColumn(
             $model->getUsuarioOperacion()->asArray()->all(),
             'operacion_id'
         );
-        //echo "<pre>";print_r($model->permisos);print_r($listaOpciones);die;
         if ($model->load(Yii::$app->request->post())) {
             if (!isset($_POST['Usuario']['permisos'])) {
                 $model->permisos = [];
             }
-            //echo "<pre>";print_r($model); die;
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }

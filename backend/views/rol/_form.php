@@ -36,8 +36,17 @@ use andru19\fancytree\FancytreeWidget;
             'options' => $options,
             'clientOptions' => [
                 'moveOnSelect' => false,
-                'selectedListLabel' => 'Selected Items',
-                'nonSelectedListLabel' => 'Available Items',
+                'selectedListLabel' => 'Operaciones Seleccionadas',
+                'nonSelectedListLabel' => 'Operaciones Disponibles',
+                'filterTextClear' => 'mostrar todo',
+                'filterPlaceHolder' => 'Filtro',
+                'moveSelectedLabel' => 'Mover seleccionado',
+                'moveAllLabel' => 'Mover todo',
+                'removeSelectedLabel' => 'Borrar seleccionado',
+                'removeAllLabel' => 'Borrar todo',
+                'infoText' => 'Mostrando todo {0}',
+                'infoTextFiltered' => '<span class="label label-warning">Filtrado</span> {0} de {1}',
+                'infoTextEmpty' => 'Lista Vacia',
             ],
         ]);
     }elseif($action == 'user'){
@@ -54,8 +63,17 @@ use andru19\fancytree\FancytreeWidget;
             'options' => $options,
             'clientOptions' => [
                 'moveOnSelect' => false,
-                'selectedListLabel' => 'Selected Items',
-                'nonSelectedListLabel' => 'Available Items',
+                'selectedListLabel' => 'Usuarios Seleccionados',
+                'nonSelectedListLabel' => 'usuarios Disponibles',
+                'filterTextClear' => 'mostrar todo',
+                'filterPlaceHolder' => 'Filtro',
+                'moveSelectedLabel' => 'Mover seleccionado',
+                'moveAllLabel' => 'Mover todo',
+                'removeSelectedLabel' => 'Borrar seleccionado',
+                'removeAllLabel' => 'Borrar todo',
+                'infoText' => 'Mostrando todo {0}',
+                'infoTextFiltered' => '<span class="label label-warning">Filtrado</span> {0} de {1}',
+                'infoTextEmpty' => 'Lista Vacia',
             ],
         ]);
     }elseif($action == 'menu'){
@@ -101,7 +119,7 @@ use andru19\fancytree\FancytreeWidget;
     
     ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

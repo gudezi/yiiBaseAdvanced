@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Usuario */
 
-$this->title = 'Update Usuario: ' . $model->id;
+$this->title = 'Permisos por Usuario: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Permisos';
+$this->params['breadcrumbs'][] = 'Permisos x Usuario';
 $action='permiso';
 ?>
 <div class="usuario-update">

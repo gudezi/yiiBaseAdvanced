@@ -37,6 +37,15 @@ use softark\duallistbox\DualListbox;
                 'moveOnSelect' => false,
                 'selectedListLabel' => 'Selected Items',
                 'nonSelectedListLabel' => 'Available Items',
+                'filterTextClear' => 'mostrar todo',
+                'filterPlaceHolder' => 'Filtro',
+                'moveSelectedLabel' => 'Mover seleccionado',
+                'moveAllLabel' => 'Mover todo',
+                'removeSelectedLabel' => 'Borrar seleccionado',
+                'removeAllLabel' => 'Borrar todo',
+                'infoText' => 'Mostrando todo {0}',
+                'infoTextFiltered' => '<span class="label label-warning">Filtrado</span> {0} de {1}',
+                'infoTextEmpty' => 'Lista Vacia',
             ],
         ]);
     }elseif($action == 'permiso'){
@@ -55,13 +64,22 @@ use softark\duallistbox\DualListbox;
                 'moveOnSelect' => false,
                 'selectedListLabel' => 'Selected Items',
                 'nonSelectedListLabel' => 'Available Items',
+                'filterTextClear' => 'mostrar todo',
+                'filterPlaceHolder' => 'Filtro',
+                'moveSelectedLabel' => 'Mover seleccionado',
+                'moveAllLabel' => 'Mover todo',
+                'removeSelectedLabel' => 'Borrar seleccionado',
+                'removeAllLabel' => 'Borrar todo',
+                'infoText' => 'Mostrando todo {0}',
+                'infoTextFiltered' => '<span class="label label-warning">Filtrado</span> {0} de {1}',
+                'infoTextEmpty' => 'Lista Vacia',
             ],
         ]);
     }
     
     ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -8,7 +8,7 @@ use yii\helpers\Url;
 /* @var $searchModel backend\models\search\RolSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Rols';
+$this->title = 'Roles';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="rol-index">
