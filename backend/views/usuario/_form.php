@@ -35,8 +35,8 @@ use softark\duallistbox\DualListbox;
             'options' => $options,
             'clientOptions' => [
                 'moveOnSelect' => false,
-                'selectedListLabel' => 'Selected Items',
-                'nonSelectedListLabel' => 'Available Items',
+                'selectedListLabel' => 'Roles Seleccionados',
+                'nonSelectedListLabel' => 'Roles Disponibles',
                 'filterTextClear' => 'mostrar todo',
                 'filterPlaceHolder' => 'Filtro',
                 'moveSelectedLabel' => 'Mover seleccionado',
@@ -62,8 +62,8 @@ use softark\duallistbox\DualListbox;
             'options' => $options,
             'clientOptions' => [
                 'moveOnSelect' => false,
-                'selectedListLabel' => 'Selected Items',
-                'nonSelectedListLabel' => 'Available Items',
+                'selectedListLabel' => 'Permisos Anulados',
+                'nonSelectedListLabel' => 'Permisos Activados',
                 'filterTextClear' => 'mostrar todo',
                 'filterPlaceHolder' => 'Filtro',
                 'moveSelectedLabel' => 'Mover seleccionado',
