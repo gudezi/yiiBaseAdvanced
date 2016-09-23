@@ -10,13 +10,14 @@ class AccessHelpers {
     public static function getAcceso($operacion)
     {
         $connection = \Yii::$app->db;
-        $sql = "SELECT DISTINCT o.nombre
-                FROM rol_usuario ru
-                INNER JOIN rol r ON r.id = ru.rol_id
-                INNER JOIN rol_operacion ro ON r.id = ro.rol_id
-                INNER JOIN operacion o ON o.id = ro.operacion_id
-                WHERE o.nombre =:operacion
-                AND ru.usuario_id =:user_id";
+        $sql = "SELECT nombre from (SELECT DISTINCT o.id, o.nombre
+                    FROM rol_usuario ru
+                    INNER JOIN rol r ON r.id = ru.rol_id
+                    INNER JOIN rol_operacion ro ON r.id = ro.rol_id
+                    INNER JOIN operacion o ON o.id = ro.operacion_id
+                    WHERE o.nombre =:operacion
+                    AND ru.usuario_id =:user_id) t1
+                WHERE id not in (SELECT operacion_id FROM usuario_operacion WHERE usuario_id =:user_id)";
         
         
         /*SELECT o.nombre

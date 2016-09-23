@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use karpoff\icrop\CropImageUploadBehavior;
 
 /**
  * This is the model class for table "profile".
@@ -52,9 +53,29 @@ class Profile extends \yii\db\ActiveRecord
             [['piso'], 'string', 'max' => 3],
             [['depto'], 'string', 'max' => 5],
             [['telefono', 'celular'], 'string', 'max' => 100],
-        ];
+			['photo', 'file', 'extensions' => 'png, jpeg, jpg, gif', 'on' => ['insert', 'update']],
+			[['photo_crop', 'photo_cropped'], 'string', 'max' => 100]        ];
     }
 
+    /**
+     * @inheritdoc
+     */
+	function behaviors()
+	{
+		return [
+			[
+				'class' => CropImageUploadBehavior::className(),
+				'attribute' => 'photo',
+				'scenarios' => ['insert', 'update'],
+				'path' => '@webroot/uploads',
+				'url' => '@web/uploads',
+				'ratio' => 1,
+				'crop_field' => 'photo_crop',
+				'cropped_field' => 'photo_cropped',
+			],
+		];
+	}
+    
     /**
      * @inheritdoc
      */
@@ -79,6 +100,7 @@ class Profile extends \yii\db\ActiveRecord
             'coordenadas' => 'Coordenadas',
             'telefono' => 'Telefono',
             'celular' => 'Celular',
+            'foto' => 'Foto',
         ];
     }
     
