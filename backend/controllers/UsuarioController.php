@@ -4,10 +4,15 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Usuario;
+//use common\models\User;
+use backend\models\Rol;
+use backend\models\Operacion;
+use backend\models\RolOperacion;
 use backend\models\search\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
@@ -119,6 +124,80 @@ class UsuarioController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
+    public function actionProfile($id)
+    {
+        $model = $this->findModel($id);
+        if($model->Profile)
+            return $this->redirect('../profile/update?id='.$id);
+        else
+            return $this->redirect('../profile/create?id='.$id);
+    }
+    
+    public function actionRol($id)
+    {
+        $model = $this->findModel($id);
+        $listaOpciones = Rol::find()->all();
+        $model->roles = \yii\helpers\ArrayHelper::getColumn(
+            $model->getRolUsuarios()->asArray()->all(),
+            'rol_id'
+        );
+        //echo "<pre>";print_r($model->roles);print_r($listaOpciones);die;
+        if ($model->load(Yii::$app->request->post())) {
+            if (!isset($_POST['Usuario']['roles'])) {
+                $model->roles = [];
+            }
+            //echo "<pre>";print_r($model); die;
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            return $this->render('rol', [
+                'model' => $model,
+                'listaOpciones' => $listaOpciones,
+            ]);
+        }
+    }
+    
+    public function actionPermiso($id)
+    {
+        $model = $this->findModel($id);
+
+        $rolarray[0]=0;
+        foreach($model->rolesPermitidos as $roles)
+            $rolarray[]=$roles->id;
+        
+        $rows = (new \yii\db\Query())
+            ->select(['operacion_id'])
+            ->distinct(true)
+            ->from('rol_operacion')
+            ->where(['rol_id' => $rolarray])
+            ->all();
+
+        $operacionarray[]=0;
+        foreach($rows as $row)
+            $operacionarray[] = $row['operacion_id'];
+
+        $listaOpciones = Operacion::find()->where(['id'=> $operacionarray])->all();
+        
+        $model->permisos = \yii\helpers\ArrayHelper::getColumn(
+            $model->getUsuarioOperacion()->asArray()->all(),
+            'operacion_id'
+        );
+        if ($model->load(Yii::$app->request->post())) {
+            if (!isset($_POST['Usuario']['permisos'])) {
+                $model->permisos = [];
+            }
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        } else {
+            return $this->render('permiso', [
+                'model' => $model,
+                'listaOpciones' => $listaOpciones,
+            ]);
         }
     }
 }

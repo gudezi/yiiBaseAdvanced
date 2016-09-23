@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 /**
  * SolicitanteController implements the CRUD actions for Solicitante model.
  */
-class SolicitanteController extends Controller
+class SolicitanteController extends BaseController //Controller
 {
     /**
      * @inheritdoc
@@ -63,7 +63,7 @@ class SolicitanteController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($submit = false)
     {
        
 /*        $model = new Solicitante();
@@ -107,40 +107,41 @@ class SolicitanteController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id, $submit = false)
     {
         $model = $this->findModel($id);
     
-       if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $submit == false) {
-           Yii::$app->response->format = Response::FORMAT_JSON;
-           return ActiveForm::validate($model);
-       }
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $submit == false) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }  
     
-       if ($model->load(Yii::$app->request->post())) {
-           if ($model->save()) {
-               $model->refresh();
-               Yii::$app->response->format = Response::FORMAT_JSON;
-               return [
-                   'message' => '¡Éxito!',
-               ];
-           } else {
-               Yii::$app->response->format = Response::FORMAT_JSON;
-               return ActiveForm::validate($model);
-           }
-       }
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                $model->refresh();
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return [
+                    'message' => '¡Éxito!',
+                ];
+            } else {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+        }
     
-       return $this->renderAjax('update', [
-           'model' => $model,
-       ]);      /*     
-         $model = $this->findModel($id);
+        return $this->renderAjax('update', [
+            'model' => $model,
+        ]);
+        /*     
+        $model = $this->findModel($id);
 
-              if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                  return $this->redirect(['view', 'id' => $model->id]);
-              } else {
-                  return $this->render('update', [
-                      'model' => $model,
-                  ]);
-              }*/
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }*/
     }
 
     /**

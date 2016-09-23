@@ -4,15 +4,17 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Cliente;
+use frontend\models\Localidades;
+use frontend\models\Partidos;
 use frontend\models\search\ClienteSearch;
-use yii\web\Controller;
+//use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * ClienteController implements the CRUD actions for Cliente model.
  */
-class ClienteController extends BaseController//Controller
+class ClienteController extends BaseController //Controller
 {
     /**
      * @inheritdoc
@@ -86,6 +88,9 @@ class ClienteController extends BaseController//Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+			$model->partido_id = Localidades::getPartidoId($model->localidad_id);
+			$model->provincia_id = Partidos::getProvinciaId($model->partido_id);
+			//$model->localidad_id = 342;
             return $this->render('update', [
                 'model' => $model,
             ]);

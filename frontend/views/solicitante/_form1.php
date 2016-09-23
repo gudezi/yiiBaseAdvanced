@@ -21,24 +21,24 @@ use yii\jui\DatePicker;
     ]); ?>
     <?php
     $this->registerJs('
-       // obtener la id del formulario y establecer el manejador de eventos
-           $("form#solicitante-form").on("beforeSubmit", function(e) {
-               var form = $(this);
-               $.post(
-                   form.attr("action")+"&submit=true",
-                   form.serialize()
-               )
-               .done(function(result) {
-                   form.parent().html(result.message);
-                   $.pjax.reload({container:"#solicitante-grid"});
-               });
-               return false;
-           }).on("submit", function(e){
-               e.preventDefault();
-               e.stopImmediatePropagation();
-               return false;
-           });
-       ');
+        // obtener la id del formulario y establecer el manejador de eventos
+        $("form#solicitante-form").on("beforeSubmit", function(e) {
+            var form = $(this);
+            $.post(
+                form.attr("action")+"&submit=true",
+                form.serialize()
+            )
+            .done(function(result) {
+                form.parent().html(result.message);
+                $.pjax.reload({container:"#solicitante-grid"});
+            });
+            return false;
+        }).on("submit", function(e){
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+        });
+    ');
     ?>
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 

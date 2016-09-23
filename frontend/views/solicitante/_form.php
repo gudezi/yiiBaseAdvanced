@@ -18,60 +18,60 @@ use yii\jui\DatePicker;
         'enableClientValidation' => true,
     ]); ?>
     <?php
-      $this->registerJs('
-         $("form#solicitante-form").on("submit", function(e) {
+    $this->registerJs('
+        $("form#solicitante-form").on("submit", function(e) {
             e.preventDefault();
             e.stopImmediatePropagation();
             var form = $(this);
             //form.attr("action")+"&submit=true";
             $.post({
-               url: form.attr("action")+"&submit=true",
-               data: form.serialize(),
-               success: function(result)
-               {
-                  form.parent().html(result.message);
-                  $.pjax.reload({container:"#solicitante-grid"});
-               },
-               error: function(result)
-               {
-                  console.log("Error Ajax al leer comandos.");
-               },
-               complete: function(result)
-               {
+                url: form.attr("action")+"&submit=true",
+                data: form.serialize(),
+                success: function(result)
+                {
+                    form.parent().html(result.message);
+                    $.pjax.reload({container:"#solicitante-grid"});
+                },
+                error: function(result)
+                {
+                    console.log("Error Ajax al leer comandos.");
+                },
+                complete: function(result)
+                {
  
-               }
+                }
             })
             .done(function(obj){
-               //alert(obj);
-               response = obj;
+                //alert(obj);
+                response = obj;
             })
             .fail(function(obj){
                //alert(obj);
                console.log("Error Ajax al leer comandos.");
                response = false;
             });
-         });
-      ');
-      /*$this->registerJs('
-          // obtener la id del formulario y establecer el manejador de eventos
-              $("form#solicitante-form").on("beforeSubmit", function(e) {
-                  var form = $(this);
-                  $.post(
-                      form.attr("action")+"&submit=true",
-                      form.serialize()
-                  )
-                  .done(function(result) {
-                      form.parent().html(result.message);
-                      $.pjax.reload({container:"#solicitante-grid"});
-                  });
-                  return false;
-              }).on("submit", function(e){
-                  e.preventDefault();
-                  e.stopImmediatePropagation();
-                  return false;
-              });
-          ');*/
-      ?>
+        });
+    ');
+    /*$this->registerJs('
+        // obtener la id del formulario y establecer el manejador de eventos
+        $("form#solicitante-form").on("beforeSubmit", function(e) {
+            var form = $(this);
+            $.post(
+                form.attr("action")+"&submit=true",
+                form.serialize()
+            )
+            .done(function(result) {
+                form.parent().html(result.message);
+                $.pjax.reload({container:"#solicitante-grid"});
+            });
+            return false;
+        }).on("submit", function(e){
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+        });
+    ');*/
+    ?>
 
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => 45]) ?>

@@ -229,15 +229,6 @@ return array (
       '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput',
     ),
   ),
-  'kartik-v/yii2-widget-depdrop' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-depdrop',
-    'version' => '1.0.4.0',
-    'alias' => 
-    array (
-      '@kartik/depdrop' => $vendorDir . '/kartik-v/yii2-widget-depdrop',
-    ),
-  ),
   'kartik-v/yii2-widget-datetimepicker' => 
   array (
     'name' => 'kartik-v/yii2-widget-datetimepicker',
@@ -335,6 +326,105 @@ return array (
     'alias' => 
     array (
       '@kartik/nav' => $vendorDir . '/kartik-v/yii2-nav-x',
+    ),
+  ),
+  'rmrevin/yii2-fontawesome' => 
+  array (
+    'name' => 'rmrevin/yii2-fontawesome',
+    'version' => '2.15.2.0',
+    'alias' => 
+    array (
+      '@rmrevin/yii/fontawesome' => $vendorDir . '/rmrevin/yii2-fontawesome',
+    ),
+  ),
+  'cebe/yii2-gravatar' => 
+  array (
+    'name' => 'cebe/yii2-gravatar',
+    'version' => '1.1.0.0',
+    'alias' => 
+    array (
+      '@cebe/gravatar' => $vendorDir . '/cebe/yii2-gravatar/cebe/gravatar',
+    ),
+  ),
+  'dmstr/yii2-adminlte-asset' => 
+  array (
+    'name' => 'dmstr/yii2-adminlte-asset',
+    'version' => '2.3.3.0',
+    'alias' => 
+    array (
+      '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
+    ),
+  ),
+  'sofse/yii2-adminlte-asset' => 
+  array (
+    'name' => 'sofse/yii2-adminlte-asset',
+    'version' => '2.3.3.0',
+    'alias' => 
+    array (
+      '@sofse' => $vendorDir . '/sofse/yii2-adminlte-asset',
+    ),
+  ),
+  'softark/yii2-dual-listbox' => 
+  array (
+    'name' => 'softark/yii2-dual-listbox',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@softark/duallistbox' => $vendorDir . '/softark/yii2-dual-listbox',
+    ),
+  ),
+  'creocoder/yii2-nested-sets' => 
+  array (
+    'name' => 'creocoder/yii2-nested-sets',
+    'version' => '0.9.0.0',
+    'alias' => 
+    array (
+      '@creocoder/nestedsets' => $vendorDir . '/creocoder/yii2-nested-sets/src',
+    ),
+  ),
+  'kartik-v/yii2-tree-manager' => 
+  array (
+    'name' => 'kartik-v/yii2-tree-manager',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/tree' => $vendorDir . '/kartik-v/yii2-tree-manager',
+    ),
+  ),
+  'execut/yii2-base' => 
+  array (
+    'name' => 'execut/yii2-base',
+    'version' => '1.1.5.0',
+    'alias' => 
+    array (
+      '@execut/yii' => $vendorDir . '/execut/yii2-base',
+    ),
+  ),
+  'execut/yii2-widget-bootstraptreeview' => 
+  array (
+    'name' => 'execut/yii2-widget-bootstraptreeview',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@execut/widget' => $vendorDir . '/execut/yii2-widget-bootstraptreeview',
+    ),
+  ),
+  'andru19/yii2-fancytree-widget' => 
+  array (
+    'name' => 'andru19/yii2-fancytree-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@andru19/fancytree' => $vendorDir . '/andru19/yii2-fancytree-widget',
+    ),
+  ),
+  'kartik-v/yii2-widget-depdrop' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-depdrop',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/depdrop' => $vendorDir . '/kartik-v/yii2-widget-depdrop',
     ),
   ),
 );

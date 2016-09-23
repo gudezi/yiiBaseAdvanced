@@ -19,7 +19,7 @@ use frontend\models\ChangePasswordForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BaseController //Controller
 {
     /**
      * @inheritdoc
@@ -183,8 +183,8 @@ class SiteController extends Controller
      */
     public function actionGustavo()
     {
-      d(Yii::$app->user);
-      return $this->render('gustavo');
+        d(Yii::$app->user);
+        return $this->render('gustavo');
     }
 
     /**

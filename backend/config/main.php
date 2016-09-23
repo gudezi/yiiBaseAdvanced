@@ -12,7 +12,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => ['gridview' => [ 'class' => '\kartik\grid\Module']],
+    'modules' => [
+        'gridview' => [ 'class' => '\kartik\grid\Module'],
+        //'treemanager' =>  [
+        //'class' => '\kartik\tree\Module',
+        // enter other module properties if needed
+        // for advanced/personalized configuration
+        // (refer module properties available below)]
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -22,6 +29,21 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
+		  'view' => [
+            'theme' => [
+               'pathMap' => [
+                  '@app/views' => '@vendor/sofse/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+               ],
+            ],
+        ],
+        'assetManager' => [
+            'bundles' => [
+               'sofse\web\AdminLteAsset' => [
+                  'skin' => 'skin-sofse',
+               ],
+            ],
+        ],
+
         'session' => [
             // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
@@ -38,14 +60,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];

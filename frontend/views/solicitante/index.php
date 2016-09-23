@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'update' => function ($url, $model, $key) {
                         return Html::a('<span class="glyphicon glyphicon-pencil"></span>', '#', [
                             'id' => 'activity-index-link',
-                            'title' => Yii::t('app', 'Update'),
+                            'title' => 'Update',
                             'data-toggle' => 'modal',
                             'data-target' => '#modal',
                             'data-url' => Url::to(['update', 'id' => $model->id]),

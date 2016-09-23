@@ -5,10 +5,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Rol */
 
-$this->title = 'Update Rol: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Rols', 'url' => ['index']];
+$this->title = 'Modificar Rol: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Roles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Modificar';
+$action='default';
 ?>
 <div class="rol-update">
 
@@ -16,7 +17,8 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
-        'tipoOperaciones' => $tipoOperaciones
+        'listaOpciones' => $listaOpciones,
+        'action' => $action
     ]) ?>
 
 </div>

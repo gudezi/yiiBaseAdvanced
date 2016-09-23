@@ -1,0 +1,43 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>TA</b></span>
+      <!-- <span class="logo-mini"><i class="fa fa-train"></i></span> -->
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><img src="../dist/img/logo_desktop.png"></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          include "main_header/sectores.html"
+          
+          <!-- // INCLUYO LOS MENSAJES 
+          include "main_header/mensajes.html" -->
+
+          <!-- // INCLUYO LAS NOTIFICACIONES -->
+          include "main_header/notificaciones.html" 
+
+          <!-- // INCLUYO LAS TAREAS
+          include "main_header/tareas.html" -->
+          
+          <!-- // INCLUYO EL MENU DE USUARIO-->
+          include "main_header/usuario.html"
+          
+          <!-- // INCLUYO EL  BOTON DE CONSTROLSIDEBAR-->
+          include "main_header/control_sidebar.html"
+
+        </ul>
+      </div>
+    </nav>
+  </header>
