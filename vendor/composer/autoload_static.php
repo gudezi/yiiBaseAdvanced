@@ -16,6 +16,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             'yii\\swiftmailer\\' => 16,
             'yii\\jui\\' => 8,
+            'yii\\imagine\\' => 12,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
@@ -31,6 +32,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'r' => 
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
+        ),
+        'm' => 
+        array (
+            'mongosoft\\file\\' => 15,
         ),
         'k' => 
         array (
@@ -67,6 +72,7 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'kartik\\base\\' => 12,
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
+            'karpoff\\icrop\\' => 14,
         ),
         'j' => 
         array (
@@ -105,6 +111,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
         ),
+        'yii\\imagine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-imagine',
+        ),
         'yii\\gii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-gii',
@@ -140,6 +150,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'rmrevin\\yii\\fontawesome\\' => 
         array (
             0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
+        ),
+        'mongosoft\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongosoft/yii2-upload-behavior',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -273,6 +287,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
+        'karpoff\\icrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/karpoff/yii2-crop-image-upload',
+        ),
         'johnitvn\\ajaxcrud\\' => 
         array (
             0 => __DIR__ . '/..' . '/johnitvn/yii2-ajaxcrud/src',
@@ -313,6 +331,13 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
             'cebe\\gravatar\\' => 
             array (
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
+            ),
+        ),
+        'I' => 
+        array (
+            'Imagine' => 
+            array (
+                0 => __DIR__ . '/..' . '/imagine/imagine/lib',
             ),
         ),
         'H' => 

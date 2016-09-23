@@ -16,7 +16,8 @@ use yii\helpers\Html;
             <span class="hidden-xs">Invitado</span>
         <?}else{?>
             <!-- The user image in the navbar-->
-            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <!-- <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+            <img src="<?= Yii::$app->getUrlManager()->getBaseUrl()?>/uploads/<?= Yii::$app->user->identity->profile->photo_cropped?>" class="img-circle user-image" alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
             <span class="hidden-xs"><?echo Yii::$app->user->identity->fullname?></span>
         <?}?>
@@ -30,7 +31,8 @@ use yii\helpers\Html;
                     Invitado
                 </p>
             <?}else{?>
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <!-- <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
+                <img src="<?= Yii::$app->getUrlManager()->getBaseUrl()?>/uploads/<?= Yii::$app->user->identity->profile->photo_cropped?>" class="img-circle" alt="User Image">
                 <p>
                     <?echo Yii::$app->user->identity->fullname?>
                     <small>Web Developer</small>
