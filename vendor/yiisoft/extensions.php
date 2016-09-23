@@ -427,4 +427,31 @@ return array (
       '@kartik/depdrop' => $vendorDir . '/kartik-v/yii2-widget-depdrop',
     ),
   ),
+  'yiisoft/yii2-imagine' => 
+  array (
+    'name' => 'yiisoft/yii2-imagine',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
+    ),
+  ),
+  'mongosoft/yii2-upload-behavior' => 
+  array (
+    'name' => 'mongosoft/yii2-upload-behavior',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@mongosoft/file' => $vendorDir . '/mongosoft/yii2-upload-behavior',
+    ),
+  ),
+  'karpoff/yii2-crop-image-upload' => 
+  array (
+    'name' => 'karpoff/yii2-crop-image-upload',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@karpoff/icrop' => $vendorDir . '/karpoff/yii2-crop-image-upload',
+    ),
+  ),
 );

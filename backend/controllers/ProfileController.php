@@ -69,6 +69,7 @@ class ProfileController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             $model->id = $id;
+            $model->scenario = 'insert';
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -84,7 +85,8 @@ class ProfileController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->scenario = 'update';
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
