@@ -17,7 +17,20 @@ if(isset(Yii::$app->controller->items_message))
 	$itemsMessage = Yii::$app->controller->items_message;
 }
 
+if(isset(Yii::$app->controller->items_alert))
+{
+	$itemsAlert = Yii::$app->controller->items_alert;
+}
 
+if(isset(Yii::$app->controller->items_task))
+{
+	$itemsTask = Yii::$app->controller->items_task;
+}
+
+if(isset(Yii::$app->controller->items_flag))
+{
+	$itemsFlag = Yii::$app->controller->items_flag;
+}
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**
@@ -60,7 +73,11 @@ if (Yii::$app->controller->action->id === 'login') {
 
         <?= $this->render(
             'header.php',
-            ['itemsMessage' => $itemsMessage,  'directoryAsset' => $directoryAsset]
+            ['itemsMessage' => $itemsMessage, 
+            'itemsAlert' => $itemsAlert,  
+            'itemsTask' => $itemsTask,  
+            'itemsFlag' => $itemsFlag,  
+            'directoryAsset' => $directoryAsset]
         ) ?>
 
         <?= $this->render(

@@ -10,6 +10,9 @@ class BaseController extends Controller {
  
 	public $items_menu;
     public $items_message;
+    public $items_alert;
+    public $items_task;
+    public $items_flag;
 	
 	public function init(){
       parent::init();
@@ -49,6 +52,54 @@ class BaseController extends Controller {
         $item['message']='Hacemos el deploy?';
         $items[]=$item;
         $this->items_message = $items;
+        
+        $items = array();
+        $item['url']='';
+        $item['user']='';
+        $item['image']='';
+        $item['time']='';
+        $item['message']='5 usuarios se agregarón hoy';
+        $items[]=$item;
+
+        $item['url']='';
+        $item['user']='';
+        $item['image']='info';
+        $item['time']='';
+        $item['message']='10 usuarios se agregarón hoy';
+        $items[]=$item;
+        $this->items_alert = $items;
+        
+        $items = array();
+        $item['url']='';
+        $item['user']='';
+        $item['image']='';
+        $item['time']=40;
+        $item['message']='Customizar el adminlte';
+        $items[]=$item;
+
+        $item['url']='';
+        $item['user']='';
+        $item['image']='';
+        $item['time']=20;
+        $item['message']='Customizar el yii2';
+        $items[]=$item;
+        $this->items_task = $items;        
+                
+        $items = array();
+        $item['url']='';
+        $item['user']='';
+        $item['image']='';
+        $item['time']='';
+        $item['message']='SECTOR AZUL';
+        $items[]=$item;
+
+        $item['url']='';
+        $item['user']='';
+        $item['image']='info';
+        $item['time']='';
+        $item['message']='SECTOR ROJO';
+        $items[]=$item;
+        $this->items_flag = $items;     
     }
 
     /*	public function beforeAction($action) { 
