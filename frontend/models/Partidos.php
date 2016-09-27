@@ -40,8 +40,8 @@ class Partidos extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'descripcion' => 'Descripcion',
             'provincia_id' => 'Provincia',
+            'descripcion' => 'Descripcion',
         ];
     }
 	

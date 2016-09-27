@@ -67,10 +67,10 @@ class Usuario extends \yii\db\ActiveRecord
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
-            'status' => 'Status',
-            'role' => 'Role',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'status' => 'Estado',
+            'role' => 'Rol',
+            'created_at' => 'Creado',
+            'updated_at' => 'Modificado',
             'rol_id' => 'Rol ID',
         ];
     }

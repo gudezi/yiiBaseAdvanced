@@ -454,4 +454,13 @@ return array (
       '@karpoff/icrop' => $vendorDir . '/karpoff/yii2-crop-image-upload',
     ),
   ),
+  'gudezi/yii2-notifications-widget' => 
+  array (
+    'name' => 'gudezi/yii2-notifications-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@gudezi/notifications' => $vendorDir . '/gudezi/yii2-notifications-widget',
+    ),
+  ),
 );

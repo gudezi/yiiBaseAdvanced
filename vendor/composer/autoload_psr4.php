@@ -60,5 +60,6 @@ return array(
     'creocoder\\nestedsets\\' => array($vendorDir . '/creocoder/yii2-nested-sets/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'andru19\\fancytree\\' => array($vendorDir . '/andru19/yii2-fancytree-widget'),
+    'gudezi\\notifications\\' => array($vendorDir . '/gudezi/yii2-notifications-widget'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

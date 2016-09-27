@@ -93,14 +93,14 @@ class Profile extends \yii\db\ActiveRecord
             'numero' => 'Numero',
             'piso' => 'Piso',
             'depto' => 'Depto',
-            'pais_id' => 'Pais ID',
-            'provincia_id' => 'Provincia ID',
-            'partido_id' => 'Partido ID',
-            'localidad_id' => 'Localidad ID',
+            'pais_id' => 'Pais',
+            'provincia_id' => 'Provincia',
+            'partido_id' => 'Partido',
+            'localidad_id' => 'Localidad',
             'coordenadas' => 'Coordenadas',
             'telefono' => 'Telefono',
             'celular' => 'Celular',
-            'foto' => 'Foto',
+            'photo' => 'Foto',
         ];
     }
     

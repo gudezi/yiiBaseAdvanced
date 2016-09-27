@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Operacion */
 
-$this->title = 'Create Operacion';
-$this->params['breadcrumbs'][] = ['label' => 'Operacions', 'url' => ['index']];
+$this->title = 'Crear Operacion';
+$this->params['breadcrumbs'][] = ['label' => 'Operaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="operacion-create">

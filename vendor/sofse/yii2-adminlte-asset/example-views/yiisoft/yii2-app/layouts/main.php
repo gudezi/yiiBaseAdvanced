@@ -9,8 +9,15 @@ die;*/
 
 if(isset(Yii::$app->controller->items_menu))
 {
-	$items = Yii::$app->controller->items_menu;
+	$itemsMenu = Yii::$app->controller->items_menu;
 }
+
+if(isset(Yii::$app->controller->items_message))
+{
+	$itemsMessage = Yii::$app->controller->items_message;
+}
+
+
 
 if (Yii::$app->controller->action->id === 'login') { 
 /**
@@ -53,12 +60,12 @@ if (Yii::$app->controller->action->id === 'login') {
 
         <?= $this->render(
             'header.php',
-            ['directoryAsset' => $directoryAsset]
+            ['itemsMessage' => $itemsMessage,  'directoryAsset' => $directoryAsset]
         ) ?>
 
         <?= $this->render(
             'sidebar.php',
-            ['items' => $items, 'directoryAsset' => $directoryAsset]
+            ['items' => $itemsMenu, 'directoryAsset' => $directoryAsset]
         )
         ?>
 

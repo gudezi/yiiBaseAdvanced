@@ -40,8 +40,8 @@ class Localidades extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'descripcion' => 'Descripcion',
             'partido_id' => 'Partido',
+            'descripcion' => 'Descripcion',
         ];
     }
 	

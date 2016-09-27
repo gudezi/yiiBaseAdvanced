@@ -1,7 +1,17 @@
  <!-- Messages: style can be found in dropdown.less-->
 <li class="dropdown messages-menu">
+<?
+echo gudezi\notifications\NotificationsWidget::widget(
+            [
+                'options' => ['class' => 'sidebar-menu'],
+                'items' => $itemsMessage,
+                'directoryAsset' =>$directoryAsset,
+            ]
+        ) 
+        ?>
+
     <!-- Menu toggle button -->
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-envelope-o"></i>
         <span class="label label-success">1</span>
     </a>
@@ -9,26 +19,26 @@
         <li class="header">Usted tiene 1 mensaje nuevo</li>
         <li>
         <!-- inner menu: contains the messages -->
-            <ul class="menu">
+    <!--             <ul class="menu">
                 <li><!-- start message -->
-                    <a href="#">
+    <!--                     <a href="#">
                     <div class="pull-left">
                         <!-- User Image -->
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+    <!--                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <!-- Message title and timestamp -->
-                    <h4>
+    <!--                     <h4>
                         Equipo de soporte
                         <small><i class="fa fa-clock-o"></i> 5 min</small>
                     </h4>
                     <!-- The message -->
-                    <p>Hacemos el deploy?</p>
+    <!--                     <p>Hacemos el deploy?</p>
                     </a>
                 </li>
                 <!-- end message -->
-            </ul>
+    <!--             </ul>
             <!-- /.menu -->
-        </li>
+    <!--         </li>
         <li class="footer"><a href="#">Ver todos los mensajes</a></li>
     </ul>
 </li>

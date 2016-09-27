@@ -1,5 +1,5 @@
 <?php
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use yii\web\Controller;
 use common\models\HtmlHelpers;
@@ -16,8 +16,8 @@ class DependentDropdownController extends Controller
 		$this->render('index');
 	}
     
-    public function actionPartido($id){
-        echo HtmlHelpers::dropDownList(Partidos::className(), 'provincia_id', $id, 'id', 'descripcion', 'Por favor elija uno');
+    public function actionProvincia($id){
+        echo HtmlHelpers::dropDownList(Provincias::className(), 'pais_id', $id, 'id', 'descripcion', 'Por favor elija una');
     }
     
     public function actionPartido($id){

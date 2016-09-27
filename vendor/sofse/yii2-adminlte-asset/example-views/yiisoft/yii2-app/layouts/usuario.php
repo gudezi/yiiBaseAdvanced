@@ -35,7 +35,7 @@ use yii\helpers\Html;
                 <img src="<?= Yii::$app->getUrlManager()->getBaseUrl()?>/uploads/<?= Yii::$app->user->identity->profile->photo_cropped?>" class="img-circle" alt="User Image">
                 <p>
                     <?echo Yii::$app->user->identity->fullname?>
-                    <small>Web Developer</small>
+                    <small><?echo Yii::$app->user->identity->profile->perfil?></small>
                 </p>
             <?}?>
             </li>
@@ -43,9 +43,9 @@ use yii\helpers\Html;
             <?if(!Yii::$app->user->isGuest){?>
             <li class="user-body">
                 <div class="row">
-                    <div class="col-xs-12 text-center">
+                    <!-- <div class="col-xs-12 text-center">
                         <a href="#" class="btn btn-default btn-block"><i class="fa fa-users"></i> Administrar usuarios</a>
-                    </div>
+                    </div> -- >
                     <!-- <div class="col-xs-4 text-center">
                         <a href="#">Ventas</a>
                     </div>
@@ -60,7 +60,7 @@ use yii\helpers\Html;
             <li class="user-footer">
             <?if(Yii::$app->user->isGuest){?>
                 <div class="pull-left">
-                    <?= Html::a(   '<i class="fa fa-user-plus"></i> Signup',
+                    <?= Html::a(   '<i class="fa fa-user-plus"></i> Registrarse',
                                 ['/site/signup'],
                                 ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                     ) ?>

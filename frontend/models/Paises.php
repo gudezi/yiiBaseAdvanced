@@ -5,19 +5,19 @@ namespace frontend\models;
 use Yii;
 
 /**
- * This is the model class for table "provincias".
+ * This is the model class for table "paises".
  *
  * @property integer $id
  * @property string $descripcion
  */
-class Provincias extends \yii\db\ActiveRecord
+class Paises extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'provincias';
+        return 'paises';
     }
 
     /**
@@ -26,9 +26,8 @@ class Provincias extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['descripcion', 'pais_id'], 'required'],
-            [['pais_id'], 'integer'],
-            [['descripcion'], 'string', 'max' => 55],
+            [['descripcion'], 'required'],
+            [['descripcion'], 'string', 'max' => 100],
         ];
     }
 
@@ -39,7 +38,6 @@ class Provincias extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'pais_id' => 'Pais',
             'descripcion' => 'Descripcion',
         ];
     }
