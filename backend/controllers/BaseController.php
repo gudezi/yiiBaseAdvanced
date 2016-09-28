@@ -83,6 +83,13 @@ class BaseController extends Controller {
         $item['time']=20;
         $item['message']='Customizar el yii2';
         $items[]=$item;
+
+        $item['url']='';
+        $item['user']='';
+        $item['image']='';
+        $item['time']=95;
+        $item['message']='Deploy WebSofse';
+        $items[]=$item;
         $this->items_task = $items;        
                 
         $items = array();

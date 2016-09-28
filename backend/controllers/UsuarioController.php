@@ -34,7 +34,7 @@ class UsuarioController extends BaseController //Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'profile', 'rol', 'permiso'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

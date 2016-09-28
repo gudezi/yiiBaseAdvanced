@@ -34,7 +34,7 @@ class RolController extends BaseController //Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'usuario', 'menu'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

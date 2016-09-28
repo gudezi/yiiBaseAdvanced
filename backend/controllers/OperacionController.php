@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 
 /**
  * OperacionController implements the CRUD actions for Operacion model.
@@ -29,7 +30,7 @@ class OperacionController extends BaseController //Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete', 'generate'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -120,6 +121,82 @@ class OperacionController extends BaseController //Controller
         return $this->redirect(['index']);
     }
 
+    private function toUrlAction($cadena)
+    {
+        $retorno = '';
+        for($i=0;$i<strlen($cadena);$i++)
+        { 
+            $letra=$cadena{$i};
+            if(ctype_upper($letra) && $i>1)
+            {
+                $retorno .= '-'.strtolower($letra);
+            }
+            else
+            {
+                $retorno .= strtolower($letra);
+            }
+        }  
+        return $retorno;
+    }
+    
+    /**
+     * Generate new Operacion model from controllers actions.
+     * @return mixed
+     */
+    public function actionGenerate()
+    {
+        $model = new Operacion();
+        
+        $operaciones=Operacion::find()->all();
+        $operaciones=ArrayHelper::map($operaciones, 'id', 'nombre');
+        
+        $accionesresult = array();
+        $controladores = $this->getControllersAndActions();
+
+        if(count($controladores)>0)
+        {
+            foreach($controladores as $key => $controlador)
+            {
+                $key = str_replace('Controller','',$key);
+                if(count($controlador)>0)
+                {
+                    foreach($controlador as $accion)
+                    {
+                        $dato = $this->toUrlAction($key).'-'.$this->toUrlAction($accion);
+                        $accionesresult[] = $dato;
+                    }
+                }
+            }
+        }
+        $acciones = array();
+        foreach ($accionesresult as $accion)
+        {
+            if(!in_array($accion,$operaciones))    
+            {
+                $acciones[]=$accion;
+            }
+        }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('generate', [
+                'model' => $model,
+                'acciones' => $acciones,
+            ]);
+        }
+        
+        
+        /*$model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }*/
+    }
+
     /**
      * Finds the Operacion model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -135,4 +212,36 @@ class OperacionController extends BaseController //Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    protected function getControllersAndActions()
+    {
+        $ruta='../../frontend/controllers';
+        $controllerlist = [];
+        if ($handle = opendir($ruta)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file != "." && $file != ".." && substr($file, strrpos($file, '.') - 10) == 'Controller.php') {
+                    $controllerlist[] = $file;
+                }
+            }
+            closedir($handle);
+        }
+        asort($controllerlist);
+        $fulllist = [];
+        foreach ($controllerlist as $controller):
+            $handle = fopen($ruta . '/' . $controller, "r");
+            if ($handle) {
+                while (($line = fgets($handle)) !== false) {
+                    if (preg_match('/public function action(.*?)\(/', $line, $display)):
+                        if (strlen($display[1]) > 2):
+                            //$fulllist[substr($controller, 0, -4)][] = strtolower($display[1]);
+                            $fulllist[substr($controller, 0, -4)][] = $display[1];
+                        endif;
+                    endif;
+                }
+            }
+            fclose($handle);
+        endforeach;
+        return $fulllist;
+    }
+
 }

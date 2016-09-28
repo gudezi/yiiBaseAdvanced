@@ -29,7 +29,7 @@ class MenuController extends BaseController //Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'view', 'create', 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -170,7 +170,7 @@ class MenuController extends BaseController //Controller
         }
     }
     
-    public function actionTree()
+    /*public function actionTree()
     {
         //$model = $this->findModel($id);
         //print_r($model);
@@ -181,5 +181,5 @@ class MenuController extends BaseController //Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-    }
+    }*/
 }
