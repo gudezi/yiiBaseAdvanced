@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * ParametrosController implements the CRUD actions for Parametros model.
  */
-class ParametrosController extends Controller
+class ParametrosController extends BaseController //Controller
 {
     /**
      * @inheritdoc

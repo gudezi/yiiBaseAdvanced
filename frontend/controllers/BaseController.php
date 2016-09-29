@@ -102,7 +102,8 @@ class BaseController extends Controller {
         } 
         $operacion = str_replace("/", "-", Yii::$app->controller->route);
         //die($operacion);
-        $permitirSiempre = ['site-captcha', 'site-signup', 'site-index', 'site-error', 'site-about', 'site-contact', 'site-login', 'site-logout', 'site-request-password-reset', 'site-reset-password', 'site-change-password', 'site-gustavo'];
+        $permitirSiempre = AccessHelpers::getPermitidas();
+//        ['site-captcha', 'site-signup', 'site-index', 'site-error', 'site-about', 'site-contact', 'site-login', 'site-logout', 'site-request-password-reset', 'site-reset-password', 'site-change-password', 'site-gustavo'];
 
         if (in_array($operacion, $permitirSiempre)) {
             return true;

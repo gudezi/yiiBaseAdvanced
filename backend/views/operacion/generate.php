@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?//= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
         <?//$htmlOptions = array('size' => '5', 'prompt'=>'Use CTRL to Select Multiple Staff', 'multiple' => 'true', 'options' => $selected);?>
-        <?= $form->field($model, 'nombre')->checkboxList($acciones, $htmlOptions)?>
+        <?= $form->field($model, 'operaciones')->checkboxList($acciones, $htmlOptions)?>
         <div class="form-group">
             <?= Html::submitButton('Generar', ['class' => 'btn btn-success']) ?>
         </div>

@@ -12,6 +12,8 @@ use Yii;
  */
 class Operacion extends \yii\db\ActiveRecord
 {
+    public $operaciones;
+    
     /**
      * @inheritdoc
      */
@@ -28,6 +30,7 @@ class Operacion extends \yii\db\ActiveRecord
         return [
             [['nombre'], 'required'],
             [['nombre'], 'string', 'max' => 64],
+            [['operaciones'], 'safe'],
         ];
     }
 
@@ -40,5 +43,18 @@ class Operacion extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nombre' => 'Nombre',
         ];
+    }
+    
+    public function generate()
+    {
+        if(isset($this->operaciones))
+        {
+            foreach ($this->operaciones as $id) {
+                $oper = new Operacion();
+                $oper->nombre = $id;
+                $oper->save();
+            }
+        }
+        return true;
     }
 }

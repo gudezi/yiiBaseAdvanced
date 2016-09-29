@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Operacion;
 use backend\models\search\OperacionSearch;
+use common\models\AccessHelpers;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -148,8 +149,7 @@ class OperacionController extends BaseController //Controller
         $model = new Operacion();
         
         $operaciones=Operacion::find()->all();
-        $operaciones=ArrayHelper::map($operaciones, 'id', 'nombre');
-        
+        $operaciones=ArrayHelper::map($operaciones, 'nombre', 'nombre');
         $accionesresult = array();
         $controladores = $this->getControllersAndActions();
 
@@ -171,14 +171,23 @@ class OperacionController extends BaseController //Controller
         $acciones = array();
         foreach ($accionesresult as $accion)
         {
-            if(!in_array($accion,$operaciones))    
+            if(!in_array($accion,$operaciones) && !in_array($accion,AccessHelpers::getPermitidas()))    
             {
-                $acciones[]=$accion;
+                $acciones[$accion]=$accion;
             }
         }
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        if ($model->load(Yii::$app->request->post())) 
+        {
+            if (!isset($_POST['Operacion']['operaciones'])) {
+                $model->operaciones = [];
+            }
+            //echo "<pre>";print_r($model->operaciones);die;
+            if ($model->generate()) {
+                return $this->redirect(['index']);
+            }
+        }
+        else 
+        {
             return $this->render('generate', [
                 'model' => $model,
                 'acciones' => $acciones,
@@ -215,11 +224,38 @@ class OperacionController extends BaseController //Controller
 
     protected function getControllersAndActions()
     {
-        $ruta='../../frontend/controllers';
+        $rutamodulos = '../../frontend/modules';
+        $rutacontrollers = '../../frontend/controllers';
+        
+        $controllers = $this->getControllersAndActionsbyRute($rutacontrollers);
+        if ($handle = opendir($rutamodulos)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file != "." && $file != "..") {
+                    $modulos = $this->getControllersAndActionsbyRute($rutamodulos.'/'.$file.'/controllers');
+                    $name = ucwords($file);
+                    if(count($modulos)>0)
+                    {
+                        foreach($modulos as $key => $value)
+                        {
+                            $controllers[$name.$key]=$value;
+                        }
+                    }
+                }
+            }
+            closedir($handle);
+        }
+        return $controllers;
+    }
+    
+    protected function getControllersAndActionsbyRute($ruta)
+    {
+        //$ruta='../../frontend/controllers';
         $controllerlist = [];
         if ($handle = opendir($ruta)) {
             while (false !== ($file = readdir($handle))) {
-                if ($file != "." && $file != ".." && substr($file, strrpos($file, '.') - 10) == 'Controller.php') {
+                //if ($file != "." && $file != ".." && substr($file, strrpos($file, '.') - 10) == 'Controller.php') {
+                if ($file != "." && $file != ".." && substr($file, strrpos($file, '.') - 10) == 'Controller.php' && substr($file, 0, 9) != 'Dependent' && substr($file, 0, 7) != 'Default') {
+                    
                     $controllerlist[] = $file;
                 }
             }

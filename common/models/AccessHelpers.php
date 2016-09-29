@@ -40,5 +40,11 @@ class AccessHelpers {
             return false;
         }
     }
+    
+    public static function getPermitidas()
+    {
+        return ['site-captcha', 'site-signup', 'site-index', 'site-error', 'site-about', 'site-contact', 'site-login', 'site-logout', 'site-request-password-reset', 'site-reset-password', 'site-change-password', 'site-gustavo'];
+    }
+
 
 }
