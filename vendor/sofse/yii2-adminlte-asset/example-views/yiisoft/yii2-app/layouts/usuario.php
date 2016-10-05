@@ -1,5 +1,5 @@
 <?php
-//use yii;
+//use Yii;
 use yii\helpers\Html;
 //dd(Yii::$app->user->identity->username);
 /* @var $this \yii\web\View */

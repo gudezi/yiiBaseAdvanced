@@ -358,7 +358,7 @@ class FancytreeWidget extends InputWidget
             
             $idfield = $this->idfield; 
             
-            if (!empty($this->parent && $this->model->$idfield)) {
+            if (!empty($this->parent) && ($this->model->$idfield)) {
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").activateKey("' . $this->model->$idfield . '");');
                 $view->registerJs('$("#' . $id . '").fancytree("getTree").getNodeByKey("' . $this->parent . '").setSelected(true)');
             } elseif ($this->model->$idfield) {

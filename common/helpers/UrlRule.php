@@ -1,7 +1,7 @@
 <?php
 namespace common\helpers;
  
-use yii;
+use Yii;
  
 class UrlRule extends yii\web\UrlRule
 {
