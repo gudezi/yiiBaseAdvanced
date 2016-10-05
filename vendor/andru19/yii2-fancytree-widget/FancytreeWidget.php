@@ -193,6 +193,7 @@ class FancytreeWidget extends InputWidget
      */
     public function registerAssets()
     {
+        $idPrefix = $this->idPrefix;
         echo "<div>";
         if($this->filter){
             echo "<label>Filter:</label><input name='".$idPrefix."search' id='".$idPrefix."search' placeholder='Filter...' autocomplete='off'><button id='".$idPrefix."btnResetSearch'>&times;</button><span id='".$idPrefix."matches'></span>";
