@@ -9,38 +9,38 @@ use yii\helpers\Html;
     <li class="dropdown user user-menu">
         <!-- Menu Toggle Button -->
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <?if(Yii::$app->user->isGuest){?>
+        <?php if(Yii::$app->user->isGuest){?>
             <!-- The user image in the navbar-->
             <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
             <span class="hidden-xs">Invitado</span>
-        <?}else{?>
+        <?php }else{?>
             <!-- The user image in the navbar-->
             <!-- <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
             <img src="<?= Yii::$app->getUrlManager()->getBaseUrl()?>/uploads/<?= Yii::$app->user->identity->profile->photo_cropped?>" class="img-circle user-image" alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs"><?echo Yii::$app->user->identity->fullname?></span>
-        <?}?>
+            <span class="hidden-xs"><?= Yii::$app->user->identity->fullname?></span>
+        <?php }?>
         </a>
         <ul class="dropdown-menu">
             <!-- The user image in the menu -->
             <li class="user-header">
-            <?if(Yii::$app->user->isGuest){?>
+            <?php if(Yii::$app->user->isGuest){?>
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 <p>
                     Invitado
                 </p>
-            <?}else{?>
+            <?php }else{?>
                 <!-- <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
                 <img src="<?= Yii::$app->getUrlManager()->getBaseUrl()?>/uploads/<?= Yii::$app->user->identity->profile->photo_cropped?>" class="img-circle" alt="User Image">
                 <p>
-                    <?echo Yii::$app->user->identity->fullname?>
-                    <small><?echo Yii::$app->user->identity->profile->perfil?></small>
+                    <?= Yii::$app->user->identity->fullname?>
+                    <small><?= Yii::$app->user->identity->profile->perfil?></small>
                 </p>
-            <?}?>
+            <?php }?>
             </li>
             <!-- Menu Body -->
-            <?if(!Yii::$app->user->isGuest){?>
+            <?php if(!Yii::$app->user->isGuest){?>
             <li class="user-body">
                 <div class="row">
                     <!-- <div class="col-xs-12 text-center">
@@ -55,10 +55,10 @@ use yii\helpers\Html;
                 </div>
                 <!-- /.row -->
             </li>
-            <?}?>
+            <?php }?>
             <!-- Menu Footer-->
             <li class="user-footer">
-            <?if(Yii::$app->user->isGuest){?>
+            <?php if(Yii::$app->user->isGuest){?>
                 <div class="pull-left">
                     <?= Html::a(   '<i class="fa fa-user-plus"></i> Registrarse',
                                 ['/site/signup'],
@@ -71,7 +71,7 @@ use yii\helpers\Html;
                                 ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                               ) ?>
                 </div>
-            <?}else{?>
+            <?php }else{?>
                 <div class="pull-left">
                     <a href="#" class="btn btn-default btn-flat"><i class="fa fa-user"></i> Mí cuenta</a>
                 </div>
@@ -82,7 +82,7 @@ use yii\helpers\Html;
                                 ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                                ) ?>
                 </div>
-            <?}?>
+            <?php }?>
             </li>
         </ul>
     </li>

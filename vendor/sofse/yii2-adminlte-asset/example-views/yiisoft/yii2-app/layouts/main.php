@@ -104,7 +104,7 @@ if (Yii::$app->controller->action->id === 'login') {
         ?>
 
     </div>
-    <?include "admin_options.php";?>
+    <?php include "admin_options.php";?>
     <?php $this->endBody() ?>
     </body>
     </html>
