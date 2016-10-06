@@ -47,7 +47,7 @@ class BaseController extends Controller {
 
         $item['url']='';
         $item['user']='Equipo de soporte';
-        $item['image']=Yii::$app->getUrlManager()->getBaseUrl().'/uploads/'.Yii::$app->user->identity->profile->photo_cropped;
+        $item['image']='';//Yii::$app->getUrlManager()->getBaseUrl().'/uploads/'.Yii::$app->user->identity->profile->photo_cropped;
         $item['time']='5 min';
         $item['message']='Hacemos el deploy?';
         $items[]=$item;
