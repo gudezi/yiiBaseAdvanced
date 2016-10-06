@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
 	]); ?>
 	
-	<?/*= GridView::widget([
+	<?php /*= GridView::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => [
@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
 	]); */?>
 	
-    <?/*= GridView::widget([
+    <?php /*= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

@@ -20,7 +20,7 @@ use kartik\widgets\DatePicker;
 
     <?= $form->field($model, 'cliente_id') ?>
 
-    <?php//= $form->field($model, 'fecha') ?>
+    <?php //= $form->field($model, 'fecha') ?>
 	<?php
 	echo $form->field($model, 'fecha_desde')->widget(DatePicker::classname(), [
 		'options' => ['placeholder' => ''],      

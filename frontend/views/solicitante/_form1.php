@@ -46,9 +46,9 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'numero_identificacion')->textInput(['maxlength' => true]) ?>
 
-    <?php//= $form->field($model, 'fecha_nacimiento')->textInput() ?>
+    <?php //= $form->field($model, 'fecha_nacimiento')->textInput() ?>
     
-    <?php/* echo $form->field($model,'fecha_nacimiento')->
+    <?php /* echo $form->field($model,'fecha_nacimiento')->
     widget(DatePicker::className(),[
         'dateFormat' => 'yyyy-MM-dd',
         'clientOptions' => [
@@ -69,9 +69,9 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'nacionalidad')->textInput(['maxlength' => true]) ?>
 
-    <?php//= $form->field($model, 'estado_civil_id')->textInput() ?>
+    <?php //= $form->field($model, 'estado_civil_id')->textInput() ?>
 
-    <?php//= $form->field($model, 'sexo_id')->textInput() ?>
+    <?php //= $form->field($model, 'sexo_id')->textInput() ?>
     
     <?= $form->field($model, 'estado_civil_id')->dropDownList($model->listaEstadoCivil, ['prompt' => 'Seleccione Uno' ]);?>
  

@@ -26,7 +26,7 @@ use frontend\models\Localidades;
 
     <?= $form->field($model, 'domicilio')->textInput(['maxlength' => true]) ?>
 
-    <?php//= $form->field($model, 'localidad_id')->textInput() ?>
+    <?php //= $form->field($model, 'localidad_id')->textInput() ?>
     <?php
         $provincia = ArrayHelper::map(Provincias::find()->all(), 'id', 'descripcion');
         echo $form->field($model, 'provincia_id')->dropDownList(

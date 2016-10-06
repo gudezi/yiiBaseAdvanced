@@ -1,4 +1,4 @@
-<?php//echo "<br>Variables:<br>"; print_r($items);die;?>
+<?php //echo "<br>Variables:<br>"; print_r($items);die;?>
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
 

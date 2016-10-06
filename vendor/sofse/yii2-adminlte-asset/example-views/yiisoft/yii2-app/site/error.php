@@ -17,7 +17,7 @@ $this->title = 'Error '.$exception->statusCode;
     <!-- Content Header (Page header) 
     <section class="content-header">
       <h1>
-        Error <?php//= $exception->statusCode?> 
+        Error <?php //= $exception->statusCode?> 
       </h1>
       <ol class="breadcrumb">
         <li class="active">Error 404 </li>
