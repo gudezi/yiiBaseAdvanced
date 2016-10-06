@@ -13,7 +13,7 @@ use softark\duallistbox\DualListbox;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <? 
+    <?php 
         if($action == 'default')
             echo $form->field($model, 'username')->textInput(['maxlength' => true]);
         else     

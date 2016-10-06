@@ -14,7 +14,7 @@ use andru19\fancytree\FancytreeWidget;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <? 
+    <?php 
         if($action == 'default')
             echo $form->field($model, 'nombre')->textInput(['maxlength' => true]);
         else     

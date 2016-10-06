@@ -21,7 +21,7 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
 
-            <?
+            <?php
             if(Yii::$app->user->isGuest)
             {
                 // INCLUYO EL MENU DE USUARIO

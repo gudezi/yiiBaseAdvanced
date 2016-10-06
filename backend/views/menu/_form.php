@@ -27,7 +27,7 @@ use andru19\fancytree\FancytreeWidget;
 	
     <?//= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
 
-    <?   /* $data = [
+    <?/* $data = [
     ['title' => 'Node 1', 'key' => 1],
     ['title' => 'Folder 2', 'key' => '3', 'folder' => true, 'children' => [
         ['title' => 'Node 2.1', 'key' => '2'],

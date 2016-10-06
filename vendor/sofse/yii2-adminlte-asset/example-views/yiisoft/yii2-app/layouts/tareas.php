@@ -1,4 +1,4 @@
-<?
+<?php
     echo gudezi\notifications\NotificationsWidget::widget(
         [
             'options' => ['class' => 'sidebar-menu'],
