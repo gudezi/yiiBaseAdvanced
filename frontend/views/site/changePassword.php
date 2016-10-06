@@ -40,14 +40,14 @@ $this->params['breadcrumbs'][] = $this->title;
 //use yii\bootstrap\ActiveForm;
 ?>
 
-<?//= Alert::widget(); ?>
+<?php//= Alert::widget(); ?>
 
-<?// $form = ActiveForm::begin(['id' => 'passwordform']); ?>
+<?php// $form = ActiveForm::begin(['id' => 'passwordform']); ?>
 
-<?//= $form->field($user, 'currentPassword')->passwordInput(); ?>
+<?php//= $form->field($user, 'currentPassword')->passwordInput(); ?>
 
-<?//= $form->field($user, 'newPassword')->passwordInput(); ?>
+<?php//= $form->field($user, 'newPassword')->passwordInput(); ?>
 
-<?//= $form->field($user, 'newPasswordConfirm')->passwordInput(); ?>
+<?php//= $form->field($user, 'newPasswordConfirm')->passwordInput(); ?>
 
 

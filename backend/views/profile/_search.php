@@ -21,9 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre') ?>
 
-    <?//= $form->field($model, 'perfil') ?>
+    <?php//= $form->field($model, 'perfil') ?>
 
-    <?//= $form->field($model, 'grupo') ?>
+    <?php//= $form->field($model, 'grupo') ?>
 
     <?php // echo $form->field($model, 'entidad') ?>
 

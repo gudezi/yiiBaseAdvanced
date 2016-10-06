@@ -19,15 +19,15 @@ use andru19\fancytree\FancytreeWidget;
 
     <?= $form->field($model, 'destino')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'directorio')->textInput(['maxlength' => true]) ?>
+    <?php//= $form->field($model, 'directorio')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'perfil')->textInput(['maxlength' => true]) ?>
+    <?php//= $form->field($model, 'perfil')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'padre')->textInput() ?>
+    <?php//= $form->field($model, 'padre')->textInput() ?>
 	
-    <?//= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
+    <?php//= $form->field($model, 'padre')->dropDownList($model->listaMenu, ['prompt' => 'Seleccione Uno', 'empty' => '0',]);?>
 
-    <?/* $data = [
+    <?php/*$data = [
     ['title' => 'Node 1', 'key' => 1],
     ['title' => 'Folder 2', 'key' => '3', 'folder' => true, 'children' => [
         ['title' => 'Node 2.1', 'key' => '2'],
@@ -75,14 +75,14 @@ use andru19\fancytree\FancytreeWidget;
 												   
     <?= $form->field($model, 'orden')->textInput() ?>
 
-	<?//= $form->field($model, 'submenu')->textInput() ?>
+	<?php//= $form->field($model, 'submenu')->textInput() ?>
     <?= $form->field($model, 'submenu')->checkBox() ?>
 
     <?= $form->field($model, 'activo')->checkBox() ?>
  
-    <?//= $form->field($model, 'grupo')->textInput(['maxlength' => true]) ?>
+    <?php//= $form->field($model, 'grupo')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'target')->textInput(['maxlength' => true]) ?>
+    <?php//= $form->field($model, 'target')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

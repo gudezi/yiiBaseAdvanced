@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?//= Html::a('Create Solicitante', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php//= Html::a('Create Solicitante', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Crear Solicitante', '#', [
             'id' => 'activity-index-link',
             'class' => 'btn btn-success',

@@ -41,7 +41,7 @@ use frontend\models\Localidades;
 
     <?= $form->field($model, 'depto')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'pais_id')->textInput() ?>
+    <?php//= $form->field($model, 'pais_id')->textInput() ?>
     <?php
         $pais = ArrayHelper::map(Paises::find()->all(), 'id', 'descripcion');
         echo $form->field($model, 'pais_id')->dropDownList(
@@ -59,7 +59,7 @@ use frontend\models\Localidades;
         );
     ?>    
 
-    <?//= $form->field($model, 'provincia_id')->textInput() ?>
+    <?php//= $form->field($model, 'provincia_id')->textInput() ?>
     <?php
 	if ($model->isNewRecord){
 		$provincia = array();
@@ -82,7 +82,7 @@ use frontend\models\Localidades;
         );
     ?>
 
-    <?//= $form->field($model, 'partido_id')->textInput() ?>
+    <?php//= $form->field($model, 'partido_id')->textInput() ?>
     <?php 
 	if ($model->isNewRecord){
 		$partido = array();
@@ -103,7 +103,7 @@ use frontend\models\Localidades;
 	);
     ?>
 
-    <?//= $form->field($model, 'localidad_id')->textInput() ?>
+    <?php//= $form->field($model, 'localidad_id')->textInput() ?>
     <?php
     if ($model->isNewRecord)
         echo $form->field($model, 'localidad_id')->dropDownList(['prompt'=>'Por favor elija una']);
@@ -119,7 +119,7 @@ use frontend\models\Localidades;
 
     <?= $form->field($model, 'celular')->textInput(['maxlength' => true]) ?>
 
-    <?//= $form->field($model, 'foto')->textInput() ?>
+    <?php//= $form->field($model, 'foto')->textInput() ?>
     
     <?= $form->field($model, 'photo')->widget(CropImageUpload::className()) ?>
 
