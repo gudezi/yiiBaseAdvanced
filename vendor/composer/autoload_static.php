@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
+class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
 {
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
@@ -78,23 +78,22 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             'johnitvn\\ajaxcrud\\' => 18,
         ),
+        'g' => 
+        array (
+            'gudezi\\notifications\\' => 21,
+            'gudezi\\fancytree\\' => 17,
+            'gudezi\\croppic\\' => 15,
+            'gudezi\\' => 7,
+        ),
         'e' => 
         array (
             'execut\\yii\\' => 11,
             'execut\\widget\\' => 14,
         ),
-        'd' => 
-        array (
-            'dmstr\\' => 6,
-        ),
         'c' => 
         array (
             'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
-        ),
-        'a' => 
-        array (
-            'andru19\\fancytree\\' => 18,
         ),
         'F' => 
         array (
@@ -295,6 +294,22 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/johnitvn/yii2-ajaxcrud/src',
         ),
+        'gudezi\\notifications\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gudezi/yii2-notifications-widget',
+        ),
+        'gudezi\\fancytree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gudezi/yii2-fancytree-widget',
+        ),
+        'gudezi\\croppic\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gudezi/yii2-croppic-widget',
+        ),
+        'gudezi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gudezi/yii2-adminlte-asset',
+        ),
         'execut\\yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/execut/yii2-base',
@@ -303,10 +318,6 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         array (
             0 => __DIR__ . '/..' . '/execut/yii2-widget-bootstraptreeview',
         ),
-        'dmstr\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
-        ),
         'creocoder\\nestedsets\\' => 
         array (
             0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
@@ -314,10 +325,6 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
-        'andru19\\fancytree\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/andru19/yii2-fancytree-widget',
         ),
         'Faker\\' => 
         array (
@@ -387,10 +394,10 @@ class ComposerStaticInit792d1aefa5b738735256480b5bbfc177
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit792d1aefa5b738735256480b5bbfc177::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit792d1aefa5b738735256480b5bbfc177::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit792d1aefa5b738735256480b5bbfc177::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit792d1aefa5b738735256480b5bbfc177::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit715e24d6c3c254d047a93e82be7b690e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit715e24d6c3c254d047a93e82be7b690e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit715e24d6c3c254d047a93e82be7b690e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit715e24d6c3c254d047a93e82be7b690e::$classMap;
 
         }, null, ClassLoader::class);
     }

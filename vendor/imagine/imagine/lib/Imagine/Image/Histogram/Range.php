@@ -37,7 +37,10 @@ final class Range
     public function __construct($start, $end)
     {
         if ($end <= $start) {
-            throw new OutOfBoundsException(sprintf('Range end cannot be bigger than start, %d %d given accordingly', $this->start, $this->end));
+            throw new OutOfBoundsException(sprintf(
+                'Range end cannot be bigger than start, %d %d given '.
+                'accordingly', $this->start, $this->end
+            ));
         }
 
         $this->start = $start;

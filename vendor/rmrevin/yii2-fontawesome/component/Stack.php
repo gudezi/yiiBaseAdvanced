@@ -7,6 +7,7 @@
 
 namespace rmrevin\yii\fontawesome\component;
 
+use rmrevin\yii\fontawesome\FA;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -17,19 +18,29 @@ use yii\helpers\Html;
 class Stack
 {
 
-    /** @var string */
+    /**
+     * @var string
+     */
     public static $defaultTag = 'span';
 
-    /** @var string */
+    /**
+     * @var string
+     */
     private $tag;
 
-    /** @var array */
+    /**
+     * @var array
+     */
     private $options = [];
 
-    /** @var Icon */
+    /**
+     * @var Icon
+     */
     private $icon_front;
 
-    /** @var Icon */
+    /**
+     * @var Icon
+     */
     private $icon_back;
 
     /**
@@ -37,7 +48,7 @@ class Stack
      */
     public function __construct($options = [])
     {
-        Html::addCssClass($options, 'fa-stack');
+        Html::addCssClass($options, FA::$cssPrefix . '-stack');
 
         $this->options = $options;
     }
@@ -112,11 +123,11 @@ class Stack
         $template = ArrayHelper::remove($options, 'template', '{back}{front}');
 
         $icon_back = $this->icon_back instanceof Icon
-            ? $this->icon_back->addCssClass('fa-stack-2x')
+            ? $this->icon_back->addCssClass(FA::$cssPrefix . '-stack-2x')
             : null;
 
         $icon_front = $this->icon_front instanceof Icon
-            ? $this->icon_front->addCssClass('fa-stack-1x')
+            ? $this->icon_front->addCssClass(FA::$cssPrefix . '-stack-1x')
             : null;
 
         return Html::tag(

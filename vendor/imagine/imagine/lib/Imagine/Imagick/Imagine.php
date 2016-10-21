@@ -11,21 +11,16 @@
 
 namespace Imagine\Imagick;
 
-use Imagine\Exception\NotSupportedException;
-use Imagine\Image\AbstractImagine;
 use Imagine\Image\BoxInterface;
-use Imagine\Image\Metadata\MetadataBag;
-use Imagine\Image\Palette\Color\ColorInterface;
+use Imagine\Image\Color;
 use Imagine\Exception\InvalidArgumentException;
 use Imagine\Exception\RuntimeException;
-use Imagine\Image\Palette\CMYK;
-use Imagine\Image\Palette\RGB;
-use Imagine\Image\Palette\Grayscale;
+use Imagine\Image\ImagineInterface;
 
 /**
  * Imagine implementation using the Imagick PHP extension
  */
-final class Imagine extends AbstractImagine
+final class Imagine implements ImagineInterface
 {
     /**
      * @throws RuntimeException
@@ -36,8 +31,13 @@ final class Imagine extends AbstractImagine
             throw new RuntimeException('Imagick not installed');
         }
 
-        if (version_compare('6.2.9', $this->getVersion(new \Imagick())) > 0) {
-            throw new RuntimeException('ImageMagick version 6.2.9 or higher is required');
+        $imagick = new \Imagick();
+        $v = $imagick->getVersion();
+        list($version, $year, $month, $day, $q, $website) = sscanf($v['versionString'], 'ImageMagick %s %04d-%02d-%02d %s %s');
+
+        // imagick.setiteratorindex.php
+        if (version_compare('6.2.9', $version) > 0) {
+            throw new RuntimeException('Imagick version 6.2.9 or higher is required');
         }
     }
 
@@ -46,12 +46,18 @@ final class Imagine extends AbstractImagine
      */
     public function open($path)
     {
-        $path = $this->checkPath($path);
+        $handle = @fopen($path, 'r');
+
+        if (false === $handle) {
+            throw new InvalidArgumentException(sprintf(
+                'File %s doesn\'t exist', $path
+            ));
+        }
 
         try {
-            $imagick = new \Imagick($path);
-            $image = new Image($imagick, $this->createPalette($imagick), $this->getMetadataReader()->readFile($path));
+            $image = $this->read($handle);
         } catch (\Exception $e) {
+            fclose($handle);
             throw new RuntimeException(sprintf('Unable to open image %s', $path), $e->getCode(), $e);
         }
 
@@ -61,33 +67,33 @@ final class Imagine extends AbstractImagine
     /**
      * {@inheritdoc}
      */
-    public function create(BoxInterface $size, ColorInterface $color = null)
+    public function create(BoxInterface $size, Color $color = null)
     {
         $width  = $size->getWidth();
         $height = $size->getHeight();
 
-        $palette = null !== $color ? $color->getPalette() : new RGB();
-        $color = null !== $color ? $color : $palette->color('fff');
+        $color = null !== $color ? $color : new Color('fff');
 
         try {
             $pixel = new \ImagickPixel((string) $color);
-            $pixel->setColorValue(\Imagick::COLOR_ALPHA, $color->getAlpha() / 100);
+            $pixel->setColorValue(
+                \Imagick::COLOR_OPACITY,
+                number_format(abs(round($color->getAlpha() / 100, 1)), 1)
+            );
 
             $imagick = new \Imagick();
             $imagick->newImage($width, $height, $pixel);
             $imagick->setImageMatte(true);
             $imagick->setImageBackgroundColor($pixel);
 
-            if (version_compare('6.3.1', $this->getVersion($imagick)) < 0) {
-                $imagick->setImageOpacity($pixel->getColorValue(\Imagick::COLOR_ALPHA));
-            }
-
             $pixel->clear();
             $pixel->destroy();
 
-            return new Image($imagick, $palette, new MetadataBag());
+            return new Image($imagick);
         } catch (\ImagickException $e) {
-            throw new RuntimeException('Could not create empty image', $e->getCode(), $e);
+            throw new RuntimeException(
+                'Could not create empty image', $e->getCode(), $e
+            );
         }
     }
 
@@ -102,9 +108,11 @@ final class Imagine extends AbstractImagine
             $imagick->readImageBlob($string);
             $imagick->setImageMatte(true);
 
-            return new Image($imagick, $this->createPalette($imagick), $this->getMetadataReader()->readData($string));
+            return new Image($imagick);
         } catch (\ImagickException $e) {
-            throw new RuntimeException('Could not load image from string', $e->getCode(), $e);
+            throw new RuntimeException(
+                'Could not load image from string', $e->getCode(), $e
+            );
         }
     }
 
@@ -121,56 +129,19 @@ final class Imagine extends AbstractImagine
             $imagick = new \Imagick();
             $imagick->readImageFile($resource);
         } catch (\ImagickException $e) {
-            throw new RuntimeException('Could not read image from resource', $e->getCode(), $e);
+            throw new RuntimeException(
+                'Could not read image from resource', $e->getCode(), $e
+            );
         }
 
-        return new Image($imagick, $this->createPalette($imagick), $this->getMetadataReader()->readStream($resource));
+        return new Image($imagick);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function font($file, $size, ColorInterface $color)
+    public function font($file, $size, Color $color)
     {
         return new Font(new \Imagick(), $file, $size, $color);
-    }
-
-    /**
-     * Returns the palette corresponding to an \Imagick resource colorspace
-     *
-     * @param \Imagick $imagick
-     *
-     * @return CMYK|Grayscale|RGB
-     *
-     * @throws NotSupportedException
-     */
-    private function createPalette(\Imagick $imagick)
-    {
-        switch ($imagick->getImageColorspace()) {
-            case \Imagick::COLORSPACE_RGB:
-            case \Imagick::COLORSPACE_SRGB:
-                return new RGB();
-            case \Imagick::COLORSPACE_CMYK:
-                return new CMYK();
-            case \Imagick::COLORSPACE_GRAY:
-                return new Grayscale();
-            default:
-                throw new NotSupportedException('Only RGB and CMYK colorspace are currently supported');
-        }
-    }
-
-    /**
-     * Returns ImageMagick version
-     *
-     * @param \Imagick $imagick
-     *
-     * @return string
-     */
-    private function getVersion(\Imagick $imagick)
-    {
-        $v = $imagick->getVersion();
-        list($version) = sscanf($v['versionString'], 'ImageMagick %s %04d-%02d-%02d %s %s');
-
-        return $version;
     }
 }

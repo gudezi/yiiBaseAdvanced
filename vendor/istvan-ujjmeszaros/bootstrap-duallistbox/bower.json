@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-duallistbox",
-	"version": "3.0.5",
+	"version": "3.0.6",
 	"homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
 	"authors": [
     {
@@ -14,7 +14,7 @@
 	  "src/bootstrap-duallistbox.css"
   ],
   "dependencies": {
-    "jquery": "~2.0.3",
+    "jquery": ">=2.0.3",
     "bootstrap": ">=2.3.2"
   },
 	"keywords": [

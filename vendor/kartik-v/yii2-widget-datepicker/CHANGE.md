@@ -1,6 +1,22 @@
 Change Log: `yii2-widget-datepicker`
 ====================================
 
+## version 1.4.2
+
+**Date:** 02-Sep-2016
+
+- (enh #107): Add Italian translations.
+- (enh #108): Correct bootstrap datepicker CSS for source map url.
+- Enhance PHP Documentation for all classes in the extension
+
+## version 1.4.1
+
+**Date:** 17-Aug-2016
+
+- (enh #96): Update locale files for plugin.
+- (enh #98): Add Japanese translations.
+- (enh #102): Add Lithuanian translations.
+
 ## version 1.4.0
 
 **Date:** 28-Jun-2016

@@ -11,6 +11,7 @@
 
 namespace Imagine\Image;
 
+use Imagine\Image\ImageInterface;
 use Imagine\Exception\RuntimeException;
 use Imagine\Exception\InvalidArgumentException;
 use Imagine\Exception\OutOfBoundsException;

@@ -15,8 +15,6 @@ use Imagine\Image\ImageInterface;
 use Imagine\Image\ImagineInterface;
 use Imagine\Image\ManipulatorInterface;
 use Imagine\Image\Point;
-use Imagine\Image\Palette\RGB;
-use Imagine\Filter\Basic\Autorotate;
 use yii\base\InvalidConfigException;
 use yii\base\InvalidParamException;
 use yii\helpers\ArrayHelper;
@@ -36,12 +34,10 @@ class BaseImage
      * GD2 driver definition for Imagine implementation using the GD library.
      */
     const DRIVER_GD2 = 'gd2';
-    
     /**
      * imagick driver definition.
      */
     const DRIVER_IMAGICK = 'imagick';
-    
     /**
      * gmagick driver definition.
      */
@@ -52,11 +48,11 @@ class BaseImage
      * If the latter, the first available driver will be used.
      */
     public static $driver = [self::DRIVER_GMAGICK, self::DRIVER_IMAGICK, self::DRIVER_GD2];
-    
     /**
      * @var ImagineInterface instance.
      */
     private static $_imagine;
+
 
     /**
      * @var string background color to use when creating thumbnails in `ImageInterface::THUMBNAIL_INSET` mode with
@@ -155,20 +151,7 @@ class BaseImage
             ->copy()
             ->crop(new Point($start[0], $start[1]), new Box($width, $height));
     }
-    
-    /**
-     * Rotates an image automatically based on exif information.
-     * 
-     * @param \Imagine\Image\ImageInterface $image The imagine instance object to rotate.
-     * @param string $color
-     * @return \Imagine\Image\ImageInterface
-     * @since 2.1.0
-     */
-    public static function autorotate(ImageInterface $image, $color = '000000')
-    {
-    	return (new Autorotate($color))->apply($image);
-    }
-    
+
     /**
      * Creates a thumbnail image.
      *
@@ -216,11 +199,8 @@ class BaseImage
             return $img;
         }
 
-        $palette = new RGB();
-        $color = $palette->color(static::$thumbnailBackgroundColor, static::$thumbnailBackgroundAlpha);
-        
         // create empty image to preserve aspect ratio of thumbnail
-        $thumb = static::getImagine()->create($thumbnailBox, $color);
+        $thumb = static::getImagine()->create($thumbnailBox, new Color(static::$thumbnailBackgroundColor, static::$thumbnailBackgroundAlpha));
 
         // calculate points
         $startX = 0;
@@ -283,11 +263,8 @@ class BaseImage
         $fontColor = ArrayHelper::getValue($fontOptions, 'color', 'fff');
         $fontAngle = ArrayHelper::getValue($fontOptions, 'angle', 0);
 
-        $palette = new RGB();
-        $color = $palette->color($fontColor);
-        
         $img = static::getImagine()->open(Yii::getAlias($filename));
-        $font = static::getImagine()->font(Yii::getAlias($fontFile), $fontSize, $color);
+        $font = static::getImagine()->font(Yii::getAlias($fontFile), $fontSize, new Color($fontColor));
 
         $img->draw()->text($text, $font, new Point($start[0], $start[1]), $fontAngle);
 
@@ -309,13 +286,11 @@ class BaseImage
         $size = $img->getSize();
 
         $pasteTo = new Point($margin, $margin);
-        
-        $palette = new RGB();
-        $color = $palette->color($color, $alpha);
+        $padColor = new Color($color, $alpha);
 
         $box = new Box($size->getWidth() + ceil($margin * 2), $size->getHeight() + ceil($margin * 2));
 
-        $image = static::getImagine()->create($box, $color);
+        $image = static::getImagine()->create($box, $padColor);
 
         $image->paste($img, $pasteTo);
 

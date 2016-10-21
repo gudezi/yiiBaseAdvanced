@@ -11,9 +11,11 @@
 
 namespace Imagine\Exception;
 
+use RuntimeException as BaseRuntimeException;
+
 /**
  * Imagine-specific runtime exception
  */
-class RuntimeException extends \RuntimeException implements Exception
+class RuntimeException extends BaseRuntimeException implements Exception
 {
 }

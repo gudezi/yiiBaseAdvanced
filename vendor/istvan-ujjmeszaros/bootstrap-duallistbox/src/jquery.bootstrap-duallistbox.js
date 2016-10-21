@@ -21,7 +21,12 @@
       infoText: 'Showing all {0}',                                                        // text when all options are visible / false for no info text
       infoTextFiltered: '<span class="label label-warning">Filtered</span> {0} from {1}', // when not all of the options are visible due to the filter
       infoTextEmpty: 'Empty list',                                                        // when there are no options present in the list
-      filterOnValues: false                                                               // filter by selector's values, boolean
+      filterOnValues: false,                                                              // filter by selector's values, boolean
+      sortByInputOrder: false,
+      eventMoveOverride: false,                                                           // boolean, allows user to unbind default event behaviour and run their own instead
+      eventMoveAllOverride: false,                                                        // boolean, allows user to unbind default event behaviour and run their own instead
+      eventRemoveOverride: false,                                                         // boolean, allows user to unbind default event behaviour and run their own instead
+      eventRemoveAllOverride: false                                                       // boolean, allows user to unbind default event behaviour and run their own instead
     },
     // Selections are invisible on android if the containing select is styled with CSS
     // http://code.google.com/p/android/issues/detail?id=16922
@@ -61,6 +66,12 @@
       var $item = $(item);
       if ($item.data('original-index') === original_index) {
         $item.prop('selected', selected);
+        if(selected){
+          $item.attr('data-sortindex', dualListbox.sortIndex);
+          dualListbox.sortIndex++;
+        } else {
+          $item.removeAttr('data-sortindex');
+        }
       }
     });
   }
@@ -167,6 +178,25 @@
     });
   }
 
+  function sortOptionsByInputOrder(select){
+    var selectopt = select.children('option');
+
+    selectopt.sort(function(a,b){
+      var an = parseInt(a.getAttribute('data-sortindex')),
+          bn = parseInt(b.getAttribute('data-sortindex'));
+
+          if(an > bn) {
+             return 1;
+          }
+          if(an < bn) {
+            return -1;
+          }
+          return 0;
+    });
+
+    selectopt.detach().appendTo(select);
+  }
+
   function sortOptions(select) {
     select.find('option').sort(function(a, b) {
       return ($(a).data('original-index') > $(b).data('original-index')) ? 1 : -1;
@@ -196,7 +226,11 @@
 
     refreshSelects(dualListbox);
     triggerChangeEvent(dualListbox);
-    sortOptions(dualListbox.elements.select2);
+    if(dualListbox.settings.sortByInputOrder){
+        sortOptionsByInputOrder(dualListbox.elements.select2);
+    } else {
+        sortOptions(dualListbox.elements.select2);
+    }
   }
 
   function remove(dualListbox) {
@@ -217,6 +251,9 @@
     refreshSelects(dualListbox);
     triggerChangeEvent(dualListbox);
     sortOptions(dualListbox.elements.select1);
+    if(dualListbox.settings.sortByInputOrder){
+        sortOptionsByInputOrder(dualListbox.elements.select2);
+    }
   }
 
   function moveAll(dualListbox) {
@@ -231,6 +268,8 @@
       var $item = $(item);
       if (!$item.data('filtered1')) {
         $item.prop('selected', true);
+        $item.attr('data-sortindex', dualListbox.sortIndex);
+        dualListbox.sortIndex++;
       }
     });
 
@@ -250,6 +289,7 @@
       var $item = $(item);
       if (!$item.data('filtered2')) {
         $item.prop('selected', false);
+        $item.removeAttr('data-sortindex');
       }
     });
 
@@ -280,21 +320,29 @@
       dualListbox.setSelectedFilter('', true);
     });
 
-    dualListbox.elements.moveButton.on('click', function() {
-      move(dualListbox);
-    });
+    if (dualListbox.settings.eventMoveOverride === false) {
+      dualListbox.elements.moveButton.on('click', function() {
+        move(dualListbox);
+      });
+    }
 
-    dualListbox.elements.moveAllButton.on('click', function() {
-      moveAll(dualListbox);
-    });
+    if (dualListbox.settings.eventMoveAllOverride === false) {
+      dualListbox.elements.moveAllButton.on('click', function() {
+        moveAll(dualListbox);
+      });
+    }
 
-    dualListbox.elements.removeButton.on('click', function() {
-      remove(dualListbox);
-    });
+    if (dualListbox.settings.eventRemoveOverride === false) {
+      dualListbox.elements.removeButton.on('click', function() {
+        remove(dualListbox);
+      });
+    }
 
-    dualListbox.elements.removeAllButton.on('click', function() {
-      removeAll(dualListbox);
-    });
+    if (dualListbox.settings.eventRemoveAllOverride === false) {
+      dualListbox.elements.removeAllButton.on('click', function() {
+        removeAll(dualListbox);
+      });
+    }
 
     dualListbox.elements.filterInput1.on('change keyup', function() {
       filter(dualListbox, 1);
@@ -382,6 +430,7 @@
 
       // Apply all settings
       this.selectedElements = 0;
+      this.sortIndex = 0;
       this.elementCount = 0;
       this.setBootstrap2Compatible(this.settings.bootstrap2Compatible);
       this.setFilterTextClear(this.settings.filterTextClear);
@@ -406,6 +455,11 @@
       this.setInfoTextFiltered(this.settings.infoTextFiltered);
       this.setInfoTextEmpty(this.settings.infoTextEmpty);
       this.setFilterOnValues(this.settings.filterOnValues);
+      this.setSortByInputOrder(this.settings.sortByInputOrder);
+      this.setEventMoveOverride(this.settings.eventMoveOverride);
+      this.setEventMoveAllOverride(this.settings.eventMoveAllOverride);
+      this.setEventRemoveOverride(this.settings.eventRemoveOverride);
+      this.setEventRemoveAllOverride(this.settings.eventRemoveAllOverride);
 
       // Hide the original select
       this.element.hide();
@@ -639,6 +693,41 @@
         refreshSelects(this);
       }
       return this.element;
+    },
+    setSortByInputOrder: function(value, refresh){
+        this.settings.sortByInputOrder = value;
+        if (refresh) {
+          refreshSelects(this);
+        }
+        return this.element;
+    },
+    setEventMoveOverride: function(value, refresh) {
+        this.settings.eventMoveOverride = value;
+        if (refresh) {
+          refreshSelects(this);
+        }
+        return this.element;
+    },
+    setEventMoveAllOverride: function(value, refresh) {
+        this.settings.eventMoveAllOverride = value;
+        if (refresh) {
+          refreshSelects(this);
+        }
+        return this.element;
+    },
+    setEventRemoveOverride: function(value, refresh) {
+        this.settings.eventRemoveOverride = value;
+        if (refresh) {
+          refreshSelects(this);
+        }
+        return this.element;
+    },
+    setEventRemoveAllOverride: function(value, refresh) {
+        this.settings.eventRemoveAllOverride = value;
+        if (refresh) {
+          refreshSelects(this);
+        }
+        return this.element;
     },
     getContainer: function() {
       return this.container;

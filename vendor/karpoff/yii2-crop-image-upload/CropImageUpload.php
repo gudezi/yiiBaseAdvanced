@@ -6,7 +6,6 @@
  */
 namespace karpoff\icrop;
 
-use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
@@ -29,13 +28,13 @@ class CropImageUpload extends InputWidget
 	/**
 	 * @var string crop ratio
 	 * format is width:height where width and height are both floats
-	 * if has model, will be got from CropImageBehavior
+	 * if empty and has model, will be got from CropImageBehavior
 	 */
 	public $ratio;
 
 	/**
 	 * @var string attribute name storing crop value or crop value itself if no model
-	 * if has model, will be got from CropImageBehavior
+	 * if empty and has model, will be got from CropImageBehavior
 	 * crop value has topLeftX-topLeftY-width-height format where all variables are float
 	 * all coordinates are in percents of corresponded image dimension
 	 */
@@ -43,18 +42,11 @@ class CropImageUpload extends InputWidget
 
 	/**
 	 * @var string crop value
-	 * if has model, will be got from $crop_field of model
+	 * if empty and has model, will be got from $crop_field of model
 	 * crop value has topLeftX-topLeftY-width-height format where all variables are float
 	 * all coordinates are in percents of corresponded image dimension
 	 */
 	public $crop_value;
-
-	/**
-	 * @var string css class of container that stores image crop
-	 */
-	public $crop_class = 'crop_medium';
-
-
 
 	/**
 	 * @var string url where uploaded files are stored
@@ -62,66 +54,65 @@ class CropImageUpload extends InputWidget
 	 */
 	public $url;
 
+	/**
+	 * @var string css class of container that stores image crop
+	 */
+	public $crop_class = 'crop_medium';
 
 	/**
 	 * @inheritdoc
 	 */
 	public function run()
 	{
-		$jsOptions = [
-			'clientOptions' => $this->clientOptions,
-			'crop_class' => $this->crop_class,
-		];
-
 		if ($this->hasModel()) {
-			echo Html::activeInput('file', $this->model, $this->attribute, $this->options);
+			echo Html::activeFileInput($this->model, $this->attribute, $this->options);
 
-			$crops = null;
-			foreach ($this->model->getBehaviors() as $beh) {
-				if (!empty($beh->attribute) && $beh->attribute == $this->attribute && $beh instanceof CropImageUploadBehavior) {
-					$crops = $beh->getConfigurations();
-					$this->url = $beh->url;
-					break;
+			if (!$this->ratio || !$this->crop_field || !$this->url) {
+				foreach ($this->model->getBehaviors() as $beh) {
+					if (!empty($beh->attribute) && $beh->attribute == $this->attribute) {
+						if ($beh instanceof CropImageUploadBehavior) {
+							if (!$this->ratio && $beh->ratio)
+								$this->ratio = $beh->ratio;
+							if (!$this->crop_field && $beh->crop_field)
+								$this->crop_field = $beh->crop_field;
+							if (!$this->url && $beh->url)
+								$this->url = $beh->url;
+							break;
+						}
+					}
 				}
 			}
 
-			if (!$crops)
-				throw new InvalidConfigException("CropImageUploadBehavior is not found for {$this->attribute} attribute");
-
-			$jsOptions['crops'] = [];
-			$input_name = Html::getInputName($this->model, $this->attribute);
-			$input_id = Html::getInputId($this->model, $this->attribute);
-
-			echo Html::hiddenInput($input_name . '[file]', Html::getAttributeValue($this->model, $this->attribute), ['id' => $input_id . '_image']);
-
-			foreach ($crops as $ind => $crop) {
-				$crop_id = $input_id . '_crop' . $ind;
-				echo Html::hiddenInput($input_name . '[' . $ind . ']', $crop['value'] === false ? '-' : $crop['value'], ['id' => $crop_id]);
-
-				$jsOptions['crops'][] = [
-					'input_id' => $crop_id,
-					'ratio' => $crop['ratio'],
-					'image' => $crop['image'],
-				];
-			}
-
+			if (!$this->crop_value && $this->crop_field)
+				$this->crop_value = $this->model->{$this->crop_field};
 		} else {
 			echo Html::fileInput($this->name, $this->value, $this->options);
+		}
 
-			$crop_id = (isset($this->options['id']) ? $this->options['id'] : ($this->name . '_id')) . '_' . $this->crop_field;;
-			echo Html::hiddenInput($this->crop_field, $this->crop_value, ['id' => $crop_id]);
+		$crop_id = false;
 
-			$jsOptions['crops'][] = [
-				'input_id' => $crop_id,
-				'ratio' => $this->ratio,
-			];
+		if ($this->crop_field) {
+			if ($this->hasModel()) {
+				$crop_id = Html::getInputId($this->model, $this->crop_field);
+				echo Html::activeHiddenInput($this->model, $this->crop_field, ['value' => $this->crop_value]);
+			} else {
+				$crop_id = $this->options['id'] . '_' . $this->crop_field;
+				echo Html::hiddenInput($this->crop_field, $this->crop_value);
+			}
 		}
 
 		if ($this->url)
 			$this->url = \Yii::getAlias($this->url);
 
-		$jsOptions['url'] = $this->url;
-
+		$jsOptions = [
+			'crop_value' => $this->crop_value,
+			'crop_id' => $crop_id,
+			'ratio' => $this->ratio,
+			'url' => $this->url,
+			'clientOptions' => $this->clientOptions,
+			'is_crop_prev' => ($crop_id || !$this->hasModel()) ? false : true,
+			'crop_class' => $this->crop_class,
+		];
 
 		$this->registerPlugin($jsOptions);
 	}

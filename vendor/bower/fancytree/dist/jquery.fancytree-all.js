@@ -2381,8 +2381,8 @@ Fancytree.prototype = /** @lends Fancytree# */{
 	generateFormElements: function(selected, active, opts) {
 		// TODO: test case
 		opts = opts || {};
-        
-        var nodeList,
+
+		var nodeList,
 			selectedName = (typeof selected === "string") ? selected : "ft_" + this._id + "[]",
 			activeName = (typeof active === "string") ? active : "ft_" + this._id + "_active",
 			id = "fancytree_result_" + this._id,
@@ -2396,12 +2396,6 @@ Fancytree.prototype = /** @lends Fancytree# */{
 				id: id
 			}).hide().insertAfter(this.$container);
 		}
-        //alert(selectedName);
-		//if(this.options.selectMode === 2)
-        //{
-         //   selectedName = selectedName+'[]';
-        //}
-        //console.log(nodeList);
 		if(selected !== false){
 			nodeList = this.getSelectedNodes(stopOnParents);
 			$.each(nodeList, function(idx, node){

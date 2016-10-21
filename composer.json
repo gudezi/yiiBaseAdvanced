@@ -12,7 +12,7 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
@@ -23,13 +23,15 @@
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-icons": "@dev",
         "kartik-v/yii2-nav-x": "*",
-        "dmstr/yii2-adminlte-asset": "2.*",
         "softark/yii2-dual-listbox": "dev-master",
         "kartik-v/yii2-tree-manager": "@dev",
         "execut/yii2-widget-bootstraptreeview": "dev-master",
-        "andru19/yii2-fancytree-widget": "*",
+        "gudezi/yii2-fancytree-widget": "*",
+	"gudezi/yii2-notifications-widget": "*",
+        "gudezi/yii2-adminlte-asset": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
-        "karpoff/yii2-crop-image-upload": "*"
+        "karpoff/yii2-crop-image-upload": "*",
+        "gudezi/yii2-croppic-widget": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

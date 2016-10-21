@@ -12,14 +12,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-        'gridview' => [ 'class' => '\kartik\grid\Module'],
-        //'treemanager' =>  [
-        //'class' => '\kartik\tree\Module',
-        // enter other module properties if needed
-        // for advanced/personalized configuration
-        // (refer module properties available below)]
-    ],
+    'modules' => [],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -32,14 +25,15 @@ return [
 		  'view' => [
             'theme' => [
                'pathMap' => [
-                  '@app/views' => '@vendor/sofse/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                  '@app/views' => '@vendor/gudezi/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
                ],
             ],
         ],
         'assetManager' => [
             'bundles' => [
-               'sofse\web\AdminLteAsset' => [
-                  'skin' => 'skin-sofse',
+               'gudezi\web\AdminLteAsset' => [
+                  //'skin' => 'skin-gudezi',
+                  'skin' => 'skin-yellow',
                ],
             ],
         ],

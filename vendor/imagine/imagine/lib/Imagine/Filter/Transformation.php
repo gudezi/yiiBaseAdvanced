@@ -28,7 +28,7 @@ use Imagine\Filter\Basic\Thumbnail;
 use Imagine\Image\ImageInterface;
 use Imagine\Image\ImagineInterface;
 use Imagine\Image\BoxInterface;
-use Imagine\Image\Palette\Color\ColorInterface;
+use Imagine\Image\Color;
 use Imagine\Image\Fill\FillInterface;
 use Imagine\Image\ManipulatorInterface;
 use Imagine\Image\PointInterface;
@@ -42,11 +42,6 @@ final class Transformation implements FilterInterface, ManipulatorInterface
      * @var array
      */
     private $filters = array();
-
-    /**
-     * @var array
-     */
-    private $sorted;
 
     /**
      * An ImagineInterface instance.
@@ -79,7 +74,10 @@ final class Transformation implements FilterInterface, ManipulatorInterface
     {
         if ($filter instanceof ImagineAware) {
             if ($this->imagine === null) {
-                throw new InvalidArgumentException(sprintf('In order to use %s pass an Imagine\Image\ImagineInterface instance to Transformation constructor', get_class($filter)));
+                throw new InvalidArgumentException(sprintf(
+                    'In order to use %s pass an Imagine\Image\ImagineInterface instance '.
+                    'to Transformation constructor', get_class($filter)
+                ));
             }
             $filter->setImagine($this->imagine);
         }
@@ -88,31 +86,12 @@ final class Transformation implements FilterInterface, ManipulatorInterface
     }
 
     /**
-     * Returns a list of filters sorted by their priority. Filters with same priority will be returned in the order they were added.
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        if (null === $this->sorted) {
-            if (!empty($this->filters)) {
-                ksort($this->filters);
-                $this->sorted = call_user_func_array('array_merge', $this->filters);
-            } else {
-                $this->sorted = array();
-            }
-        }
-
-        return $this->sorted;
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function apply(ImageInterface $image)
     {
         return array_reduce(
-            $this->getFilters(),
+            $this->filters,
             array($this, 'applyFilter'),
             $image
         );
@@ -193,7 +172,7 @@ final class Transformation implements FilterInterface, ManipulatorInterface
     /**
      * {@inheritdoc}
      */
-    public function rotate($angle, ColorInterface $background = null)
+    public function rotate($angle, Color $background = null)
     {
         return $this->add(new Rotate($angle, $background));
     }
@@ -201,7 +180,7 @@ final class Transformation implements FilterInterface, ManipulatorInterface
     /**
      * {@inheritdoc}
      */
-    public function save($path = null, array $options = array())
+    public function save($path, array $options = array())
     {
         return $this->add(new Save($path, $options));
     }
@@ -217,23 +196,22 @@ final class Transformation implements FilterInterface, ManipulatorInterface
     /**
      * {@inheritdoc}
      */
-    public function thumbnail(BoxInterface $size, $mode = ImageInterface::THUMBNAIL_INSET, $filter = ImageInterface::FILTER_UNDEFINED)
+    public function thumbnail(BoxInterface $size, $mode = ImageInterface::THUMBNAIL_INSET)
     {
-        return $this->add(new Thumbnail($size, $mode, $filter));
+        return $this->add(new Thumbnail($size, $mode));
     }
 
     /**
      * Registers a given FilterInterface in an internal array of filters for
      * later application to an instance of ImageInterface
      *
-     * @param  FilterInterface $filter
-     * @param  int             $priority
+     * @param FilterInterface $filter
+     *
      * @return Transformation
      */
-    public function add(FilterInterface $filter, $priority = 0)
+    public function add(FilterInterface $filter)
     {
-        $this->filters[$priority][] = $filter;
-        $this->sorted = null;
+        $this->filters[] = $filter;
 
         return $this;
     }

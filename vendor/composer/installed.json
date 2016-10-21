@@ -208,12 +208,12 @@
         "version_normalized": "3.2.7.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+            "url": "https://github.com/RobinHerbots/Inputmask.git",
             "reference": "5a72c563b502b8e05958a524cdfffafe9987be38"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
+            "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
             "reference": "5a72c563b502b8e05958a524cdfffafe9987be38",
             "shasum": ""
         },
@@ -252,17 +252,17 @@
     },
     {
         "name": "cebe/markdown",
-        "version": "1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/cebe/markdown.git",
-            "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2"
+            "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/cebe/markdown/zipball/54a2c49de31cc44e864ebf0500a35ef21d0010b2",
-            "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2",
+            "url": "https://api.github.com/repos/cebe/markdown/zipball/c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
+            "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
             "shasum": ""
         },
         "require": {
@@ -274,7 +274,7 @@
             "facebook/xhprof": "*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2015-03-06 05:28:07",
+        "time": "2016-09-14 20:40:20",
         "bin": [
             "bin/markdown"
         ],
@@ -359,121 +359,25 @@
         ]
     },
     {
-        "name": "yiisoft/yii2",
-        "version": "2.0.9",
-        "version_normalized": "2.0.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-framework.git",
-            "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2b75151ea60e1fd820046416eee2e89c3dda1133",
-            "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
-            "bower-asset/jquery.inputmask": "~3.2.2",
-            "bower-asset/punycode": "1.3.*",
-            "bower-asset/yii2-pjax": "~2.0.1",
-            "cebe/markdown": "~1.0.0 | ~1.1.0",
-            "ext-ctype": "*",
-            "ext-mbstring": "*",
-            "ezyang/htmlpurifier": "~4.6",
-            "lib-pcre": "*",
-            "php": ">=5.4.0",
-            "yiisoft/yii2-composer": "~2.0.4"
-        },
-        "time": "2016-07-11 13:36:42",
-        "bin": [
-            "yii"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "yii\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Qiang Xue",
-                "email": "qiang.xue@gmail.com",
-                "homepage": "http://www.yiiframework.com/",
-                "role": "Founder and project lead"
-            },
-            {
-                "name": "Alexander Makarov",
-                "email": "sam@rmcreative.ru",
-                "homepage": "http://rmcreative.ru/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Maurizio Domba",
-                "homepage": "http://mdomba.info/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Carsten Brandt",
-                "email": "mail@cebe.cc",
-                "homepage": "http://cebe.cc/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Timur Ruziev",
-                "email": "resurtm@gmail.com",
-                "homepage": "http://resurtm.com/",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Paul Klimov",
-                "email": "klimov.paul@gmail.com",
-                "role": "Core framework development"
-            },
-            {
-                "name": "Dmitry Naumenko",
-                "email": "d.naumenko.a@gmail.com",
-                "role": "Core framework development"
-            }
-        ],
-        "description": "Yii PHP Framework Version 2",
-        "homepage": "http://www.yiiframework.com/",
-        "keywords": [
-            "framework",
-            "yii2"
-        ]
-    },
-    {
         "name": "yiisoft/yii2-swiftmailer",
-        "version": "2.0.5",
-        "version_normalized": "2.0.5.0",
+        "version": "2.0.6",
+        "version_normalized": "2.0.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-            "reference": "e2c6315caff30a9271a7afad4d684627721dc69a"
+            "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/e2c6315caff30a9271a7afad4d684627721dc69a",
-            "reference": "e2c6315caff30a9271a7afad4d684627721dc69a",
+            "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/26b900767f1031ff3a4668dfa36c10595875f0a5",
+            "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5",
             "shasum": ""
         },
         "require": {
             "swiftmailer/swiftmailer": "~5.0",
-            "yiisoft/yii2": ">=2.0.4"
+            "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2016-03-17 03:58:49",
+        "time": "2016-09-09 11:48:11",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -551,7 +455,8 @@
         "keywords": [
             "codeception",
             "yii2"
-        ]
+        ],
+        "abandoned": "codeception/codeception"
     },
     {
         "name": "bower-asset/bootstrap",
@@ -929,6 +834,95 @@
         ]
     },
     {
+        "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
+        "version": "3.0.6",
+        "version_normalized": "3.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
+            "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/4ebd0727b27425b96204cb0dde1d8ce564676403",
+            "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403",
+            "shasum": ""
+        },
+        "suggest": {
+            "components/jquery": "2.0.*",
+            "twbs/bootstrap": "3.*"
+        },
+        "time": "2016-09-06 13:18:25",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "István Ujj-Mészáros",
+                "homepage": "https://github.com/istvan-ujjmeszaros"
+            }
+        ],
+        "description": "A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.",
+        "homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
+        "keywords": [
+            "bootstrap",
+            "bootstrap duallistbox",
+            "bootstrap select",
+            "duallistbox",
+            "select"
+        ]
+    },
+    {
+        "name": "softark/yii2-dual-listbox",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/softark/yii2-dual-listbox.git",
+            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/softark/yii2-dual-listbox/zipball/e2d46973271449043b8faa248c9c8f83afe895cd",
+            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd",
+            "shasum": ""
+        },
+        "require": {
+            "istvan-ujjmeszaros/bootstrap-duallistbox": "*",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-01-12 23:14:58",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "softark\\duallistbox\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nobuo Kihara",
+                "email": "softark@gmail.com",
+                "homepage": "http://softark.net"
+            }
+        ],
+        "description": "Dual Listbox Widget for Yii 2",
+        "keywords": [
+            "dual-listbox",
+            "duallistbox",
+            "widget",
+            "yii 2",
+            "yii2"
+        ]
+    },
+    {
         "name": "bower-asset/jquery-ui",
         "version": "1.11.4",
         "version_normalized": "1.11.4.0",
@@ -1008,26 +1002,277 @@
         ]
     },
     {
-        "name": "kartik-v/bootstrap-popover-x",
-        "version": "v1.4.1",
-        "version_normalized": "1.4.1.0",
+        "name": "execut/yii2-base",
+        "version": "1.1.5",
+        "version_normalized": "1.1.5.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/kartik-v/bootstrap-popover-x.git",
-            "reference": "ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6"
+            "url": "https://github.com/execut/yii2-base.git",
+            "reference": "0812d40630542b67be3c3cb93e96540ae2966578"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/bootstrap-popover-x/zipball/ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6",
-            "reference": "ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6",
+            "url": "https://api.github.com/repos/execut/yii2-base/zipball/0812d40630542b67be3c3cb93e96540ae2966578",
+            "reference": "0812d40630542b67be3c3cb93e96540ae2966578",
             "shasum": ""
         },
-        "time": "2015-03-18 13:08:39",
-        "type": "library",
+        "require": {
+            "yiisoft/yii2-jui": "@dev"
+        },
+        "time": "2016-02-01 11:39:25",
+        "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\plugins\\popover\\": ""
+                "execut\\yii\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "eXeCUT"
+            }
+        ],
+        "description": "My base classes for yii2",
+        "homepage": "https://github.com/execut/yii2-base",
+        "keywords": [
+            "yii2"
+        ]
+    },
+    {
+        "name": "bower-asset/bootstrap-treeview",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jonmiles/bootstrap-treeview.git",
+            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jonmiles/bootstrap-treeview/zipball/542f57eab636e14417216e95fa7f7049bbf3d69f",
+            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap": ">=3.0.0",
+            "bower-asset/jquery": ">=1.9.0"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "dist/bootstrap-treeview.min.js",
+                "dist/bootstrap-treeview.min.css"
+            ],
+            "bower-asset-ignore": [
+                "**/.*",
+                "node_modules",
+                "bower_components",
+                "test",
+                "tests"
+            ]
+        },
+        "installation-source": "dist",
+        "description": "Tree View for Twitter Bootstrap",
+        "keywords": [
+            "bootstrap",
+            "javascript",
+            "jquery",
+            "jquery-plugin",
+            "navigation",
+            "tree",
+            "tree-view",
+            "treeview",
+            "twitter"
+        ]
+    },
+    {
+        "name": "execut/yii2-widget-bootstraptreeview",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/execut/yii2-widget-bootstraptreeview.git",
+            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/execut/yii2-widget-bootstraptreeview/zipball/2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
+            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap-treeview": "@dev",
+            "execut/yii2-base": "*",
+            "yiisoft/yii2-jui": "@dev"
+        },
+        "time": "2015-11-27 08:08:18",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "execut\\widget\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "eXeCUT"
+            }
+        ],
+        "description": "Bootstrap Tree View widget wrapper for yii2",
+        "homepage": "https://github.com/execut/yii2-widget-bootstraptreeview",
+        "keywords": [
+            "bootstrap",
+            "extension",
+            "form",
+            "input",
+            "jquery",
+            "plugin",
+            "tree",
+            "yii2"
+        ]
+    },
+    {
+        "name": "imagine/imagine",
+        "version": "v0.5.0",
+        "version_normalized": "0.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/avalanche123/Imagine.git",
+            "reference": "f64ec666baaa800edcbf237db41121a569230709"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/f64ec666baaa800edcbf237db41121a569230709",
+            "reference": "f64ec666baaa800edcbf237db41121a569230709",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "sami/sami": "dev-master"
+        },
+        "suggest": {
+            "ext-gd": "to use the GD implementation",
+            "ext-gmagick": "to use the Gmagick implementation",
+            "ext-imagick": "to use the Imagick implementation"
+        },
+        "time": "2013-07-10 17:25:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Imagine": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bulat Shakirzyanov",
+                "email": "mallluhuct@gmail.com",
+                "homepage": "http://avalanche123.com"
+            }
+        ],
+        "description": "Image processing for PHP 5.3",
+        "homepage": "http://imagine.readthedocs.org/",
+        "keywords": [
+            "drawing",
+            "graphics",
+            "image manipulation",
+            "image processing"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-imagine",
+        "version": "2.0.4",
+        "version_normalized": "2.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-imagine.git",
+            "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
+            "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
+            "shasum": ""
+        },
+        "require": {
+            "imagine/imagine": "0.5.*",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-09-04 15:14:08",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\imagine\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Antonio Ramirez",
+                "email": "amigo.cobos@gmail.com"
+            }
+        ],
+        "description": "The Imagine integration for the Yii framework",
+        "keywords": [
+            "helper",
+            "image",
+            "imagine",
+            "yii2"
+        ]
+    },
+    {
+        "name": "mongosoft/yii2-upload-behavior",
+        "version": "0.1.6",
+        "version_normalized": "0.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mongosoft/yii2-upload-behavior.git",
+            "reference": "dca58ec2252d37fd941e6599735dfaf63a48c911"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mongosoft/yii2-upload-behavior/zipball/dca58ec2252d37fd941e6599735dfaf63a48c911",
+            "reference": "dca58ec2252d37fd941e6599735dfaf63a48c911",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-imagine": "*"
+        },
+        "require-dev": {
+            "phpunit/dbunit": "~1.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2015-08-27 15:48:02",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "mongosoft\\file\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1036,42 +1281,89 @@
         ],
         "authors": [
             {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
+                "name": "Alexander Mohorev",
+                "email": "dev.mohorev@gmail.com"
             }
         ],
-        "description": "Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.",
-        "homepage": "https://github.com/kartik-v/bootstrap-popover-x",
+        "description": "Upload behavior for Yii 2",
+        "homepage": "https://github.com/mongosoft/yii2-upload-behavior",
         "keywords": [
-            "bootstrap",
-            "extended",
-            "jquery",
-            "modal",
-            "modal-popover",
-            "popover",
-            "popover-x"
+            "Behavior",
+            "extension",
+            "file",
+            "image",
+            "resize",
+            "thumb",
+            "upload",
+            "yii2"
+        ]
+    },
+    {
+        "name": "karpoff/yii2-crop-image-upload",
+        "version": "0.0.1",
+        "version_normalized": "0.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/karpoff/yii2-crop-image-upload.git",
+            "reference": "b4cd26bd7e326d62c7a8158f640682186c67a2a8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/karpoff/yii2-crop-image-upload/zipball/b4cd26bd7e326d62c7a8158f640682186c67a2a8",
+            "reference": "b4cd26bd7e326d62c7a8158f640682186c67a2a8",
+            "shasum": ""
+        },
+        "require": {
+            "mongosoft/yii2-upload-behavior": "*",
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-imagine": "*"
+        },
+        "time": "2014-12-15 18:13:03",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "karpoff\\icrop\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Anton Karpov",
+                "email": "karpoff@bk.ru"
+            }
+        ],
+        "description": "Yii 2 Crop image upload widget",
+        "homepage": "https://github.com/karpoff/yii2-crop-image-upload",
+        "keywords": [
+            "crop",
+            "image",
+            "upload",
+            "yii2"
         ]
     },
     {
         "name": "kartik-v/yii2-krajee-base",
-        "version": "1.8.5",
-        "version_normalized": "1.8.5.0",
+        "version": "v1.8.7",
+        "version_normalized": "1.8.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-            "reference": "7f7a45ffe193fe673f72b9effc01b08499f2a454"
+            "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/7f7a45ffe193fe673f72b9effc01b08499f2a454",
-            "reference": "7f7a45ffe193fe673f72b9effc01b08499f2a454",
+            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/8f558809e6093c8f4f4599b7b9fd64b366b22a60",
+            "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60",
             "shasum": ""
         },
         "require": {
             "yiisoft/yii2-bootstrap": "@dev"
         },
-        "time": "2016-05-07 19:45:52",
+        "time": "2016-09-04 09:25:29",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1102,414 +1394,6 @@
             "extension",
             "foundation",
             "krajee",
-            "widget",
-            "yii2"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-popover-x",
-        "version": "v1.3.3",
-        "version_normalized": "1.3.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-popover-x.git",
-            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/38f2208cf92f8c4a7758f485575a881cade1970c",
-            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/bootstrap-popover-x": "~1.4",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2016-01-12 16:59:09",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\popover\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
-        "homepage": "https://github.com/kartik-v/yii2-popover-x",
-        "keywords": [
-            "bootstrap",
-            "extended",
-            "jquery",
-            "modal",
-            "modal-popover",
-            "popover",
-            "popover-x"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-editable",
-        "version": "v1.7.4",
-        "version_normalized": "1.7.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-editable.git",
-            "reference": "7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd",
-            "reference": "7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/yii2-krajee-base": "~1.7",
-            "kartik-v/yii2-popover-x": "~1.3"
-        },
-        "time": "2015-12-27 16:31:06",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\editable\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
-        "homepage": "https://github.com/kartik-v/yii2-editable",
-        "keywords": [
-            "bootstrap",
-            "editable",
-            "input",
-            "jquery",
-            "popover",
-            "popover-x",
-            "widget"
-        ]
-    },
-    {
-        "name": "kartik-v/mpdf",
-        "version": "v1.0.2",
-        "version_normalized": "1.0.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/mpdf.git",
-            "reference": "6ab0ae3a82673e514f168c8e6da02289e6d95f2c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/mpdf/zipball/6ab0ae3a82673e514f168c8e6da02289e6d95f2c",
-            "reference": "6ab0ae3a82673e514f168c8e6da02289e6d95f2c",
-            "shasum": ""
-        },
-        "require": {
-            "ext-mbstring": "*",
-            "php": ">=4.3.10"
-        },
-        "time": "2015-05-05 07:34:49",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "mpdf.php",
-                "classes"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-1.0+"
-        ],
-        "authors": [
-            {
-                "name": "Ian N Back"
-            }
-        ],
-        "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support. This is a fork of the official mPDF library.",
-        "homepage": "http://www.mpdf1.com/mpdf/index.php",
-        "keywords": [
-            "pdf",
-            "php",
-            "utf-8"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-mpdf",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-mpdf.git",
-            "reference": "4599a1d95d7e0afb3279322e302717b7e4f52dd3"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/4599a1d95d7e0afb3279322e302717b7e4f52dd3",
-            "reference": "4599a1d95d7e0afb3279322e302717b7e4f52dd3",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/mpdf": "*"
-        },
-        "time": "2014-11-10 18:09:37",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\mpdf\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD 3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
-        "homepage": "https://github.com/kartik-v/yii2-mpdf",
-        "keywords": [
-            "component",
-            "extension",
-            "html",
-            "mpdf",
-            "pdf",
-            "utf8",
-            "yii2"
-        ]
-    },
-    {
-        "name": "johnitvn/yii2-ajaxcrud",
-        "version": "2.1.3",
-        "version_normalized": "2.1.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/johnitvn/yii2-ajaxcrud.git",
-            "reference": "563c2d57a13fc307c2ad2f9e69427581568e26fd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/johnitvn/yii2-ajaxcrud/zipball/563c2d57a13fc307c2ad2f9e69427581568e26fd",
-            "reference": "563c2d57a13fc307c2ad2f9e69427581568e26fd",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/yii2-editable": "^1.7.3",
-            "kartik-v/yii2-grid": "^3.0.4",
-            "kartik-v/yii2-mpdf": "^1.0.0",
-            "yiisoft/yii2": "*",
-            "yiisoft/yii2-bootstrap": "*",
-            "yiisoft/yii2-gii": "*"
-        },
-        "time": "2016-03-21 10:56:25",
-        "type": "yii2-extension",
-        "extra": {
-            "bootstrap": "johnitvn\\ajaxcrud\\Bootstrap"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "johnitvn\\ajaxcrud\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "John Martin",
-                "email": "john.itvn@gmail.com",
-                "homepage": "https://github.com/johnitvn?tab=repositories"
-            }
-        ],
-        "description": "Gii CRUD template for Single Page Ajax Administration for yii2",
-        "keywords": [
-            "ajax",
-            "crud",
-            "database",
-            "extension",
-            "gii",
-            "template",
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/bootstrap3-dialog",
-        "version": "v1.35.2",
-        "version_normalized": "1.35.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
-            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/49b786d4949bb02a22a9358d7d65f30e058c5438",
-            "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap": ">=3.1.0",
-            "bower-asset/jquery": ">=1.9.0"
-        },
-        "type": "bower-asset-library",
-        "extra": {
-            "bower-asset-main": [
-                "dist/less/bootstrap-dialog.less",
-                "dist/css/bootstrap-dialog.min.css",
-                "dist/js/bootstrap-dialog.min.js"
-            ],
-            "bower-asset-ignore": [
-                "source",
-                "spec",
-                ".bowerrc",
-                ".gitignore",
-                ".jshintignore",
-                ".jshintrc",
-                "bower.json",
-                "gruntfile.js",
-                "package.json",
-                "README.md"
-            ]
-        },
-        "installation-source": "dist",
-        "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
-        "keywords": [
-            "css",
-            "framework",
-            "front-end",
-            "js",
-            "less",
-            "mobile-first",
-            "responsive",
-            "web"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-dialog",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-dialog.git",
-            "reference": "c0f83291c050fb05a1dc66a90ad6151de2d1e982"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/c0f83291c050fb05a1dc66a90ad6151de2d1e982",
-            "reference": "c0f83291c050fb05a1dc66a90ad6151de2d1e982",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap3-dialog": "~1.34",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2016-02-22 10:58:46",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\dialog\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
-        "homepage": "https://github.com/kartik-v/yii2-dialog",
-        "keywords": [
-            "alert",
-            "bootstrap",
-            "dialog",
-            "extension",
-            "modal",
-            "yii2"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-grid",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-grid.git",
-            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/6373e72c8747d64e9df53b4d03a76c7069f37431",
-            "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/yii2-dialog": "~1.0",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2016-08-09 13:17:33",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.1.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\grid\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
-        "homepage": "https://github.com/kartik-v/yii2-grid",
-        "keywords": [
-            "extension",
-            "grid",
             "widget",
             "yii2"
         ]
@@ -2083,20 +1967,20 @@
     },
     {
         "name": "kartik-v/bootstrap-fileinput",
-        "version": "v4.3.4",
-        "version_normalized": "4.3.4.0",
+        "version": "v4.3.5",
+        "version_normalized": "4.3.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-            "reference": "abde5a9611d4939b951fdd00f70a9fec935c7b6b"
+            "reference": "6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/abde5a9611d4939b951fdd00f70a9fec935c7b6b",
-            "reference": "abde5a9611d4939b951fdd00f70a9fec935c7b6b",
+            "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c",
+            "reference": "6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c",
             "shasum": ""
         },
-        "time": "2016-08-07 07:50:42",
+        "time": "2016-09-20 05:47:41",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2238,6 +2122,57 @@
         ]
     },
     {
+        "name": "kartik-v/yii2-widget-depdrop",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-widget-depdrop.git",
+            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-depdrop/zipball/6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
+            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/dependent-dropdown": "~1.4",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-01-10 17:30:48",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\depdrop\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Widget that enables setting up dependent dropdowns with nested dependencies (sub repo split from yii2-widgets)",
+        "homepage": "https://github.com/kartik-v/yii2-widget-depdrop",
+        "keywords": [
+            "dependent",
+            "dropdown",
+            "extension",
+            "form",
+            "jquery",
+            "plugin",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
         "name": "kartik-v/yii2-widget-datetimepicker",
         "version": "v1.4.2",
         "version_normalized": "1.4.2.0",
@@ -2290,23 +2225,23 @@
     },
     {
         "name": "kartik-v/yii2-widget-datepicker",
-        "version": "v1.4.0",
-        "version_normalized": "1.4.0.0",
+        "version": "v1.4.2",
+        "version_normalized": "1.4.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-            "reference": "b76e08a432950d658cadc7597178426a47a994ac"
+            "reference": "8738f6dc3211d949b05189ba103aab786143fc6c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/b76e08a432950d658cadc7597178426a47a994ac",
-            "reference": "b76e08a432950d658cadc7597178426a47a994ac",
+            "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/8738f6dc3211d949b05189ba103aab786143fc6c",
+            "reference": "8738f6dc3211d949b05189ba103aab786143fc6c",
             "shasum": ""
         },
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2016-06-28 17:51:26",
+        "time": "2016-09-04 10:52:50",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2678,21 +2613,478 @@
         ]
     },
     {
-        "name": "components/flag-icon-css",
-        "version": "2.4.0",
-        "version_normalized": "2.4.0.0",
+        "name": "kartik-v/bootstrap-popover-x",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/lipis/flag-icon-css.git",
-            "reference": "f34e695eed7df4a1fd8035a0a89d287c4355dcc5"
+            "url": "https://github.com/kartik-v/bootstrap-popover-x.git",
+            "reference": "ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/f34e695eed7df4a1fd8035a0a89d287c4355dcc5",
-            "reference": "f34e695eed7df4a1fd8035a0a89d287c4355dcc5",
+            "url": "https://api.github.com/repos/kartik-v/bootstrap-popover-x/zipball/ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6",
+            "reference": "ce1d165af25f6e6caaf97083e20b5a3ad7c7b7c6",
             "shasum": ""
         },
-        "time": "2016-08-14 16:10:21",
+        "time": "2015-03-18 13:08:39",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\plugins\\popover\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.",
+        "homepage": "https://github.com/kartik-v/bootstrap-popover-x",
+        "keywords": [
+            "bootstrap",
+            "extended",
+            "jquery",
+            "modal",
+            "modal-popover",
+            "popover",
+            "popover-x"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-popover-x",
+        "version": "v1.3.3",
+        "version_normalized": "1.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-popover-x.git",
+            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/38f2208cf92f8c4a7758f485575a881cade1970c",
+            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/bootstrap-popover-x": "~1.4",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-01-12 16:59:09",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\popover\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
+        "homepage": "https://github.com/kartik-v/yii2-popover-x",
+        "keywords": [
+            "bootstrap",
+            "extended",
+            "jquery",
+            "modal",
+            "modal-popover",
+            "popover",
+            "popover-x"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-editable",
+        "version": "v1.7.4",
+        "version_normalized": "1.7.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-editable.git",
+            "reference": "7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd",
+            "reference": "7c25b5bb6b21027eaf11b6ee4bba5c9f00cf04cd",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-krajee-base": "~1.7",
+            "kartik-v/yii2-popover-x": "~1.3"
+        },
+        "time": "2015-12-27 16:31:06",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\editable\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
+        "homepage": "https://github.com/kartik-v/yii2-editable",
+        "keywords": [
+            "bootstrap",
+            "editable",
+            "input",
+            "jquery",
+            "popover",
+            "popover-x",
+            "widget"
+        ]
+    },
+    {
+        "name": "kartik-v/mpdf",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/mpdf.git",
+            "reference": "6ab0ae3a82673e514f168c8e6da02289e6d95f2c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/mpdf/zipball/6ab0ae3a82673e514f168c8e6da02289e6d95f2c",
+            "reference": "6ab0ae3a82673e514f168c8e6da02289e6d95f2c",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=4.3.10"
+        },
+        "time": "2015-05-05 07:34:49",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "mpdf.php",
+                "classes"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-1.0+"
+        ],
+        "authors": [
+            {
+                "name": "Ian N Back"
+            }
+        ],
+        "description": "A PHP class to generate PDF files from HTML with Unicode/UTF-8 and CJK support. This is a fork of the official mPDF library.",
+        "homepage": "http://www.mpdf1.com/mpdf/index.php",
+        "keywords": [
+            "pdf",
+            "php",
+            "utf-8"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-mpdf",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-mpdf.git",
+            "reference": "4599a1d95d7e0afb3279322e302717b7e4f52dd3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-mpdf/zipball/4599a1d95d7e0afb3279322e302717b7e4f52dd3",
+            "reference": "4599a1d95d7e0afb3279322e302717b7e4f52dd3",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/mpdf": "*"
+        },
+        "time": "2014-11-10 18:09:37",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\mpdf\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "A Yii2 wrapper component for the mPDF library which generates PDF files from UTF-8 encoded HTML.",
+        "homepage": "https://github.com/kartik-v/yii2-mpdf",
+        "keywords": [
+            "component",
+            "extension",
+            "html",
+            "mpdf",
+            "pdf",
+            "utf8",
+            "yii2"
+        ]
+    },
+    {
+        "name": "bower-asset/bootstrap3-dialog",
+        "version": "v1.35.3",
+        "version_normalized": "1.35.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
+            "reference": "4aa9d536516957e01c39afd1b5e8bdd88976ef7b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/4aa9d536516957e01c39afd1b5e8bdd88976ef7b",
+            "reference": "4aa9d536516957e01c39afd1b5e8bdd88976ef7b",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap": ">=3.1.0",
+            "bower-asset/jquery": ">=1.9.0"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "dist/less/bootstrap-dialog.less",
+                "dist/css/bootstrap-dialog.min.css",
+                "dist/js/bootstrap-dialog.min.js"
+            ],
+            "bower-asset-ignore": [
+                "source",
+                "spec",
+                ".bowerrc",
+                ".gitignore",
+                ".jshintignore",
+                ".jshintrc",
+                "bower.json",
+                "gruntfile.js",
+                "package.json",
+                "README.md"
+            ]
+        },
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ],
+        "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
+        "keywords": [
+            "css",
+            "framework",
+            "front-end",
+            "js",
+            "less",
+            "mobile-first",
+            "responsive",
+            "web"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-dialog",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-dialog.git",
+            "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/4aaf8918c6dbd90218b6ad9036b1aae211480716",
+            "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/bootstrap3-dialog": "~1.34",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-09-13 18:15:26",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\dialog\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
+        "homepage": "https://github.com/kartik-v/yii2-dialog",
+        "keywords": [
+            "alert",
+            "bootstrap",
+            "dialog",
+            "extension",
+            "modal",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-grid",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-grid.git",
+            "reference": "a7d8fed3485720a8b17614685216a43f69c4224d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/a7d8fed3485720a8b17614685216a43f69c4224d",
+            "reference": "a7d8fed3485720a8b17614685216a43f69c4224d",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-dialog": "~1.0",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-10-21 07:44:15",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\grid\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Yii 2 GridView on steroids. Various enhancements and utilities for the Yii 2.0 GridView widget.",
+        "homepage": "https://github.com/kartik-v/yii2-grid",
+        "keywords": [
+            "extension",
+            "grid",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "johnitvn/yii2-ajaxcrud",
+        "version": "2.1.3",
+        "version_normalized": "2.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/johnitvn/yii2-ajaxcrud.git",
+            "reference": "563c2d57a13fc307c2ad2f9e69427581568e26fd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/johnitvn/yii2-ajaxcrud/zipball/563c2d57a13fc307c2ad2f9e69427581568e26fd",
+            "reference": "563c2d57a13fc307c2ad2f9e69427581568e26fd",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-editable": "^1.7.3",
+            "kartik-v/yii2-grid": "^3.0.4",
+            "kartik-v/yii2-mpdf": "^1.0.0",
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-bootstrap": "*",
+            "yiisoft/yii2-gii": "*"
+        },
+        "time": "2016-03-21 10:56:25",
+        "type": "yii2-extension",
+        "extra": {
+            "bootstrap": "johnitvn\\ajaxcrud\\Bootstrap"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "johnitvn\\ajaxcrud\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "John Martin",
+                "email": "john.itvn@gmail.com",
+                "homepage": "https://github.com/johnitvn?tab=repositories"
+            }
+        ],
+        "description": "Gii CRUD template for Single Page Ajax Administration for yii2",
+        "keywords": [
+            "ajax",
+            "crud",
+            "database",
+            "extension",
+            "gii",
+            "template",
+            "yii2"
+        ]
+    },
+    {
+        "name": "components/flag-icon-css",
+        "version": "2.6.0",
+        "version_normalized": "2.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lipis/flag-icon-css.git",
+            "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
+            "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
+            "shasum": ""
+        },
+        "time": "2016-10-03 14:43:33",
         "type": "component",
         "extra": {
             "component": {
@@ -2917,24 +3309,24 @@
     },
     {
         "name": "rmrevin/yii2-fontawesome",
-        "version": "2.15.2",
-        "version_normalized": "2.15.2.0",
+        "version": "2.16.1",
+        "version_normalized": "2.16.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-            "reference": "23e282eadeaec70ea7a0241eabf5d672568f26ba"
+            "reference": "ab08282b8cd05c570634926f41c868cf902981e7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/23e282eadeaec70ea7a0241eabf5d672568f26ba",
-            "reference": "23e282eadeaec70ea7a0241eabf5d672568f26ba",
+            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ab08282b8cd05c570634926f41c868cf902981e7",
+            "reference": "ab08282b8cd05c570634926f41c868cf902981e7",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0",
             "yiisoft/yii2": "2.0.*"
         },
-        "time": "2016-08-19 14:09:51",
+        "time": "2016-08-31 12:41:25",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -2966,48 +3358,6 @@
             "bundle",
             "font",
             "yii"
-        ]
-    },
-    {
-        "name": "almasaeed2010/adminlte",
-        "version": "v2.3.6",
-        "version_normalized": "2.3.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/almasaeed2010/AdminLTE.git",
-            "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/be11566d9539370b196ac85f22a6baf9f42c87cb",
-            "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb",
-            "shasum": ""
-        },
-        "time": "2016-08-04 23:22:06",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Abdullah Almsaeed",
-                "email": "abdullah@almsaeedstudio.com"
-            }
-        ],
-        "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-        "homepage": "http://almsaeedstudio.com/",
-        "keywords": [
-            "JS",
-            "admin",
-            "back-end",
-            "css",
-            "less",
-            "responsive",
-            "template",
-            "theme",
-            "web"
         ]
     },
     {
@@ -3053,157 +3403,6 @@
         "keywords": [
             "gravatar",
             "yii"
-        ]
-    },
-    {
-        "name": "dmstr/yii2-adminlte-asset",
-        "version": "2.3.3",
-        "version_normalized": "2.3.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-            "reference": "a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60",
-            "reference": "a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60",
-            "shasum": ""
-        },
-        "require": {
-            "almasaeed2010/adminlte": "~2.0",
-            "cebe/yii2-gravatar": "1.*",
-            "rmrevin/yii2-fontawesome": "~2.9",
-            "yiisoft/yii2": "2.*",
-            "yiisoft/yii2-bootstrap": "2.*"
-        },
-        "time": "2016-07-28 03:57:05",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "dmstr\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Tobias Munk",
-                "email": "tobias@diemeisterei.de"
-            },
-            {
-                "name": "Evgeniy Tkachenko",
-                "email": "et.coder@gmail.com"
-            }
-        ],
-        "description": "AdminLTE backend theme asset bundle for Yii 2.0 Framework",
-        "keywords": [
-            "AdminLTE",
-            "admin",
-            "asset",
-            "backend",
-            "css",
-            "extension",
-            "less",
-            "theme",
-            "yii2"
-        ]
-    },
-    {
-        "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
-        "version": "3.0.5",
-        "version_normalized": "3.0.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
-            "reference": "68ab678f033b175f8609f13621285bc25d692c1d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/68ab678f033b175f8609f13621285bc25d692c1d",
-            "reference": "68ab678f033b175f8609f13621285bc25d692c1d",
-            "shasum": ""
-        },
-        "suggest": {
-            "components/jquery": "2.0.*",
-            "twbs/bootstrap": "3.*"
-        },
-        "time": "2015-09-23 10:50:32",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "István Ujj-Mészáros",
-                "homepage": "https://github.com/istvan-ujjmeszaros"
-            }
-        ],
-        "description": "A responsive dual listbox widget optimized for Twitter Bootstrap. It works on all modern browsers and on touch devices.",
-        "homepage": "http://www.virtuosoft.eu/code/bootstrap-duallistbox/",
-        "keywords": [
-            "bootstrap",
-            "bootstrap duallistbox",
-            "bootstrap select",
-            "duallistbox",
-            "select"
-        ]
-    },
-    {
-        "name": "softark/yii2-dual-listbox",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/softark/yii2-dual-listbox.git",
-            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/softark/yii2-dual-listbox/zipball/e2d46973271449043b8faa248c9c8f83afe895cd",
-            "reference": "e2d46973271449043b8faa248c9c8f83afe895cd",
-            "shasum": ""
-        },
-        "require": {
-            "istvan-ujjmeszaros/bootstrap-duallistbox": "*",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2016-01-12 23:14:58",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "softark\\duallistbox\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Nobuo Kihara",
-                "email": "softark@gmail.com",
-                "homepage": "http://softark.net"
-            }
-        ],
-        "description": "Dual Listbox Widget for Yii 2",
-        "keywords": [
-            "dual-listbox",
-            "duallistbox",
-            "widget",
-            "yii 2",
-            "yii2"
         ]
     },
     {
@@ -3255,19 +3454,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-tree-manager.git",
-            "reference": "f911e3eecc95e84b7ca3851d35d976dcabf8f4de"
+            "reference": "e0d9f1cbada047b1726860893d1982189e46f877"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/f911e3eecc95e84b7ca3851d35d976dcabf8f4de",
-            "reference": "f911e3eecc95e84b7ca3851d35d976dcabf8f4de",
+            "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/e0d9f1cbada047b1726860893d1982189e46f877",
+            "reference": "e0d9f1cbada047b1726860893d1982189e46f877",
             "shasum": ""
         },
         "require": {
             "creocoder/yii2-nested-sets": "~0.9",
             "kartik-v/yii2-widget-activeform": "~1.4"
         },
-        "time": "2016-07-12 16:59:52",
+        "time": "2016-10-14 16:51:22",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3307,156 +3506,18 @@
         ]
     },
     {
-        "name": "execut/yii2-base",
-        "version": "1.1.5",
-        "version_normalized": "1.1.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/execut/yii2-base.git",
-            "reference": "0812d40630542b67be3c3cb93e96540ae2966578"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/execut/yii2-base/zipball/0812d40630542b67be3c3cb93e96540ae2966578",
-            "reference": "0812d40630542b67be3c3cb93e96540ae2966578",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2-jui": "@dev"
-        },
-        "time": "2016-02-01 11:39:25",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "execut\\yii\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "eXeCUT"
-            }
-        ],
-        "description": "My base classes for yii2",
-        "homepage": "https://github.com/execut/yii2-base",
-        "keywords": [
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/bootstrap-treeview",
-        "version": "v1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jonmiles/bootstrap-treeview.git",
-            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jonmiles/bootstrap-treeview/zipball/542f57eab636e14417216e95fa7f7049bbf3d69f",
-            "reference": "542f57eab636e14417216e95fa7f7049bbf3d69f",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap": ">=3.0.0",
-            "bower-asset/jquery": ">=1.9.0"
-        },
-        "type": "bower-asset-library",
-        "extra": {
-            "bower-asset-main": [
-                "dist/bootstrap-treeview.min.js",
-                "dist/bootstrap-treeview.min.css"
-            ],
-            "bower-asset-ignore": [
-                "**/.*",
-                "node_modules",
-                "bower_components",
-                "test",
-                "tests"
-            ]
-        },
-        "installation-source": "dist",
-        "description": "Tree View for Twitter Bootstrap",
-        "keywords": [
-            "bootstrap",
-            "javascript",
-            "jquery",
-            "jquery-plugin",
-            "navigation",
-            "tree",
-            "tree-view",
-            "treeview",
-            "twitter"
-        ]
-    },
-    {
-        "name": "execut/yii2-widget-bootstraptreeview",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/execut/yii2-widget-bootstraptreeview.git",
-            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/execut/yii2-widget-bootstraptreeview/zipball/2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
-            "reference": "2ab2ef015cb50fe3003c57e17ccaee855eb3ab88",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/bootstrap-treeview": "@dev",
-            "execut/yii2-base": "*",
-            "yiisoft/yii2-jui": "@dev"
-        },
-        "time": "2015-11-27 08:08:18",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "execut\\widget\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "eXeCUT"
-            }
-        ],
-        "description": "Bootstrap Tree View widget wrapper for yii2",
-        "homepage": "https://github.com/execut/yii2-widget-bootstraptreeview",
-        "keywords": [
-            "bootstrap",
-            "extension",
-            "form",
-            "input",
-            "jquery",
-            "plugin",
-            "tree",
-            "yii2"
-        ]
-    },
-    {
         "name": "bower-asset/fancytree",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v2.19.0",
+        "version_normalized": "2.19.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/mar10/fancytree.git",
-            "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24"
+            "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mar10/fancytree/zipball/73367c54db0bfc9cea81b0382bdc82adecc57f24",
-            "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24",
+            "url": "https://api.github.com/repos/mar10/fancytree/zipball/a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
+            "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
             "shasum": ""
         },
         "require": {
@@ -3483,10 +3544,7 @@
                 "fancytree.jquery.json",
                 "Gruntfile.coffee",
                 "index.html"
-            ],
-            "branch-alias": {
-                "dev-master": "2.19.1-patch0-dev"
-            }
+            ]
         },
         "installation-source": "dist",
         "license": [
@@ -3504,18 +3562,18 @@
         ]
     },
     {
-        "name": "andru19/yii2-fancytree-widget",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "gudezi/yii2-fancytree-widget",
+        "version": "v1.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/ANDRU19/yii2-fancy-tree-widget.git",
-            "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346"
+            "url": "https://github.com/gudezi/yii2-fancy-tree-widget.git",
+            "reference": "e576607add94566f8f006bdf956e28ac5b32d04d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ANDRU19/yii2-fancy-tree-widget/zipball/fe0d74c1ca7be401d74c8487750c690a6332d346",
-            "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346",
+            "url": "https://api.github.com/repos/gudezi/yii2-fancy-tree-widget/zipball/e576607add94566f8f006bdf956e28ac5b32d04d",
+            "reference": "e576607add94566f8f006bdf956e28ac5b32d04d",
             "shasum": ""
         },
         "require": {
@@ -3523,12 +3581,12 @@
             "yiisoft/yii2": "*",
             "yiisoft/yii2-jui": "*"
         },
-        "time": "2016-08-08 14:02:03",
+        "time": "2016-10-19 18:53:10",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "andru19\\fancytree\\": ""
+                "gudezi\\fancytree\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3537,8 +3595,8 @@
         ],
         "authors": [
             {
-                "name": "Andrew",
-                "email": "andriy.ry@gmail.com"
+                "name": "gudezi",
+                "email": "gudezi@gmail.com"
             }
         ],
         "description": "The yii2-fancytree widget is a Yii 2 wrapper for the [Fancytree](https://github.com/mar10/fancytree). A JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag'n'drop, and lazy loading",
@@ -3551,30 +3609,47 @@
         ]
     },
     {
-        "name": "kartik-v/yii2-widget-depdrop",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "yiisoft/yii2",
+        "version": "2.0.10",
+        "version_normalized": "2.0.10.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/kartik-v/yii2-widget-depdrop.git",
-            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c"
+            "url": "https://github.com/yiisoft/yii2-framework.git",
+            "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-widget-depdrop/zipball/6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
-            "reference": "6918ca6f7d7be153c80f6aa9c261f9b333293e9c",
+            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
+            "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
             "shasum": ""
         },
         "require": {
-            "kartik-v/dependent-dropdown": "~1.4",
-            "kartik-v/yii2-krajee-base": "~1.7"
+            "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+            "bower-asset/jquery.inputmask": "~3.2.2",
+            "bower-asset/punycode": "1.3.*",
+            "bower-asset/yii2-pjax": "~2.0.1",
+            "cebe/markdown": "~1.0.0 | ~1.1.0",
+            "ext-ctype": "*",
+            "ext-mbstring": "*",
+            "ezyang/htmlpurifier": "~4.6",
+            "lib-pcre": "*",
+            "php": ">=5.4.0",
+            "yiisoft/yii2-composer": "~2.0.4"
         },
-        "time": "2016-01-10 17:30:48",
-        "type": "yii2-extension",
-        "installation-source": "source",
+        "time": "2016-10-20 12:02:50",
+        "bin": [
+            "yii"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "kartik\\depdrop\\": ""
+                "yii\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3583,103 +3658,211 @@
         ],
         "authors": [
             {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com",
+                "homepage": "http://www.yiiframework.com/",
+                "role": "Founder and project lead"
+            },
+            {
+                "name": "Alexander Makarov",
+                "email": "sam@rmcreative.ru",
+                "homepage": "http://rmcreative.ru/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Maurizio Domba",
+                "homepage": "http://mdomba.info/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Carsten Brandt",
+                "email": "mail@cebe.cc",
+                "homepage": "http://cebe.cc/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Timur Ruziev",
+                "email": "resurtm@gmail.com",
+                "homepage": "http://resurtm.com/",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com",
+                "role": "Core framework development"
+            },
+            {
+                "name": "Dmitry Naumenko",
+                "email": "d.naumenko.a@gmail.com",
+                "role": "Core framework development"
             }
         ],
-        "description": "Widget that enables setting up dependent dropdowns with nested dependencies (sub repo split from yii2-widgets)",
-        "homepage": "https://github.com/kartik-v/yii2-widget-depdrop",
+        "description": "Yii PHP Framework Version 2",
+        "homepage": "http://www.yiiframework.com/",
         "keywords": [
-            "dependent",
-            "dropdown",
+            "framework",
+            "yii2"
+        ]
+    },
+    {
+        "name": "gudezi/yii2-notifications-widget",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gudezi/yii2-notifications-widget.git",
+            "reference": "44c76f5aebe006bbb79eb74a55b3e7423a7c45e3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gudezi/yii2-notifications-widget/zipball/44c76f5aebe006bbb79eb74a55b3e7423a7c45e3",
+            "reference": "44c76f5aebe006bbb79eb74a55b3e7423a7c45e3",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-10-20 14:48:25",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "gudezi\\notifications\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Gustavo Jose Dezi",
+                "email": "gudezi@gmail.com"
+            }
+        ],
+        "description": "list notifications widgets",
+        "keywords": [
             "extension",
-            "form",
-            "jquery",
-            "plugin",
+            "notifications",
+            "widgets",
+            "yii2"
+        ]
+    },
+    {
+        "name": "gudezi/yii2-croppic-widget",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gudezi/yii2-croppic-widget.git",
+            "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/c16bcb49bbdbae5b20e2444b90d59169303006da",
+            "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-imagine": "*"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": ">=1.0.0",
+            "yiisoft/yii2-codeception": "*"
+        },
+        "time": "2016-10-20 16:16:12",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "gudezi\\croppic\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Gustavo Dezi",
+                "email": "gudezi@gmail.com",
+                "homepage": "https://github.com/gudezi"
+            }
+        ],
+        "description": "Croppic widget Yii2 Framework.",
+        "homepage": "https://github.com/gudezi/yii2-croppic-widget",
+        "keywords": [
+            "croppic",
+            "extension",
             "widget",
             "yii2"
         ]
     },
     {
-        "name": "imagine/imagine",
-        "version": "v0.6.3",
-        "version_normalized": "0.6.3.0",
+        "name": "gudezi/adminlte",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/avalanche123/Imagine.git",
-            "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+            "url": "https://github.com/gudezi/AdminLTE.git",
+            "reference": "b1514fce6eff4cbd9752664dcead46d8410e7182"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
-            "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+            "url": "https://api.github.com/repos/gudezi/AdminLTE/zipball/b1514fce6eff4cbd9752664dcead46d8410e7182",
+            "reference": "b1514fce6eff4cbd9752664dcead46d8410e7182",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "sami/sami": "dev-master"
-        },
-        "suggest": {
-            "ext-gd": "to use the GD implementation",
-            "ext-gmagick": "to use the Gmagick implementation",
-            "ext-imagick": "to use the Imagick implementation"
-        },
-        "time": "2015-09-19 16:54:05",
+        "time": "2016-10-20 18:07:36",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-develop": "0.7-dev"
-            }
-        },
         "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Imagine": "lib/"
-            }
-        },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "MIT"
         ],
         "authors": [
             {
-                "name": "Bulat Shakirzyanov",
-                "email": "mallluhuct@gmail.com",
-                "homepage": "http://avalanche123.com"
+                "name": "Gustavo Dezi",
+                "email": "gudezi@gmail.com"
             }
         ],
-        "description": "Image processing for PHP 5.3",
-        "homepage": "http://imagine.readthedocs.org/",
+        "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
         "keywords": [
-            "drawing",
-            "graphics",
-            "image manipulation",
-            "image processing"
+            "JS",
+            "admin",
+            "back-end",
+            "css",
+            "less",
+            "responsive",
+            "template",
+            "theme",
+            "web"
         ]
     },
     {
-        "name": "yiisoft/yii2-imagine",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "name": "gudezi/yii2-adminlte-asset",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/yiisoft/yii2-imagine.git",
-            "reference": "e8c7161b38bf2a3067e9203b4370424709232d87"
+            "url": "https://github.com/gudezi/yii2-adminlte-asset.git",
+            "reference": "58cbd06d0283dd40624beb1e1fec7f9de4a1a255"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/e8c7161b38bf2a3067e9203b4370424709232d87",
-            "reference": "e8c7161b38bf2a3067e9203b4370424709232d87",
+            "url": "https://api.github.com/repos/gudezi/yii2-adminlte-asset/zipball/58cbd06d0283dd40624beb1e1fec7f9de4a1a255",
+            "reference": "58cbd06d0283dd40624beb1e1fec7f9de4a1a255",
             "shasum": ""
         },
         "require": {
-            "imagine/imagine": "~0.6.0",
-            "yiisoft/yii2": "~2.0.0"
+            "cebe/yii2-gravatar": "1.*",
+            "gudezi/adminlte": "*",
+            "rmrevin/yii2-fontawesome": "~2.9",
+            "yiisoft/yii2": "2.*",
+            "yiisoft/yii2-bootstrap": "2.*"
         },
-        "time": "2016-09-20 20:58:01",
+        "time": "2016-10-20 19:44:02",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3689,7 +3872,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "yii\\imagine\\": ""
+                "gudezi\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3698,117 +3881,24 @@
         ],
         "authors": [
             {
-                "name": "Antonio Ramirez",
-                "email": "amigo.cobos@gmail.com"
-            }
-        ],
-        "description": "The Imagine integration for the Yii framework",
-        "keywords": [
-            "helper",
-            "image",
-            "imagine",
-            "yii2"
-        ]
-    },
-    {
-        "name": "mongosoft/yii2-upload-behavior",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/mohorev/yii2-upload-behavior.git",
-            "reference": "eb3ba838337900fcb8a852b11a83d873f6554139"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/mohorev/yii2-upload-behavior/zipball/eb3ba838337900fcb8a852b11a83d873f6554139",
-            "reference": "eb3ba838337900fcb8a852b11a83d873f6554139",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0",
-            "yiisoft/yii2": "*",
-            "yiisoft/yii2-imagine": "*"
-        },
-        "require-dev": {
-            "phpunit/dbunit": "~1.0",
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2016-05-26 09:00:57",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "mongosoft\\file\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD 3-Clause"
-        ],
-        "authors": [
+                "name": "Tobias Munk",
+                "email": "tobias@diemeisterei.de"
+            },
             {
-                "name": "Alexander Mohorev",
-                "email": "dev.mohorev@gmail.com"
+                "name": "Evgeniy Tkachenko",
+                "email": "et.coder@gmail.com"
             }
         ],
-        "description": "Upload behavior for Yii 2",
-        "homepage": "https://github.com/mongosoft/yii2-upload-behavior",
+        "description": "AdminLTE backend theme asset bundle for Yii 2.0 Framework",
         "keywords": [
-            "Behavior",
+            "AdminLTE",
+            "admin",
+            "asset",
+            "backend",
+            "css",
             "extension",
-            "file",
-            "image",
-            "resize",
-            "thumb",
-            "upload",
-            "yii2"
-        ]
-    },
-    {
-        "name": "karpoff/yii2-crop-image-upload",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/karpoff/yii2-crop-image-upload.git",
-            "reference": "961e65069759c754ffdd2c54050dad14c26abf70"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/karpoff/yii2-crop-image-upload/zipball/961e65069759c754ffdd2c54050dad14c26abf70",
-            "reference": "961e65069759c754ffdd2c54050dad14c26abf70",
-            "shasum": ""
-        },
-        "require": {
-            "mongosoft/yii2-upload-behavior": "*",
-            "yiisoft/yii2": "*",
-            "yiisoft/yii2-imagine": "*"
-        },
-        "time": "2015-11-13 13:15:24",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "karpoff\\icrop\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Anton Karpov",
-                "email": "karpoff@bk.ru"
-            }
-        ],
-        "description": "Yii 2 Crop image upload widget",
-        "homepage": "https://github.com/karpoff/yii2-crop-image-upload",
-        "keywords": [
-            "crop",
-            "image",
-            "upload",
+            "less",
+            "theme",
             "yii2"
         ]
     }

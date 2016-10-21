@@ -29,7 +29,7 @@ return [
 		  'view' => [
             'theme' => [
                'pathMap' => [
-                  '@app/views' => '@vendor/sofse/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                  '@app/views' => '@vendor/gudezi/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
                   //'@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
                ],
             ],
@@ -40,6 +40,7 @@ return [
                //   'skin' => 'skin-blue',
                'sofse\web\AdminLteAsset' => [
                   'skin' => 'skin-sofse',
+                  //'skin' => 'skin-black',
                ],
             ],
         ],

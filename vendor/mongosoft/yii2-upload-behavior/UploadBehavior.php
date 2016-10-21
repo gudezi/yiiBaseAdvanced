@@ -36,7 +36,6 @@ use yii\web\UploadedFile;
  * ```
  *
  * @author Alexander Mohorev <dev.mohorev@gmail.com>
- * @author Alexey Samoylov <alexey.samoylov@gmail.com>
  */
 class UploadBehavior extends Behavior
 {
@@ -119,7 +118,7 @@ class UploadBehavior extends Behavior
             BaseActiveRecord::EVENT_BEFORE_UPDATE => 'beforeSave',
             BaseActiveRecord::EVENT_AFTER_INSERT => 'afterSave',
             BaseActiveRecord::EVENT_AFTER_UPDATE => 'afterSave',
-            BaseActiveRecord::EVENT_AFTER_DELETE => 'afterDelete',
+            BaseActiveRecord::EVENT_BEFORE_DELETE => 'beforeDelete',
         ];
     }
 
@@ -193,9 +192,9 @@ class UploadBehavior extends Behavior
     }
 
     /**
-     * This method is invoked after deleting a record.
+     * This method is invoked before deleting a record.
      */
-    public function afterDelete()
+    public function beforeDelete()
     {
         $attribute = $this->attribute;
         if ($this->unlinkOnDelete && $attribute) {

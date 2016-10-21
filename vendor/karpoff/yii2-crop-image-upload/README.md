@@ -1,7 +1,6 @@
 cropped image upload extension for Yii2
 ======================
 
-[![Latest Stable Version](https://poser.pugx.org/karpoff/yii2-crop-image-upload/v/stable.svg)](https://packagist.org/packages/karpoff/yii2-crop-image-upload) [![Total Downloads](https://poser.pugx.org/karpoff/yii2-crop-image-upload/downloads.svg)](https://packagist.org/packages/karpoff/yii2-crop-image-upload) [![Latest Unstable Version](https://poser.pugx.org/karpoff/yii2-crop-image-upload/v/unstable.svg)](https://packagist.org/packages/karpoff/yii2-crop-image-upload) [![License](https://poser.pugx.org/karpoff/yii2-crop-image-upload/license.svg)](https://packagist.org/packages/karpoff/yii2-crop-image-upload)
 
 This extension automatically uploads image and make crop.
 
@@ -32,8 +31,6 @@ Usage
 Attach the behavior in your model:
 
 ```php
-use karpoff\icrop\CropImageUploadBehavior;
-
 class Document extends ActiveRecord
 {
     /**
@@ -70,8 +67,6 @@ class Document extends ActiveRecord
 Example view file:
 
 ```php
-<?php use karpoff\icrop\CropImageUpload; ?>
-
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
     <?= $form->field($model, 'photo')->widget(CropImageUpload::className()) ?>
     <div class="form-group">

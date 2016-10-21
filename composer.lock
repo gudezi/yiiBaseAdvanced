@@ -4,94 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a412a5e6314e6ea699e0dfc51fbcbf58",
-    "content-hash": "bf1473eb491454357f0c462a39fad58a",
+    "hash": "45fca33f871d9274d83e703dbd77236f",
+    "content-hash": "3656ecff2d6166a41a72c98f31a01e97",
     "packages": [
-        {
-            "name": "almasaeed2010/adminlte",
-            "version": "v2.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/be11566d9539370b196ac85f22a6baf9f42c87cb",
-                "reference": "be11566d9539370b196ac85f22a6baf9f42c87cb",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Abdullah Almsaeed",
-                    "email": "abdullah@almsaeedstudio.com"
-                }
-            ],
-            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
-            "homepage": "http://almsaeedstudio.com/",
-            "keywords": [
-                "JS",
-                "admin",
-                "back-end",
-                "css",
-                "less",
-                "responsive",
-                "template",
-                "theme",
-                "web"
-            ],
-            "time": "2016-08-04 23:22:06"
-        },
-        {
-            "name": "andru19/yii2-fancytree-widget",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ANDRU19/yii2-fancy-tree-widget.git",
-                "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ANDRU19/yii2-fancy-tree-widget/zipball/fe0d74c1ca7be401d74c8487750c690a6332d346",
-                "reference": "fe0d74c1ca7be401d74c8487750c690a6332d346",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/fancytree": "*",
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-jui": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "andru19\\fancytree\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Andrew",
-                    "email": "andriy.ry@gmail.com"
-                }
-            ],
-            "description": "The yii2-fancytree widget is a Yii 2 wrapper for the [Fancytree](https://github.com/mar10/fancytree). A JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag'n'drop, and lazy loading",
-            "keywords": [
-                "extension",
-                "fancytree",
-                "treeview",
-                "widget",
-                "yii2"
-            ],
-            "time": "2016-08-08 14:02:03"
-        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -188,16 +103,16 @@
         },
         {
             "name": "bower-asset/bootstrap3-dialog",
-            "version": "v1.35.2",
+            "version": "v1.35.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
-                "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438"
+                "reference": "4aa9d536516957e01c39afd1b5e8bdd88976ef7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/49b786d4949bb02a22a9358d7d65f30e058c5438",
-                "reference": "49b786d4949bb02a22a9358d7d65f30e058c5438",
+                "url": "https://api.github.com/repos/nakupanda/bootstrap3-dialog/zipball/4aa9d536516957e01c39afd1b5e8bdd88976ef7b",
+                "reference": "4aa9d536516957e01c39afd1b5e8bdd88976ef7b",
                 "shasum": ""
             },
             "require": {
@@ -224,6 +139,9 @@
                     "README.md"
                 ]
             },
+            "license": [
+                "MIT"
+            ],
             "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/",
             "keywords": [
                 "css",
@@ -238,16 +156,16 @@
         },
         {
             "name": "bower-asset/fancytree",
-            "version": "dev-master",
+            "version": "v2.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mar10/fancytree.git",
-                "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24"
+                "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mar10/fancytree/zipball/73367c54db0bfc9cea81b0382bdc82adecc57f24",
-                "reference": "73367c54db0bfc9cea81b0382bdc82adecc57f24",
+                "url": "https://api.github.com/repos/mar10/fancytree/zipball/a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
+                "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
                 "shasum": ""
             },
             "require": {
@@ -274,10 +192,7 @@
                     "fancytree.jquery.json",
                     "Gruntfile.coffee",
                     "index.html"
-                ],
-                "branch-alias": {
-                    "dev-master": "2.19.1-patch0-dev"
-                }
+                ]
             },
             "license": [
                 "MIT"
@@ -354,12 +269,12 @@
             "version": "3.2.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/jquery.inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "5a72c563b502b8e05958a524cdfffafe9987be38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobinHerbots/jquery.inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/5a72c563b502b8e05958a524cdfffafe9987be38",
                 "reference": "5a72c563b502b8e05958a524cdfffafe9987be38",
                 "shasum": ""
             },
@@ -486,16 +401,16 @@
         },
         {
             "name": "cebe/markdown",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2"
+                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/54a2c49de31cc44e864ebf0500a35ef21d0010b2",
-                "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
+                "reference": "c30eb5e01fe021cc5bba2f9ee0eeef96d4931166",
                 "shasum": ""
             },
             "require": {
@@ -542,7 +457,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2015-03-06 05:28:07"
+            "time": "2016-09-14 20:40:20"
         },
         {
             "name": "cebe/yii2-gravatar",
@@ -589,16 +504,16 @@
         },
         {
             "name": "components/flag-icon-css",
-            "version": "2.4.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lipis/flag-icon-css.git",
-                "reference": "f34e695eed7df4a1fd8035a0a89d287c4355dcc5"
+                "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/f34e695eed7df4a1fd8035a0a89d287c4355dcc5",
-                "reference": "f34e695eed7df4a1fd8035a0a89d287c4355dcc5",
+                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
+                "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
                 "shasum": ""
             },
             "type": "component",
@@ -623,7 +538,7 @@
                 }
             ],
             "description": "CSS for vector based country flags",
-            "time": "2016-08-14 16:10:21"
+            "time": "2016-10-03 14:43:33"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -664,66 +579,6 @@
                 "yii2"
             ],
             "time": "2015-01-27 10:53:51"
-        },
-        {
-            "name": "dmstr/yii2-adminlte-asset",
-            "version": "2.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dmstr/yii2-adminlte-asset.git",
-                "reference": "a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dmstr/yii2-adminlte-asset/zipball/a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60",
-                "reference": "a1330f2f678d66d8ce2f8acb6fb9ce60a4614c60",
-                "shasum": ""
-            },
-            "require": {
-                "almasaeed2010/adminlte": "~2.0",
-                "cebe/yii2-gravatar": "1.*",
-                "rmrevin/yii2-fontawesome": "~2.9",
-                "yiisoft/yii2": "2.*",
-                "yiisoft/yii2-bootstrap": "2.*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "dmstr\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Munk",
-                    "email": "tobias@diemeisterei.de"
-                },
-                {
-                    "name": "Evgeniy Tkachenko",
-                    "email": "et.coder@gmail.com"
-                }
-            ],
-            "description": "AdminLTE backend theme asset bundle for Yii 2.0 Framework",
-            "keywords": [
-                "AdminLTE",
-                "admin",
-                "asset",
-                "backend",
-                "css",
-                "extension",
-                "less",
-                "theme",
-                "yii2"
-            ],
-            "time": "2016-07-28 03:57:05"
         },
         {
             "name": "execut/yii2-base",
@@ -905,17 +760,252 @@
             "time": "2016-05-13 15:42:25"
         },
         {
-            "name": "imagine/imagine",
-            "version": "v0.6.3",
+            "name": "gudezi/adminlte",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+                "url": "https://github.com/gudezi/AdminLTE.git",
+                "reference": "b1514fce6eff4cbd9752664dcead46d8410e7182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
-                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "url": "https://api.github.com/repos/gudezi/AdminLTE/zipball/b1514fce6eff4cbd9752664dcead46d8410e7182",
+                "reference": "b1514fce6eff4cbd9752664dcead46d8410e7182",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Dezi",
+                    "email": "gudezi@gmail.com"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+            "keywords": [
+                "JS",
+                "admin",
+                "back-end",
+                "css",
+                "less",
+                "responsive",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2016-10-20 18:07:36"
+        },
+        {
+            "name": "gudezi/yii2-adminlte-asset",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gudezi/yii2-adminlte-asset.git",
+                "reference": "58cbd06d0283dd40624beb1e1fec7f9de4a1a255"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gudezi/yii2-adminlte-asset/zipball/58cbd06d0283dd40624beb1e1fec7f9de4a1a255",
+                "reference": "58cbd06d0283dd40624beb1e1fec7f9de4a1a255",
+                "shasum": ""
+            },
+            "require": {
+                "cebe/yii2-gravatar": "1.*",
+                "gudezi/adminlte": "*",
+                "rmrevin/yii2-fontawesome": "~2.9",
+                "yiisoft/yii2": "2.*",
+                "yiisoft/yii2-bootstrap": "2.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "gudezi\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Munk",
+                    "email": "tobias@diemeisterei.de"
+                },
+                {
+                    "name": "Evgeniy Tkachenko",
+                    "email": "et.coder@gmail.com"
+                }
+            ],
+            "description": "AdminLTE backend theme asset bundle for Yii 2.0 Framework",
+            "keywords": [
+                "AdminLTE",
+                "admin",
+                "asset",
+                "backend",
+                "css",
+                "extension",
+                "less",
+                "theme",
+                "yii2"
+            ],
+            "time": "2016-10-20 19:44:02"
+        },
+        {
+            "name": "gudezi/yii2-croppic-widget",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gudezi/yii2-croppic-widget.git",
+                "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/c16bcb49bbdbae5b20e2444b90d59169303006da",
+                "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-imagine": "*"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": ">=1.0.0",
+                "yiisoft/yii2-codeception": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "gudezi\\croppic\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Dezi",
+                    "email": "gudezi@gmail.com",
+                    "homepage": "https://github.com/gudezi"
+                }
+            ],
+            "description": "Croppic widget Yii2 Framework.",
+            "homepage": "https://github.com/gudezi/yii2-croppic-widget",
+            "keywords": [
+                "croppic",
+                "extension",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-10-20 16:16:12"
+        },
+        {
+            "name": "gudezi/yii2-fancytree-widget",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gudezi/yii2-fancy-tree-widget.git",
+                "reference": "e576607add94566f8f006bdf956e28ac5b32d04d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gudezi/yii2-fancy-tree-widget/zipball/e576607add94566f8f006bdf956e28ac5b32d04d",
+                "reference": "e576607add94566f8f006bdf956e28ac5b32d04d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fancytree": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "gudezi\\fancytree\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "gudezi",
+                    "email": "gudezi@gmail.com"
+                }
+            ],
+            "description": "The yii2-fancytree widget is a Yii 2 wrapper for the [Fancytree](https://github.com/mar10/fancytree). A JavaScript dynamic tree view plugin for jQuery with support for persistence, keyboard, checkboxes, tables, drag'n'drop, and lazy loading",
+            "keywords": [
+                "extension",
+                "fancytree",
+                "treeview",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-10-19 18:53:10"
+        },
+        {
+            "name": "gudezi/yii2-notifications-widget",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gudezi/yii2-notifications-widget.git",
+                "reference": "44c76f5aebe006bbb79eb74a55b3e7423a7c45e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gudezi/yii2-notifications-widget/zipball/44c76f5aebe006bbb79eb74a55b3e7423a7c45e3",
+                "reference": "44c76f5aebe006bbb79eb74a55b3e7423a7c45e3",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "gudezi\\notifications\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Jose Dezi",
+                    "email": "gudezi@gmail.com"
+                }
+            ],
+            "description": "list notifications widgets",
+            "keywords": [
+                "extension",
+                "notifications",
+                "widgets",
+                "yii2"
+            ],
+            "time": "2016-10-20 14:48:25"
+        },
+        {
+            "name": "imagine/imagine",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "f64ec666baaa800edcbf237db41121a569230709"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/f64ec666baaa800edcbf237db41121a569230709",
+                "reference": "f64ec666baaa800edcbf237db41121a569230709",
                 "shasum": ""
             },
             "require": {
@@ -930,11 +1020,6 @@
                 "ext-imagick": "to use the Imagick implementation"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.7-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Imagine": "lib/"
@@ -959,20 +1044,20 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2015-09-19 16:54:05"
+            "time": "2013-07-10 17:25:36"
         },
         {
             "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox.git",
-                "reference": "68ab678f033b175f8609f13621285bc25d692c1d"
+                "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/68ab678f033b175f8609f13621285bc25d692c1d",
-                "reference": "68ab678f033b175f8609f13621285bc25d692c1d",
+                "url": "https://api.github.com/repos/istvan-ujjmeszaros/bootstrap-duallistbox/zipball/4ebd0727b27425b96204cb0dde1d8ce564676403",
+                "reference": "4ebd0727b27425b96204cb0dde1d8ce564676403",
                 "shasum": ""
             },
             "suggest": {
@@ -999,7 +1084,7 @@
                 "duallistbox",
                 "select"
             ],
-            "time": "2015-09-23 10:50:32"
+            "time": "2016-09-06 13:18:25"
         },
         {
             "name": "johnitvn/yii2-ajaxcrud",
@@ -1057,16 +1142,16 @@
         },
         {
             "name": "karpoff/yii2-crop-image-upload",
-            "version": "dev-master",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/karpoff/yii2-crop-image-upload.git",
-                "reference": "961e65069759c754ffdd2c54050dad14c26abf70"
+                "reference": "b4cd26bd7e326d62c7a8158f640682186c67a2a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/karpoff/yii2-crop-image-upload/zipball/961e65069759c754ffdd2c54050dad14c26abf70",
-                "reference": "961e65069759c754ffdd2c54050dad14c26abf70",
+                "url": "https://api.github.com/repos/karpoff/yii2-crop-image-upload/zipball/b4cd26bd7e326d62c7a8158f640682186c67a2a8",
+                "reference": "b4cd26bd7e326d62c7a8158f640682186c67a2a8",
                 "shasum": ""
             },
             "require": {
@@ -1098,7 +1183,7 @@
                 "upload",
                 "yii2"
             ],
-            "time": "2015-11-13 13:15:24"
+            "time": "2014-12-15 18:13:03"
         },
         {
             "name": "kartik-v/bootstrap-popover-x",
@@ -1231,16 +1316,16 @@
         },
         {
             "name": "kartik-v/yii2-dialog",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-dialog.git",
-                "reference": "c0f83291c050fb05a1dc66a90ad6151de2d1e982"
+                "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/c0f83291c050fb05a1dc66a90ad6151de2d1e982",
-                "reference": "c0f83291c050fb05a1dc66a90ad6151de2d1e982",
+                "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/4aaf8918c6dbd90218b6ad9036b1aae211480716",
+                "reference": "4aaf8918c6dbd90218b6ad9036b1aae211480716",
                 "shasum": ""
             },
             "require": {
@@ -1279,7 +1364,7 @@
                 "modal",
                 "yii2"
             ],
-            "time": "2016-02-22 10:58:46"
+            "time": "2016-09-13 18:15:26"
         },
         {
             "name": "kartik-v/yii2-dropdown-x",
@@ -1382,12 +1467,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431"
+                "reference": "a7d8fed3485720a8b17614685216a43f69c4224d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/6373e72c8747d64e9df53b4d03a76c7069f37431",
-                "reference": "6373e72c8747d64e9df53b4d03a76c7069f37431",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/a7d8fed3485720a8b17614685216a43f69c4224d",
+                "reference": "a7d8fed3485720a8b17614685216a43f69c4224d",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1509,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-08-09 13:17:33"
+            "time": "2016-10-21 07:44:15"
         },
         {
             "name": "kartik-v/yii2-icons",
@@ -1476,16 +1561,16 @@
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "1.8.5",
+            "version": "v1.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "7f7a45ffe193fe673f72b9effc01b08499f2a454"
+                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/7f7a45ffe193fe673f72b9effc01b08499f2a454",
-                "reference": "7f7a45ffe193fe673f72b9effc01b08499f2a454",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/8f558809e6093c8f4f4599b7b9fd64b366b22a60",
+                "reference": "8f558809e6093c8f4f4599b7b9fd64b366b22a60",
                 "shasum": ""
             },
             "require": {
@@ -1523,7 +1608,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-05-07 19:45:52"
+            "time": "2016-09-04 09:25:29"
         },
         {
             "name": "kartik-v/yii2-mpdf",
@@ -1673,12 +1758,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-tree-manager.git",
-                "reference": "f911e3eecc95e84b7ca3851d35d976dcabf8f4de"
+                "reference": "e0d9f1cbada047b1726860893d1982189e46f877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/f911e3eecc95e84b7ca3851d35d976dcabf8f4de",
-                "reference": "f911e3eecc95e84b7ca3851d35d976dcabf8f4de",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/e0d9f1cbada047b1726860893d1982189e46f877",
+                "reference": "e0d9f1cbada047b1726860893d1982189e46f877",
                 "shasum": ""
             },
             "require": {
@@ -1721,7 +1806,7 @@
                 "tree",
                 "treeview"
             ],
-            "time": "2016-07-12 16:59:52"
+            "time": "2016-10-14 16:51:22"
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
@@ -1826,16 +1911,16 @@
         },
         {
             "name": "mongosoft/yii2-upload-behavior",
-            "version": "dev-master",
+            "version": "0.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mohorev/yii2-upload-behavior.git",
-                "reference": "eb3ba838337900fcb8a852b11a83d873f6554139"
+                "url": "https://github.com/mongosoft/yii2-upload-behavior.git",
+                "reference": "dca58ec2252d37fd941e6599735dfaf63a48c911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mohorev/yii2-upload-behavior/zipball/eb3ba838337900fcb8a852b11a83d873f6554139",
-                "reference": "eb3ba838337900fcb8a852b11a83d873f6554139",
+                "url": "https://api.github.com/repos/mongosoft/yii2-upload-behavior/zipball/dca58ec2252d37fd941e6599735dfaf63a48c911",
+                "reference": "dca58ec2252d37fd941e6599735dfaf63a48c911",
                 "shasum": ""
             },
             "require": {
@@ -1875,7 +1960,7 @@
                 "upload",
                 "yii2"
             ],
-            "time": "2016-05-26 09:00:57"
+            "time": "2015-08-27 15:48:02"
         },
         {
             "name": "phpspec/php-diff",
@@ -1917,16 +2002,16 @@
         },
         {
             "name": "rmrevin/yii2-fontawesome",
-            "version": "2.15.2",
+            "version": "2.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "23e282eadeaec70ea7a0241eabf5d672568f26ba"
+                "reference": "ab08282b8cd05c570634926f41c868cf902981e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/23e282eadeaec70ea7a0241eabf5d672568f26ba",
-                "reference": "23e282eadeaec70ea7a0241eabf5d672568f26ba",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ab08282b8cd05c570634926f41c868cf902981e7",
+                "reference": "ab08282b8cd05c570634926f41c868cf902981e7",
                 "shasum": ""
             },
             "require": {
@@ -1964,7 +2049,7 @@
                 "font",
                 "yii"
             ],
-            "time": "2016-08-19 14:09:51"
+            "time": "2016-08-31 12:41:25"
         },
         {
             "name": "softark/yii2-dual-listbox",
@@ -2066,16 +2151,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.9",
+            "version": "2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133"
+                "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2b75151ea60e1fd820046416eee2e89c3dda1133",
-                "reference": "2b75151ea60e1fd820046416eee2e89c3dda1133",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
+                "reference": "5bfcb7a6dfa9771e2248eb8c4448613330f343ff",
                 "shasum": ""
             },
             "require": {
@@ -2156,7 +2241,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-07-11 13:36:42"
+            "time": "2016-10-20 12:02:50"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -2357,21 +2442,21 @@
         },
         {
             "name": "yiisoft/yii2-imagine",
-            "version": "dev-master",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-imagine.git",
-                "reference": "e8c7161b38bf2a3067e9203b4370424709232d87"
+                "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/e8c7161b38bf2a3067e9203b4370424709232d87",
-                "reference": "e8c7161b38bf2a3067e9203b4370424709232d87",
+                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
+                "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
                 "shasum": ""
             },
             "require": {
-                "imagine/imagine": "~0.6.0",
-                "yiisoft/yii2": "~2.0.0"
+                "imagine/imagine": "0.5.*",
+                "yiisoft/yii2": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2401,7 +2486,7 @@
                 "imagine",
                 "yii2"
             ],
-            "time": "2016-09-20 20:58:01"
+            "time": "2016-09-04 15:14:08"
         },
         {
             "name": "yiisoft/yii2-jui",
@@ -2455,21 +2540,21 @@
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "e2c6315caff30a9271a7afad4d684627721dc69a"
+                "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/e2c6315caff30a9271a7afad4d684627721dc69a",
-                "reference": "e2c6315caff30a9271a7afad4d684627721dc69a",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/26b900767f1031ff3a4668dfa36c10595875f0a5",
+                "reference": "26b900767f1031ff3a4668dfa36c10595875f0a5",
                 "shasum": ""
             },
             "require": {
                 "swiftmailer/swiftmailer": "~5.0",
-                "yiisoft/yii2": ">=2.0.4"
+                "yiisoft/yii2": "~2.0.4"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2501,7 +2586,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2016-03-17 03:58:49"
+            "time": "2016-09-09 11:48:11"
         }
     ],
     "packages-dev": [
@@ -2555,16 +2640,16 @@
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "abde5a9611d4939b951fdd00f70a9fec935c7b6b"
+                "reference": "6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/abde5a9611d4939b951fdd00f70a9fec935c7b6b",
-                "reference": "abde5a9611d4939b951fdd00f70a9fec935c7b6b",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c",
+                "reference": "6e1a8ca5ca04d4927540ccf18bbfc3253286bd0c",
                 "shasum": ""
             },
             "type": "library",
@@ -2604,7 +2689,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2016-08-07 07:50:42"
+            "time": "2016-09-20 05:47:41"
         },
         {
             "name": "kartik-v/bootstrap-star-rating",
@@ -2859,16 +2944,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-datepicker",
-            "version": "v1.4.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "b76e08a432950d658cadc7597178426a47a994ac"
+                "reference": "8738f6dc3211d949b05189ba103aab786143fc6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/b76e08a432950d658cadc7597178426a47a994ac",
-                "reference": "b76e08a432950d658cadc7597178426a47a994ac",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/8738f6dc3211d949b05189ba103aab786143fc6c",
+                "reference": "8738f6dc3211d949b05189ba103aab786143fc6c",
                 "shasum": ""
             },
             "require": {
@@ -2909,7 +2994,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-06-28 17:51:26"
+            "time": "2016-09-04 10:52:50"
         },
         {
             "name": "kartik-v/yii2-widget-datetimepicker",
@@ -3621,6 +3706,7 @@
                 "codeception",
                 "yii2"
             ],
+            "abandoned": "codeception/codeception",
             "time": "2016-03-17 03:41:26"
         },
         {
@@ -3672,7 +3758,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "kartik-v/yii2-grid": 20,
         "kartik-v/yii2-icons": 20,

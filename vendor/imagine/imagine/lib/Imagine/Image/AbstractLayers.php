@@ -11,6 +11,9 @@
 
 namespace Imagine\Image;
 
+use Imagine\Image\LayersInterface;
+use Imagine\Image\ImageInterface;
+
 abstract class AbstractLayers implements LayersInterface
 {
     /**

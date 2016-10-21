@@ -2,6 +2,14 @@ LASTEST NOT RELEASED
 ------------------------------
 NONE
 
+V1.35.3
+------------------------------
+* Refs #144 *
+* Refs #284 *
+* Refs #231 *
+* Refs #271 * 
+* Refs #294 *
+
 V1.35.2
 ------------------------------
 * Refs #251 Close icon on the top right is configurable *

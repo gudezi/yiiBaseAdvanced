@@ -2,7 +2,6 @@ Upload behavior for Yii 2
 ===========================
 
 This behavior automatically uploads file and fills the specified attribute with a value of the name of the uploaded file.
-This code is inspired by, but not derived from, https://github.com/yii-dream-team/yii2-upload-behavior.
 
 [![Latest Version](https://img.shields.io/packagist/v/mongosoft/yii2-upload-behavior.svg?style=flat-square)](https://packagist.org/packages/mongosoft/yii2-upload-behavior)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -72,23 +71,6 @@ class Document extends ActiveRecord
         ];
     }
 }
-```
-
-Set model scenario in controller action:
-
-```php
-class Controller extends Controller
-{
-    public function actionCreate($id)
-    {
-        $model = $this->findModel($id);
-        $model->setScenario('insert'); // Note! Set upload behavior scenario.
-        
-        ...
-        ...
-    }
-}
-
 ```
 
 Example view file:
@@ -185,7 +167,7 @@ Behavior Options
 
 It is prefered to use immutable placeholder in `url` and `path` options, other words try don't use related attributes that can be changed. There's bad practice. For example:
 
-```php
+```
 class Track extends ActiveRecord
 {
     public function getArtist()

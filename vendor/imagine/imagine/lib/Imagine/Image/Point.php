@@ -39,7 +39,9 @@ final class Point implements PointInterface
     public function __construct($x, $y)
     {
         if ($x < 0 || $y < 0) {
-            throw new InvalidArgumentException(sprintf('A coordinate cannot be positioned outside of a bounding box (x: %s, y: %s given)', $x, $y));
+            throw new InvalidArgumentException(
+                'A coordinate cannot be positioned outside of a bounding box'
+            );
         }
 
         $this->x = $x;

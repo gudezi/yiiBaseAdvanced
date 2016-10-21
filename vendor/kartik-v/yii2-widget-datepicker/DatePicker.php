@@ -4,7 +4,7 @@
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2016
  * @package yii2-widgets
  * @subpackage yii2-widget-datepicker
- * @version 1.4.0
+ * @version 1.4.2
  */
 
 namespace kartik\date;
@@ -18,8 +18,30 @@ use kartik\base\InputWidget;
 use kartik\field\FieldRangeAsset;
 
 /**
- * DatePicker widget is a Yii2 wrapper for the Bootstrap DatePicker plugin. The plugin is a fork of Stefan Petre's
- * DatePicker (of eyecon.ro), with improvements by @eternicode.
+ * DatePicker widget is a Yii2 wrapper for the Bootstrap DatePicker plugin by @eternicode and provides 
+ * a flexible datepicker widget in Bootstrap style. 
+ 
+ * This DatePicker widget by Krajee also includes additional features and enhancements to the core plugin like better
+ * useful bootstrap addons. It includes an enhanced date clear addon button to clear dates easily. It also adds ability
+ * to configure and render the datepicker INLINE, or as a BUTTON, or as a date RANGE by integrating with the
+ * [[\kartik\field\FieldRange]] widget.
+ *
+ * Usage example:
+ *
+ * ~~~
+ * use kartik\date\DatePicker;
+ * // usage without model
+ * echo '<label>Check Issue Date</label>';
+ * echo DatePicker::widget([
+ *     'name' => 'check_issue_date',
+ *     'value' => date('d-M-Y', strtotime('+2 days')),
+ *     'options' => ['placeholder' => 'Select issue date ...'],
+ *     'pluginOptions' => [
+ *         'format' => 'dd-M-yyyy',
+ *         'todayHighlight' => true
+ *     ]
+ * ]);
+ * ~~~
  *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since 1.0
@@ -27,34 +49,55 @@ use kartik\field\FieldRangeAsset;
  */
 class DatePicker extends InputWidget
 {
+    /**
+     * The markup to render the calendar icon in the date picker button.
+     */
     const CALENDAR_ICON = '<i class="glyphicon glyphicon-calendar"></i>';
+    /**
+     * Datepicker rendered as a plain input.
+     */
     const TYPE_INPUT = 1;
+    /**
+     * Datepicker with the date picker button rendered as a prepended bootstrap addon component
+     */
     const TYPE_COMPONENT_PREPEND = 2;
+    /**
+     * Datepicker with the date picker button rendered as a appended bootstrap addon component
+     */
     const TYPE_COMPONENT_APPEND = 3;
+    /**
+     * Datepicker calendar directly rendered inline
+     */
     const TYPE_INLINE = 4;
+    /**
+     * Datepicker range with from and to date inputs
+     */
     const TYPE_RANGE = 5;
+    /**
+     * Datepicker rendered as a picker button without any input
+     */
     const TYPE_BUTTON = 6;
 
     /**
      * @var string the markup type of widget markup must be one of the TYPE constants. Defaults to
-     *     [[TYPE_COMPONENT_PREPEND]]
+     * [[TYPE_COMPONENT_PREPEND]]
      */
     public $type = self::TYPE_COMPONENT_PREPEND;
 
     /**
-     * @var string The size of the input - 'lg', 'md', 'sm', 'xs'
+     * @var string the size of the input - 'lg', 'md', 'sm', 'xs'
      */
     public $size;
 
     /**
      * @var ActiveForm the ActiveForm object which you can pass for seamless usage with ActiveForm. This property is
-     *     especially useful for client validation of `attribute2` for [[TYPE_RANGE]] validation.
+     * especially useful for client validation of [[attribute2]] for [[TYPE_RANGE]] validation.
      */
     public $form;
 
     /**
-     * @var array the HTML attributes for the button that is rendered for [[DatePicker::TYPE_BUTTON]]. Defaults to
-     *     `['class'=>'btn btn-default']`. The following special options are recognized:
+     * @var array the HTML attributes for the button that is rendered for [[TYPE_BUTTON]]. Defaults to
+     * `['class'=>'btn btn-default']`. The following special options are recognized:
      * - 'label': string the button label. Defaults to `<i class="glyphicon glyphicon-calendar"></i>`
      */
     public $buttonOptions = [];
@@ -65,93 +108,97 @@ class DatePicker extends InputWidget
     public $options = [];
 
     /**
-     * @var string the layout template to display the buttons (applicable only  when `type` is one of
-     *     TYPE_COMPONENT_PREPEND or TYPE_COMPONENT_APPEND or TYPE_RANGE). The following tags will be parsed and
-     *     replaced for TYPE_COMPONENT_PREPEND or TYPE_COMPONENT_APPEND :
+     * @var string the layout template to display the buttons (applicable only  when [[type]] is set to one of
+     * [[TYPE_COMPONENT_PREPEND]] or [[TYPE_COMPONENT_APPEND]] or [[TYPE_RANGE]]). The following tokens will be
+     * parsed and replaced when [[type]] is set to one of [[TYPE_COMPONENT_PREPEND]] or [[TYPE_COMPONENT_APPEND]]:
      * - `{picker}`: will be replaced with the date picker button (rendered as a bootstrap input group addon).
      * - `{remove}`: will be replaced with the date clear/remove button (rendered as a bootstrap input group addon).
      * - `{input}`: will be replaced with the HTML input markup that stores the date.
-     * For TYPE_RANGE the following tags will be parsed and replaced:
+     *
+     * When [[type]] is set to [[TYPE_RANGE]] the following tokens will be parsed and replaced:
+     *
      * - `{input1}`: will be replaced with the HTML input markup that stores the date for attribute1.
      * - `{separator}`: will be replaced with the input group addon for field range separator. The text for the
      *    separator is set via the `separator` property.
      * - `{input2}`: will be replaced with the HTML input markup that stores the date for attribute2.
-     * The `layout` defaults to the following value if not set:
-     * - `{picker}{remove}{input}` for TYPE_COMPONENT_PREPEND
-     * - `{input}{remove}{picker}` for TYPE_COMPONENT_APPEND
-     * - `{input1}{separator}{input2}` for TYPE_RANGE
+     *
+     * The [[layout]] property defaults to the following value if not set:
+     *
+     * - `{picker}{remove}{input}` for [[TYPE_COMPONENT_PREPEND]]
+     * - `{input}{remove}{picker}` for [[TYPE_COMPONENT_APPEND]]
+     * - `{input1}{separator}{input2}` for [[TYPE_RANGE]]
      */
     public $layout;
 
     /**
-     * @var mixed the calendar picker button configuration.
-     * - if this is passed as a string, it will be displayed as is (will not be HTML encoded).
+     * @var array|string|boolean the calendar picker button configuration.
+     * - if this is passed as a _string_, it will be displayed as is (will not be HTML encoded).
      * - if this is set to `false`, the picker button will not be displayed.
-     * - if this is passed as an array (this is the DEFAULT) it will treat this as HTML attributes for the button (to
-     *     be displayed as a Bootstrap addon). The following special keys are recognized;
-     *   - icon: string, the bootstrap glyphicon name/suffix. Defaults to 'calendar'.
-     *   - title: string|bool, the title to be displayed on hover. Defaults to 'Select date & time'. To disable, set it
-     *     to `false`.
+     * - if this is passed as an _array_ (which is the default) it will be parsed as HTML attributes for the button (to
+     *   be displayed as a Bootstrap addon). The following special keys are recognized;
+     *   - `icon`: _string_, the bootstrap glyphicon name/suffix. Defaults to 'calendar'.
+     *   - `title`: _string|_boolean_, the title to be displayed on hover. Defaults to 'Select date & time'. To disable, 
+     *     set it to `false`.
      */
     public $pickerButton = [];
 
     /**
-     * @var mixed the calendar remove button configuration - applicable only for type set to
-     *     `DatePicker::TYPE_COMPONENT_PREPEND` or `DatePicker::TYPE_COMPONENT_APPEND`.
-     * - if this is passed as a string, it will be displayed as is (will not be HTML encoded).
+     * @var array|string|boolean the calendar remove button configuration - applicable only for type set to
+     * [[TYPE_COMPONENT_PREPEND]] or [[TYPE_COMPONENT_APPEND]].
+     * - if this is passed as a _string_, it will be displayed as is (will not be HTML encoded).
      * - if this is set to `false`, the remove button will not be displayed.
-     * - if this is passed as an array (this is the DEFAULT) it will treat this as HTML attributes for the button (to
-     *     be displayed as a Bootstrap addon). The following special keys are recognized;
-     *   - icon - string, the bootstrap glyphicon name/suffix. Defaults to 'remove'.
-     *   - title - string, the title to be displayed on hover. Defaults to 'Clear field'. To disable, set it to
-     *     `false`.
+     * - if this is passed as an _array_ (this is the DEFAULT) it will treat this as HTML attributes for the button (to
+     *   be displayed as a Bootstrap addon). The following special keys are recognized;
+     *   - `icon`: _string_, the bootstrap glyphicon name/suffix. Defaults to 'remove'.
+     *   - `title`: _string|_boolean_, the title to be displayed on hover. Defaults to 'Clear field'. To disable, 
+     *     set it to `false`.
      */
     public $removeButton = [];
 
     /**
-     * @var string the model attribute 2 if you are using [[TYPE_RANGE]] for markup.
+     * @var string the model attribute 2 if you are setting [[type]] to [[TYPE_RANGE]] for markup.
      */
     public $attribute2;
 
     /**
-     * @var string the name of input number 2 if you are using [[TYPE_RANGE]] for markup
+     * @var string the name of input number 2 if you are setting [[type]] to [[TYPE_RANGE]] for markup.
      */
     public $name2;
 
     /**
-     * @var string the name of value for input number 2 if you are using [[TYPE_RANGE]] for markup
+     * @var string the name of value for input number 2 if you are setting [[type]] to [[TYPE_RANGE]] for markup.
      */
     public $value2 = null;
 
     /**
-     * @var array the HTML attributes for the input number 2 tag. if you are using [[TYPE_RANGE]] for markup
+     * @var array the HTML attributes for the input number 2 if you are setting [[type]] to [[TYPE_RANGE]] for markup.
      */
     public $options2 = [];
 
     /**
-     * @var string the range input separator if you are using [[TYPE_RANGE]] for markup. Defaults to 'to'.
+     * @var string the range input separator if you are setting [[type]] to [[TYPE_RANGE]] for markup. Defaults to 'to'.
      */
     public $separator = 'to';
 
     /**
-     * @var array the HTML options for the DatePicker container
+     * @var array the HTML options for the DatePicker container.
      */
     private $_container = [];
 
     /**
-     * @var bool whether a prepend or append addon exists
+     * @var boolean whether a prepend or append addon exists.
      */
     protected $_hasAddon = false;
 
     /**
      * @inheritdoc
      */
-    public $pluginName = 'kvDatepicker';
+    protected $_msgCat = 'kvdate';
 
     /**
      * @inheritdoc
      */
-    protected $_msgCat = 'kvdate';
+    public $pluginName = 'kvDatepicker';
 
     /**
      * @inheritdoc
@@ -163,7 +210,7 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Renders the date picker widget
+     * Renders the date picker widget.
      */
     protected function renderDatePicker()
     {
@@ -195,9 +242,9 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Raise an error exception
+     * Raise an invalid configuration exception.
      *
-     * @param string $msg
+     * @param string $msg the exception message
      *
      * @throws InvalidConfigException
      */
@@ -207,9 +254,9 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Validates widget configuration
+     * Validates widget configuration.
      *
-     * @throw InvalidConfigException
+     * @throws InvalidConfigException
      */
     protected function validateConfig()
     {
@@ -243,8 +290,7 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Renders the source input for the DatePicker plugin. Graceful fallback to a normal HTML  text input in case
-     * JQuery is not supported by the browser
+     * Renders the source input for the DatePicker plugin.
      *
      * @return string
      */
@@ -294,7 +340,7 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Parses the input to render based on markup type
+     * Parses the input to render based on markup type.
      *
      * @param string $input
      *
@@ -370,9 +416,7 @@ class DatePicker extends InputWidget
     }
 
     /**
-     * Registers the needed client assets
-     *
-     * @return void
+     * Registers the [[DatePicker]] widget client assets.
      */
     public function registerAssets()
     {

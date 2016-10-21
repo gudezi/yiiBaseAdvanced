@@ -42,7 +42,6 @@ use yii\imagine\Image;
  * ```
  *
  * @author Alexander Mohorev <dev.mohorev@gmail.com>
- * @author Alexey Samoylov <alexey.samoylov@gmail.com>
  */
 class UploadImageBehavior extends UploadBehavior
 {
