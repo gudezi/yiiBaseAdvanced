@@ -109,7 +109,7 @@ class BaseController extends Controller {
             return true;
         }
         if (!AccessHelpers::getAcceso($operacion)) {
-            echo $this->render('//site/nopermitido');
+            echo $this->render('//site/nopermitido', array('message' => '-----'));
             return false;
         }
  

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use softark\duallistbox\DualListbox;
-use andru19\fancytree\FancytreeWidget;
+use gudezi\fancytree\FancytreeWidget;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Rol */

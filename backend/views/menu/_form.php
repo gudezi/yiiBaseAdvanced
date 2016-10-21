@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use andru19\fancytree\FancytreeWidget;
+use gudezi\fancytree\FancytreeWidget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Menu */

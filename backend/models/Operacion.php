@@ -49,10 +49,12 @@ class Operacion extends \yii\db\ActiveRecord
     {
         if(isset($this->operaciones))
         {
-            foreach ($this->operaciones as $id) {
-                $oper = new Operacion();
-                $oper->nombre = $id;
-                $oper->save();
+            if(is_array($this->operaciones)>0){
+                foreach ($this->operaciones as $id) {
+                    $oper = new Operacion();
+                    $oper->nombre = $id;
+                    $oper->save();
+                }
             }
         }
         return true;

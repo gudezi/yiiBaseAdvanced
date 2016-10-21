@@ -66,34 +66,39 @@ class Rol extends \yii\db\ActiveRecord
         {
             \Yii::$app->db->createCommand()->delete('rol_operacion', 'rol_id = '.(int) $this->id)->execute();
      
-            foreach ($this->operaciones as $id) {
-                $ro = new RolOperacion();
-                $ro->rol_id = $this->id;
-                $ro->operacion_id = $id;
-                $ro->save();
+            if(is_array($this->operaciones)>0){
+                foreach ($this->operaciones as $id) {
+                        $ro = new RolOperacion();
+                        $ro->rol_id = $this->id;
+                        $ro->operacion_id = $id;
+                        $ro->save();
+                    }
             }
         }
         elseif(isset($this->usuarios))
         {
             \Yii::$app->db->createCommand()->delete('rol_usuario', 'rol_id = '.(int) $this->id)->execute();
             //echo "<pre>";print_r($this->usuarios);die();
-            foreach ($this->usuarios as $id) {
-                $ru = new RolUsuario();
-                $ru->rol_id = $this->id;
-                $ru->usuario_id = $id;
-                $ru->save();
+            if(is_array($this->usuarios)>0){
+                foreach ($this->usuarios as $id) {
+                    $ru = new RolUsuario();
+                    $ru->rol_id = $this->id;
+                    $ru->usuario_id = $id;
+                    $ru->save();
+                }
             }
         }
         elseif(isset($this->menues))
         {
             \Yii::$app->db->createCommand()->delete('rol_menu', 'rol_id = '.(int) $this->id)->execute();
-     
-            foreach ($this->menues as $id) {
-                $rm = new RolMenu();
-                $rm->rol_id = $this->id;
-                $rm->menu_id = $id;
-                $rm->save();
-            }        
+            if(is_array($this->menues)>0){
+                foreach ($this->menues as $id) {
+                    $rm = new RolMenu();
+                    $rm->rol_id = $this->id;
+                    $rm->menu_id = $id;
+                    $rm->save();
+                }        
+            }
         }
     }
 

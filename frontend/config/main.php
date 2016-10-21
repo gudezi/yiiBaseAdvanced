@@ -38,8 +38,8 @@ return [
             'bundles' => [
                //'dmstr\web\AdminLteAsset' => [
                //   'skin' => 'skin-blue',
-               'sofse\web\AdminLteAsset' => [
-                  'skin' => 'skin-sofse',
+               'gudezi\web\AdminLteAsset' => [
+                  'skin' => 'skin-green',
                   //'skin' => 'skin-black',
                ],
             ],

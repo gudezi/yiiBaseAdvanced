@@ -81,23 +81,27 @@ class Usuario extends \yii\db\ActiveRecord
         {
             \Yii::$app->db->createCommand()->delete('rol_usuario', 'usuario_id = '.(int) $this->id)->execute();
             //echo "<pre>";print_r($this);die;
-            foreach ($this->roles as $id) {
-                $ru = new RolUsuario();
-                $ru->usuario_id = $this->id;
-                $ru->rol_id = $id;
-                $ru->save();
+            if(is_array($this->roles)>0){
+                foreach ($this->roles as $id) {
+                    $ru = new RolUsuario();
+                    $ru->usuario_id = $this->id;
+                    $ru->rol_id = $id;
+                    $ru->save();
+                }
             }
         }
         if(isset($this->permisos))
         {
             \Yii::$app->db->createCommand()->delete('usuario_operacion', 'usuario_id = '.(int) $this->id)->execute();
-            //echo "<pre>";print_r($this->permisos);die;
-            foreach ($this->permisos as $id) {
-                //echo $id."<br>";
-                $uo = new UsuarioOperacion();
-                $uo->usuario_id = $this->id;
-                $uo->operacion_id = $id;
-                $uo->save();
+            //echo "<pre>";print_r($this);die;
+            if(is_array($this->permisos)>0){
+                foreach ($this->permisos as $id) {
+                    //echo $id."<br>";
+                    $uo = new UsuarioOperacion();
+                    $uo->usuario_id = $this->id;
+                    $uo->operacion_id = $id;
+                    $uo->save();
+                }
             }
             //die;
         }

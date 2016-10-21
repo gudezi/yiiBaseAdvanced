@@ -19,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php $form = ActiveForm::begin(); ?>
 
         <?php //= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
-        <?php //$htmlOptions = array('size' => '5', 'prompt'=>'Use CTRL to Select Multiple Staff', 'multiple' => 'true', 'options' => $selected);?>
+        <?php $htmlOptions = array('size' => '5', 'prompt'=>'Use CTRL to Select Multiple Staff');
+        //$htmlOptions = array('size' => '5', 'prompt'=>'Use CTRL to Select Multiple Staff', 'multiple' => 'true', 'options' => $selected);?>
         <?= $form->field($model, 'operaciones')->checkboxList($acciones, $htmlOptions)?>
         <div class="form-group">
             <?= Html::submitButton('Generar', ['class' => 'btn btn-success']) ?>
