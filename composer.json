@@ -27,7 +27,7 @@
         "kartik-v/yii2-tree-manager": "@dev",
         "execut/yii2-widget-bootstraptreeview": "dev-master",
         "gudezi/yii2-fancytree-widget": "*",
-	"gudezi/yii2-notifications-widget": "*",
+        "gudezi/yii2-notifications-widget": "*",
         "gudezi/yii2-adminlte-asset": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
         "karpoff/yii2-crop-image-upload": "*",
