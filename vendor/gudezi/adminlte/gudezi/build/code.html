@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>AdminLTE GUDEZI | Test</title>
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+      <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../dist/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../dist/css/font-awesome-animation.min.css">
+      <link rel="stylesheet" href="../dist/css/ionicons.min.css">
+      <link rel="stylesheet" href="../plugins/prism/prism.css">
+      <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+      <link rel="stylesheet" href="../dist/css/skins/skin-gudezi.min.css">
+   </head>
+
+
+   <body class="hold-transition skin-gudezi fixed sidebar-mini">
+      <script src="../dist/js/sideBarStateLocalStorage.min.js"></script>
+      <div class="wrapper">
+         <!-- // INCLUYO EL MAIN HEADER-->
+         include "main_header.html"
+         <!-- // INCLUYO EL SIDEBAR-->
+         include "sidebar.html"
+         <!-- Content Wrapper. Contains page content -->
+         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+               <h1>
+                  Vista de código
+                  <small>Descripción opcional</small>
+               </h1>
+               <ol class="breadcrumb">
+                  <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
+                  <li class="active">Test</li>
+               </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+
+
+               <div class="box">
+                  <div class="box-header">
+                     <h3 class="box-title">Ejemplo CSS</h3>
+                     <div class="box-tools">
+                        <!-- aqui botones y esas cosas -->
+                     </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <pre>
+<code class="language-css">
+div.container {
+    border: 1px solid red;
+    margin-left: 100px;
+}
+
+p.one {
+    margin-left: inherit;
+}</code>
+                    </pre>
+                    
+                  </div>
+                  <!-- /.box-body -->
+               </div><!-- /.box -->
+
+                <div class="box">
+                  <div class="box-header">
+                     <h3 class="box-title">Ejemplo HTML</h3>
+                     <div class="box-tools">
+                        <!-- aqui botones y esas cosas -->
+                     </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <pre>
+<code class="language-html language-javascript language-php">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;title&gt;AdminLTE GUDEZI | Test&lt;/title&gt;
+  &lt;meta content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot; name=&quot;viewport&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../bootstrap/css/bootstrap.min.css&quot;&gt;
+</code>
+                    </pre>
+                    
+                  </div>
+                  <!-- /.box-body -->
+               </div><!-- /.box -->
+
+
+               <div class="box">
+                  <div class="box-header">
+                     <h3 class="box-title">Ejemplo Javascript</h3>
+                     <div class="box-tools">
+                        <!-- aqui botones y esas cosas -->
+                     </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <pre>
+<code class="language-javascript">
+
+var displayClosure = function() {
+    var count = 0;
+    return function () {
+        return ++count;
+    };
+}
+var inc = displayClosure();
+inc(); // devuelve 1
+inc(); // devuelve 2
+inc(); // devuelve 3
+
+</code>
+                    </pre>
+                    
+                  </div>
+                  <!-- /.box-body -->
+               </div><!-- /.box -->
+
+
+
+               <div class="box">
+                  <div class="box-header">
+                     <h3 class="box-title">Ejemplo PHP</h3>
+                     <div class="box-tools">
+                        <!-- aqui botones y esas cosas -->
+                     </div>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <pre>
+<code class="language-php">
+
+public function index()
+  {
+    $this->load->library('pagination');
+    $this->trenes_filtros->inicializar();
+
+    $config['base_url'] = base_url() . 'empleados';
+    $config['total_rows'] = $this->empleados_model->get_empleados(true);
+    $config['per_page'] = 3; 
+    $config['uri_segment'] = 2;
+    
+    $this->pagination->initialize($config);
+
+    $data['empleados'] = $this->empleados_model->get_empleados(false, $config['per_page'], $this->uri->segment(2));
+
+    $data['head_title'] = 'Empleados';
+
+    $this->load->view('empleados/empleados_index_view', $data);
+  }
+
+
+</code>
+                    </pre>
+                    
+                  </div>
+                  <!-- /.box-body -->
+               </div><!-- /.box -->
+
+
+
+
+
+            </section>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+         <!-- // INCLUYO EL FOOTER -->
+         include "footer.html"
+         <!-- // INCLUYO EL SIDEBAR LATERAL -->
+         include "sidebar_right.html"
+      </div>
+      <!-- ./wrapper -->
+      <!-- REQUIRED JS SCRIPTS -->
+      <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+      <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+      <script src="../plugins/prism/prism.js"></script>
+      <!-- // INCLUYO LAS OPCIONES DEL ADMIN -->
+      include "admin_options.html"
+      <script src="../dist/js/app.min.js"></script>
+   </body>
+</html>
