@@ -292,6 +292,7 @@ class CropAction extends Action
     {
         // Compruebe que la imagen existe
         // y puede ser leída.
+        //print_r(Yii::getAlias('@webroot/' . $model->imgUrl));die;
         if (!is_readable(Yii::getAlias('@webroot/' . $model->imgUrl))) {
             throw new InvalidCallException(
                 'La imagen no existe o no se puede leer.'

@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'doubleZoomControls' => false,
                 'enableMousescroll' => true,
                 'outputUrlId' => 'prueba-urlupload',
-                'loadPicture' => 'img/user/avatar/i-14768128925806605c543c7.jpg',
+                //'loadPicture' => 'img/user/avatar/i-14768128925806605c543c7.jpg',
                 'loaderHtml' => '<div class="loader bubblingG">
                     <span id="bubblingG_1"></span>
                     <span id="bubblingG_2"></span>

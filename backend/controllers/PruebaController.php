@@ -101,7 +101,7 @@ class PruebaController extends BaseController
         }
         else
         {
-            $model->urlUpload = 'img/user/avatar/i-14768128925806605c543c7.jpg';
+            //$model->urlUpload = 'img/user/avatar/i-14768128925806605c543c7.jpg';
             return $this->render('index', [
                 'model' => $model,
             ]);
