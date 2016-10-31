@@ -32,8 +32,8 @@ return [
         'assetManager' => [
             'bundles' => [
                'gudezi\web\AdminLteAsset' => [
-                  //'skin' => 'skin-gudezi',
-                  'skin' => 'skin-yellow',
+                  'skin' => 'skin-gudezi',
+                  //'skin' => 'skin-yellow',
                ],
             ],
         ],

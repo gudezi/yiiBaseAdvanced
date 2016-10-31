@@ -39,7 +39,7 @@ return [
                //'dmstr\web\AdminLteAsset' => [
                //   'skin' => 'skin-blue',
                'gudezi\web\AdminLteAsset' => [
-                  'skin' => 'skin-green',
+                  'skin' => 'skin-gudezi',
                   //'skin' => 'skin-black',
                ],
             ],

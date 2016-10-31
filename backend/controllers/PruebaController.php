@@ -19,7 +19,7 @@ use gudezi\croppic\actions\UploadAction;
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
  */
-class PruebaController extends Controller
+class PruebaController extends BaseController
 {
     public function behaviors()
     {
@@ -91,7 +91,7 @@ class PruebaController extends Controller
         //print_r(Yii::$app->request->post());
         $model = new Prueba();
 
-        $this->layout = false;
+        //$this->layout = false;
         //die;
         if ($model->load(Yii::$app->request->post()))
         {
