@@ -7,42 +7,21 @@ namespace gudezi\croppic;
  * @link   <gudezi@gmail.com>
  */
 
-use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\base\InvalidConfigException;
+use yii\widgets\InputWidget;
 
-/**
- * 
- * Widget para Croppic - Plugin jQuery para cropping
- *
- * @see http://www.croppic.net/
- * @link https://github.com/sconsult/croppic
- *
- * USO:
- *
- * use gudezi\croppic\Croppic;
- *
- * <?= Croppic::widget([
- *    'options' => [
- *       'class' => 'croppic',
- *    ],
- *    'pluginOptions' => [
- *       'uploadUrl' => $model->urlUpload,
- *       'cropUrl' => $model->urlCrop,
- *       'modal' => false,
- *       'doubleZoomControls' => false,
- *       'enableMousescroll' => true,
- *       'loaderHtml' => '<div class="loader bubblingG">
- *          <span id="bubblingG_1"></span>
- *          <span id="bubblingG_2"></span>
- *          <span id="bubblingG_3"></span>
- *       </div> ',
- *    ],
- * ]) ?>
- */
-class Croppic extends Widget
+class Croppic extends InputWidget
 {
+    const SELECT_SINGLE = 1;
+    const CLICK_ACTIVATE = 1;
+    
+    /**
+     * @var string
+     */
+    public $idPrefix = 'ft_';
+
     /**
      * HTML atributos de etiqueta div.
      *
@@ -51,15 +30,15 @@ class Croppic extends Widget
     public $options = [];
     /**
      * Opciones de plug-js Croppic, todas las opciones posibles
-     * Ver la p√°gina web oficial - "http://www.croppic.net/".
+     * Ver la p·gina web oficial - "http://www.croppic.net/".
      *
      * @var array
      */
     public $pluginOptions = [];
-
+    
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function init()
     {
         // Sino se establece 'id' widget.
@@ -70,30 +49,31 @@ class Croppic extends Widget
         // Asignar el 'id' widget.
         $this->id = $this->options['id'];
 
-        // Si la opci√≥n 'uploadURL' est√° vac√≠a.
+        // Si la opciÛn 'uploadURL' est· vacÌa.
         if (!isset($this->pluginOptions['uploadUrl']) || empty($this->pluginOptions['uploadUrl'])) {
-            throw new InvalidConfigException('Par√°metro "uploadURL" no puede estar vac√≠o');
+            throw new InvalidConfigException('Par·metro "uploadURL" no puede estar vacÌo');
         }
-        // Si el par√°metro 'cropUrl' est√° vac√≠a.
+        // Si el par·metro 'cropUrl' est· vacÌa.
         if (!isset($this->pluginOptions['cropUrl']) || empty($this->pluginOptions['cropUrl'])) {
-            throw new InvalidConfigException('Par√°metro "cropUrl" no puede estar vac√≠o');
+            throw new InvalidConfigException('Par·metro "cropUrl" no puede estar vacÌo');
         }
-
+    //        $this->registerAssets();
         parent::init();
     }
-
+    
     /**
      * @inheritdoc
      */
     public function run()
     {
+        echo Html::tag('input', '');
         echo Html::tag('div', '', $this->options);
-
+        
         $this->registerClientScript();
     }
 
     /**
-     * Registra css y js en una p√°gina.
+     * Registra css y js en una p·gina.
      */
     public function registerClientScript()
     {
