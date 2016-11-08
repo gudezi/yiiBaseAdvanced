@@ -16,6 +16,8 @@ use gudezi\croppic\Croppic;
 
     <?php //= $form->field($model, 'urlUpload')->textInput(['maxlength' => true]) ?>
     
+    <?= $form->field($model, 'urlCrop')->textInput(['maxlength' => true]) ?>
+
     <?php 
         $options = [
             'class' => 'croppic',
@@ -23,8 +25,8 @@ use gudezi\croppic\Croppic;
             //'size' => 10,
         ];
         $pluginOptions= [
-            'uploadUrl' => 'upload',
-            'cropUrl' => 'crop',
+            'uploadUrl' => '../upload-crop/upload',
+            'cropUrl' => '../upload-crop/crop',
             'modal' => false,
             'doubleZoomControls' => false,
             'enableMousescroll' => true,
@@ -52,8 +54,6 @@ use gudezi\croppic\Croppic;
                 </div> ',
             ]
         ])*/ ?>
-
-    <?= $form->field($model, 'urlCrop')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -25,8 +25,8 @@ class FotosController extends BaseController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
-                    'upload' => ['post'],
-                    'crop' => ['post'],
+                    //'upload' => ['post'],
+                    //'crop' => ['post'],
                 ],
             ],
         ];
@@ -67,9 +67,15 @@ class FotosController extends BaseController
     public function actionCreate()
     {
         $model = new Fotos();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        ///$model->urlUpload = 'img/user/avatar/i-14768128925806605c543c7.jpg';
+        //$model->urlUpload = 'gustavito';
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $model->urlUpload=str_replace('../','/',$model->urlUpload);
+            if($model->save()) 
+            {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -125,7 +131,7 @@ class FotosController extends BaseController
         }
     }
     
-    public function actions()
+    /*public function actions()
     {
         return [
             'upload' => [
@@ -151,5 +157,5 @@ class FotosController extends BaseController
                 //'parameterRBAC' => 'profile',
             ],
         ];
-    }
+    }*/
 }
