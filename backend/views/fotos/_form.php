@@ -21,6 +21,7 @@ use gudezi\croppic\Croppic;
     <?php 
         $options = [
             'class' => 'croppic',
+            'pathroot' => 'yiiBaseAdvanced/backend/web',
             //'multiple' => true,
             //'size' => 10,
         ];

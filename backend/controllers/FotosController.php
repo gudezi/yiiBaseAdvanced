@@ -8,8 +8,6 @@ use backend\models\FotosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use gudezi\croppic\actions\CropAction;
-use gudezi\croppic\actions\UploadAction;
 /**
  * FotosController implements the CRUD actions for Fotos model.
  */
@@ -25,8 +23,6 @@ class FotosController extends BaseController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
-                    //'upload' => ['post'],
-                    //'crop' => ['post'],
                 ],
             ],
         ];
@@ -67,11 +63,8 @@ class FotosController extends BaseController
     public function actionCreate()
     {
         $model = new Fotos();
-        ///$model->urlUpload = 'img/user/avatar/i-14768128925806605c543c7.jpg';
-        //$model->urlUpload = 'gustavito';
         if ($model->load(Yii::$app->request->post()))
         {
-            $model->urlUpload=str_replace('../','/',$model->urlUpload);
             if($model->save()) 
             {
                 return $this->redirect(['view', 'id' => $model->id]);
