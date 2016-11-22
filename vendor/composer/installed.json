@@ -1140,110 +1140,6 @@
         ]
     },
     {
-        "name": "imagine/imagine",
-        "version": "v0.5.0",
-        "version_normalized": "0.5.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/avalanche123/Imagine.git",
-            "reference": "f64ec666baaa800edcbf237db41121a569230709"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/f64ec666baaa800edcbf237db41121a569230709",
-            "reference": "f64ec666baaa800edcbf237db41121a569230709",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "sami/sami": "dev-master"
-        },
-        "suggest": {
-            "ext-gd": "to use the GD implementation",
-            "ext-gmagick": "to use the Gmagick implementation",
-            "ext-imagick": "to use the Imagick implementation"
-        },
-        "time": "2013-07-10 17:25:36",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Imagine": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Bulat Shakirzyanov",
-                "email": "mallluhuct@gmail.com",
-                "homepage": "http://avalanche123.com"
-            }
-        ],
-        "description": "Image processing for PHP 5.3",
-        "homepage": "http://imagine.readthedocs.org/",
-        "keywords": [
-            "drawing",
-            "graphics",
-            "image manipulation",
-            "image processing"
-        ]
-    },
-    {
-        "name": "yiisoft/yii2-imagine",
-        "version": "2.0.4",
-        "version_normalized": "2.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yiisoft/yii2-imagine.git",
-            "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
-            "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
-            "shasum": ""
-        },
-        "require": {
-            "imagine/imagine": "0.5.*",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2016-09-04 15:14:08",
-        "type": "yii2-extension",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "yii\\imagine\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Antonio Ramirez",
-                "email": "amigo.cobos@gmail.com"
-            }
-        ],
-        "description": "The Imagine integration for the Yii framework",
-        "keywords": [
-            "helper",
-            "image",
-            "imagine",
-            "yii2"
-        ]
-    },
-    {
         "name": "mongosoft/yii2-upload-behavior",
         "version": "0.1.6",
         "version_normalized": "0.1.6.0",
@@ -2968,19 +2864,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/kartik-v/yii2-grid.git",
-            "reference": "a7d8fed3485720a8b17614685216a43f69c4224d"
+            "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/a7d8fed3485720a8b17614685216a43f69c4224d",
-            "reference": "a7d8fed3485720a8b17614685216a43f69c4224d",
+            "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/ff39cb3340510b5634f27108727f82c6ce9fb242",
+            "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242",
             "shasum": ""
         },
         "require": {
             "kartik-v/yii2-dialog": "~1.0",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2016-10-21 07:44:15",
+        "time": "2016-11-05 15:33:03",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3067,96 +2963,6 @@
             "gii",
             "template",
             "yii2"
-        ]
-    },
-    {
-        "name": "components/flag-icon-css",
-        "version": "2.6.0",
-        "version_normalized": "2.6.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/lipis/flag-icon-css.git",
-            "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
-            "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
-            "shasum": ""
-        },
-        "time": "2016-10-03 14:43:33",
-        "type": "component",
-        "extra": {
-            "component": {
-                "name": "flag-icon-css",
-                "files": [
-                    "less/**",
-                    "css/**",
-                    "flags/**"
-                ]
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Panayiotis Lipiridis (Lipis)",
-                "email": "lipiridis@gmail.com"
-            }
-        ],
-        "description": "CSS for vector based country flags"
-    },
-    {
-        "name": "fortawesome/font-awesome",
-        "version": "v4.6.3",
-        "version_normalized": "4.6.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/FortAwesome/Font-Awesome.git",
-            "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/8e241f209faa1dd2182c9fdc9c352d8806504a4e",
-            "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e",
-            "shasum": ""
-        },
-        "require-dev": {
-            "jekyll": "1.0.2",
-            "lessc": "1.4.2"
-        },
-        "time": "2016-05-13 15:42:25",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.6.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "OFL-1.1",
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Dave Gandy",
-                "email": "dave@fontawesome.io",
-                "homepage": "http://twitter.com/davegandy",
-                "role": "Developer"
-            }
-        ],
-        "description": "The iconic font and CSS framework",
-        "homepage": "http://fontawesome.io/",
-        "keywords": [
-            "FontAwesome",
-            "awesome",
-            "bootstrap",
-            "font",
-            "icon"
         ]
     },
     {
@@ -3308,59 +3114,6 @@
         ]
     },
     {
-        "name": "rmrevin/yii2-fontawesome",
-        "version": "2.16.1",
-        "version_normalized": "2.16.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-            "reference": "ab08282b8cd05c570634926f41c868cf902981e7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ab08282b8cd05c570634926f41c868cf902981e7",
-            "reference": "ab08282b8cd05c570634926f41c868cf902981e7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0",
-            "yiisoft/yii2": "2.0.*"
-        },
-        "time": "2016-08-31 12:41:25",
-        "type": "yii2-extension",
-        "extra": {
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "rmrevin\\yii\\fontawesome\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Revin Roman",
-                "email": "roman@rmrevin.com",
-                "homepage": "https://rmrevin.com/"
-            }
-        ],
-        "description": "Asset Bundle for Yii2 with Font Awesome",
-        "keywords": [
-            "asset",
-            "awesome",
-            "bundle",
-            "font",
-            "yii"
-        ]
-    },
-    {
         "name": "cebe/yii2-gravatar",
         "version": "1.1",
         "version_normalized": "1.1.0.0",
@@ -3503,62 +3256,6 @@
             "set",
             "tree",
             "treeview"
-        ]
-    },
-    {
-        "name": "bower-asset/fancytree",
-        "version": "v2.19.0",
-        "version_normalized": "2.19.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/mar10/fancytree.git",
-            "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/mar10/fancytree/zipball/a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
-            "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/jquery": ">=1.7",
-            "bower-asset/jquery-ui": ">=1.8.6"
-        },
-        "type": "bower-asset-library",
-        "extra": {
-            "bower-asset-main": [
-                "dist/jquery.fancytree-all.js"
-            ],
-            "bower-asset-ignore": [
-                "**/.*",
-                "/3rd-party",
-                "/archive",
-                "/bin",
-                "/build",
-                "/demo",
-                "/doc",
-                "/lib",
-                "/src",
-                "/test",
-                "CONTRIBUTING.md",
-                "fancytree.jquery.json",
-                "Gruntfile.coffee",
-                "index.html"
-            ]
-        },
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ],
-        "description": "Fancytree is a JavaScript tree view plugin for jQuery with support for persistence, keyboard, checkboxes, drag'n'drop, and lazy loading.",
-        "keywords": [
-            "ajax",
-            "jquery-plugin",
-            "lazy",
-            "table",
-            "tabletree",
-            "tree",
-            "treegrid"
         ]
     },
     {
@@ -3749,57 +3446,6 @@
         ]
     },
     {
-        "name": "gudezi/yii2-croppic-widget",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/gudezi/yii2-croppic-widget.git",
-            "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/c16bcb49bbdbae5b20e2444b90d59169303006da",
-            "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": "*",
-            "yiisoft/yii2-imagine": "*"
-        },
-        "require-dev": {
-            "mikey179/vfsstream": ">=1.0.0",
-            "yiisoft/yii2-codeception": "*"
-        },
-        "time": "2016-10-20 16:16:12",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "gudezi\\croppic\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Gustavo Dezi",
-                "email": "gudezi@gmail.com",
-                "homepage": "https://github.com/gudezi"
-            }
-        ],
-        "description": "Croppic widget Yii2 Framework.",
-        "homepage": "https://github.com/gudezi/yii2-croppic-widget",
-        "keywords": [
-            "croppic",
-            "extension",
-            "widget",
-            "yii2"
-        ]
-    },
-    {
         "name": "gudezi/adminlte",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -3900,6 +3546,366 @@
             "less",
             "theme",
             "yii2"
+        ]
+    },
+    {
+        "name": "imagine/imagine",
+        "version": "v0.6.3",
+        "version_normalized": "0.6.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/avalanche123/Imagine.git",
+            "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
+            "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "sami/sami": "dev-master"
+        },
+        "suggest": {
+            "ext-gd": "to use the GD implementation",
+            "ext-gmagick": "to use the Gmagick implementation",
+            "ext-imagick": "to use the Imagick implementation"
+        },
+        "time": "2015-09-19 16:54:05",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-develop": "0.7-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Imagine": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bulat Shakirzyanov",
+                "email": "mallluhuct@gmail.com",
+                "homepage": "http://avalanche123.com"
+            }
+        ],
+        "description": "Image processing for PHP 5.3",
+        "homepage": "http://imagine.readthedocs.org/",
+        "keywords": [
+            "drawing",
+            "graphics",
+            "image manipulation",
+            "image processing"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-imagine",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-imagine.git",
+            "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
+            "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
+            "shasum": ""
+        },
+        "require": {
+            "imagine/imagine": "~0.6.0",
+            "yiisoft/yii2": "~2.0.0"
+        },
+        "time": "2016-11-03 19:28:39",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\imagine\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Antonio Ramirez",
+                "email": "amigo.cobos@gmail.com"
+            }
+        ],
+        "description": "The Imagine integration for the Yii framework",
+        "keywords": [
+            "helper",
+            "image",
+            "imagine",
+            "yii2"
+        ]
+    },
+    {
+        "name": "gudezi/yii2-croppic-widget",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gudezi/yii2-croppic-widget.git",
+            "reference": "b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf",
+            "reference": "b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-imagine": "*"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": ">=1.0.0",
+            "yiisoft/yii2-codeception": "*"
+        },
+        "time": "2016-11-21 19:32:13",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "gudezi\\croppic\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Gustavo Dezi",
+                "email": "gudezi@gmail.com",
+                "homepage": "https://github.com/gudezi"
+            }
+        ],
+        "description": "Croppic widget Yii2 Framework.",
+        "homepage": "https://github.com/gudezi/yii2-croppic-widget",
+        "keywords": [
+            "croppic",
+            "extension",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "components/flag-icon-css",
+        "version": "2.7.0",
+        "version_normalized": "2.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lipis/flag-icon-css.git",
+            "reference": "113ad54e85c5d03dbe727dcdd5dbd23de1917d4d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/113ad54e85c5d03dbe727dcdd5dbd23de1917d4d",
+            "reference": "113ad54e85c5d03dbe727dcdd5dbd23de1917d4d",
+            "shasum": ""
+        },
+        "time": "2016-10-29 15:47:10",
+        "type": "component",
+        "extra": {
+            "component": {
+                "name": "flag-icon-css",
+                "files": [
+                    "less/**",
+                    "css/**",
+                    "flags/**"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Panayiotis Lipiridis (Lipis)",
+                "email": "lipiridis@gmail.com"
+            }
+        ],
+        "description": "CSS for vector based country flags"
+    },
+    {
+        "name": "bower-asset/fancytree",
+        "version": "v2.20.0",
+        "version_normalized": "2.20.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mar10/fancytree.git",
+            "reference": "b6ea14ff50a5883a854981e2cb6f56f27c3a5392"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mar10/fancytree/zipball/b6ea14ff50a5883a854981e2cb6f56f27c3a5392",
+            "reference": "b6ea14ff50a5883a854981e2cb6f56f27c3a5392",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/jquery": ">=1.7",
+            "bower-asset/jquery-ui": ">=1.8.6"
+        },
+        "type": "bower-asset-library",
+        "extra": {
+            "bower-asset-main": [
+                "dist/jquery.fancytree-all.js"
+            ],
+            "bower-asset-ignore": [
+                "**/.*",
+                "/3rd-party",
+                "/archive",
+                "/bin",
+                "/build",
+                "/demo",
+                "/doc",
+                "/lib",
+                "/src",
+                "/test",
+                "CONTRIBUTING.md",
+                "fancytree.jquery.json",
+                "Gruntfile.coffee",
+                "index.html"
+            ]
+        },
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ],
+        "description": "Fancytree is a JavaScript tree view plugin for jQuery with support for persistence, keyboard, checkboxes, drag'n'drop, and lazy loading.",
+        "keywords": [
+            "ajax",
+            "jquery-plugin",
+            "lazy",
+            "table",
+            "tabletree",
+            "tree",
+            "treegrid"
+        ]
+    },
+    {
+        "name": "fortawesome/font-awesome",
+        "version": "v4.7.0",
+        "version_normalized": "4.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FortAwesome/Font-Awesome.git",
+            "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+            "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
+            "shasum": ""
+        },
+        "require-dev": {
+            "jekyll": "1.0.2",
+            "lessc": "1.4.2"
+        },
+        "time": "2016-10-24 15:52:54",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "OFL-1.1",
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dave Gandy",
+                "email": "dave@fontawesome.io",
+                "homepage": "http://twitter.com/davegandy",
+                "role": "Developer"
+            }
+        ],
+        "description": "The iconic font and CSS framework",
+        "homepage": "http://fontawesome.io/",
+        "keywords": [
+            "FontAwesome",
+            "awesome",
+            "bootstrap",
+            "font",
+            "icon"
+        ]
+    },
+    {
+        "name": "rmrevin/yii2-fontawesome",
+        "version": "2.17.0",
+        "version_normalized": "2.17.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rmrevin/yii2-fontawesome.git",
+            "reference": "470202eace1868f1f627bf8c4ce21a17b0548c4a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/470202eace1868f1f627bf8c4ce21a17b0548c4a",
+            "reference": "470202eace1868f1f627bf8c4ce21a17b0548c4a",
+            "shasum": ""
+        },
+        "require": {
+            "fortawesome/font-awesome": "~4.7",
+            "php": ">=5.5.0",
+            "yiisoft/yii2": "2.0.*"
+        },
+        "time": "2016-10-25 15:14:55",
+        "type": "yii2-extension",
+        "extra": {
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "rmrevin\\yii\\fontawesome\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Revin Roman",
+                "email": "roman@rmrevin.com",
+                "homepage": "https://rmrevin.com/"
+            }
+        ],
+        "description": "Asset Bundle for Yii2 with Font Awesome",
+        "keywords": [
+            "asset",
+            "awesome",
+            "bundle",
+            "font",
+            "yii"
         ]
     }
 ]

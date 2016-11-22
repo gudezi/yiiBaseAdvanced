@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
         <?= $form->field($model, 'urlUpload')->textInput() ?>
-        <?= Croppic::widget([
+        <?php /*= Croppic::widget([
             'options' => [
                 'class' => 'croppic',
             ],
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <span id="bubblingG_3"></span>
                 </div> ',
             ]
-        ])?>
+        ])*/?>
         
         <?php //= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
         <?php //$htmlOptions = array('size' => '5', 'prompt'=>'Use CTRL to Select Multiple Staff', 'multiple' => 'true', 'options' => $selected);?>

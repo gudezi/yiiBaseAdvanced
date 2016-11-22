@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45fca33f871d9274d83e703dbd77236f",
+    "hash": "16103be321882713f83a9f8cca412947",
     "content-hash": "3656ecff2d6166a41a72c98f31a01e97",
     "packages": [
         {
@@ -156,16 +156,16 @@
         },
         {
             "name": "bower-asset/fancytree",
-            "version": "v2.19.0",
+            "version": "v2.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mar10/fancytree.git",
-                "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4"
+                "reference": "b6ea14ff50a5883a854981e2cb6f56f27c3a5392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mar10/fancytree/zipball/a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
-                "reference": "a82f59a8fad23a63a6fa0288b466dfcaf7cdd5b4",
+                "url": "https://api.github.com/repos/mar10/fancytree/zipball/b6ea14ff50a5883a854981e2cb6f56f27c3a5392",
+                "reference": "b6ea14ff50a5883a854981e2cb6f56f27c3a5392",
                 "shasum": ""
             },
             "require": {
@@ -504,16 +504,16 @@
         },
         {
             "name": "components/flag-icon-css",
-            "version": "2.6.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lipis/flag-icon-css.git",
-                "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f"
+                "reference": "113ad54e85c5d03dbe727dcdd5dbd23de1917d4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
-                "reference": "8a8b0eb53106d9d49c800d6abe106ba0ffd7604f",
+                "url": "https://api.github.com/repos/lipis/flag-icon-css/zipball/113ad54e85c5d03dbe727dcdd5dbd23de1917d4d",
+                "reference": "113ad54e85c5d03dbe727dcdd5dbd23de1917d4d",
                 "shasum": ""
             },
             "type": "component",
@@ -538,7 +538,7 @@
                 }
             ],
             "description": "CSS for vector based country flags",
-            "time": "2016-10-03 14:43:33"
+            "time": "2016-10-29 15:47:10"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -713,16 +713,16 @@
         },
         {
             "name": "fortawesome/font-awesome",
-            "version": "v4.6.3",
+            "version": "v4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e"
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/8e241f209faa1dd2182c9fdc9c352d8806504a4e",
-                "reference": "8e241f209faa1dd2182c9fdc9c352d8806504a4e",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/a8386aae19e200ddb0f6845b5feeee5eb7013687",
+                "reference": "a8386aae19e200ddb0f6845b5feeee5eb7013687",
                 "shasum": ""
             },
             "require-dev": {
@@ -757,7 +757,7 @@
                 "font",
                 "icon"
             ],
-            "time": "2016-05-13 15:42:25"
+            "time": "2016-10-24 15:52:54"
         },
         {
             "name": "gudezi/adminlte",
@@ -860,16 +860,16 @@
         },
         {
             "name": "gudezi/yii2-croppic-widget",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gudezi/yii2-croppic-widget.git",
-                "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da"
+                "reference": "b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/c16bcb49bbdbae5b20e2444b90d59169303006da",
-                "reference": "c16bcb49bbdbae5b20e2444b90d59169303006da",
+                "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf",
+                "reference": "b7728ac0b17691cc39ac1fcd8e4b95b4eb1c9bcf",
                 "shasum": ""
             },
             "require": {
@@ -905,7 +905,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-10-20 16:16:12"
+            "time": "2016-11-21 19:32:13"
         },
         {
             "name": "gudezi/yii2-fancytree-widget",
@@ -996,16 +996,16 @@
         },
         {
             "name": "imagine/imagine",
-            "version": "v0.5.0",
+            "version": "v0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "f64ec666baaa800edcbf237db41121a569230709"
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/f64ec666baaa800edcbf237db41121a569230709",
-                "reference": "f64ec666baaa800edcbf237db41121a569230709",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
                 "shasum": ""
             },
             "require": {
@@ -1020,6 +1020,11 @@
                 "ext-imagick": "to use the Imagick implementation"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Imagine": "lib/"
@@ -1044,7 +1049,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2013-07-10 17:25:36"
+            "time": "2015-09-19 16:54:05"
         },
         {
             "name": "istvan-ujjmeszaros/bootstrap-duallistbox",
@@ -1467,12 +1472,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-grid.git",
-                "reference": "a7d8fed3485720a8b17614685216a43f69c4224d"
+                "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/a7d8fed3485720a8b17614685216a43f69c4224d",
-                "reference": "a7d8fed3485720a8b17614685216a43f69c4224d",
+                "url": "https://api.github.com/repos/kartik-v/yii2-grid/zipball/ff39cb3340510b5634f27108727f82c6ce9fb242",
+                "reference": "ff39cb3340510b5634f27108727f82c6ce9fb242",
                 "shasum": ""
             },
             "require": {
@@ -1509,7 +1514,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-10-21 07:44:15"
+            "time": "2016-11-05 15:33:03"
         },
         {
             "name": "kartik-v/yii2-icons",
@@ -2002,20 +2007,21 @@
         },
         {
             "name": "rmrevin/yii2-fontawesome",
-            "version": "2.16.1",
+            "version": "2.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "ab08282b8cd05c570634926f41c868cf902981e7"
+                "reference": "470202eace1868f1f627bf8c4ce21a17b0548c4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ab08282b8cd05c570634926f41c868cf902981e7",
-                "reference": "ab08282b8cd05c570634926f41c868cf902981e7",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/470202eace1868f1f627bf8c4ce21a17b0548c4a",
+                "reference": "470202eace1868f1f627bf8c4ce21a17b0548c4a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
+                "fortawesome/font-awesome": "~4.7",
+                "php": ">=5.5.0",
                 "yiisoft/yii2": "2.0.*"
             },
             "type": "yii2-extension",
@@ -2049,7 +2055,7 @@
                 "font",
                 "yii"
             ],
-            "time": "2016-08-31 12:41:25"
+            "time": "2016-10-25 15:14:55"
         },
         {
             "name": "softark/yii2-dual-listbox",
@@ -2442,21 +2448,21 @@
         },
         {
             "name": "yiisoft/yii2-imagine",
-            "version": "2.0.4",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-imagine.git",
-                "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c"
+                "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
-                "reference": "68ed3d96cd1895035cef3c0e9ce9cf6c2c0c7f1c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-imagine/zipball/59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
+                "reference": "59dcd0b43c2b0e5495c7e5c0320e2cbc1cd57411",
                 "shasum": ""
             },
             "require": {
-                "imagine/imagine": "0.5.*",
-                "yiisoft/yii2": "*"
+                "imagine/imagine": "~0.6.0",
+                "yiisoft/yii2": "~2.0.0"
             },
             "type": "yii2-extension",
             "extra": {
@@ -2486,7 +2492,7 @@
                 "imagine",
                 "yii2"
             ],
-            "time": "2016-09-04 15:14:08"
+            "time": "2016-11-03 19:28:39"
         },
         {
             "name": "yiisoft/yii2-jui",

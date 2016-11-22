@@ -93,15 +93,6 @@ return array (
       '@execut/widget' => $vendorDir . '/execut/yii2-widget-bootstraptreeview',
     ),
   ),
-  'yiisoft/yii2-imagine' => 
-  array (
-    'name' => 'yiisoft/yii2-imagine',
-    'version' => '2.0.4.0',
-    'alias' => 
-    array (
-      '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
-    ),
-  ),
   'mongosoft/yii2-upload-behavior' => 
   array (
     'name' => 'mongosoft/yii2-upload-behavior',
@@ -382,15 +373,6 @@ return array (
       '@kartik/nav' => $vendorDir . '/kartik-v/yii2-nav-x',
     ),
   ),
-  'rmrevin/yii2-fontawesome' => 
-  array (
-    'name' => 'rmrevin/yii2-fontawesome',
-    'version' => '2.16.1.0',
-    'alias' => 
-    array (
-      '@rmrevin/yii/fontawesome' => $vendorDir . '/rmrevin/yii2-fontawesome',
-    ),
-  ),
   'cebe/yii2-gravatar' => 
   array (
     'name' => 'cebe/yii2-gravatar',
@@ -436,15 +418,6 @@ return array (
       '@gudezi/notifications' => $vendorDir . '/gudezi/yii2-notifications-widget',
     ),
   ),
-  'gudezi/yii2-croppic-widget' => 
-  array (
-    'name' => 'gudezi/yii2-croppic-widget',
-    'version' => '1.0.0.0',
-    'alias' => 
-    array (
-      '@gudezi/croppic' => $vendorDir . '/gudezi/yii2-croppic-widget',
-    ),
-  ),
   'gudezi/yii2-adminlte-asset' => 
   array (
     'name' => 'gudezi/yii2-adminlte-asset',
@@ -452,6 +425,33 @@ return array (
     'alias' => 
     array (
       '@gudezi' => $vendorDir . '/gudezi/yii2-adminlte-asset',
+    ),
+  ),
+  'yiisoft/yii2-imagine' => 
+  array (
+    'name' => 'yiisoft/yii2-imagine',
+    'version' => '2.1.0.0',
+    'alias' => 
+    array (
+      '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
+    ),
+  ),
+  'gudezi/yii2-croppic-widget' => 
+  array (
+    'name' => 'gudezi/yii2-croppic-widget',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@gudezi/croppic' => $vendorDir . '/gudezi/yii2-croppic-widget',
+    ),
+  ),
+  'rmrevin/yii2-fontawesome' => 
+  array (
+    'name' => 'rmrevin/yii2-fontawesome',
+    'version' => '2.17.0.0',
+    'alias' => 
+    array (
+      '@rmrevin/yii/fontawesome' => $vendorDir . '/rmrevin/yii2-fontawesome',
     ),
   ),
   'kartik-v/yii2-grid' => 

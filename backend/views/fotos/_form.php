@@ -14,9 +14,28 @@ use gudezi\croppic\Croppic;
 
     <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'urlUpload')->textInput(['maxlength' => true]) ?>
+    <?php //= $form->field($model, 'urlUpload')->textInput(['maxlength' => true]) ?>
     
-    <?= Croppic::widget([
+    <?= $form->field($model, 'urlCrop')->textInput(['maxlength' => true]) ?>
+
+    <?php 
+        $options = [
+            'class' => 'croppic',
+            //'multiple' => true,
+            //'size' => 10,
+        ];
+        $pluginOptions= [
+            'uploadUrl' => '../upload-crop/upload',
+            'cropUrl' => '../upload-crop/crop',
+            'modal' => false,
+            'doubleZoomControls' => false,
+            'enableMousescroll' => true,
+        ];
+        echo $form->field($model, 'urlUpload')->widget(Croppic::className(),
+            ['options' => $options,'pluginOptions' => $pluginOptions]); 
+    ?>
+    
+    <?php /*= Croppic::widget([
             'options' => [
                 'class' => 'croppic',
             ],
@@ -34,9 +53,7 @@ use gudezi\croppic\Croppic;
                     <span id="bubblingG_3"></span>
                 </div> ',
             ]
-        ]) ?>
-
-    <?= $form->field($model, 'urlCrop')->textInput(['maxlength' => true]) ?>
+        ])*/ ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
