@@ -45,4 +45,11 @@ class Fotos extends \yii\db\ActiveRecord
             'urlCrop' => 'Url Crop',
         ];
     }
+ 
+    public function getImageurl()
+    {
+        //print_r($this);
+        //die();
+        return \Yii::$app->urlManager->createUrl(''.$this->urlUpload);
+    }
 }

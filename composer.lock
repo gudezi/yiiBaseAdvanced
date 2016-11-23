@@ -860,16 +860,16 @@
         },
         {
             "name": "gudezi/yii2-croppic-widget",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gudezi/yii2-croppic-widget.git",
-                "reference": "7f7b4df171d385180e581208d7c224ec56a4aa0c"
+                "reference": "26fa409ee6d16aae76c5b803bf5aefbe37673e1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/7f7b4df171d385180e581208d7c224ec56a4aa0c",
-                "reference": "7f7b4df171d385180e581208d7c224ec56a4aa0c",
+                "url": "https://api.github.com/repos/gudezi/yii2-croppic-widget/zipball/26fa409ee6d16aae76c5b803bf5aefbe37673e1c",
+                "reference": "26fa409ee6d16aae76c5b803bf5aefbe37673e1c",
                 "shasum": ""
             },
             "require": {
@@ -905,7 +905,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-11-22 15:03:36"
+            "time": "2016-11-23 18:26:58"
         },
         {
             "name": "gudezi/yii2-fancytree-widget",

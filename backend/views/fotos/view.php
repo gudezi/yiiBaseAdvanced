@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'descripcion',
             'urlUpload:url',
-            'urlCrop:url',
+            //'urlCrop:url',
+            [
+                'attribute'=>'Foto',
+                'format'=>[raw,['width'=>'50']],
+                'value'=>Html::img($model->imageurl),
+            ],
         ],
     ]) ?>
 

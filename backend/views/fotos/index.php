@@ -27,8 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'descripcion',
             'urlUpload:url',
-            'urlCrop:url',
-
+            //'urlCrop:url',
+            [
+            //'format' => ['image',['width'=>'100','height'=>'100']],
+            'format' => ['image',['width'=>'100']],
+            'label' => 'Foto',
+            'value' => function($data) { return $data->imageurl; },
+        ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

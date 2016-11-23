@@ -26,8 +26,8 @@ use gudezi\croppic\Croppic;
             //'size' => 10,
         ];
         $pluginOptions= [
-            'uploadUrl' => '../upload-crop/upload',
-            'cropUrl' => '../upload-crop/crop',
+            'uploadUrl' => '../upload-crop/upload?id='.$model->id,
+            'cropUrl' => '../upload-crop/crop?id='.$model->id,
             'modal' => false,
             'doubleZoomControls' => false,
             'enableMousescroll' => true,

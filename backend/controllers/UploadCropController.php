@@ -5,6 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\Fotos;
 use gudezi\croppic\actions\CropAction;
 use gudezi\croppic\actions\UploadAction;
 
@@ -16,7 +17,7 @@ class UploadCropController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'upload' => ['post'],
+                    'upload' => ['post','get'],
                     'crop' => ['post'],
                 ],
             ],
@@ -25,11 +26,19 @@ class UploadCropController extends Controller
 
     public function actions()
     {
+        $id = Yii::$app->request->get('id');
+        if($id>0)
+            $model = $this->findModel($id);
+        else
+            $model = new Fotos();
+        
         return [
             'upload' => [
                 'class' => 'gudezi\croppic\actions\UploadAction',
                 'tempPath' => '@backend/web/img/temp',
                 'tempUrl' => '../img/temp/',
+                'modelAttribute' => 'urlUpload',
+                'model' => $model,
                 'validatorOptions' => [
                     'checkExtensionByMimeType' => true,
                     'extensions' => 'jpeg, jpg, png',
@@ -42,7 +51,17 @@ class UploadCropController extends Controller
                 'path' => '@backend/web/img/user/avatar',
                 'url' => '../img/user/avatar/',
                 'modelAttribute' => 'urlUpload',
+                'model' => $model,
             ],
         ];
     }
+
+    protected function findModel($id)
+    {
+        if (($model = Fotos::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }    
 }

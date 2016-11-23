@@ -439,7 +439,7 @@ return array (
   'gudezi/yii2-croppic-widget' => 
   array (
     'name' => 'gudezi/yii2-croppic-widget',
-    'version' => '1.0.2.0',
+    'version' => '1.0.3.0',
     'alias' => 
     array (
       '@gudezi/croppic' => $vendorDir . '/gudezi/yii2-croppic-widget',
