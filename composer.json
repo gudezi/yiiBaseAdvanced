@@ -29,6 +29,7 @@
         "gudezi/yii2-fancytree-widget": "*",
         "gudezi/yii2-notifications-widget": "*",
         "gudezi/yii2-adminlte-asset": "*",
+        "gudezi/yii2-gmdcrud": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
         "karpoff/yii2-crop-image-upload": "*",
         "gudezi/yii2-croppic-widget": "*"

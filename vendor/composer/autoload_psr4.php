@@ -57,6 +57,7 @@ return array(
     'gudezi\\notifications\\' => array($vendorDir . '/gudezi/yii2-notifications-widget'),
     'gudezi\\fancytree\\' => array($vendorDir . '/gudezi/yii2-fancytree-widget'),
     'gudezi\\croppic\\' => array($vendorDir . '/gudezi/yii2-croppic-widget'),
+    'gudezi\\gmdcrud\\' => array($vendorDir . '/gudezi/yii2-gmdcrud/src'),
     'gudezi\\' => array($vendorDir . '/gudezi/yii2-adminlte-asset'),
     'execut\\yii\\' => array($vendorDir . '/execut/yii2-base'),
     'execut\\widget\\' => array($vendorDir . '/execut/yii2-widget-bootstraptreeview'),

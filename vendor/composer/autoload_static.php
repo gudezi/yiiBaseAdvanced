@@ -83,6 +83,7 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'gudezi\\notifications\\' => 21,
             'gudezi\\fancytree\\' => 17,
             'gudezi\\croppic\\' => 15,
+            'gudezi\\gmdcrud\\' => 18,
             'gudezi\\' => 7,
         ),
         'e' => 

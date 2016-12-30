@@ -436,6 +436,16 @@ return array (
       '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
     ),
   ),
+  'gudezi/yii2-gmdcrud' => 
+  array (
+    'name' => 'gudezi/yii2-gmdcrud',
+    'version' => '2.1.3.0',
+    'alias' => 
+    array (
+      '@gudezi/gmdcrud' => $vendorDir . '/gudezi/yii2-gmdcrud/src',
+    ),
+    'bootstrap' => 'gudezi\\gmdcrud\\Bootstrap',
+  ),
   'gudezi/yii2-croppic-widget' => 
   array (
     'name' => 'gudezi/yii2-croppic-widget',
