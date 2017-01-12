@@ -8,6 +8,9 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
 {
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '3e2471375464aac821502deb0ac64275' => __DIR__ . '/..' . '/symfony/polyfill-php54/bootstrap.php',
+        '0bd6df6f66b748fa0864bea88a58fa4a' => __DIR__ . '/..' . '/schmunk42/retry/src/retry.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
@@ -28,6 +31,7 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         's' => 
         array (
             'softark\\duallistbox\\' => 20,
+            'schmunk42\\giiant\\' => 17,
         ),
         'r' => 
         array (
@@ -35,7 +39,12 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         ),
         'm' => 
         array (
+            'mootensai\\relation\\' => 19,
+            'mootensai\\enhancedgii\\' => 22,
+            'mootensai\\components\\' => 21,
+            'mootensai\\behaviors\\' => 20,
             'mongosoft\\file\\' => 15,
+            'mikehaertl\\shellcommand\\' => 24,
         ),
         'k' => 
         array (
@@ -44,6 +53,7 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'kartik\\tree\\' => 12,
             'kartik\\touchspin\\' => 17,
             'kartik\\time\\' => 12,
+            'kartik\\tabs\\' => 12,
             'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
             'kartik\\sidenav\\' => 15,
@@ -51,16 +61,19 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'kartik\\rating\\' => 14,
             'kartik\\range\\' => 13,
             'kartik\\popover\\' => 15,
+            'kartik\\plugins\\tabs\\' => 20,
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\plugins\\depdrop\\' => 23,
             'kartik\\nav\\' => 11,
             'kartik\\mpdf\\' => 12,
             'kartik\\icons\\' => 13,
+            'kartik\\helpers\\' => 15,
             'kartik\\growl\\' => 13,
             'kartik\\grid\\' => 12,
             'kartik\\form\\' => 12,
             'kartik\\file\\' => 12,
+            'kartik\\export\\' => 14,
             'kartik\\editable\\' => 16,
             'kartik\\dropdown\\' => 16,
             'kartik\\dialog\\' => 14,
@@ -69,6 +82,7 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'kartik\\daterange\\' => 17,
             'kartik\\date\\' => 12,
             'kartik\\color\\' => 13,
+            'kartik\\builder\\' => 15,
             'kartik\\base\\' => 12,
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
@@ -90,10 +104,35 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'execut\\yii\\' => 11,
             'execut\\widget\\' => 14,
         ),
+        'd' => 
+        array (
+            'dmstr\\helpers\\' => 14,
+            'dmstr\\db\\tests\\' => 15,
+            'dmstr\\db\\' => 9,
+            'dmstr\\console\\' => 14,
+            'dmstr\\bootstrap\\' => 16,
+        ),
         'c' => 
         array (
             'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Php54\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Stopwatch\\' => 28,
+            'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Filesystem\\' => 29,
+            'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Debug\\' => 24,
+            'Symfony\\Component\\Console\\' => 26,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+            'PhpCsFixer\\' => 11,
         ),
         'F' => 
         array (
@@ -146,13 +185,38 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         array (
             0 => __DIR__ . '/..' . '/softark/yii2-dual-listbox',
         ),
+        'schmunk42\\giiant\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/schmunk42/yii2-giiant/src',
+        ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
             0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
         ),
+        'mootensai\\relation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mootensai/yii2-relation-trait',
+        ),
+        'mootensai\\enhancedgii\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mootensai/yii2-enhanced-gii',
+        ),
+        'mootensai\\components\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mootensai/yii2-optimistic-lock-validator',
+            1 => __DIR__ . '/..' . '/mootensai/yii2-jsblock',
+        ),
+        'mootensai\\behaviors\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mootensai/yii2-uuid-behavior',
+        ),
         'mongosoft\\file\\' => 
         array (
             0 => __DIR__ . '/..' . '/mongosoft/yii2-upload-behavior',
+        ),
+        'mikehaertl\\shellcommand\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mikehaertl/php-shellcommand/src',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -173,6 +237,10 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         'kartik\\time\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker',
+        ),
+        'kartik\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x',
         ),
         'kartik\\switchinput\\' => 
         array (
@@ -202,6 +270,10 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-popover-x',
         ),
+        'kartik\\plugins\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-tabs-x',
+        ),
         'kartik\\plugins\\popover\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/bootstrap-popover-x',
@@ -226,6 +298,10 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-icons',
         ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
         'kartik\\growl\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
@@ -241,6 +317,10 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         'kartik\\file\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
+        ),
+        'kartik\\export\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-export',
         ),
         'kartik\\editable\\' => 
         array (
@@ -273,6 +353,10 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         'kartik\\color\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput',
+        ),
+        'kartik\\builder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-builder',
         ),
         'kartik\\base\\' => 
         array (
@@ -318,6 +402,26 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         array (
             0 => __DIR__ . '/..' . '/execut/yii2-widget-bootstraptreeview',
         ),
+        'dmstr\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-helpers/src',
+        ),
+        'dmstr\\db\\tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-db/db/tests',
+        ),
+        'dmstr\\db\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-db/db',
+        ),
+        'dmstr\\console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-db/console',
+        ),
+        'dmstr\\bootstrap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dmstr/yii2-bootstrap',
+        ),
         'creocoder\\nestedsets\\' => 
         array (
             0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
@@ -325,6 +429,50 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'Symfony\\Polyfill\\Php54\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php54',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\Stopwatch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/stopwatch',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
+        'Symfony\\Component\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'PhpCsFixer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src',
         ),
         'Faker\\' => 
         array (
@@ -338,6 +486,13 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
             'cebe\\gravatar\\' => 
             array (
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
+            ),
+        ),
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
             ),
         ),
         'I' => 
@@ -370,12 +525,23 @@ class ComposerStaticInit715e24d6c3c254d047a93e82be7b690e
         'CGIFIMAGE' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
         'CGIFIMAGEHEADER' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
         'CGIFLZW' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/gif.php',
+        'CallbackFilterIterator' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/CallbackFilterIterator.php',
         'INDIC' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/indic.php',
         'MYANMAR' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/myanmar.php',
         'OTLdump' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/otl_dump.php',
         'PDFBarcode' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/barcode.php',
+        'RecursiveCallbackFilterIterator' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/RecursiveCallbackFilterIterator.php',
         'SEA' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/sea.php',
         'SVG' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/svg.php',
+        'SebastianBergmann\\Diff\\Chunk' => __DIR__ . '/..' . '/sebastian/diff/src/Chunk.php',
+        'SebastianBergmann\\Diff\\Diff' => __DIR__ . '/..' . '/sebastian/diff/src/Diff.php',
+        'SebastianBergmann\\Diff\\Differ' => __DIR__ . '/..' . '/sebastian/diff/src/Differ.php',
+        'SebastianBergmann\\Diff\\LCS\\LongestCommonSubsequence' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/LongestCommonSubsequence.php',
+        'SebastianBergmann\\Diff\\LCS\\MemoryEfficientImplementation' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/MemoryEfficientLongestCommonSubsequenceImplementation.php',
+        'SebastianBergmann\\Diff\\LCS\\TimeEfficientImplementation' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php',
+        'SebastianBergmann\\Diff\\Line' => __DIR__ . '/..' . '/sebastian/diff/src/Line.php',
+        'SebastianBergmann\\Diff\\Parser' => __DIR__ . '/..' . '/sebastian/diff/src/Parser.php',
+        'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/SessionHandlerInterface.php',
         'TTFontFile' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ttfontsuni.php',
         'TTFontFile_Analysis' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ttfontsuni_analysis.php',
         'UCDN' => __DIR__ . '/..' . '/kartik-v/mpdf/classes/ucdn.php',

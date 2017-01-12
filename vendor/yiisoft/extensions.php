@@ -463,4 +463,116 @@ return array (
       '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
     ),
   ),
+  'kartik-v/yii2-tabs-x' => 
+  array (
+    'name' => 'kartik-v/yii2-tabs-x',
+    'version' => '1.2.3.0',
+    'alias' => 
+    array (
+      '@kartik/tabs' => $vendorDir . '/kartik-v/yii2-tabs-x',
+    ),
+  ),
+  'mootensai/yii2-optimistic-lock-validator' => 
+  array (
+    'name' => 'mootensai/yii2-optimistic-lock-validator',
+    'version' => '0.0.1.0',
+    'alias' => 
+    array (
+      '@mootensai/components' => $vendorDir . '/mootensai/yii2-optimistic-lock-validator',
+    ),
+  ),
+  'kartik-v/yii2-export' => 
+  array (
+    'name' => 'kartik-v/yii2-export',
+    'version' => '1.2.5.0',
+    'alias' => 
+    array (
+      '@kartik/export' => $vendorDir . '/kartik-v/yii2-export',
+    ),
+  ),
+  'kartik-v/yii2-helpers' => 
+  array (
+    'name' => 'kartik-v/yii2-helpers',
+    'version' => '1.3.6.0',
+    'alias' => 
+    array (
+      '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers',
+    ),
+  ),
+  'kartik-v/yii2-builder' => 
+  array (
+    'name' => 'kartik-v/yii2-builder',
+    'version' => '1.6.2.0',
+    'alias' => 
+    array (
+      '@kartik/builder' => $vendorDir . '/kartik-v/yii2-builder',
+    ),
+  ),
+  'mootensai/yii2-jsblock' => 
+  array (
+    'name' => 'mootensai/yii2-jsblock',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@mootensai/components' => $vendorDir . '/mootensai/yii2-jsblock',
+    ),
+  ),
+  'mootensai/yii2-relation-trait' => 
+  array (
+    'name' => 'mootensai/yii2-relation-trait',
+    'version' => '1.1.4.0',
+    'alias' => 
+    array (
+      '@mootensai/relation' => $vendorDir . '/mootensai/yii2-relation-trait',
+    ),
+  ),
+  'mootensai/yii2-enhanced-gii' => 
+  array (
+    'name' => 'mootensai/yii2-enhanced-gii',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@mootensai/enhancedgii' => $vendorDir . '/mootensai/yii2-enhanced-gii',
+    ),
+    'bootstrap' => 'mootensai\\enhancedgii\\Bootstrap',
+  ),
+  'dmstr/yii2-db' => 
+  array (
+    'name' => 'dmstr/yii2-db',
+    'version' => '0.7.7.0',
+    'alias' => 
+    array (
+      '@dmstr/db' => $vendorDir . '/dmstr/yii2-db/db',
+      '@dmstr/db/tests' => $vendorDir . '/dmstr/yii2-db/db/tests',
+      '@dmstr/console' => $vendorDir . '/dmstr/yii2-db/console',
+    ),
+  ),
+  'dmstr/yii2-helpers' => 
+  array (
+    'name' => 'dmstr/yii2-helpers',
+    'version' => '0.4.1.0',
+    'alias' => 
+    array (
+      '@dmstr/helpers' => $vendorDir . '/dmstr/yii2-helpers/src',
+    ),
+  ),
+  'dmstr/yii2-bootstrap' => 
+  array (
+    'name' => 'dmstr/yii2-bootstrap',
+    'version' => '0.2.0.0',
+    'alias' => 
+    array (
+      '@dmstr/bootstrap' => $vendorDir . '/dmstr/yii2-bootstrap',
+    ),
+  ),
+  'schmunk42/yii2-giiant' => 
+  array (
+    'name' => 'schmunk42/yii2-giiant',
+    'version' => '0.9.0.0',
+    'alias' => 
+    array (
+      '@schmunk42/giiant' => $vendorDir . '/schmunk42/yii2-giiant/src',
+    ),
+    'bootstrap' => 'schmunk42\\giiant\\Bootstrap',
+  ),
 );

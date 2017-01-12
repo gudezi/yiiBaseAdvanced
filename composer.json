@@ -31,7 +31,9 @@
         "gudezi/yii2-adminlte-asset": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
         "karpoff/yii2-crop-image-upload": "*",
-        "gudezi/yii2-croppic-widget": "*"
+        "gudezi/yii2-croppic-widget": "*",
+        "mootensai/yii2-enhanced-gii": "dev-master",
+        "schmunk42/yii2-giiant": "@stable"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

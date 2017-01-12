@@ -177,4 +177,9 @@ class SolicitanteController extends BaseController //Controller
     {
         return $this->render('gustavo');
     }
+    
+    public function actionAgustin()
+    {
+        return $this->render('gustavo');
+    }
 }
